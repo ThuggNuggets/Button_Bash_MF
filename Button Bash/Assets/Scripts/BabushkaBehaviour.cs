@@ -10,24 +10,12 @@ public class BabushkaBehaviour : MonoBehaviour
     public float health = 2;
 
 
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-      
-    }
-
-    // Update.
-    void FixedUpdate()
-    {
-       
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
         if (collision.gameObject.tag == "bullet")
         {
+            Destroy(collision.gameObject);
             if (gameObject.tag == "babushkaLarge" || gameObject.tag == "babushkaMedium")
             {
                 //if it is the large or medium babushka span smaller one next to it then reduce health

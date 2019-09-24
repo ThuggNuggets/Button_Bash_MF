@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         // Move fowards at it's speed.
-        m_Rigidbody.MovePosition(transform.position + (-transform.forward) * m_Speed * Time.deltaTime);
+        m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
 
         // If the enemy reaches the end trigger, destroy the enemy.
         if (transform.position.z <= m_EndingTrigger.transform.position.z+0.5f)

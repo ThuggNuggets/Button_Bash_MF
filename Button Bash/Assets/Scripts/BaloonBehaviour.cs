@@ -23,7 +23,7 @@ public class BaloonBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             Destroy(collision.gameObject);
-            expand = true;
+      
             Destroy(gameObject, 10);
             //speeds up enemies based on tags
             GameObject[] enemies;
@@ -41,10 +41,19 @@ public class BaloonBehaviour : MonoBehaviour
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
             m_enemiesToSpeedUp.AddRange(enemies);
 
-            foreach (GameObject enemy in m_enemiesToSpeedUp)
-               {
+            enemies = GameObject.FindGameObjectsWithTag("TeddyBear");
+            m_enemiesToSpeedUp.AddRange(enemies);
+
+            enemies = GameObject.FindGameObjectsWithTag("Rubix");
+            m_enemiesToSpeedUp.AddRange(enemies);
+            if (expand == false)
+            {
+                foreach (GameObject enemy in m_enemiesToSpeedUp)
+                {
                     enemy.GetComponent<EnemyBehaviour>().m_Speed *= 2;
+                }
             }
+            expand = true;
         }
     }
     // Update is called once per frame
