@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
 		if (m_Timer <= 0.0f)
 		{
 			// If the wave iterator is less then the amount of waves there are, check the conditions to spawn an enemy.
-			if (m_WaveIterator < m_Waves.Length)
+			if (m_WaveIterator <= m_Waves.Length)
 			{
 				// If the wave enemy iterator is equal to the amount of enemies in the wave, move to the next wave.
 				if (m_WaveEnemyIterator == m_Waves[m_WaveIterator].GetComponent<WaveInformation>().m_WaveEnemies.Length)
@@ -64,7 +64,7 @@ public class WaveManager : MonoBehaviour
 					Vector3 spawnPos = m_EnemySpawnpoint.transform.position;
 
 					// Set the spawn point's x positon to a random number along the z axis of the spawner.
-					spawnPos.x = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.position.z / 2);
+					spawnPos.z = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.position.z / 2);
 					
 					// Increase the spawn point's y by 1, so the enemies don't spawn in the ground.
 					spawnPos.y += 1.0f;
@@ -76,7 +76,7 @@ public class WaveManager : MonoBehaviour
 					GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
 					// Set the colour of the enemy to be the colour set in the wave.
-					enemy.GetComponent<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
+					//enemy.GetComponent<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
 
 					// Reset the timer.
 					m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
@@ -90,5 +90,7 @@ public class WaveManager : MonoBehaviour
 		// Else, decrease the timer by delta time.
 		else
 			m_Timer -= Time.deltaTime;
+
+		Debug.Log(m_Timer);
     }
 }
