@@ -28,7 +28,7 @@ public class WaveManager : MonoBehaviour
 	// Basically constructor.
     void Awake()
     {
-		// Seed the random number generator with the current time.
+		// Seed the random number generator with the current time so the random number is different every time.
 		Random.InitState((int)System.DateTime.Now.Ticks);
 
 		// Set the timer for spawns.
@@ -60,26 +60,31 @@ public class WaveManager : MonoBehaviour
 				// Else, spawn an enemy.
 				else
 				{
-					// The spawn point for the enemy is the position of the enemy spawn.
-					Vector3 spawnPos = m_EnemySpawnpoint.transform.position;
+					// Try to spawn an enemy, if an exception is thrown, do nothing.
+					try
+					{
+						// The spawn point for the enemy is the position of the enemy spawn.
+						Vector3 spawnPos = m_EnemySpawnpoint.transform.position;
 
-					// Set the spawn point's x positon to a random number along the z axis of the spawner.
-					spawnPos.z = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.position.z / 2);
-					
-					// Increase the spawn point's y by 1, so the enemies don't spawn in the ground.
-					spawnPos.y += 1.0f;
+						// Set the spawn point's x positon to a random number along the z axis of the spawner.
+						spawnPos.z = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.position.z / 2);
 
-					// Get the wave information.
-					WaveInformation waveInformation = m_Waves[m_WaveIterator].GetComponent<WaveInformation>();
+						// Increase the spawn point's y by 1, so the enemies don't spawn in the ground.
+						spawnPos.y += 1.0f;
 
-					// Instantiate an enemy, getting what type it is from the wave's enemies, spawning at the spawn positoin, with the enemy spawn point's rotation.
-					GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
+						// Get the wave information.
+						WaveInformation waveInformation = m_Waves[m_WaveIterator].GetComponent<WaveInformation>();
 
-					// Set the colour of the enemy to be the colour set in the wave.
-					//enemy.GetComponent<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
+						// Instantiate an enemy, getting what type it is from the wave's enemies, spawning at the spawn positoin, with the enemy spawn point's rotation.
+						GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
-					// Reset the timer.
-					m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+						// Set the colour of the enemy to be the colour set in the wave.
+						//enemy.GetComponent<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
+
+						// Reset the timer.
+						m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+					}
+					catch { }
 
 					// Increment the wave enemy iterator.
 					++m_WaveEnemyIterator;
