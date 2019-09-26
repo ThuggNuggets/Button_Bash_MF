@@ -8,6 +8,8 @@ public class BaloonBehaviour : MonoBehaviour
     //destroy self after this many seconds on collision (allow expanding)
     public float m_TimerToDestroy;
 
+    //speed increase (multiplacative)
+    public float m_speedIncrease = 2.0f;
     //expanding when hit
     private float timer = 0.0f;
     private bool expand = false;
@@ -50,7 +52,7 @@ public class BaloonBehaviour : MonoBehaviour
             {
                 foreach (GameObject enemy in m_enemiesToSpeedUp)
                 {
-                    enemy.GetComponent<EnemyBehaviour>().m_Speed *= 2;
+                    enemy.GetComponent<EnemyBehaviour>().m_Speed *= m_speedIncrease;
                 }
             }
             expand = true;
