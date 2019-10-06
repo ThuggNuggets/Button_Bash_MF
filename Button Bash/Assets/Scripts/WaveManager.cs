@@ -61,13 +61,13 @@ public class WaveManager : MonoBehaviour
 				else
 				{
 					// Try to spawn an enemy, if an exception is thrown, do nothing.
-					try
-					{
+					//try
+					//{
 						// The spawn point for the enemy is the position of the enemy spawn.
 						Vector3 spawnPos = m_EnemySpawnpoint.transform.position;
 
 						// Set the spawn point's x positon to a random number along the z axis of the spawner.
-						spawnPos.z = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.position.z / 2);
+						spawnPos.z = Random.Range(-m_EnemySpawnpoint.transform.localScale.z / 2, m_EnemySpawnpoint.transform.localScale.z / 2);
 
 						// Increase the spawn point's y by 1, so the enemies don't spawn in the ground.
 						spawnPos.y += 1.0f;
@@ -79,12 +79,13 @@ public class WaveManager : MonoBehaviour
 						GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
 						// Set the colour of the enemy to be the colour set in the wave.
-						//enemy.GetComponent<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
+						enemy.GetComponentInChildren<EnemyBehaviour>().SetColour(waveInformation.m_EnemyColours[m_WaveEnemyIterator]);
 
 						// Reset the timer.
 						m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
-					}
-					catch { }
+					//}
+					// If an exception was thrown, do nothing.
+					//catch { }
 
 					// Increment the wave enemy iterator.
 					++m_WaveEnemyIterator;
