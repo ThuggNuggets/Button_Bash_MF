@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ce70554c1d4dc438f584060edf13b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 3
+  m_Speed: 4
   m_EndingTrigger: {fileID: 4156497635197341471, guid: 5c9bccec9b3ddc54e940cbe383381819,
     type: 3}
   m_Colour: 2
