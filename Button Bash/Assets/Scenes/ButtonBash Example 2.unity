@@ -480,17 +480,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 282759491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ce75b52a03ada43935416cb53022ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 801f9a5f40b776c4aa5180738b96590a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_WaveEnemies:
   - {fileID: 8729044696699980931, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
   - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
+  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
   - {fileID: 706427984538570376, guid: b328a68457f96dd4db84cfab7c95764d, type: 3}
   - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
+  - {fileID: 706427984538570376, guid: b328a68457f96dd4db84cfab7c95764d, type: 3}
 --- !u!4 &282759493
 Transform:
   m_ObjectHideFlags: 0
@@ -1720,12 +1719,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107200752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271567b5bf451104cae6d59003e805f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 97d815183d71e3a43952ebe419606094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnemySpawnpoint: {fileID: 1069012242}
   m_MinSpawnTime: 1
-  m_MaxSpawnTime: 3
+  m_MaxSpawnTime: 4
   m_Waves:
   - {fileID: 282759491}
 --- !u!4 &1107200754

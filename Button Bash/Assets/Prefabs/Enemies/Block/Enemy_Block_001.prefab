@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 6
-  m_EndingTrigger: {fileID: 4156497635197341471, guid: 5c9bccec9b3ddc54e940cbe383381819,
+  m_EndingTrigger: {fileID: 8856049190698004848, guid: 17ab3256d8e16f045bf9c3773fd43a0c,
     type: 3}
   m_Colour: 2
 --- !u!114 &7098583433137576342
