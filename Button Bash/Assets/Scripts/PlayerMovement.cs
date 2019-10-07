@@ -37,10 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        switch (GameManager.GetGameState())
+        //switch (GameManager.GetGameState())
         {
             // execute on Playing state
-            case GameManager.GameStates.Playing:
+           // case GameManager.GameStates.Playing:
                 Vector3 movement = Vector3.zero;
 
                 movement += transform.right * Input.GetAxis("Horizontal") * railMoveSpeed;

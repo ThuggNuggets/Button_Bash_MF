@@ -186,9 +186,9 @@ public class CharacterControl : MonoBehaviour
 		GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
 
 		// Set the force on the bullet.
-		bullet.GetComponent<BulletBehavior>().SetForce(m_BulletSpeed);
+		//bullet.GetComponent<PlayerProjectile>().SetForce(m_BulletSpeed);
 
 		// Set the bullet's colour to this player's colour.
-		bullet.GetComponent<BulletBehavior>().SetColour(m_Colour);
+		bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
 	}
 }
