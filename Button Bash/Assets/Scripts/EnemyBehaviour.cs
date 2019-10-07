@@ -64,7 +64,7 @@ public class EnemyBehaviour : MonoBehaviour
         // Move fowards at it's speed.
         m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
 
-        // If the enemy reaches the end trigger, destroy the enemy.
+        // If the enemy reaches the end trigger x position, destroy the enemy.
         if (transform.position.x >= m_EndingTrigger.transform.position.x-1)
             Destroy(gameObject);
     }

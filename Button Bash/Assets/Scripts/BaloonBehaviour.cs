@@ -12,25 +12,21 @@ public class BaloonBehaviour : MonoBehaviour
     public float m_speedIncrease = 2.0f;
     //expanding when hit
     private float timer = 0.0f;
+    //is the ballooon expanding (popping)
     private bool expand = false;
-
-    void Awake()
-    {
-      
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
         if (collision.gameObject.tag == "bullet")
         {
+            //destroy bullet
             Destroy(collision.gameObject);
-      
-            Destroy(gameObject, 10);
-            //speeds up enemies based on tags
+            //creates an array of enemies
             GameObject[] enemies;
+           //creates a list of enemies
             List<GameObject> m_enemiesToSpeedUp = new List<GameObject>();
-            //GameObject.FindGameObjectsWithTag("babushkaLarge")
+        //puts all enemies into the array then puts the contents of the array into the list
             enemies = GameObject.FindGameObjectsWithTag("babushkaLarge");
             m_enemiesToSpeedUp.AddRange(enemies);
 
@@ -48,6 +44,7 @@ public class BaloonBehaviour : MonoBehaviour
 
             enemies = GameObject.FindGameObjectsWithTag("Rubix");
             m_enemiesToSpeedUp.AddRange(enemies);
+            //speeds up enemies in the list
             if (expand == false)
             {
                 foreach (GameObject enemy in m_enemiesToSpeedUp)
@@ -63,8 +60,10 @@ public class BaloonBehaviour : MonoBehaviour
     {
         if (expand)
         {
+            //increases size of self (popping)
             timer += Time.deltaTime;
             transform.localScale += new Vector3(0.05F, 0.05F, 0.05F);
+            //kill self
             if (timer > m_TimerToDestroy)
             {
                 Destroy(gameObject);

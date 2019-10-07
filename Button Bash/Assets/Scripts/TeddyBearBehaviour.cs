@@ -13,10 +13,12 @@ public class TeddyBearBehaviour : MonoBehaviour
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
         if (collision.gameObject.tag == "bullet")
         {
+            //destroy the bullet
                 Destroy(collision.gameObject);
                 health--;
                 if (health > 0)
                 {
+                //increases size of bear
                 transform.localScale += new Vector3(scale, scale, scale);
                 }
 

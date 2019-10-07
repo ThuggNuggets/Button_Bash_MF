@@ -8,6 +8,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
+            //destroy self and bullet on collision
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
