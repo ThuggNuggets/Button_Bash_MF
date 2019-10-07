@@ -37,28 +37,30 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void FixedUpdate()
-    {
-        
-    }
-
     void Update()
     {
         switch (gameState)
         {
             // execute on Playing state
-           case GameManager.GameStates.Playing:
-                Vector3 movement = Vector3.zero;
+            case GameManager.GameStates.Playing:
+                Vector3 movementStrafe = Vector3.zero;
+                Vector3 movementForward = Vector3.zero;
                 // distance moved = elapsed time * speed
                 float distanceCovered = (Time.time - startTime) * railSwitchSpeed;
                 // fraction of distance completed equals current distance divided by total distance
                 float fractionOfDistance = distanceCovered / distance;
 
-                // set position as a fraction of the distance between the rails
-                transform.position = Vector3.Lerp(railOne.position, railTwo.position, fractionOfDistance);
-
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    // set position as a fraction of the distance between the rails
+                    transform.position = Vector3.Lerp(railOne.position, railTwo.position, fractionOfDistance);
+                }
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    transform.position = Vector3.Lerp(railTwo.position, railOne.position, fractionOfDistance);
+                }
                 // horizontal movement along a rail
-                movement += transform.right * Input.GetAxis("Horizontal") * railMoveSpeed;
+                movementStrafe += transform.right * Input.GetAxis("Horizontal") * railMoveSpeed;
 
                 break;
         }
