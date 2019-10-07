@@ -65,7 +65,7 @@ public class EnemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         // Move fowards at it's speed.
-        m_Rigidbody.MovePosition(transform.position - transform.forward * m_Speed * Time.deltaTime);
+        m_Rigidbody.MovePosition(transform.position + transform.forward * m_Speed * Time.deltaTime);
 
      
     }
