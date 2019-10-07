@@ -44,16 +44,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-<<<<<<< .mine
         switch (gameState)
-||||||| .r44
-        switch (GameManager.GetGameState())
-=======
-        //switch (GameManager.GetGameState())
->>>>>>> .r45
         {
             // execute on Playing state
-           // case GameManager.GameStates.Playing:
+           case GameManager.GameStates.Playing:
                 Vector3 movement = Vector3.zero;
                 // distance moved = elapsed time * speed
                 float distanceCovered = (Time.time - startTime) * railSwitchSpeed;
