@@ -5106,6 +5106,42 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 46
       objectReference: {fileID: 0}
+    - target: {fileID: 3740765121689776261, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: m_CharacterSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: movementAxis
+      value: move
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: laneChangingAxis
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: m_Bullet
+      value: 
+      objectReference: {fileID: 3905374817873417468, guid: 505a6e222f1cedf4c964bf468268b639,
+        type: 3}
+    - target: {fileID: 5386285086304696439, guid: da80cbfa663eafe4d8efca7ee2d7ccbd,
+        type: 3}
+      propertyPath: m_ShootingCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da80cbfa663eafe4d8efca7ee2d7ccbd, type: 3}
 --- !u!1001 &7311364263660662600

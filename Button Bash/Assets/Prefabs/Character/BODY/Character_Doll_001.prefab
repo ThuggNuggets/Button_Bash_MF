@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4516481592368621662}
   - component: {fileID: 3740765121689776261}
   - component: {fileID: 7270741669928810460}
-  - component: {fileID: 502205575749214442}
+  - component: {fileID: 5386285086304696439}
   m_Layer: 0
   m_Name: BODY
   m_TagString: Untagged
@@ -110,7 +110,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &502205575749214442
+--- !u!114 &5386285086304696439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,13 +119,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1632974632835629407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba89e93e0e59ef546be6018dbb97825e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  railMoveSpeed: 2
-  railSwitchSpeed: 2
-  railOne: {fileID: 0}
-  railTwo: {fileID: 0}
+  movementAxis: Horizontal
+  fireAxis: Fire1
+  laneChangingAxis: Vretical
+  m_CharacterSpeed: 1
+  m_Bullet: {fileID: 100000, guid: 9060e1221e43ad34c9e56da991476626, type: 3}
+  m_BulletSpeed: 2
+  m_ShootingCooldown: 1
+  playerNumber: 1
 --- !u!1 &5774254116982083708
 GameObject:
   m_ObjectHideFlags: 0

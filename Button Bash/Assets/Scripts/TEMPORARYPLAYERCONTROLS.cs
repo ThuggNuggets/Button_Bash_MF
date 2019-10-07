@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterControl : MonoBehaviour
+public class 
+    TEMPORARYPLAYERCONTROLS: MonoBehaviour
 {
 	// Enum of the lanes.
 	public enum Lane
@@ -100,7 +101,7 @@ public class CharacterControl : MonoBehaviour
 			{
 				m_CurrentLane = Lane.FrontLane;
 
-				GameObject newLane = GameObject.Find("TopLane");
+				GameObject newLane = GameObject.Find("Rail");
 
 				m_TargetLane = transform.position;
 
@@ -118,7 +119,7 @@ public class CharacterControl : MonoBehaviour
 			{
 				m_CurrentLane = Lane.BackLane;
 
-				GameObject newLane = GameObject.Find("BottomLane");
+				GameObject newLane = GameObject.Find("Rail (1)");
 
 				m_TargetLane = transform.position;
 
@@ -128,12 +129,12 @@ public class CharacterControl : MonoBehaviour
             }
 		}
 
-            //checks if there is input to the selected controls
-            float translation = Input.GetAxis(movementAxis) * m_CharacterSpeed;
-            //so the player moves at playerSpeed units per sec not per frame
-            translation *= Time.deltaTime;
-            //moves the player
-            transform.Translate(0,0,translation);
+        //checks if there is input to the selected controls
+        float translation = Input.GetAxis(movementAxis) * m_CharacterSpeed;
+        //so the player moves at playerSpeed units per sec not per frame
+        translation *= Time.deltaTime;
+        //moves the player
+        transform.Translate(0,0,translation);
         
 
   
