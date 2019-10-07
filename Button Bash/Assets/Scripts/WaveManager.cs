@@ -16,8 +16,14 @@ public class WaveManager : MonoBehaviour
 	// The waves.
 	public GameObject[] m_Waves;
 
-	// The timer.
-	private float m_Timer;
+	// The wave enemy spawning timer.
+	private float m_WaveEnemySpawningTimer;
+
+	// The timer for inbetween waves.
+	public float m_WaveTimer;
+
+	// Wave timer for use in code, other one is just for changing outside of code.
+	private float m_CodeWaveTimer;
 
 	// Iterates through the waves.
 	private int m_WaveIterator = 0;
@@ -31,15 +37,18 @@ public class WaveManager : MonoBehaviour
 		// Seed the random number generator with the current time so the random number is different every time.
 		Random.InitState((int)System.DateTime.Now.Ticks);
 
+		// Set the code wave timer to the wave timer.
+		m_CodeWaveTimer = m_WaveTimer;
+
 		// Set the timer for spawns.
-		m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+		m_WaveEnemySpawningTimer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
     }
 
     // Update the wave manager.
     void Update()
     {
 		// If the timer is less than or equal to 0, check the conditions to spawn an enemy.
-		if (m_Timer <= 0.0f)
+		if (m_WaveEnemySpawningTimer <= 0.0f)
 		{
 			// If the wave iterator is less then the amount of waves there are, check the conditions to spawn an enemy.
 			if (m_WaveIterator <= m_Waves.Length)
@@ -47,14 +56,25 @@ public class WaveManager : MonoBehaviour
 				// If the wave enemy iterator is equal to the amount of enemies in the wave, move to the next wave.
 				if (m_WaveEnemyIterator == m_Waves[m_WaveIterator].GetComponent<WaveInformation>().m_WaveEnemies.Length)
 				{
-					// Increment the wave iterator to the next wave.
-					++m_WaveIterator;
+					// If the code wave timer is equal to or less than 0, move on to the next wave.
+					if (m_CodeWaveTimer <= 0.0f)
+					{
+						// Increment the wave iterator to the next wave.
+						++m_WaveIterator;
 
-					// Reset the wave enemy iterator.
-					m_WaveEnemyIterator = 0;
+						// Reset the wave enemy iterator.
+						m_WaveEnemyIterator = 0;
 
-					// Reset the timer.
-					m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+						// Reset the timer.
+						m_WaveEnemySpawningTimer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+
+						// Reset the code wave timer.
+						m_CodeWaveTimer = m_WaveTimer;
+					}
+
+					// Else, decrease the code wave timer by delta time.
+					else
+						m_CodeWaveTimer -= Time.deltaTime;
 				}
 
 				// Else, spawn an enemy.
@@ -79,7 +99,7 @@ public class WaveManager : MonoBehaviour
 						GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
 						// Reset the timer.
-						m_Timer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+						m_WaveEnemySpawningTimer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
 					}
 					// If an exception was thrown, do nothing.
 					catch { }
@@ -92,8 +112,8 @@ public class WaveManager : MonoBehaviour
 
 		// Else, decrease the timer by delta time.
 		else
-			m_Timer -= Time.deltaTime;
+			m_WaveEnemySpawningTimer -= Time.deltaTime;
 
-		Debug.Log(m_Timer);
+		Debug.Log(m_CodeWaveTimer);
     }
 }
