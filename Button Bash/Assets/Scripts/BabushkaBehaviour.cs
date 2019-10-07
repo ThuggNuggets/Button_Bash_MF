@@ -22,7 +22,7 @@ public class BabushkaBehaviour : MonoBehaviour
                 health--;
                 if (health > 0)
                 {
-                    Vector3 addedVector = new Vector3(3, 0, 0);
+                    Vector3 addedVector = new Vector3(0, 0, 3);
                     GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
                     enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
                 }
