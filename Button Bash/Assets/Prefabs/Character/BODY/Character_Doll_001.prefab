@@ -108,7 +108,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &5386285086304696439
 MonoBehaviour:
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Horizontal
+  movementAxis: move
   fireAxis: Fire1
-  laneChangingAxis: Vretical
+  laneChangingAxis: Vertical
   m_CharacterSpeed: 1
   m_Bullet: {fileID: 100000, guid: 9060e1221e43ad34c9e56da991476626, type: 3}
   m_BulletSpeed: 2

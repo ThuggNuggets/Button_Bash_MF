@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7892330749157188601}
   - component: {fileID: 5165726197444766795}
   - component: {fileID: 5191945083800053405}
+  - component: {fileID: 3451128034417223131}
   m_Layer: 0
   m_Name: BODY
   m_TagString: Untagged
@@ -107,8 +108,29 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3451128034417223131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245289750242697761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: move
+  fireAxis: Fire1
+  laneChangingAxis: Vertical
+  m_CharacterSpeed: 1
+  m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
+    type: 3}
+  m_BulletSpeed: 2
+  m_ShootingCooldown: 1
+  playerNumber: 3
 --- !u!1 &6132905396552334188
 GameObject:
   m_ObjectHideFlags: 0

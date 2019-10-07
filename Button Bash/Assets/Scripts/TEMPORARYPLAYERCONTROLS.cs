@@ -50,14 +50,14 @@ public class
         {
             case 1:
                 {
-                    m_Colour = Colours.Colour.Red;
-                    m_Material.color = Color.red;
+                    m_Colour = Colours.Colour.Blue;
+                    m_Material.color = Color.blue;
                     break;
                 }
             case 2:
                 {
-                    m_Colour = Colours.Colour.Blue;
-                    m_Material.color = Color.blue;
+                    m_Colour = Colours.Colour.Red;
+                    m_Material.color = Color.red;
                     break;
                 }
             case 3:
