@@ -64,13 +64,20 @@ public class EnemyBehaviour : MonoBehaviour
         // Move fowards at it's speed.
         m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
 
-        // If the enemy reaches the end trigger x position, destroy the enemy.
-        if (transform.position.x >= m_EndingTrigger.transform.position.x-1)
-            Destroy(gameObject);
+     
     }
 
-	// Get this enemy's colour.
-	public Colours.Colour GetColour() { return m_Colour; }
+    private void OnCollisionEnter(Collision collision)
+    {
+        // If the enemy reaches the end trigger x position, destroy the enemy.
+        if (collision.gameObject.tag == "endingTrigger")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+        // Get this enemy's colour.
+        public Colours.Colour GetColour() { return m_Colour; }
 
 	// Set the enemy's colour.
 	public void SetColour(Colours.Colour colour)
