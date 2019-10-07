@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Fence
   - Enemy
+  - endingTrigger
+  - letterBlock
+  - rubix
+  - teddyBear
+  - babushkaLarge
+  - babushkaMedium
+  - babushkaSmall
+  - bullet
   layers:
   - Default
   - TransparentFX
