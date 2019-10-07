@@ -54,15 +54,18 @@ public class EnemyBehaviour : MonoBehaviour
                 // Set the material colour to magenta, something went WRONG!
                 default:
                     m_Material.color = Color.magenta;
-                    break;
+  
+                break;
+
+               
             }
-        }
+     }
 
     // Update.
     void FixedUpdate()
     {
         // Move fowards at it's speed.
-        m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
+        m_Rigidbody.MovePosition(transform.position - transform.forward * m_Speed * Time.deltaTime);
 
      
     }

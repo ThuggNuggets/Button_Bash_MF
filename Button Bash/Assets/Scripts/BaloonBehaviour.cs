@@ -36,13 +36,13 @@ public class BaloonBehaviour : MonoBehaviour
             enemies = GameObject.FindGameObjectsWithTag("babushkaSmall");
             m_enemiesToSpeedUp.AddRange(enemies);
 
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            enemies = GameObject.FindGameObjectsWithTag("letterBlock");
             m_enemiesToSpeedUp.AddRange(enemies);
 
-            enemies = GameObject.FindGameObjectsWithTag("TeddyBear");
+            enemies = GameObject.FindGameObjectsWithTag("teddyBear");
             m_enemiesToSpeedUp.AddRange(enemies);
 
-            enemies = GameObject.FindGameObjectsWithTag("Rubix");
+            enemies = GameObject.FindGameObjectsWithTag("rubix");
             m_enemiesToSpeedUp.AddRange(enemies);
             //speeds up enemies in the list
             if (expand == false)

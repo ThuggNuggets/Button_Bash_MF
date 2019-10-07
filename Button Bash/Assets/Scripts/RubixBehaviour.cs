@@ -17,6 +17,7 @@ public class RubixBehaviour : MonoBehaviour
             {
                 //changes its colour
             gameObject.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+
             }
             else
             {
