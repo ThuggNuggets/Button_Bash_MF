@@ -128,7 +128,7 @@ MonoBehaviour:
   fireAxis: player 1 fire
   laneChangingAxis: player 1 lane
   m_CharacterSpeed: 4
-  m_Bullet: {fileID: 3905374817873417468, guid: 505a6e222f1cedf4c964bf468268b639,
+  m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
     type: 3}
   m_ShootingCooldown: 1
   playerNumber: 1
