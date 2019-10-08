@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7245673798505192798}
   - component: {fileID: 7245673798506160030}
   - component: {fileID: 1593930794142071736}
+  - component: {fileID: 4044416406418089204}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -130,5 +131,18 @@ MonoBehaviour:
   m_CharacterSpeed: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_ShootingCooldown: 1
+  m_ShootingCooldown: 0.5
   playerNumber: 3
+--- !u!65 &4044416406418089204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245673798508347742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5913963, y: 7.162251, z: 5.3904257}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -45,7 +45,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1580251217975245205
 BoxCollider:
@@ -60,6 +60,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99999905, y: 1, z: 1}
   m_Center: {x: 0.000000461936, y: 0, z: 0}
+--- !u!114 &105358592646460334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936200861120640488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb9d038bc720d24791b996a1845680f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!114 &7125014091218811919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,19 +88,6 @@ MonoBehaviour:
   m_Speed: 4
   m_EndingTrigger: {fileID: 0}
   m_Colour: 2
---- !u!114 &105358592646460334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936200861120640488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb9d038bc720d24791b996a1845680f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
 --- !u!1001 &4191534609723437984
 PrefabInstance:
   m_ObjectHideFlags: 0
