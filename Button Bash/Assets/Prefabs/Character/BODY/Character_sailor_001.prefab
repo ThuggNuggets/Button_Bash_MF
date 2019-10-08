@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112924354684261012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.325314, y: 1.9072076, z: -2.6832879}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 976318150993130316}
@@ -132,6 +132,7 @@ MonoBehaviour:
     type: 3}
   m_ShootingCooldown: 1
   playerNumber: 1
+  buttonSpawnDistance: 0.75
 --- !u!65 &2959393516573678641
 BoxCollider:
   m_ObjectHideFlags: 0

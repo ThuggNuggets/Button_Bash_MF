@@ -101,6 +101,7 @@ MonoBehaviour:
     type: 3}
   m_ShootingCooldown: 1
   playerNumber: 2
+  buttonSpawnDistance: 0.75
 --- !u!54 &4292179127142314511
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4338928138229557469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.868008, y: 0.83776367, z: -1.3528076}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1552107870225363307}
