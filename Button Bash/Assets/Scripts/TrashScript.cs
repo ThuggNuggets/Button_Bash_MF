@@ -11,10 +11,10 @@ public class TrashScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey("up"))
         {
             // Move fowards at it's speed.
-            m_Rigidbody.MovePosition(transform.position + transform.forward * m_Speed * Time.deltaTime);
+            m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
         }
     }
 }
