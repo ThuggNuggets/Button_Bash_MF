@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-	// The event to begin the game/
+	// The event to begin the game.
 	UnityEvent m_BeginEvent;
 
 	// On startup.
@@ -30,5 +30,7 @@ public class StartGame : MonoBehaviour
 
 		// Load the main game scene.
 		SceneManager.LoadScene(1);
+
+		GameObject.Find("Canvas").SetActive(false);
 	}
 }
