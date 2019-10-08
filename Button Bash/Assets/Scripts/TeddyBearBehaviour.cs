@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//increases object size the more it gets hit with objects tagged with "bullet"
+/*put this code on the Teddy bear enemy*/
 public class TeddyBearBehaviour : MonoBehaviour
 {
     //hits until it is defeated
@@ -29,6 +30,5 @@ public class TeddyBearBehaviour : MonoBehaviour
             }
         }
     }
-
 
 }

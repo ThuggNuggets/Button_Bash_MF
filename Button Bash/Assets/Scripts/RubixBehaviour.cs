@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code for the Rubix cube enemy which allows the changing colour when hit with something with the tag "bullet"
+/*put this code on the Rubix enemy*/
 public class RubixBehaviour : MonoBehaviour
 {
     public float health = 3.0f;
@@ -15,9 +17,9 @@ public class RubixBehaviour : MonoBehaviour
             health--;
             if(health > 0)
             {
-                //changes its colour
+            //changes its colour
             gameObject.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
-
+            Debug.Log((int)Colours.Colour.Blue);
             }
             else
             {

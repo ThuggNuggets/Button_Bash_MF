@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//if the object is hit with somthing tagged with "bullet" will find all objects with the tags: "babushkaLarge", "babushkaMedium","babushkaSmall","teddyBear", "rubix" or "letterBlock"
+/*put this code on the Balloon enemy*/
 public class BaloonBehaviour : MonoBehaviour
 {
    

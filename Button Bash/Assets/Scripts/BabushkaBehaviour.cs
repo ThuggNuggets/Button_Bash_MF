@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//allows splitting when hit with an object tagged with "bullet"
+//splitting wil only occur if babushka is tagged with either "babushkaLarge" or "babushkaMedium"
+//requires two objects for the walls to decide where the new babushka doll spawns
+
+/*put this code on all babushka enemies*/
 public class BabushkaBehaviour : MonoBehaviour
 {
     public GameObject nextLevel = null;
@@ -25,7 +30,7 @@ public class BabushkaBehaviour : MonoBehaviour
                 Vector3 addedVector;
                 if (health > 0)
                 {
-                    // creates the next babushka doll to the positive z of the current one
+                    // creates the next babushka doll based off how close it is to the walls so it doesnt spawn it out of bounds/add variety
                     if(LeftWall.transform.position.z + 4 > transform.position.z)
                     {
                     addedVector = new Vector3(0, 0, 3);
@@ -38,6 +43,7 @@ public class BabushkaBehaviour : MonoBehaviour
                     {
                         addedVector = new Vector3(-3, 0, 0);
                     }
+                    //creates next level babushka
                     GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
                     enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
                 }
@@ -51,7 +57,7 @@ public class BabushkaBehaviour : MonoBehaviour
 
             if (health <= 0)
             {
-                // Destroy self.
+                // Destroy self if no health left
                 Destroy(gameObject);
             }
         }
