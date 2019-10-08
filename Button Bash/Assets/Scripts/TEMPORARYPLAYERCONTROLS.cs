@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 
-    TEMPORARYPLAYERCONTROLS: MonoBehaviour
+
+public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 {
 	// Enum of the lanes.
 	public enum Lane
@@ -14,6 +14,7 @@ public class
     public string movementAxis;
     public string fireAxis;
     public string laneChangingAxis;
+
     // the material the player is
     private Material m_Material;
     // The character's speed.
@@ -21,9 +22,6 @@ public class
 
 	// The bullets the player shoots.
 	public GameObject m_Bullet = null;
-
-    // The speed of the bullets.
-    public float m_BulletSpeed = 0.0f;
 
     // The cooldown to shooting.
     public float m_ShootingCooldown = 0.0f;
@@ -185,9 +183,6 @@ public class
 
 		// Clone the bullet at the bullet spawn point.
 		GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
-
-		// Set the force on the bullet.
-		//bullet.GetComponent<PlayerProjectile>().SetForce(m_BulletSpeed);
 
 		// Set the bullet's colour to this player's colour.
 		bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
