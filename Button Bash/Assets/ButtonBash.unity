@@ -130,7 +130,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementAxis: 
+  fireAxis: 
+  laneChangingAxis: 
+  m_CharacterSpeed: 1
+  m_Bullet: {fileID: 0}
+  m_ShootingCooldown: 0
+  playerNumber: 0
   buttonSpawnDistance: 0.5
+  buttonSpawnHeight: 0.5
 --- !u!4 &50428236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6815664412322042890, guid: 475e1879bd3b34c4c8cf56380c87b444,
@@ -639,7 +647,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b711f95d9d5fa89429c2ed41776d34b7, type: 2}
+  - {fileID: 2100000, guid: 6ddac2bf4938d014ab7f3c4fd5f605f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1239,17 +1247,17 @@ PrefabInstance:
     - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5096394947610743486, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -1365,7 +1373,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[4]
       value: 
-      objectReference: {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6,
+      objectReference: {fileID: 4049320621646561682, guid: fe7f69fb3c4fc6b4cbccff9d29511191,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -1389,7 +1397,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[1]
       value: 
-      objectReference: {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6,
+      objectReference: {fileID: 4049320621646561682, guid: fe7f69fb3c4fc6b4cbccff9d29511191,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -1401,7 +1409,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[3]
       value: 
-      objectReference: {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef,
+      objectReference: {fileID: 4049320621646561682, guid: fe7f69fb3c4fc6b4cbccff9d29511191,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
