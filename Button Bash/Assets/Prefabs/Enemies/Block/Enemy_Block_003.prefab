@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6306881111085767865}
   m_Layer: 0
-  m_Name: Enemy_Block_001
+  m_Name: Enemy_Block_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 39aead65f21a54c4f89d50b52f1e0659, type: 2}
+      objectReference: {fileID: 2100000, guid: 1245ddcc02e24994184cf842e7c5d308, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
 --- !u!1 &6386710517952015776 stripped
