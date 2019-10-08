@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
+	// On startup.
 	void Awake()
 	{
+		// Don't destroy this object when loading other scenes.
 		DontDestroyOnLoad(gameObject);
 	}
 }

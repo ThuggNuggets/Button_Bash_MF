@@ -59,9 +59,14 @@ public class WaveManager : MonoBehaviour
 					// If the code wave timer is equal to or less than 0, move on to the next wave.
 					if (m_CodeWaveTimer <= 0.0f)
 					{
-						if(m_WaveIterator == m_Waves.Length)
+						// If the wave iterator does not equal the amount of waves there are - 1, increment the waves iterator.
+						if (m_WaveIterator != m_Waves.Length - 1)
 							// Increment the wave iterator to the next wave.
 							++m_WaveIterator;
+
+						// Else, don't reset (for now), we are at the end of the waves.
+						else
+							return;
 
 						// Reset the wave enemy iterator.
 						m_WaveEnemyIterator = 0;

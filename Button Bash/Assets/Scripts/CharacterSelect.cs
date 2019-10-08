@@ -15,6 +15,7 @@ public class CharacterSelect : MonoBehaviour
 	// The event to move on to the next character.
 	UnityEvent m_NextCharacter;
 
+	// On startup.
 	private void Awake()
 	{
 		// If the name of the image is "Naiciam", set the current image to 0.
@@ -43,7 +44,7 @@ public class CharacterSelect : MonoBehaviour
 	// Move on to the next character.
 	public void NextCharacter()
 	{
-		// If the current image + 1 is less than the amount of portraits there are - 1, increment the current image.
+		// If the current image is less than the amount of portraits there are - 1, increment the current image.
 		if (m_CurrentImage < m_PlayerPortraits.Length - 1)
 			++m_CurrentImage;
 

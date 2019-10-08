@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 	// The player's and their selection of character.
 	public RawImage[] m_Players;
 
-	// On startup, just for debugging, to quickly get to the main game.
+	// On startup.
 	private void Awake()
 	{
 		// Set this game manager's instance to itself.
@@ -47,38 +47,7 @@ public class GameManager : MonoBehaviour
 
 	// Set the game state.
 	// Params: the new game state.
-	public void SetGameState(GameStates newState)
-	{
-		// If the new state is the same as the current game state
-		if (newState == m_CurrentGameState)
-			return;
-
-		// Check what the new state is.
-		switch (newState)
-		{
-			// Game is on the menu.
-			case GameStates.Menu:
-				// Show the menu.
-				break;
-
-			// Game is on the game over screen
-			case GameStates.GameOver:
-				// Show the end screen.
-				break;
-
-			// Game is currently being played.
-			case GameStates.Playing:
-				break;
-
-			// Game is paused.
-			case GameStates.Pause:
-				// Pause the game.
-				break;
-		}
-
-		// Set the current game state to be the new game state.
-		m_CurrentGameState = newState;
-	}
+	public void SetGameState(GameStates newState) { m_CurrentGameState = newState; }
 
 	// Get the current game state.
 	// Returns: the current game state.
@@ -88,6 +57,8 @@ public class GameManager : MonoBehaviour
 	// Returns: this instance of the game manager.
 	public static GameManager GetInstance()	{ return m_Instance; }
 
+	// When a scene is loaded.
+	// Params: the scene, the load scene mode.
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		Debug.Log(scene.name + " loaded");

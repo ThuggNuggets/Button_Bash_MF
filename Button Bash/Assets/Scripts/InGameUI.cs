@@ -8,6 +8,7 @@ public class InGameUI : MonoBehaviour
 	// The text box.
 	private Text m_Text;
 
+	// On startup.
 	void Awake()
 	{
 		// Get the text box the script is attatched to.
