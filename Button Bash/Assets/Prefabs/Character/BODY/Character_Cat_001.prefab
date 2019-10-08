@@ -132,7 +132,7 @@ MonoBehaviour:
     type: 3}
   m_ShootingCooldown: 1
   playerNumber: 4
-  buttonSpawnDistance: 0.75
+  buttonSpawnDistance: 2.5
 --- !u!65 &9115786010933917628
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112924354684261012}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 976318150993130316}
   - component: {fileID: 976318150993130317}
   - component: {fileID: 976318150993130318}
-  - component: {fileID: 976318150993130319}
   - component: {fileID: 2959393516573678641}
   - component: {fileID: 5607457697793743523}
+  - component: {fileID: 8463243688075575724}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -112,27 +112,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &976318150993130319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976318150993130304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementAxis: player 1 move
-  fireAxis: player 1 fire
-  laneChangingAxis: player 1 lane
-  m_CharacterSpeed: 4
-  m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
-    type: 3}
-  m_ShootingCooldown: 1
-  playerNumber: 1
-  buttonSpawnDistance: 0.75
 --- !u!65 &2959393516573678641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -160,5 +139,26 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 0
+--- !u!114 &8463243688075575724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976318150993130304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: player 1 move
+  fireAxis: player 1 fire
+  laneChangingAxis: player 1 lane
+  m_CharacterSpeed: 4
+  m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
+    type: 3}
+  m_ShootingCooldown: 1
+  playerNumber: 1
+  buttonSpawnDistance: 2.5

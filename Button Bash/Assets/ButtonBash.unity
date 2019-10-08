@@ -130,14 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: move
-  fireAxis: Fire1
-  laneChangingAxis: Vertical
-  m_CharacterSpeed: 10
-  m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
-    type: 3}
-  m_ShootingCooldown: 0.5
-  playerNumber: 3
 --- !u!4 &50428236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6815664412322042890, guid: 475e1879bd3b34c4c8cf56380c87b444,
@@ -211,7 +203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 55.904003, y: -116.89001, z: -87.966}
 --- !u!1001 &222295342
 PrefabInstance:
@@ -1225,7 +1217,7 @@ PrefabInstance:
     - target: {fileID: 1295850231897219032, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1295850231897219032, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -1601,13 +1593,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5607457697793743523, guid: 3ad5de00e8caade47a99069d544733b9,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 114
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 976318150993130319, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
 --- !u!1 &1549377851
 GameObject:
