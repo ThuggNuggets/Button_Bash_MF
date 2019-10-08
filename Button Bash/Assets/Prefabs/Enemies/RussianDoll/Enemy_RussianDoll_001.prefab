@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2778159219441451147}
   m_Layer: 0
   m_Name: Russian_Doll_Bottom
-  m_TagString: Untagged
+  m_TagString: babushkaLarge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4049320621646561680}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
   - {fileID: 4049320621647060406}
   m_Father: {fileID: 4049320621647060402}
@@ -138,10 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3321ae6030a2ce545a4a7dbaa03eb96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 4049320621646561680}
   health: 2
-  LeftWall: {fileID: 0}
-  RightWall: {fileID: 0}
+  scale: 1
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 4049320621646561682}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4049320621647060400}
   m_Father: {fileID: 0}
