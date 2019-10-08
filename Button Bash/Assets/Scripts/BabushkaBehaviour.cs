@@ -12,9 +12,6 @@ public class BabushkaBehaviour : MonoBehaviour
     private Vector3 addedVector =new Vector3 (0,0,3);
     //health for the babushka
     public float health = 2;
-    //walls of the spawn area
-    public GameObject LeftWall;
-    public GameObject RightWall;
 
     // the size reduction of the next level babushka
     public float scale = 1;
