@@ -9,13 +9,28 @@ using UnityEngine;
 public class BabushkaBehaviour : MonoBehaviour
 {
     public GameObject nextLevel;
-    private Vector3 addedVector =new Vector3 (0,0,3);
+    //where the new babushka doll spawns
+    private Vector3 addedVector =new Vector3 (-3,0,0);
     //health for the babushka
     public float health = 2;
 
+    //walls
+    public GameObject leftWall;
+    public GameObject rightWall;
     // the size reduction of the next level babushka
     public float scale = 1;
 
+    private void Awake()
+    {
+        if(leftWall.transform.position.z + 5 > transform.position.z)
+        {
+            addedVector = new Vector3(0, 0, 3);
+        }
+        else  if (rightWall.transform.position.z - 5 < transform.position.z)
+        {
+            addedVector = new Vector3(0, 0, -3);
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
@@ -26,11 +41,7 @@ public class BabushkaBehaviour : MonoBehaviour
             {
                 if (health > 1)
                 {
-                    //creates next level babushka
-                    GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
-                    enemy.transform.localScale -= new Vector3(scale, scale, scale);
-                    enemy.gameObject.tag = "babushkaMedium";
-                    enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+                    createNextLevel("babushkaMedium");
                 }
                 health--;
             }
@@ -38,11 +49,7 @@ public class BabushkaBehaviour : MonoBehaviour
             {
                 if (health > 1)
                 {
-                    //creates next level babushka
-                    GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
-                    enemy.transform.localScale -= new Vector3(scale, scale, scale);
-                    enemy.gameObject.tag = "babushkaSmall";
-                    enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+                    createNextLevel("babushkaSmall");
                 }
                 health--;
             }
@@ -59,6 +66,19 @@ public class BabushkaBehaviour : MonoBehaviour
             }
         }
     }
-
     
+    private void createNextLevel(string newTag)
+    {
+        //creates next level babushka
+        GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
+        enemy.transform.localScale -= new Vector3(scale, scale, scale);
+        enemy.gameObject.tag = newTag;
+        enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        
+    }
 }

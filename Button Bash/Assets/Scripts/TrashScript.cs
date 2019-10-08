@@ -9,9 +9,9 @@ public class TrashScript : MonoBehaviour
     // Speed of the enemy.
     public float m_Speed = 2;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey("up"))
+        if (Input.GetKey(KeyCode.V))
         {
             // Move fowards at it's speed.
             m_Rigidbody.MovePosition(transform.position + transform.right * m_Speed * Time.deltaTime);
