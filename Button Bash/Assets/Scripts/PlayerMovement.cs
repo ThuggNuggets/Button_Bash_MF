@@ -8,16 +8,41 @@ public class PlayerMovement : MonoBehaviour
     public float railMoveSpeed;
     // speed of switching between rails
     public float railSwitchSpeed;
+    public string movementAxis;
+    public string fireAxis;
+    public string laneChangingAxis;
+
+    private Material colourMaterial;
+    public GameObject bullet = null;
+    public float bulletSpeed = 0.0f;
+    public float shootCoolDown = 0.0f;
+    private float maxCoolDown = 0.0f;
+
+    // current rail, defaulted to the first rail
+    private Rails currentRail = Rails.rail_one;
+    private Vector3 targetRail = new Vector3();
+    private bool changingRail = false;
+
     // animator now exists
     private Animator animator;
     // rigidBody now exists
     private Rigidbody rigidBody;
-    // position of the first rail
-    public Transform railOne;
-    // position of the second rail
-    public Transform railTwo;
+    // position of the front rail
+    public GameObject frontRail;
+    // position of the back rail
+    public GameObject backRail;
+
+    public int playerNumber;
+    private Colours.Colour colour;
+
     // gameState now exists and calls on existing GameManager script to get the current game state
-    GameManager.GameStates gameState = GameManager.GetInstance().GetGameState();
+    GameManager.GameStates gameState;
+
+    enum Rails
+    {
+        rail_one,
+        rail_two
+    }
 
     // when movement started
     private float startTime;
@@ -26,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        gameState = GameManager.GetInstance().GetGameState();
         // rigidBody now has properties of RigidBody
         rigidBody = GetComponent<Rigidbody>();
         // animator now has properties of Animator
@@ -33,8 +59,43 @@ public class PlayerMovement : MonoBehaviour
         // time when movement started
         startTime = Time.time;
         // calculate distance
-        distance = Vector3.Distance(railOne.position, railTwo.position);
+        distance = Vector3.Distance(frontRail.position, backRail.position);
 
+    }
+
+    private void Start()
+    {
+        switch (playerNumber)
+        {
+            case 1:
+                {
+                    colour = Colours.Colour.Blue;
+                    colourMaterial.color = Color.blue;
+                    break;
+                }
+            case 2:
+                {
+                    colour = Colours.Colour.Red;
+                    colourMaterial.color = Color.red;
+                    break;
+                }
+            case 3:
+                {
+                    colour = Colours.Colour.Green;
+                    colourMaterial.color = Color.green;
+                    break;
+                }
+            case 4:
+                {
+                    colour = Colours.Colour.Yellow;
+                    colourMaterial.color = Color.yellow;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
     }
 
     void Update()
@@ -50,19 +111,30 @@ public class PlayerMovement : MonoBehaviour
                 // fraction of distance completed equals current distance divided by total distance
                 float fractionOfDistance = distanceCovered / distance;
 
-                if (Input.GetKeyDown(KeyCode.S))
-                {
-                    // set position as a fraction of the distance between the rails
-                    transform.position = Vector3.Lerp(railOne.position, railTwo.position, fractionOfDistance);
-                }
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    transform.position = Vector3.Lerp(railTwo.position, railOne.position, fractionOfDistance);
-                }
                 // horizontal movement along a rail
                 movementStrafe += transform.right * Input.GetAxis("Horizontal") * railMoveSpeed;
 
                 break;
         }
+    }
+
+    // on call, change rails
+    private void ChangeRail(Rails rail)
+    {
+        currentRail = rail;
+        targetRail = transform.position;
+
+        if(rail == Rails.rail_two)
+        {
+            targetRail.z = backRail.transform.position.z;
+        }
+
+        else if (rail == Rails.rail_one)
+        {
+            targetRail.z = frontRail.transform.position.z;
+        }
+
+        changingRail = true;
+
     }
 }
