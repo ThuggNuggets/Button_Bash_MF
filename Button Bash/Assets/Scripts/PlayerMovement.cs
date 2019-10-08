@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         // time when movement started
         startTime = Time.time;
         // calculate distance
-        distance = Vector3.Distance(frontRail.position, backRail.position);
+        //distance = Vector3.Distance(frontRail.position, backRail.position);
 
     }
 
