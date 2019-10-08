@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 	// On startup, just for debugging, to quickly get to the main game.
 	private void Awake()
 	{
+		m_Instance = this;
+
 		// Get the current scene.
 		Scene currentScene = SceneManager.GetActiveScene();
 
@@ -30,6 +32,9 @@ public class GameManager : MonoBehaviour
 		if (currentScene.name == "ButtonBash Example")
 			// Set the current state to playing.
 			m_CurrentGameState = GameStates.Playing;
+
+		// Don't destroy the game manager when loading a new scene.
+		DontDestroyOnLoad(gameObject);
 	}
 
 	// Set the game state.
@@ -76,29 +81,6 @@ public class GameManager : MonoBehaviour
 	// Returns: this instance of the game manager.
 	public static GameManager GetInstance()
 	{
-		// If there isn't an instance of a game manager, find a game manager in the scene.
-		if (m_Instance == null)
-		{
-			// Find a game manager.
-			m_Instance = (GameManager)FindObjectOfType(typeof(GameManager));
-
-			// If there wasn't a game manager in the scene, create a new game manager in the scene.
-			if (m_Instance == null)
-			{
-				// Create a new game object.
-				GameObject gameManager = new GameObject();
-
-				// Add the game manager script to the object.
-				m_Instance = gameManager.AddComponent<GameManager>();
-
-				// Call the object "Game Manager".
-				gameManager.name = "Game Manager";
-
-				// Don't destroy the game manager when loading a new scene.
-				DontDestroyOnLoad(gameManager);
-			}
-		}
-
 		// Return this instance of the game manager.
 		return m_Instance;
 	}
