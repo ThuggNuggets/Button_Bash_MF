@@ -42,6 +42,9 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     // The player's colour.
     public int playerNumber;
 	private Colours.Colour m_Colour;
+
+    //how far ahead the button will spawn
+    public float buttonSpawnDistance = 0.5f;
     private void Start()
     {
         switch (playerNumber)
@@ -179,7 +182,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 	private void ShootBullet()
 	{
 		// The spawn point of the bullet.
-        Vector3 bulletSpawnPoint = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.5f, transform.position.z);
+        Vector3 bulletSpawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), transform.position.y + 0.5f, transform.position.z);
 
 		// Clone the bullet at the bullet spawn point.
 		GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
