@@ -179,7 +179,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 	private void ShootBullet()
 	{
 		// The spawn point of the bullet.
-        Vector3 bulletSpawnPoint = new Vector3(transform.position.x - 0.5f, transform.position.y - 0.1f, transform.position.z);
+        Vector3 bulletSpawnPoint = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.5f, transform.position.z);
 
 		// Clone the bullet at the bullet spawn point.
 		GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);

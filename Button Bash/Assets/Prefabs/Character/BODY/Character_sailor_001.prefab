@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2427988442959640500}
   m_Layer: 0
-  m_Name: Character_sailor_001 1
+  m_Name: Character_sailor_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 976318150993130317}
   - component: {fileID: 976318150993130318}
   - component: {fileID: 976318150993130319}
+  - component: {fileID: 2959393516573678641}
+  - component: {fileID: 5607457697793743523}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -122,12 +124,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: move
-  fireAxis: Fire1
-  laneChangingAxis: Vertical
+  movementAxis: player 1 move
+  fireAxis: player 1 fire
+  laneChangingAxis: player 1 lane
   m_CharacterSpeed: 4
   m_Bullet: {fileID: 3905374817873417468, guid: 505a6e222f1cedf4c964bf468268b639,
     type: 3}
-  m_BulletSpeed: 1
   m_ShootingCooldown: 1
   playerNumber: 1
+--- !u!65 &2959393516573678641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976318150993130304}
+  m_Material: {fileID: 13400000, guid: e87a05b729c4e7d468c381441d96de07, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3520622, y: 7.0360336, z: 5.059069}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5607457697793743523
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976318150993130304}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
