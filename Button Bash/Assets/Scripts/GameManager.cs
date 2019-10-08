@@ -92,19 +92,21 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log(scene.name + " loaded");
 
+		// If the current scene is "ButtonBash Example", find the players and apply their player number.
 		if (scene.name == "ButtonBash Example")
 		{
+			// Get the player characters.
 			GameObject[] playerCharacters = GameObject.FindGameObjectsWithTag("Player");
 
 			// For each player character there is, assign it's player number.
 			for (int i = 0; i < playerCharacters.Length; ++i)
 			{
-				//try
-				//{
+				try
+				{
 					// Assign each player character's player number to their player's number. (If that didn't make sense, read it again.)
 					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_Players[i].GetComponent<CharacterSelect>().GetCurrentImage();
-				//}
-				//catch { }
+				}
+				catch { }
 			}
 		}
 	}
