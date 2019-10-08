@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2389659210888240884}
   - component: {fileID: 8213223668972232251}
   - component: {fileID: 3349121209579034381}
+  - component: {fileID: 4185340337937819914}
   m_Layer: 0
   m_Name: Russian_Doll_Bottom
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 4
   m_EndingTrigger: {fileID: 0}
-  m_Colour: 2
+  m_Colour: 3
 --- !u!65 &8213223668972232251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,6 +126,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4185340337937819914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049320621646561680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3321ae6030a2ce545a4a7dbaa03eb96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: {fileID: 0}
+  health: 2
+  LeftWall: {fileID: 0}
+  RightWall: {fileID: 0}
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4049320621647060402}
   m_Layer: 0
-  m_Name: Enemy_RussianDoll_001
+  m_Name: Enemy_RussianDoll_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 218ace3b4b39e504eb3dcfa896e8dd09, type: 3}
+  - {fileID: 2100000, guid: 29e67468685f2584ebd32e140cc1fe27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

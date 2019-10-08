@@ -88,18 +88,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552107870225001803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: move
-  fireAxis: Fire1
-  laneChangingAxis: Vertical
-  m_CharacterSpeed: 4
-  m_Bullet: {fileID: 3905374817873417468, guid: 37550f32f4d13c342a06e3f6f6e9c35e,
-    type: 3}
-  m_BulletSpeed: 1
-  m_ShootingCooldown: 1
-  playerNumber: 2
+  movementAxis: 
+  fireAxis: 
+  laneChangingAxis: 
+  m_CharacterSpeed: 1
+  m_Bullet: {fileID: 0}
+  m_ShootingCooldown: 0
+  playerNumber: 0
 --- !u!1 &4338928138229557469
 GameObject:
   m_ObjectHideFlags: 0

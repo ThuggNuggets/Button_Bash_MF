@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3232552646242079949}
   m_Layer: 0
-  m_Name: Character_Alien_001 1
+  m_Name: Character_Alien_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,15 +121,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7245673798508347742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementAxis: move
   fireAxis: Fire1
   laneChangingAxis: Vertical
-  m_CharacterSpeed: 4
+  m_CharacterSpeed: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_BulletSpeed: 1
   m_ShootingCooldown: 1
   playerNumber: 3

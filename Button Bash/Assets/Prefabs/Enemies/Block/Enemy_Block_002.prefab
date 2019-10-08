@@ -44,6 +44,18 @@ MonoBehaviour:
   m_Speed: 5
   m_EndingTrigger: {fileID: 0}
   m_Colour: 0
+--- !u!114 &8473094995441310814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386710517952015776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec5e53a34ba6024eb4c6ed516c37b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9127828091661151835
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,23 +157,23 @@ PrefabInstance:
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 149.23637
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 149.23637
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 149.23637
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 8897838330280665017, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 231a704fe05fff44e92257b1b2910bb2, type: 2}
+      objectReference: {fileID: 2100000, guid: e44872a54fb61574b814fe10aa4b9101, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
 --- !u!1 &6386710517952015776 stripped
