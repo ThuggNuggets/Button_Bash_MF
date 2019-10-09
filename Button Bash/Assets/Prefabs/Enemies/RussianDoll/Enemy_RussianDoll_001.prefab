@@ -140,11 +140,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: {fileID: 4049320621646561680}
   health: 2
+<<<<<<< .mine
+  leftWall: {fileID: 3471049854871646269, guid: 4539d5cb285a65042a80a5aa4cdf7af7,
+    type: 3}
+  rightWall: {fileID: 4830326459990629804, guid: 3e1c64cf054faf249aae1fbc41bf7943,
+    type: 3}
+  scale: 0.005
+||||||| .r89
+  scale: 1
+=======
   leftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
     type: 3}
   rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
   scale: 0.005
+>>>>>>> .r127
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,6 +120,6 @@ public class WaveManager : MonoBehaviour
 		else
 			m_WaveEnemySpawningTimer -= Time.deltaTime;
 
-		Debug.Log(m_CodeWaveTimer);
+		//Debug.Log(m_CodeWaveTimer);
     }
 }
