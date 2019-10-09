@@ -28,9 +28,10 @@ public class StartGame : MonoBehaviour
 		// Set the state of the game manager to playing.
 		gm.SetGameState(GameManager.GameStates.Playing);
 
-		// Load the main game scene.
-		SceneManager.LoadScene(1);
+        // Load the main game scene.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-		GameObject.Find("Canvas").SetActive(false);
+
+        GameObject.Find("Canvas").SetActive(false);
 	}
 }
