@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentRail == Rails.frontRail)
         {
-            if (Input.GetAxis)
+            //if (Input.GetAxis) 
         }
     }
 
