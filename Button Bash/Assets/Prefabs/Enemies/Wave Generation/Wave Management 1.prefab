@@ -28,7 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1295850232319659904}
-  - {fileID: 2567788578608028924}
   - {fileID: 1295850233292013735}
   - {fileID: 1295850233441699234}
   m_Father: {fileID: 0}
@@ -127,7 +126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1295850231897219032}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1295850233292013736
 MonoBehaviour:
@@ -146,8 +145,6 @@ MonoBehaviour:
   m_MaxSpawnTime: 2
   m_Waves:
   - {fileID: 1295850232319659906}
-  - {fileID: 4325489947128425307}
-  - {fileID: 4325489947128425307}
   m_WaveTimer: 20
 --- !u!1 &1295850233441699238
 GameObject:
@@ -180,7 +177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 19}
   m_Children: []
   m_Father: {fileID: 1295850231897219032}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1295850233441699235
 MeshFilter:
@@ -240,67 +237,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &4325489947128425307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2567788578608028924}
-  - component: {fileID: 283692356233627044}
-  m_Layer: 0
-  m_Name: Wave 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2567788578608028924
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4325489947128425307}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1295850231897219032}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &283692356233627044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4325489947128425307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801f9a5f40b776c4aa5180738b96590a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_WaveEnemies:
-  - {fileID: 8729044696699980931, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 8729044696699980931, guid: ff584e5faa5ff3c41beca1dccfd1df42, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 706427984538570376, guid: b328a68457f96dd4db84cfab7c95764d, type: 3}
-  - {fileID: 6185754279729482953, guid: 853d6fb193b11774a86ad2d43f838d68, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 6185754279729482953, guid: 853d6fb193b11774a86ad2d43f838d68, type: 3}
-  - {fileID: 706427984538570376, guid: b328a68457f96dd4db84cfab7c95764d, type: 3}
-  - {fileID: 8729044696699980931, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
-  - {fileID: 8729044696699980931, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 8729044696699980931, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
-  - {fileID: 6185754279729482953, guid: 2d25a32dc0dd89f4ab106bea3f1eceeb, type: 3}
-  - {fileID: 8874426123643396275, guid: f8ca53b9a4f778749972d23f11a7e439, type: 3}
-  - {fileID: 8874426123643396275, guid: 220a838d806413946a1c56d290533e62, type: 3}
