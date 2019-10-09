@@ -144,7 +144,7 @@ MonoBehaviour:
     type: 3}
   rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
-  scale: 0.05
+  scale: 0.005
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4049320621647060402}
   m_Layer: 0
-  m_Name: Enemy_RussianDoll_002
+  m_Name: Enemy_RussianDoll_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
