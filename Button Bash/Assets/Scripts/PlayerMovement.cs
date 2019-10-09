@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxCoolDown = 0.0f;
 
     // current rail, defaulted to the first rail
-    private Rails currentRail = Rails.rail_one;
+    private Rails currentRail = Rails.frontRail;
     private Vector3 targetRail = new Vector3();
     private bool changingRail = false;
 
@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     enum Rails
     {
-        rail_one,
-        rail_two
+        frontRail,
+        backRail
     }
 
     // when movement started
@@ -56,8 +56,14 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         // animator now has properties of Animator
         animator = GetComponent<Animator>();
+        // colourMaterial now has properties of Renderer
+        colourMaterial = GetComponent<Renderer>().material;
+
+        maxCoolDown = shootCoolDown;
+        shootCoolDown = 0.0f;
+
         // time when movement started
-        startTime = Time.time;
+        //startTime = Time.time;
         // calculate distance
         //distance = Vector3.Distance(frontRail.position, backRail.position);
 
@@ -98,6 +104,69 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if(Input.GetAxis(laneChangingAxis) > 0)
+        {
+            if (currentRail != Rails.frontRail)
+            {
+                currentRail = Rails.frontRail;
+
+                GameObject newRail = GameObject.Find("Rail");
+
+                targetRail = transform.position;
+
+                targetRail.x = newRail.transform.position.x;
+
+                changingRail = true;
+            }
+        }
+
+        else if (Input.GetAxis(laneChangingAxis) < 0)
+        {
+            if (currentRail != Rails.backRail)
+            {
+                currentRail = Rails.backRail;
+                GameObject newRail = GameObject.Find("Rail (1)");
+
+                targetRail = transform.position;
+
+                targetRail.x = newRail.transform.position.x;
+
+                changingRail = true;
+            }
+        }
+
+        float translation = Input.GetAxis(movementAxis) * railMoveSpeed;
+        translation *= Time.deltaTime;
+        transform.Translate(0, 0, translation);
+
+        if(railSwitchSpeed > 1)
+        {
+            railSwitchSpeed = 1;
+        }
+        if (changingRail)
+        {
+            if (railSwitchSpeed < 1)
+            {
+                railSwitchSpeed += Time.deltaTime * railMoveSpeed;
+                targetRail.z = transform.position.z;
+                targetRail.y = transform.position.y;
+                transform.position = Vector3.Lerp(transform.position, targetRail, railSwitchSpeed);
+            }
+            else
+            {
+                railSwitchSpeed = 0.0f;
+                changingRail = false;
+            }
+        }
+
+        if (currentRail == Rails.frontRail)
+        {
+            if (Input.GetAxis)
+        }
+    }
+
     void Update()
     {
         switch (gameState)
@@ -124,12 +193,12 @@ public class PlayerMovement : MonoBehaviour
         currentRail = rail;
         targetRail = transform.position;
 
-        if(rail == Rails.rail_two)
+        if(rail == Rails.backRail)
         {
             targetRail.z = backRail.transform.position.z;
         }
 
-        else if (rail == Rails.rail_one)
+        else if (rail == Rails.frontRail)
         {
             targetRail.z = frontRail.transform.position.z;
         }
