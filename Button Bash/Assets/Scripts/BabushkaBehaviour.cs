@@ -22,11 +22,11 @@ public class BabushkaBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        if(leftWall.transform.position.z + 5 > transform.position.z)
+        if(leftWall.transform.position.z + 9 > transform.position.z)
         {
             addedVector = new Vector3(0, 0, 3);
         }
-        else  if (rightWall.transform.position.z - 5 < transform.position.z)
+        else  if (rightWall.transform.position.z - 9 < transform.position.z)
         {
             addedVector = new Vector3(0, 0, -3);
         }
