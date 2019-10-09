@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ButtonBash.unity
     guid: 95e0b94580e5e334d891ee8971f5391e
+  - enabled: 1
+    path: Assets/Scenes/end scene.unity
+    guid: 77b02d8f53c1a9548bba68e15a37f61e
   m_configObjects: {}
