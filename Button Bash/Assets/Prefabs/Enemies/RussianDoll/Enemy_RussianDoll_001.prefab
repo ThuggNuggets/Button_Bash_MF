@@ -140,7 +140,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: {fileID: 4049320621646561680}
   health: 2
-  scale: 1
+  leftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
+    type: 3}
+  rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
+    type: 3}
+  scale: 0.005
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
