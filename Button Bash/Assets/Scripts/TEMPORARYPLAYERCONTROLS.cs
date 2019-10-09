@@ -12,8 +12,8 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		BackLane
 	}
     public string movementAxis;
-    public string laneChangingAxis;
     public string fireAxis;
+    public string laneChangingAxis;
 
     // the material the player is
     private Material m_Material;
@@ -25,6 +25,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
     // The cooldown to shooting.
     public float m_ShootingCooldown = 0.0f;
+
 	// The cooldown, for reseting the cooldown.
 	private float m_MaxShootingCooldown = 0.0f;
 
@@ -45,10 +46,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     //how far ahead the button will spawn
     public float buttonSpawnDistance = 0.5f;
     public float buttonSpawnHeight = 0.5f;
-
-    public float halfWidth = 1.01f;
-    private float leftHand;
-    GameObject[] PlayerList;
     private void Start()
     {
         switch (playerNumber)
@@ -88,7 +85,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     void Awake()
     {
         m_Material = GetComponent<Renderer>().material;
-        PlayerList = GameObject.FindGameObjectsWithTag("Player1"); 
+
 
 
         m_MaxShootingCooldown = m_ShootingCooldown;
@@ -98,52 +95,53 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     // Update the player.
     void FixedUpdate()
     {
+		// Move up one lane.
+		if (Input.GetAxis(laneChangingAxis) > 0)
+		{
+			// If the current lane is not lane 1, move up one lane.
+			if (m_CurrentLane != Lane.FrontLane)
+			{
+				m_CurrentLane = Lane.FrontLane;
+
+				GameObject newLane = GameObject.Find("Rail");
+
+				m_TargetLane = transform.position;
+
+				m_TargetLane.x = newLane.transform.position.x;
+
+				m_ChangingLanes = true;               
+			}
+		}
+
+		// Move back one lane.
+		else if (Input.GetAxis(laneChangingAxis) < 0)
+		{
+			// If the current lane is not lane 2, move down one lane.
+			if (m_CurrentLane != Lane.BackLane)
+			{
+				m_CurrentLane = Lane.BackLane;
+
+				GameObject newLane = GameObject.Find("Rail (1)");
+
+				m_TargetLane = transform.position;
+
+				m_TargetLane.x = newLane.transform.position.x;
+
+				m_ChangingLanes = true;               
+            }
+		}
+
         //checks if there is input to the selected controls
         float translation = Input.GetAxis(movementAxis) * m_CharacterSpeed;
         //so the player moves at playerSpeed units per sec not per frame
         translation *= Time.deltaTime;
         //moves the player
-        transform.Translate(0, 0, translation);
-        leftHand = transform.position.z - halfWidth;
-        // Move up one lane.
-        if (Input.GetAxis(laneChangingAxis) <0)
-		{
-        Debug.Log(PlayerList[0].transform.position.z);
-            foreach (GameObject otherPlayer in PlayerList)
-            {
-                float otherLefthand = otherPlayer.transform.position.z - halfWidth;
-                float otherRightHand = otherPlayer.transform.position.z + halfWidth;
-                if (otherLefthand < leftHand &&  otherRightHand > leftHand)
-                {
-                   // Debug.Log("Collision forward");
-                }
-            }
-                // If the current lane is not lane 1, move up one lane.
-                changeLanes(Lane.FrontLane, "Rail");
+        transform.Translate(0,0,translation);
+        
 
-        }
-
-		// Move back one lane.
-		else if (Input.GetAxis(laneChangingAxis) > 0)
-		{
-          
-            foreach (GameObject otherPlayer in PlayerList)
-        {
-                float otherLefthand =   otherPlayer.transform.position.z - halfWidth;
-                float otherRightHand = otherPlayer.transform.position.z + halfWidth;
-                if (/*leftHand > otherLefthand  && */leftHand  < otherRightHand )
-                {
-                   // Debug.Log("Collision move back");
-                }
-            changeLanes(Lane.BackLane, "Rail (1)");
-        }
-            // If the current lane is not lane 2, move down one lane.
-        }
-
-
-
+  
         // If the character is currently moving between lanes.
-        if (laneChangingSpeed > 1)
+        if(laneChangingSpeed > 1)
         {
             laneChangingSpeed = 1;
         }
@@ -181,11 +179,8 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
     }
 
-
-
-
-        // Shoot a bullet.
-        private void ShootBullet()
+	// Shoot a bullet.
+	private void ShootBullet()
 	{
 		// The spawn point of the bullet.
         Vector3 bulletSpawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), (transform.position.y + buttonSpawnHeight), transform.position.z);
@@ -196,22 +191,4 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		// Set the bullet's colour to this player's colour.
 		bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
 	}
-
-    private void changeLanes(Lane targetLane, string railName)
-    {
-        if (m_CurrentLane != targetLane)
-        {
-            m_CurrentLane = targetLane;
-
-
-                GameObject newLane = GameObject.Find(railName);
-
-
-            m_TargetLane = transform.position;
-
-            m_TargetLane.x = newLane.transform.position.x;
-
-            m_ChangingLanes = true;
-        }
-    }
 }

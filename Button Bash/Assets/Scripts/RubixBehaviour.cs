@@ -19,46 +19,7 @@ public class RubixBehaviour : MonoBehaviour
             {
             //changes its colour
             gameObject.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
-                int rotate = Random.Range(0, 5);
-                switch (rotate)
-                {
-                    case 0:
-                        {
-                        transform.Rotate(0, 90, 0);
-                        break;
-                        }
-                    case 1:
-                        {
-                            transform.Rotate(0, 0, 90);
-                            break;
-                        }
-                    case 2:
-                        {
-                            transform.Rotate(90, 0, 0);
-                            break;
-                        }
-                    case 3:
-                        {
-                            transform.Rotate(0, -90, 0);
-                            break;
-                        }
-                    case 4:
-                        {
-                            transform.Rotate(0, 0, -90);
-                            break;
-                        }
-                    case 5:
-                        {
-                            transform.Rotate(-90, 0, 0);
-                            break;
-                        }
-                    default:
-                        {
-                            break;
-                        }
-                }
-
-             
+            Debug.Log((int)Colours.Colour.Blue);
             }
             else
             {
