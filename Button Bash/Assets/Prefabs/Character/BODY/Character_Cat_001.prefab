@@ -133,6 +133,7 @@ MonoBehaviour:
   m_ShootingCooldown: 1
   playerNumber: 4
   buttonSpawnDistance: 2.5
+  buttonSpawnHeight: 0.5
 --- !u!65 &9115786010933917628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -160,5 +161,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 118
   m_CollisionDetection: 0

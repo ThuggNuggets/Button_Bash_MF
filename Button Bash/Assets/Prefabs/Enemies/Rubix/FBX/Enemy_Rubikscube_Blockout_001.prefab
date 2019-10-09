@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5055450918301162056}
   - component: {fileID: 5055450918302128264}
   m_Layer: 0
-  m_Name: Enemy_Rubikscube_Blockout_001
+  m_Name: Enemy_Rubikscube_Blockout_001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -43,8 +43,9 @@ GameObject:
   - component: {fileID: 7245673798505192798}
   - component: {fileID: 7245673798506160030}
   - component: {fileID: 4044416406418089204}
-  - component: {fileID: 3152206328790939621}
   - component: {fileID: 5096394947610743486}
+  - component: {fileID: 6440181520354962319}
+  - component: {fileID: 3089077819819124676}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -127,28 +128,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1504371, y: 2.8986144, z: 2.0676005}
   m_Center: {x: -0.0016407073, y: 0.029366493, z: -0.02664125}
---- !u!114 &3152206328790939621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7245673798508347742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementAxis: move
-  fireAxis: Fire1
-  laneChangingAxis: Vertical
-  m_CharacterSpeed: 10
-  m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
-    type: 3}
-  m_ShootingCooldown: 0.7
-  playerNumber: 3
-  buttonSpawnDistance: 0.5
-  buttonSpawnHeight: 0.5
 --- !u!54 &5096394947610743486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,5 +142,49 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 118
   m_CollisionDetection: 0
+--- !u!114 &6440181520354962319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245673798508347742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: player 4 move
+  fireAxis: player 4 fire
+  laneChangingAxis: player 4 lane
+  m_CharacterSpeed: 4
+  m_Bullet: {fileID: 3905374817873417468, guid: 4babf2c3e6872c148b63c953d6fb397e,
+    type: 3}
+  m_ShootingCooldown: 1
+  playerNumber: 4
+  buttonSpawnDistance: 2.5
+  buttonSpawnHeight: 0.5
+--- !u!114 &3089077819819124676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245673798508347742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: player 3 move
+  fireAxis: Fire1
+  laneChangingAxis: player 3 lane
+  m_CharacterSpeed: 4
+  m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
+    type: 3}
+  m_ShootingCooldown: 1
+  playerNumber: 3
+  buttonSpawnDistance: 2.5
+  buttonSpawnHeight: 0.5
