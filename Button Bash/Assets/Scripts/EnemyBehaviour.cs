@@ -55,8 +55,6 @@ public class EnemyBehaviour : MonoBehaviour
 
             // Set the material colour to magenta, something went WRONG!
             default:
-                m_Material.color = Color.magenta;
-
                 break;
 
 
@@ -117,7 +115,6 @@ public class EnemyBehaviour : MonoBehaviour
 
             // Set the material colour to magenta, something went WRONG!
             default:
-                m_Material.color = Color.magenta;
                 break;
         }
 
