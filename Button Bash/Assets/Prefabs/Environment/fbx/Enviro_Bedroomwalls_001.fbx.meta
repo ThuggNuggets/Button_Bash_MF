@@ -1,45 +1,32 @@
 fileFormatVersion: 2
-guid: 6482fe610e670fb42929af8579b99529
+guid: 848d949d7e48d5447a032f74a2030639
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Crayon_Blue
-    100002: Crayon_Green
-    100004: Crayon_Purple
-    100006: Crayon_Red
-    100008: Crayon_Yellow
-    100010: //RootNode
-    400000: Crayon_Blue
-    400002: Crayon_Green
-    400004: Crayon_Purple
-    400006: Crayon_Red
-    400008: Crayon_Yellow
-    400010: //RootNode
-    2100000: Crayon_Green_
-    2100002: Crayon_Green_Paper
-    2100004: Crayon_Red_
-    2100006: Crayon_Red_Paper
-    2100008: Crayon_Blue_
-    2100010: Crayon_Blue_Paper
-    2100012: Crayon_Yellow_
-    2100014: Crayon_Yellow_Paper
-    2100016: Crayon_Purple_
-    2100018: Crayon_Purple_Paper
-    2300000: Crayon_Blue
-    2300002: Crayon_Green
-    2300004: Crayon_Purple
-    2300006: Crayon_Red
-    2300008: Crayon_Yellow
-    3300000: Crayon_Blue
-    3300002: Crayon_Green
-    3300004: Crayon_Purple
-    3300006: Crayon_Red
-    3300008: Crayon_Yellow
-    4300000: Crayon_Green
-    4300002: Crayon_Red
-    4300004: Crayon_Blue
-    4300006: Crayon_Yellow
-    4300008: Crayon_Purple
+    100000: Bedroom_Floor
+    100002: Bedroom_Wall_Back
+    100004: Bedroom_Wall_left
+    100006: Bedroom_Wall_Right
+    100008: //RootNode
+    400000: Bedroom_Floor
+    400002: Bedroom_Wall_Back
+    400004: Bedroom_Wall_left
+    400006: Bedroom_Wall_Right
+    400008: //RootNode
+    2100000: lambert2
+    2100002: lambert10
+    2300000: Bedroom_Floor
+    2300002: Bedroom_Wall_Back
+    2300004: Bedroom_Wall_left
+    2300006: Bedroom_Wall_Right
+    3300000: Bedroom_Floor
+    3300002: Bedroom_Wall_Back
+    3300004: Bedroom_Wall_left
+    3300006: Bedroom_Wall_Right
+    4300000: Bedroom_Wall_left
+    4300002: Bedroom_Floor
+    4300004: Bedroom_Wall_Right
+    4300006: Bedroom_Wall_Back
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -91,7 +78,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
