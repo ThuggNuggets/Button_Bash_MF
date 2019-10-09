@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8897838330279533945}
   - component: {fileID: 8897838330280665017}
   m_Layer: 0
-  m_Name: Enemy_Block_001
+  m_Name: Enemy_Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8897838330278396281}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.16213587, z: 0}
-  m_LocalScale: {x: 32.16301, y: 32.16301, z: 32.16301}
+  m_LocalPosition: {x: 0, y: 0.325, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
