@@ -54,37 +54,37 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
     private void Start()
     {
-        switch (playerNumber)
-        {
-            case 1:
-                {
-                    m_Colour = Colours.Colour.Blue;
-                    m_Material.color = Color.blue;
-                    break;
-                }
-            case 2:
-                {
-                    m_Colour = Colours.Colour.Red;
-                    m_Material.color = Color.red;
-                    break;
-                }
-            case 3:
-                {
-                    m_Colour = Colours.Colour.Green;
-                    m_Material.color = Color.green;
-                    break;
-                }
-            case 4:
-                {
-                    m_Colour = Colours.Colour.Yellow;
-                    m_Material.color = Color.yellow;
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
+        //switch (playerNumber)
+        //{
+        //    case 1:
+        //        {
+        //            m_Colour = Colours.Colour.Blue;
+        //            m_Material.color = Color.blue;
+        //            break;
+        //        }
+        //    case 2:
+        //        {
+        //            m_Colour = Colours.Colour.Red;
+        //            m_Material.color = Color.red;
+        //            break;
+        //        }
+        //    case 3:
+        //        {
+        //            m_Colour = Colours.Colour.Green;
+        //            m_Material.color = Color.green;
+        //            break;
+        //        }
+        //    case 4:
+        //        {
+        //            m_Colour = Colours.Colour.Yellow;
+        //            m_Material.color = Color.yellow;
+        //            break;
+        //        }
+        //    default:
+        //        {
+        //            break;
+        //        }
+       // }
 
     }
     // Constructor.

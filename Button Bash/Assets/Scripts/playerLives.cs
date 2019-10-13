@@ -16,6 +16,7 @@ public class playerLives : MonoBehaviour
 {
     //starting lives for the players
     public int maxHealth = 5;
+
     private int player1Lives;
     private int player2Lives;
     private int player3Lives;
@@ -47,7 +48,7 @@ public class playerLives : MonoBehaviour
                     if (player1Lives > 0)
                     {
                         player1Lives -= 1;
-                        player1.text = "Player 1 health = " + player1Lives;
+                        player1.text =  player1Lives.ToString();
                     }
                     break;
                 }
@@ -58,7 +59,7 @@ public class playerLives : MonoBehaviour
                     if (player2Lives > 0)
                     {
                         player2Lives -= 1;
-                        player2.text = "Player 2 health = " + player2Lives;
+                        player2.text = player2Lives.ToString();
                     }
                     break;
                 }
@@ -68,7 +69,7 @@ public class playerLives : MonoBehaviour
                     if (player3Lives > 0)
                     {
                         player3Lives -= 1;
-                        player3.text = "Player 3 health = " + player3Lives;
+                        player3.text = player3Lives.ToString();
                     }
                     break;
                 }
@@ -78,7 +79,7 @@ public class playerLives : MonoBehaviour
                     if (player4Lives > 0)
                     {
                         player4Lives -= 1;
-                        player4.text = "Player 4 health = " + player4Lives;
+                        player4.text = player4Lives.ToString();
                     }
                     break;
                 }
@@ -88,5 +89,7 @@ public class playerLives : MonoBehaviour
                     break;
                 }
         }
+
+
     }
  }
