@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 	private static GameManager m_Instance = null;
 
 	// The player's and their selection of character.
-	public RawImage[] m_Players;
+	public RawImage[] m_PlayersPortraits;
 
 	// On startup.
 	private void Awake()
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 				try
 				{
 					// Assign each player character's player number to their player's number. (If that didn't make sense, read it again.)
-					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_Players[i].GetComponent<CharacterSelect>().GetCurrentImage();
+					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_PlayersPortraits[i].GetComponent<CharacterSelect>().GetCurrentImage();
 				}
 				catch { }
 			}
