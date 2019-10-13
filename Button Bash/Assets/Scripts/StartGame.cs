@@ -28,10 +28,10 @@ public class StartGame : MonoBehaviour
 		// Set the state of the game manager to playing.
 		gm.SetGameState(GameManager.GameStates.Playing);
 
-        // Load the main game scene.
+        // Load the next scene.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-
+		// Turn off the canvas, otherwise it will stay on the screen, since it cannot be deleted or the information on it will be lost.
         GameObject.Find("Canvas").SetActive(false);
 	}
 }
