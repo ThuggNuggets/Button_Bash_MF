@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7396571802136102271}
   - component: {fileID: 7396571802136102265}
   - component: {fileID: 7396571802136102270}
+  - component: {fileID: 1923600117703141267}
   m_Layer: 5
   m_Name: ammo counter
   m_TagString: Untagged
@@ -158,6 +159,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &1923600117703141267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571802136102268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571802171359961
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.13333334, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -319,6 +332,7 @@ GameObject:
   - component: {fileID: 7396571802311847318}
   - component: {fileID: 7396571802311847312}
   - component: {fileID: 7396571802311847313}
+  - component: {fileID: 9067466540575462072}
   m_Layer: 5
   m_Name: health counter
   m_TagString: Untagged
@@ -387,6 +401,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &9067466540575462072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571802311847319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571802370022218
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 0.43529412, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1208,6 +1234,7 @@ GameObject:
   - component: {fileID: 7396571802967765615}
   - component: {fileID: 7396571802967765609}
   - component: {fileID: 7396571802967765614}
+  - component: {fileID: 1463259779139440945}
   m_Layer: 5
   m_Name: health counter
   m_TagString: Untagged
@@ -1276,6 +1303,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &1463259779139440945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571802967765612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571802969417090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1558,7 @@ GameObject:
   - component: {fileID: 7396571803197513342}
   - component: {fileID: 7396571803197513336}
   - component: {fileID: 7396571803197513337}
+  - component: {fileID: 5159612783465561349}
   m_Layer: 5
   m_Name: health counter
   m_TagString: Untagged
@@ -1587,6 +1627,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &5159612783465561349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571803197513343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571803244576151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1650,7 @@ GameObject:
   - component: {fileID: 7396571803244576150}
   - component: {fileID: 7396571803244576144}
   - component: {fileID: 7396571803244576145}
+  - component: {fileID: 1793400507096980606}
   m_Layer: 5
   m_Name: ammo counter
   m_TagString: Untagged
@@ -1666,6 +1719,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &1793400507096980606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571803244576151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571803302574847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,6 +1821,7 @@ GameObject:
   - component: {fileID: 7396571803312096624}
   - component: {fileID: 7396571803312096626}
   - component: {fileID: 7396571803312096627}
+  - component: {fileID: 7132380879103572783}
   m_Layer: 5
   m_Name: health counter
   m_TagString: Untagged
@@ -1824,6 +1890,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
+--- !u!114 &7132380879103572783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7396571803312096625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edc39a9c267d5c4c9e06da7c1b40242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396571803377870421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 0.43190646, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2105,7 +2183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7844248, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2255,7 +2333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7882353, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2482,7 +2560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9048885, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.13192508, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
