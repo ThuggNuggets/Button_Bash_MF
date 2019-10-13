@@ -65,11 +65,10 @@ public class EnemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         // Move fowards at it's speed.
-        m_Rigidbody.MovePosition(transform.position + transform.forward * m_Speed * Time.deltaTime);
-
+        transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
 
     }
-
+        
     private void OnCollisionEnter(Collision collision)
     {
         // If the enemy reaches the end trigger x position, destroy the enemy.
