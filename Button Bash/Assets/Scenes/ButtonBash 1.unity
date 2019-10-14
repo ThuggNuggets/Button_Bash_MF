@@ -241,9 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  player1: {fileID: 1391909583}
+  player1: {fileID: 81628882}
   player2: {fileID: 852368106}
-  player3: {fileID: 81628882}
+  player3: {fileID: 1391909583}
   player4: {fileID: 1844131338}
 --- !u!1 &219806274
 GameObject:
