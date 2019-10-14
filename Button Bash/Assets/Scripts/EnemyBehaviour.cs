@@ -60,17 +60,14 @@ public class EnemyBehaviour : MonoBehaviour
             case 0:            
                 m_Colour = Colours.Colour.Red;
                 break;
-
-            // Set the material colour to blue.
-            case 1:
-                m_Colour = Colours.Colour.Blue;
-                break;
-
             // Set the material colour to green.
-            case 2:
+            case 1:
                 m_Colour = Colours.Colour.Green;
                 break;
-
+            // Set the material colour to blue.
+            case 2:
+                m_Colour = Colours.Colour.Blue;
+                break;
             // Set the material colour to yellow.
             case 3:
                 m_Colour = Colours.Colour.Yellow;

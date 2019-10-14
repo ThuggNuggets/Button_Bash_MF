@@ -7,7 +7,6 @@ using UnityEngine;
 public class RubixBehaviour : MonoBehaviour
 {
     public float health = 3.0f;
-    private int rotateDirection = 0;
     private Colours.Colour m_colour;
     private void Awake()
     {
@@ -21,7 +20,6 @@ public class RubixBehaviour : MonoBehaviour
             //destroy bullet
             Destroy(collision.gameObject);
             health--;
-            rotateDirection = Random.Range(1,6);
             if(health > 0)
             {
             //changes its colour
@@ -32,34 +30,39 @@ public class RubixBehaviour : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
+           
 
             switch (m_colour)
             {
                 case Colours.Colour.Blue:
                     {
                         m_colour = Colours.Colour.Red;
+                        Debug.Log("change to red");
                         break;
                     }
                 case Colours.Colour.Red:
                     {
                         m_colour = Colours.Colour.Green;
+                        Debug.Log("change to green");
                         break;
                     }
                 case Colours.Colour.Yellow:
                     {
                         m_colour = Colours.Colour.Blue;
+                        Debug.Log("change to blue");
                         break;
                     }
                 case Colours.Colour.Green:
                     {
                         m_colour = Colours.Colour.Yellow;
+                        Debug.Log("change to yellow");
                         break;
                     }
             }
+            gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
             //when hit rotate body
-           
-             
+
+
         }
     }
 }
