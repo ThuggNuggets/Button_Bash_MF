@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1552107870225363307}
   - component: {fileID: 1552107870226133323}
   - component: {fileID: 1552107870227264395}
-  - component: {fileID: 7450264125550632092}
   - component: {fileID: 4292179127142314511}
   - component: {fileID: 1939201170365321297}
+  - component: {fileID: 308056784}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552107870225001803}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00057762145, y: 0.6686499, z: 0.0013539887}
+  m_LocalPosition: {x: 115, y: 3.2, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8795633859476986802}
@@ -81,28 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7450264125550632092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552107870225001803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba8cf5d2c53c14498127e9e38037967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementAxis: player 2 move
-  fireAxis: player 2 fire
-  laneChangingAxis: player 2 lane
-  m_CharacterSpeed: 4
-  m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
-    type: 3}
-  m_ShootingCooldown: 1
-  playerNumber: 2
-  buttonSpawnDistance: 2.5
-  buttonSpawnHeight: 0.5
 --- !u!54 &4292179127142314511
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,7 +95,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!65 &1939201170365321297
 BoxCollider:
@@ -126,12 +104,32 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552107870225001803}
-  m_Material: {fileID: 13400000, guid: e87a05b729c4e7d468c381441d96de07, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.687385, y: 7.5652914, z: 5.059069}
   m_Center: {x: 0, y: 0, z: -0.00000023841858}
+--- !u!114 &308056784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552107870225001803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterSpeed: 10
+  m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
+    type: 3}
+  m_ShootingCooldown: 0.7
+  playerNumber: 1
+  m_Colour: 0
+  buttonSpawnDistance: 0.5
+  buttonSpawnHeight: 0
 --- !u!1 &4338928138229557469
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +153,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4338928138229557469}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
