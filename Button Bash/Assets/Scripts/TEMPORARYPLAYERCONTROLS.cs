@@ -41,7 +41,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
     // The player's colour.
     public int playerNumber;
-	private Colours.Colour m_Colour;
+	public Colours.Colour m_Colour;
 
     private float halfWidth = 1.01f;
     GameObject[] PlayerList;
