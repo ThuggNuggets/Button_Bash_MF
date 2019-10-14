@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -28,7 +29,9 @@ public class playerLives : MonoBehaviour
     public Text player4;
     //holds colour variable
     Colours.Colour enemyColour = Colours.Colour.None;
- 
+
+	// How many players have lost all their lives.
+	private int m_PlayerDeathIterator = 0;
 
     private void Awake()
     {
@@ -58,6 +61,10 @@ public class playerLives : MonoBehaviour
                     {
                         player1Lives -= 1;
                         player1.text =  player1Lives.ToString();
+
+						// If player 1's lives are 0, increase the amount of players that have no lives.
+						if (player1Lives == 0)
+							m_PlayerDeathIterator++;
                     }
                     break;
                 }
@@ -69,7 +76,11 @@ public class playerLives : MonoBehaviour
                     {
                         player2Lives -= 1;
                         player2.text = player2Lives.ToString();
-                    }
+
+						// If player 2's lives are 0, increase the amount of players that have no lives.
+						if (player2Lives == 0)
+							m_PlayerDeathIterator++;
+					}
                     break;
                 }
             // Set the material colour to green.
@@ -79,7 +90,11 @@ public class playerLives : MonoBehaviour
                     {
                         player3Lives -= 1;
                         player3.text = player3Lives.ToString();
-                    }
+
+						// If player 3's lives are 0, increase the amount of players that have no lives.
+						if (player3Lives == 0)
+							m_PlayerDeathIterator++;
+					}
                     break;
                 }
             // Set the material colour to yellow.
@@ -89,7 +104,11 @@ public class playerLives : MonoBehaviour
                     {
                         player4Lives -= 1;
                         player4.text = player4Lives.ToString();
-                    }
+
+						// If player 4's lives are 0, increase the amount of players that have no lives.
+						if (player4Lives == 0)
+							m_PlayerDeathIterator++;
+					}
                     break;
                 }
             // Set the material colour to magenta, something went WRONG!
@@ -99,6 +118,37 @@ public class playerLives : MonoBehaviour
                 }
         }
 
+		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.
+		if (m_PlayerDeathIterator == 3)
+		{
+			// Which player is alive.
+			int alivePlayer = 0;
+
+			// If player 1 has more than 0 lives, player 1 is alive.
+			if (player1Lives > 0)
+				alivePlayer = 1;
+
+			// If player 2 has more than 0 lives, player 1 is alive.
+			else if (player2Lives > 0)
+				alivePlayer = 2;
+
+			// If player 3 has more than 0 lives, player 1 is alive.
+			else if (player3Lives > 0)
+				alivePlayer = 3;
+
+			// If player 4 has more than 0 lives, player 1 is alive.
+			else if (player4Lives > 0)
+				alivePlayer = 4;
+
+			// Get the game manager.
+			GameManager gm = GameManager.GetInstance();
+
+			// Store the final player in the game manager.
+			gm.SetWinningPlayer(alivePlayer);
+
+			// Load the end scene.
+			SceneManager.LoadScene(3);
+		}
 
     }
  }
