@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7396571802136102270}
   - component: {fileID: 1923600117703141267}
   m_Layer: 5
-  m_Name: ammo counter
+  m_Name: ammo counter 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 7396571802201770055}
   - component: {fileID: 7396571802201770052}
   m_Layer: 5
-  m_Name: player 1 portret
+  m_Name: player 3 portret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,17 +274,19 @@ RectTransform:
   m_GameObject: {fileID: 7396571802201770058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_Children:
+<<<<<<< .mine  m_LocalScale: {x: 0.60000014, y: 0.60000014, z: 0.60000014}
+=======  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+>>>>>>> .theirs  m_Children:
   - {fileID: 7396571803391407479}
   - {fileID: 7396571802413845136}
   m_Father: {fileID: 7396571803710228593}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 269, y: 159.8}
-  m_SizeDelta: {x: 94, y: 140}
+<<<<<<< .mine  m_AnchoredPosition: {x: 269.00003, y: 159.80005}
+=======  m_AnchoredPosition: {x: 269, y: 159.8}
+>>>>>>> .theirs  m_SizeDelta: {x: 94, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7396571802201770055
 CanvasRenderer:
@@ -334,7 +336,7 @@ GameObject:
   - component: {fileID: 7396571802311847313}
   - component: {fileID: 9067466540575462072}
   m_Layer: 5
-  m_Name: health counter
+  m_Name: health counter  1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,7 +916,7 @@ GameObject:
   - component: {fileID: 7396571802704122203}
   - component: {fileID: 7396571802704122200}
   m_Layer: 5
-  m_Name: health text
+  m_Name: 'health text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +995,7 @@ GameObject:
   - component: {fileID: 7396571802704536417}
   - component: {fileID: 7396571802704536422}
   m_Layer: 5
-  m_Name: Player 3 portret
+  m_Name: Player 1 portret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1015,7 @@ RectTransform:
   - {fileID: 7396571803700528674}
   - {fileID: 7396571803428052739}
   m_Father: {fileID: 7396571803710228593}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1144,7 +1146,7 @@ GameObject:
   - component: {fileID: 7396571802891914413}
   - component: {fileID: 7396571802891914415}
   m_Layer: 5
-  m_Name: ammo counter
+  m_Name: ammo counter 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1236,7 +1238,7 @@ GameObject:
   - component: {fileID: 7396571802967765614}
   - component: {fileID: 1463259779139440945}
   m_Layer: 5
-  m_Name: health counter
+  m_Name: health counter 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1409,7 +1411,7 @@ GameObject:
   - component: {fileID: 7396571803062223234}
   - component: {fileID: 7396571803062223262}
   m_Layer: 5
-  m_Name: ammo counter
+  m_Name: ammo counter 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1560,7 +1562,7 @@ GameObject:
   - component: {fileID: 7396571803197513337}
   - component: {fileID: 5159612783465561349}
   m_Layer: 5
-  m_Name: health counter
+  m_Name: health counter 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1652,7 +1654,7 @@ GameObject:
   - component: {fileID: 7396571803244576145}
   - component: {fileID: 1793400507096980606}
   m_Layer: 5
-  m_Name: ammo counter
+  m_Name: ammo counter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1743,7 +1745,7 @@ GameObject:
   - component: {fileID: 7396571803302574840}
   - component: {fileID: 7396571803302574841}
   m_Layer: 5
-  m_Name: ammo text (3)
+  m_Name: 'ammo text '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1825,7 @@ GameObject:
   - component: {fileID: 7396571803312096627}
   - component: {fileID: 7132380879103572783}
   m_Layer: 5
-  m_Name: health counter
+  m_Name: health counter 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2376,9 +2378,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7396571802201770053}
-  - {fileID: 7396571803902260667}
   - {fileID: 7396571802704536423}
+  - {fileID: 7396571803902260667}
+  - {fileID: 7396571802201770053}
   - {fileID: 7396571803557538785}
   m_Father: {fileID: 7396571802687285732}
   m_RootOrder: 0
