@@ -9,9 +9,6 @@ public class EnemyBehaviour : MonoBehaviour
     // Speed of the enemy.
     public float m_Speed = 2;
 
-    // The end of movement trigger.
-    public GameObject m_EndingTrigger = null;
-
     // The rigidbody.
     private Rigidbody m_Rigidbody;
 
