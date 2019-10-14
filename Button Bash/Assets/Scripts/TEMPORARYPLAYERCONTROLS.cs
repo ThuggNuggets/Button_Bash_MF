@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using XboxCtrlrInput;
 
 public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 {
@@ -11,7 +11,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		FrontLane,
 		BackLane
 	}
-    public string movementAxis;
     public string fireAxis;
     public string laneChangingAxis;
 
@@ -51,40 +50,43 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     public float buttonSpawnDistance = 0.5f;
     public float buttonSpawnHeight = 0.5f;
 
-
+    //input from controllers
+    private float xAxis;
+    private float yAxis;
+    private float deadZone = 0.5f;
     private void Start()
     {
-        //switch (playerNumber)
-        //{
-        //    case 1:
-        //        {
-        //            m_Colour = Colours.Colour.Blue;
-        //            m_Material.color = Color.blue;
-        //            break;
-        //        }
-        //    case 2:
-        //        {
-        //            m_Colour = Colours.Colour.Red;
-        //            m_Material.color = Color.red;
-        //            break;
-        //        }
-        //    case 3:
-        //        {
-        //            m_Colour = Colours.Colour.Green;
-        //            m_Material.color = Color.green;
-        //            break;
-        //        }
-        //    case 4:
-        //        {
-        //            m_Colour = Colours.Colour.Yellow;
-        //            m_Material.color = Color.yellow;
-        //            break;
-        //        }
-        //    default:
-        //        {
-        //            break;
-        //        }
-       // }
+        switch (playerNumber)
+        {
+            case 0:
+                {
+                    m_Colour = Colours.Colour.Blue;
+                    m_Material.color = Color.blue;
+                    break;
+                }
+            case 1:
+                {
+                    m_Colour = Colours.Colour.Red;
+                    m_Material.color = Color.red;
+                    break;
+                }
+            case 2:
+                {
+                    m_Colour = Colours.Colour.Green;
+                    m_Material.color = Color.green;
+                    break;
+                }
+            case 3:
+                {
+                    m_Colour = Colours.Colour.Yellow;
+                    m_Material.color = Color.yellow;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
 
     }
     // Constructor.
@@ -94,42 +96,79 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
         PlayerList = GameObject.FindGameObjectsWithTag("Player1");
+        
+            
     }
 
     // Update the player.
     void FixedUpdate()
     {
-        //checks if there is input to the selected controls
-        float translation = Input.GetAxis(movementAxis) * m_CharacterSpeed;
-        //so the player moves at playerSpeed units per sec not per frame
-        translation *= Time.deltaTime;
-        //moves the player
-        transform.Translate(0, 0, translation);
-
-
-        leftHand = transform.position.z - halfWidth;
-
+        switch (playerNumber)
+        {
+            case 0:
+                {
+                    
+                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
+                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
+                    //checks if there is input to the selected controls
+                    float translation = xAxis * m_CharacterSpeed;
+                    //so the player moves at playerSpeed units per sec not per frame
+                    translation *= Time.deltaTime;
+                    //moves the player
+                    transform.Translate(0, 0, translation);
+                    break;
+                }
+            case 1:
+                {
+                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
+                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
+               
+                    //checks if there is input to the selected controls
+                    float translation = xAxis * m_CharacterSpeed;
+                    //so the player moves at playerSpeed units per sec not per frame
+                    translation *= Time.deltaTime;
+                    //moves the player
+                    transform.Translate(0, 0, translation);
+                    break;
+                }
+            case 2:
+                {
+                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
+                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
+                   
+                    //checks if there is input to the selected controls
+                    float translation = xAxis * m_CharacterSpeed;
+                    //so the player moves at playerSpeed units per sec not per frame
+                    translation *= Time.deltaTime;
+                    //moves the player
+                    transform.Translate(0, 0, translation);
+                    break;
+                }
+            case 3:
+                {
+                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
+                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
+                    
+                    //checks if there is input to the selected controls
+                    float translation = xAxis * m_CharacterSpeed;
+                    //so the player moves at playerSpeed units per sec not per frame
+                    translation *= Time.deltaTime;
+                    //moves the player
+                    transform.Translate(0, 0, translation);
+                    break;
+                }
+        }
         // Move up one lane.
-        if (Input.GetAxis(laneChangingAxis) <0)
+        if (yAxis > deadZone)
         { 
                 changeLanes(Lane.FrontLane, "Rail");
-
         }
 		// Move up one lane.
-		if (Input.GetAxis(laneChangingAxis) > 0)
+		if (yAxis < -deadZone)
         {
-            //foreach (GameObject otherPlayer in PlayerList)
-            //{
-            //    float otherLefthand = otherPlayer.transform.position.z - halfWidth;
-            //    float otherRightHand = otherPlayer.transform.position.z + halfWidth;
-            //    if (otherLefthand < leftHand &&  otherRightHand > leftHand)
-            //    {
-            //       // Debug.Log("Collision forward");
-            //    }
-            //}
             changeLanes(Lane.BackLane, "Rail (1)");
         }
-        // If the character is currently moving between lanes.
+        // If the character is currently moving between lanes.Z
         if(laneChangingSpeed > 1)
         {
             laneChangingSpeed = 1;
@@ -156,11 +195,45 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		if (m_CurrentLane == Lane.FrontLane)
 		{
 			// Shoot a bullet.
-			if (Input.GetAxis(fireAxis) > 0 && m_ShootingCooldown <= 0.0f)
-			{
-				ShootBullet();
-				m_ShootingCooldown = m_MaxShootingCooldown;
-			}
+            switch(playerNumber)
+            {
+                case 0:
+                    {
+		            if (XCI.GetButton(XboxButton.A, XboxController.First) && m_ShootingCooldown <= 0.0f)
+		            {
+		            	ShootBullet();
+		            	m_ShootingCooldown = m_MaxShootingCooldown;
+		            }
+                        break;
+                    }
+                case 1:
+                    {
+                        if (XCI.GetButton(XboxButton.A, XboxController.Second) && m_ShootingCooldown <= 0.0f)
+                        {
+                            ShootBullet();
+                            m_ShootingCooldown = m_MaxShootingCooldown;
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        if (XCI.GetButton(XboxButton.A, XboxController.Third) && m_ShootingCooldown <= 0.0f)
+                        {
+                            ShootBullet();
+                            m_ShootingCooldown = m_MaxShootingCooldown;
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (XCI.GetButton(XboxButton.A, XboxController.Fourth) && m_ShootingCooldown <= 0.0f)
+                        {
+                            ShootBullet();
+                            m_ShootingCooldown = m_MaxShootingCooldown;
+                        }
+                        break;
+                    }
+            }
 		}
         // Else if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)

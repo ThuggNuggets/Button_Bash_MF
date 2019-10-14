@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -27,10 +26,9 @@ public class playerLives : MonoBehaviour
     public Text player2;
     public Text player3;
     public Text player4;
-	//using for reference on how much damage has been taken
-
-		// How many players have died so far.
-	int m_PlayerDeathIterator = 0;
+    //holds colour variable
+    Colours.Colour enemyColour = Colours.Colour.None;
+ 
 
     private void Awake()
     {
@@ -42,20 +40,25 @@ public class playerLives : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // If the enemy reaches the end trigger deal damage to specific player
-        Colours.Colour enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
+        if(collision.gameObject.tag == "letterBlock" || collision.gameObject.tag == "teddyBear" || collision.gameObject.tag == "rubix" || collision.gameObject.tag == "babushkaSmall" || collision.gameObject.tag == "babushkaMedium" || collision.gameObject.tag == "babushkaLarge" )
+        {
+        enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
+        }
+        else
+        {
+            enemyColour = Colours.Colour.None;
+        }
 
         switch (enemyColour)
         {
             // Set the material colour to red.
             case Colours.Colour.Blue:
                 {
-					if (player1Lives > 0)
-					{
-						player1Lives -= 1;
-						player1.text = player1Lives.ToString();
-						if (player1Lives == 0)
-							m_PlayerDeathIterator++;
-					}
+                    if (player1Lives > 0)
+                    {
+                        player1Lives -= 1;
+                        player1.text =  player1Lives.ToString();
+                    }
                     break;
                 }
 
@@ -66,10 +69,8 @@ public class playerLives : MonoBehaviour
                     {
                         player2Lives -= 1;
                         player2.text = player2Lives.ToString();
-						if (player2Lives == 0)
-							m_PlayerDeathIterator++;
                     }
-					break;
+                    break;
                 }
             // Set the material colour to green.
             case Colours.Colour.Green:
@@ -78,10 +79,8 @@ public class playerLives : MonoBehaviour
                     {
                         player3Lives -= 1;
                         player3.text = player3Lives.ToString();
-						if (player3Lives == 0)
-							m_PlayerDeathIterator++;
-					}
-					break;
+                    }
+                    break;
                 }
             // Set the material colour to yellow.
             case Colours.Colour.Yellow:
@@ -90,10 +89,8 @@ public class playerLives : MonoBehaviour
                     {
                         player4Lives -= 1;
                         player4.text = player4Lives.ToString();
-						if (player4Lives == 0)
-							m_PlayerDeathIterator++;
-					}
-					break;
+                    }
+                    break;
                 }
             // Set the material colour to magenta, something went WRONG!
             default:
@@ -102,26 +99,6 @@ public class playerLives : MonoBehaviour
                 }
         }
 
-		if (m_PlayerDeathIterator == 3)
-		{
-			int m_AlivePlayer = 0;
 
-			if (player1Lives > 0)
-				m_AlivePlayer = 1;
-
-			else if (player2Lives > 0)
-				m_AlivePlayer = 2;
-
-			else if (player3Lives > 0)
-				m_AlivePlayer = 3;
-
-			else if (player4Lives > 0)
-				m_AlivePlayer = 4;
-
-			GameManager gm = GameManager.GetInstance();
-			gm.SetWinningPlayer(m_AlivePlayer);
-
-			SceneManager.LoadScene(3);
-		}
     }
  }
