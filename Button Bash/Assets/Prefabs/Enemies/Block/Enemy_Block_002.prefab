@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 5
   m_EndingTrigger: {fileID: 0}
-  m_Colour: 5
+  m_Colour: 0
 --- !u!114 &8473094995441310814
 MonoBehaviour:
   m_ObjectHideFlags: 0
