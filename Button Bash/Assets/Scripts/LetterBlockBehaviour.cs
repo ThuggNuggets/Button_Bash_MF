@@ -10,10 +10,11 @@ public class LetterBlockBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
+            health--;
+            Destroy(collision.gameObject);
             if (health <= 0)
             {
                 //destroy self and bullet on collision
-                Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
         }
