@@ -20,6 +20,11 @@ public class BabushkaBehaviour : MonoBehaviour
     // the size reduction of the next level babushka
     public float scale = 1;
 
+    // The colour of the enemy.
+    public Colours.Colour m_Colour = Colours.Colour.None;
+
+    // The material of the enemy.
+    private Material m_Material;
     private void Awake()
     {
         if(leftWall.transform.position.z + 5 > transform.position.z)
@@ -30,6 +35,9 @@ public class BabushkaBehaviour : MonoBehaviour
         {
             addedVector = new Vector3(0, 0, -3);
         }
+
+        // Get the material of this enemy.
+        m_Material = GetComponent<Renderer>().material;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -73,12 +81,13 @@ public class BabushkaBehaviour : MonoBehaviour
         GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
         enemy.transform.localScale -= new Vector3(scale, scale, scale);
         enemy.gameObject.tag = newTag;
-        enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
-
+        enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+        
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
         
     }
+
 }

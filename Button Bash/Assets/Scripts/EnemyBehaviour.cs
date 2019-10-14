@@ -26,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Get the rigidbody of this enemy.
         m_Rigidbody = GetComponent<Rigidbody>();
-        //changes the colousr of the enemy when it is pawned
+        //changes the colousr of the enemy when it is spawned
        
     }
 
@@ -74,6 +74,37 @@ public class EnemyBehaviour : MonoBehaviour
 
                 break;
 
+            // Set the material colour to magenta, something went WRONG!
+            default:
+                break;
+        }
+
+    }
+    public void SetBabushkaColour(Colours.Colour colour)
+    {
+        // Set the colour of the enemy's material.
+        switch ((int)colour)
+        {
+            // Set the material colour to red.
+            case 0:
+                m_Colour = Colours.Colour.Red;
+                m_Material.color = Color.red;
+                break;
+            // Set the material colour to green.
+            case 1:
+                m_Colour = Colours.Colour.Green;
+                m_Material.color = Color.green;
+                break;
+            // Set the material colour to blue.
+            case 2:
+                m_Colour = Colours.Colour.Blue;
+                m_Material.color = Color.blue;
+                break;
+            // Set the material colour to yellow.
+            case 3:
+                m_Colour = Colours.Colour.Yellow;
+                m_Material.color = Color.yellow;
+                break;
             // Set the material colour to magenta, something went WRONG!
             default:
                 break;
