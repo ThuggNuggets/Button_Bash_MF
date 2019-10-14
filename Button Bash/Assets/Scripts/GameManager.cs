@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
 	private static GameManager m_Instance = null;
 
 	// The player's and their selection of character.
-	public RawImage[] m_PlayersPortraits;
+	public static RawImage[] m_PlayerPortraits;
+
+	// The winning player.
+	private int m_WinningPlayer;
 
 	// On startup.
 	private void Awake()
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour
 		Debug.Log(scene.name + " loaded");
 
 		// If the current scene is "ButtonBash Example", find the players and apply their player number.
-		if (scene.name == "ButtonBash Example")
+		if (scene.name == "ButtonBash")
 		{
 			// Get the player characters.
 			GameObject[] playerCharacters = GameObject.FindGameObjectsWithTag("Player");
@@ -75,10 +78,18 @@ public class GameManager : MonoBehaviour
 				try
 				{
 					// Assign each player character's player number to their player's number. (If that didn't make sense, read it again.)
-					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_PlayersPortraits[i].GetComponent<CharacterSelect>().GetCurrentImage();
+					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_PlayerPortraits[i].GetComponent<CharacterSelect>().GetCurrentImage();
 				}
 				catch { }
 			}
 		}
 	}
+
+	// Set which player won.
+	// Params: the winning player.
+	public void SetWinningPlayer(int winner) 	{ m_WinningPlayer = winner; }
+
+	// Get the player that won.
+	// Returns: the winning player.
+	public int GetWinningPlayer() { return m_WinningPlayer; }
 }
