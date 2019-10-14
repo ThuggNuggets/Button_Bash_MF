@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public string laneChangingAxis;
 
     private Material colourMaterial;
-    public GameObject bullet = null;
+    public GameObject bulletModel = null;
     public float bulletSpeed = 0.0f;
     public float shootCoolDown = 0.0f;
     private float maxCoolDown = 0.0f;
@@ -32,8 +32,13 @@ public class PlayerMovement : MonoBehaviour
     // position of the back rail
     public GameObject backRail;
 
+    // player colour
     public int playerNumber;
     private Colours.Colour colour;
+
+    // button spawn position upon shoot function execution
+    public float buttonSpawnDistance = 0.5f;
+    public float buttonSpawnHeight = 0.5f;
 
     // gameState now exists and calls on existing GameManager script to get the current game state
     GameManager.GameStates gameState;
@@ -163,8 +168,24 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentRail == Rails.frontRail)
         {
-            //if (Input.GetAxis) 
+            if (Input.GetAxis(fireAxis) > 0 && shootCoolDown <= 0.0f)
+            {
+                ShootBullet();
+                shootCoolDown = maxCoolDown;
+            }
+            if(shootCoolDown > 0.0f)
+            {
+                shootCoolDown -= Time.deltaTime;
+            }
         }
+    }
+
+    private void ShootBullet()
+    {
+        Vector3 spawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), (transform.position.y + buttonSpawnHeight), transform.position.z);
+        GameObject bullet = Instantiate(bulletModel, spawnPoint, transform.rotation);
+
+        bullet.GetComponent<PlayerProjectile>().SetColour(colour);
     }
 
     void Update()
