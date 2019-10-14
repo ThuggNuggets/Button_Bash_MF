@@ -30,35 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
         // Get the rigidbody of this enemy.
         m_Rigidbody = GetComponent<Rigidbody>();
         //changes the colousr of the enemy when it is pawned
-        // Set the colour of the bullet's material.
-        switch (m_Colour)
-        {
-            // Set the material colour to red.
-            case Colours.Colour.Red:
-                m_Material.color = Color.red;
-                break;
-
-            // Set the material colour to blue.
-            case Colours.Colour.Blue:
-                m_Material.color = Color.blue;
-                break;
-
-            // Set the material colour to green.
-            case Colours.Colour.Green:
-                m_Material.color = Color.green;
-                break;
-
-            // Set the material colour to yellow.
-            case Colours.Colour.Yellow:
-                m_Material.color = Color.yellow;
-                break;
-
-            // Set the material colour to magenta, something went WRONG!
-            default:
-                break;
-
-
-        }
+       
     }
 
     // Update.
@@ -88,26 +60,22 @@ public class EnemyBehaviour : MonoBehaviour
         switch ((int)colour)
         {
             // Set the material colour to red.
-            case 0:
-                m_Material.color = Color.red;
+            case 0:            
                 m_Colour = Colours.Colour.Red;
                 break;
 
             // Set the material colour to blue.
             case 1:
-                m_Material.color = Color.blue;
                 m_Colour = Colours.Colour.Blue;
                 break;
 
             // Set the material colour to green.
             case 2:
-                m_Material.color = Color.green;
                 m_Colour = Colours.Colour.Green;
                 break;
 
             // Set the material colour to yellow.
             case 3:
-                m_Material.color = Color.yellow;
                 m_Colour = Colours.Colour.Yellow;
 
                 break;
@@ -117,42 +85,5 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
         }
 
-        //void SetColour(Colours.Colour newColour)
-        //{
-        //    // Set the colour of the enemy's material.
-        //    switch (colour)
-        //    {
-        //        // Set the material colour to red.
-        //        case Colours.Colour.Red:
-        //            m_Material.color = Color.red;
-        //            m_Colour = Colours.Colour.Red;
-        //            break;
-
-        //        // Set the material colour to blue.
-        //        case Colours.Colour.Blue:
-        //            m_Material.color = Color.blue;
-        //            m_Colour = Colours.Colour.Blue;
-        //            break;
-
-        //        // Set the material colour to green.
-        //        case Colours.Colour.Green:
-        //            m_Material.color = Color.green;
-        //            m_Colour = Colours.Colour.Green;
-        //            break;
-
-        //        // Set the material colour to yellow.
-        //        case Colours.Colour.Yellow:
-        //            m_Material.color = Color.yellow;
-        //            m_Colour = Colours.Colour.Yellow;
-
-        //            break;
-
-        //        // Set the material colour to magenta, something went WRONG!
-        //        default:
-        //            m_Material.color = Color.magenta;
-        //            break;
-        //    }
-
-        //}
     }
 }
