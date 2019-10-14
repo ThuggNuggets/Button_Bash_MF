@@ -296,6 +296,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 452027585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &159633989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 976318150993130304, guid: 3ad5de00e8caade47a99069d544733b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406709640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &159633991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159633989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: Controller1X-axis
+  fireAxis: Controller1-A
+  laneChangingAxis: Controller1Y-axis
+  m_CharacterSpeed: 10
+  m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
+    type: 3}
+  m_ShootingCooldown: 0.7
+  playerNumber: 1
+  m_Colour: 2
+  buttonSpawnDistance: 0.5
+  buttonSpawnHeight: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 5914207633451769167, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 2.57
       objectReference: {fileID: 0}
     - target: {fileID: 5914207633451769167, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
@@ -692,16 +721,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller3X-axis
-  fireAxis: Controller3-A
-  laneChangingAxis: 
-  m_CharacterSpeed: 1
-  m_Bullet: {fileID: 0}
-  m_ShootingCooldown: 0
-  playerNumber: 0
+  movementAxis: Controller2X-axis
+  fireAxis: Controller2-A
+  laneChangingAxis: Controller2Y-axis
+  m_CharacterSpeed: 10
+  m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
+    type: 3}
+  m_ShootingCooldown: 0.7
+  playerNumber: 2
   m_Colour: 0
   buttonSpawnDistance: 0.5
-  buttonSpawnHeight: 0.5
+  buttonSpawnHeight: 0
 --- !u!4 &377892782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4567360447113795920, guid: 59c9f22fd68275349ad8d32859dec9c6,
@@ -2241,7 +2271,7 @@ PrefabInstance:
     - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.101
       objectReference: {fileID: 0}
     - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -2751,101 +2781,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.size
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[15]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[16]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[17]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[18]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[19]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[20]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[21]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[22]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[23]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 1dd1b6eb73b26914fb65daa7f4d0c27d,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[24]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[25]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[26]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[27]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[28]
-      value: 
-      objectReference: {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[29]
-      value: 
-      objectReference: {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
 --- !u!1001 &1392635525
@@ -3003,7 +2938,7 @@ PrefabInstance:
     - target: {fileID: 976318150993130316, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 2.61
       objectReference: {fileID: 0}
     - target: {fileID: 8463243688075575724, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
@@ -3015,7 +2950,8 @@ PrefabInstance:
       propertyPath: fireAxis
       value: Controller3-A
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8463243688075575724, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
 --- !u!1001 &1469790188
 PrefabInstance:
@@ -3119,16 +3055,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller3X-axis
-  fireAxis: Controller3-A
-  laneChangingAxis: 
-  m_CharacterSpeed: 1
-  m_Bullet: {fileID: 0}
-  m_ShootingCooldown: 0
-  playerNumber: 0
-  m_Colour: 0
+  movementAxis: Controller4X-axis
+  fireAxis: Controller4-A
+  laneChangingAxis: Controller4Y-axis
+  m_CharacterSpeed: 10
+  m_Bullet: {fileID: 3905374817873417468, guid: 4babf2c3e6872c148b63c953d6fb397e,
+    type: 3}
+  m_ShootingCooldown: 0.7
+  playerNumber: 4
+  m_Colour: 3
   buttonSpawnDistance: 0.5
-  buttonSpawnHeight: 0.5
+  buttonSpawnHeight: 0
 --- !u!1001 &1486820528
 PrefabInstance:
   m_ObjectHideFlags: 0
