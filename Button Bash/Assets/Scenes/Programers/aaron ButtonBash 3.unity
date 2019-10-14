@@ -179,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 55.904003, y: -116.89001, z: -87.966}
 --- !u!1001 &222295342
 PrefabInstance:
@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 6815664412322042890, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6815664412322042890, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 5914207633451769167, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.78
       objectReference: {fileID: 0}
     - target: {fileID: 5914207633451769167, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
@@ -471,9 +471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller2X-axis
-  laneChangingAxis: Controller2Y-axis
-  fireAxis: Controller2-A
+  movementAxis: Controller1X-axis
+  fireAxis: Controller1-A
+  laneChangingAxis: Controller1Y-axis
   m_CharacterSpeed: 10
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
@@ -481,7 +481,6 @@ MonoBehaviour:
   playerNumber: 1
   buttonSpawnDistance: 1
   buttonSpawnHeight: 0.2
-  halfWidth: 0.2
 --- !u!1 &362026652
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,9 +590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller1X-axis
-  laneChangingAxis: Controller1Y-axis
-  fireAxis: Controller1-A
+  movementAxis: Controller4X-axis
+  fireAxis: Controller4-A
+  laneChangingAxis: Controller4Y-axis
   m_CharacterSpeed: 10
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
@@ -601,7 +600,6 @@ MonoBehaviour:
   playerNumber: 4
   buttonSpawnDistance: 1
   buttonSpawnHeight: 0.2
-  halfWidth: 0.2
 --- !u!1 &452319147
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,8 +837,38 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 34.230003, y: -90.00001, z: 0}
+--- !u!1 &634238953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7539877487532881668}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634238954}
+  m_Layer: 0
+  m_Name: rightWall (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634238954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7539877487532881668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634238953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656705380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1069,36 @@ Transform:
   - {fileID: 503554899}
   m_Father: {fileID: 0}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &754174271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6477528247001831000}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754174272}
+  m_Layer: 0
+  m_Name: leftWall (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754174272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6477528247001831000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754174271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &821150435
 GameObject:
@@ -1250,7 +1308,7 @@ PrefabInstance:
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.95
+      value: 51.74
       objectReference: {fileID: 0}
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
@@ -1260,7 +1318,7 @@ PrefabInstance:
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
@@ -1285,7 +1343,7 @@ PrefabInstance:
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
@@ -1551,7 +1609,7 @@ PrefabInstance:
     - target: {fileID: 3232552646242079949, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3232552646242079949, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -1572,6 +1630,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245673798508584318, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: movementAxis
+      value: Controller3X-axis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: fireAxis
+      value: Controller3-A
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: laneChangingAxis
+      value: Controller3Y-axis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: buttonSpawnHeight
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: buttonSpawnDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: m_ShootingCooldown
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7546036976404991003, guid: 5ea4aad07d28c5844910d6e818ce694e, type: 3}
@@ -1626,7 +1724,7 @@ PrefabInstance:
     - target: {fileID: 1295850231897219032, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1295850231897219032, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -2017,7 +2115,7 @@ PrefabInstance:
     - target: {fileID: 2427988442959640500, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.39
+      value: -7.41
       objectReference: {fileID: 0}
     - target: {fileID: 2427988442959640500, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
@@ -2042,7 +2140,7 @@ PrefabInstance:
     - target: {fileID: 2427988442959640500, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2427988442959640500, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
@@ -2591,6 +2689,34 @@ Transform:
   m_Father: {fileID: 674215283}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971413120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1552107870225001803, guid: 150e4469d2b1bab428c8dc388c98ca78,
+    type: 3}
+  m_PrefabInstance: {fileID: 934340541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1971413126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971413120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementAxis: Controller2X-axis
+  fireAxis: Controller2-A
+  laneChangingAxis: Controller2Y-axis
+  m_CharacterSpeed: 10
+  m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
+    type: 3}
+  m_ShootingCooldown: 0.2
+  playerNumber: 2
+  buttonSpawnDistance: 1
+  buttonSpawnHeight: 0.2
 --- !u!1001 &4156497634136199628
 PrefabInstance:
   m_ObjectHideFlags: 0
