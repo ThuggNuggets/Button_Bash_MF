@@ -8,7 +8,11 @@ public class RubixBehaviour : MonoBehaviour
 {
     public float health = 3.0f;
     private int rotateDirection = 0;
-
+    private Colours.Colour m_colour;
+    private void Awake()
+    {
+        m_colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy destroy the bullet.
@@ -21,46 +25,41 @@ public class RubixBehaviour : MonoBehaviour
             if(health > 0)
             {
             //changes its colour
-            gameObject.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+            transform.Rotate(0, 90, 0, Space.Self);
             }
             else
             {
                 Destroy(gameObject);
             }
-            //when hit rotate body
-            switch(rotateDirection)
+
+            gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
+
+            switch (m_colour)
             {
-                case 1:
+                case Colours.Colour.Blue:
                     {
-                       transform.Rotate(90, 0, 0, Space.Self);
+                        m_colour = Colours.Colour.Red;
                         break;
                     }
-                case 2:
+                case Colours.Colour.Red:
                     {
-                        transform.Rotate(-90, 0, 0, Space.Self);
+                        m_colour = Colours.Colour.Green;
                         break;
                     }
-                case 3:
+                case Colours.Colour.Yellow:
                     {
-                        transform.Rotate(0, 90, 0, Space.Self);
+                        m_colour = Colours.Colour.Blue;
                         break;
                     }
-                case 4:
+                case Colours.Colour.Green:
                     {
-                        transform.Rotate(0, -90, 0, Space.Self);
-                        break;
-                    }
-                case 5:
-                    {
-                        transform.Rotate(0, 0, 90, Space.Self);
-                        break;
-                    }
-                case 6:
-                    {
-                        transform.Rotate(0, 0, -90, Space.Self);
+                        m_colour = Colours.Colour.Yellow;
                         break;
                     }
             }
+            //when hit rotate body
+           
+             
         }
     }
 }
