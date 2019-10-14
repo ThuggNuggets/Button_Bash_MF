@@ -314,14 +314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller1X-axis
-  fireAxis: Controller1-A
-  laneChangingAxis: Controller1Y-axis
   m_CharacterSpeed: 10
   m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
     type: 3}
   m_ShootingCooldown: 0.7
-  playerNumber: 1
+  playerNumber: 0
   m_Colour: 2
   buttonSpawnDistance: 0.5
   buttonSpawnHeight: 0
@@ -721,14 +718,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller2X-axis
-  fireAxis: Controller2-A
-  laneChangingAxis: Controller2Y-axis
   m_CharacterSpeed: 10
   m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
     type: 3}
   m_ShootingCooldown: 0.7
-  playerNumber: 2
+  playerNumber: 1
   m_Colour: 0
   buttonSpawnDistance: 0.5
   buttonSpawnHeight: 0
@@ -2313,6 +2307,11 @@ PrefabInstance:
       propertyPath: m_Colour
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
+        type: 3}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7546036976404991003, guid: 5ea4aad07d28c5844910d6e818ce694e, type: 3}
     - {fileID: 3089077819819124676, guid: 5ea4aad07d28c5844910d6e818ce694e, type: 3}
@@ -3055,14 +3054,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: Controller4X-axis
-  fireAxis: Controller4-A
-  laneChangingAxis: Controller4Y-axis
   m_CharacterSpeed: 10
   m_Bullet: {fileID: 3905374817873417468, guid: 4babf2c3e6872c148b63c953d6fb397e,
     type: 3}
   m_ShootingCooldown: 0.7
-  playerNumber: 4
+  playerNumber: 3
   m_Colour: 3
   buttonSpawnDistance: 0.5
   buttonSpawnHeight: 0
