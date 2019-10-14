@@ -19,6 +19,8 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 	// The bullets the player shoots.
 	public GameObject m_Bullet = null;
 
+    //the rigidbody
+    private Rigidbody body;
     // The cooldown to shooting.
     public float m_ShootingCooldown = 0.0f;
 
@@ -96,7 +98,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         m_Material = GetComponent<Renderer>().material;
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
-       
+        body = GetComponent<Rigidbody>();
 
     }
 
@@ -107,7 +109,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         {
             case 0:
                 {
-
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
                     break;
@@ -116,23 +117,18 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
-
                     break;
                 }
             case 2:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
-
-
                     break;
                 }
             case 3:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
-
-
                     break;
                 }
         }
@@ -142,6 +138,10 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         translation *= Time.deltaTime;
         //moves the player
         transform.Translate(0, 0, translation);
+
+            body.velocity = new Vector3(0, 0, 0);
+
+
         // Move up a lane.
         if (yAxis > deadZone)
         {
@@ -165,7 +165,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
             }
             else
             {
-                Debug.Log("NO HIT FORWARDS");
             changeLanes(Lane.BackLane, "Rail (1)");
             }
         }
@@ -239,6 +238,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         // Else if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)
         {
+        
             m_ShootingCooldown -= Time.deltaTime;
         }
 
