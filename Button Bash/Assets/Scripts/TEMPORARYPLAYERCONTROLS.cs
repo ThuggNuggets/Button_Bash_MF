@@ -41,7 +41,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
     //used for stopping running into other player backs
     private float halfWidth = 1.01f;
-    GameObject[] PlayerList;
 
     //how far ahead the button will spawn
     public float buttonSpawnDistance = 0.5f;
@@ -52,6 +51,10 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     private float yAxis;
     private float deadZone = 0.5f;
 
+
+    //stop running into the back of other players
+    private Vector3 leftHand = new Vector3 (0, 0, -1);
+    private Vector3 rightHand = new Vector3(0, 0, 1);
     private void Start()
     {
         switch (playerNumber)
@@ -93,78 +96,78 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         m_Material = GetComponent<Renderer>().material;
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
-        PlayerList = GameObject.FindGameObjectsWithTag("Player1");
-        
-            
+       
+
     }
 
     // Update the player.
     void FixedUpdate()
-    {
+    {//movement on the Z-axis
         switch (playerNumber)
         {
             case 0:
                 {
-                    
+
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
-                    //checks if there is input to the selected controls
-                    float translation = xAxis * m_CharacterSpeed;
-                    //so the player moves at playerSpeed units per sec not per frame
-                    translation *= Time.deltaTime;
-                    //moves the player
-                    transform.Translate(0, 0, translation);
                     break;
                 }
             case 1:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
-               
-                    //checks if there is input to the selected controls
-                    float translation = xAxis * m_CharacterSpeed;
-                    //so the player moves at playerSpeed units per sec not per frame
-                    translation *= Time.deltaTime;
-                    //moves the player
-                    transform.Translate(0, 0, translation);
+
                     break;
                 }
             case 2:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
-                   
-                    //checks if there is input to the selected controls
-                    float translation = xAxis * m_CharacterSpeed;
-                    //so the player moves at playerSpeed units per sec not per frame
-                    translation *= Time.deltaTime;
-                    //moves the player
-                    transform.Translate(0, 0, translation);
+
+
                     break;
                 }
             case 3:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
-                    
-                    //checks if there is input to the selected controls
-                    float translation = xAxis * m_CharacterSpeed;
-                    //so the player moves at playerSpeed units per sec not per frame
-                    translation *= Time.deltaTime;
-                    //moves the player
-                    transform.Translate(0, 0, translation);
+
+
                     break;
                 }
         }
-        // Move up one lane.
+        //checks if there is input to the selected controls
+        float translation = xAxis * m_CharacterSpeed;
+        //so the player moves at playerSpeed units per sec not per frame
+        translation *= Time.deltaTime;
+        //moves the player
+        transform.Translate(0, 0, translation);
+        // Move up a lane.
         if (yAxis > deadZone)
-        { 
-                changeLanes(Lane.FrontLane, "Rail");
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position+leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1) || Physics.Raycast(transform.position +rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
+            {
+                Debug.Log("HIT forwards");
+            }
+            else
+            {
+            changeLanes(Lane.FrontLane, "Rail");
+            }
         }
-		// Move up one lane.
+		// Move down a lane.
 		if (yAxis < -deadZone)
         {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + leftHand, transform.TransformDirection(Vector3.right), out hit, 3, 1) || Physics.Raycast(transform.position + rightHand, transform.TransformDirection(Vector3.right), out hit, 3, 1))
+            {
+                Debug.Log("HIT forwards");
+            }
+            else
+            {
+                Debug.Log("NO HIT FORWARDS");
             changeLanes(Lane.BackLane, "Rail (1)");
+            }
         }
         // If the character is currently moving between lanes.Z
         if(laneChangingSpeed > 1)
