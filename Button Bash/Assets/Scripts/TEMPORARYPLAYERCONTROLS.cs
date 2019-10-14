@@ -11,9 +11,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		FrontLane,
 		BackLane
 	}
-    public string fireAxis;
-    public string laneChangingAxis;
-
     // the material the player is
     private Material m_Material;
     // The character's speed.
@@ -42,10 +39,10 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     public int playerNumber;
 	public Colours.Colour m_Colour;
 
+    //used for stopping running into other player backs
     private float halfWidth = 1.01f;
     GameObject[] PlayerList;
 
-    private float leftHand;
     //how far ahead the button will spawn
     public float buttonSpawnDistance = 0.5f;
     public float buttonSpawnHeight = 0.5f;
@@ -54,6 +51,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     private float xAxis;
     private float yAxis;
     private float deadZone = 0.5f;
+
     private void Start()
     {
         switch (playerNumber)
