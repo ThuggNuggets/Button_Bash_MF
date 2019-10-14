@@ -64,9 +64,9 @@ public class WaveManager : MonoBehaviour
 							// Increment the wave iterator to the next wave.
 							++m_WaveIterator;
 
-						// Else, don't reset (for now), we are at the end of the waves.
+						// Else, reset the wave iterator, restarting the waves.
 						else
-							return;
+							m_WaveIterator = 0;
 
 						// Reset the wave enemy iterator.
 						m_WaveEnemyIterator = 0;
