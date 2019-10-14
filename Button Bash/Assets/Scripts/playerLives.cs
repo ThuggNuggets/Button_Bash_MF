@@ -118,6 +118,38 @@ public class playerLives : MonoBehaviour
                 }
         }
 
+        if(player1Lives <= 0)
+        {
+           GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player1");
+            foreach (GameObject nolife in noLivesLeft)
+            {
+                Destroy(nolife);
+            }
+        }
+        if (player2Lives <= 0)
+        {
+            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player2");
+            foreach (GameObject nolife in noLivesLeft)
+            {
+                Destroy(nolife);
+            } 
+        }
+        if (player3Lives <= 0)
+        {
+            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player3");
+            foreach (GameObject nolife in noLivesLeft)
+            {
+                Destroy(nolife);
+            }
+        }
+        if (player4Lives <= 0)
+        {
+            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player4");
+            foreach (GameObject nolife in noLivesLeft)
+            {
+                Destroy(nolife);
+            }
+        }
 		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.
 		if (m_PlayerDeathIterator == 3)
 		{
