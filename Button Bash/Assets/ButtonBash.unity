@@ -19873,6 +19873,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: health counter 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5814669578201457292, guid: 154029635902eee47b6810a29a575f66,
+        type: 3}
+      propertyPath: m_Text
+      value: '15
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814669578232213437, guid: 154029635902eee47b6810a29a575f66,
+        type: 3}
+      propertyPath: m_Text
+      value: '15
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814669578890029919, guid: 154029635902eee47b6810a29a575f66,
+        type: 3}
+      propertyPath: m_Text
+      value: '15
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814669580197221296, guid: 154029635902eee47b6810a29a575f66,
+        type: 3}
+      propertyPath: m_Text
+      value: '15
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154029635902eee47b6810a29a575f66, type: 3}
 --- !u!1001 &4084375645524851869
