@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
+using UnityEngine.UI;
 
 public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 {
@@ -16,11 +17,18 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     // The character's speed.
     public float m_CharacterSpeed = 1.0f;
 
-	// The bullets the player shoots.
-	public GameObject m_Bullet = null;
+    // character's personal ammunition text
+    public Text playerAmmoText;
 
-    //the rigidbody
-    private Rigidbody body;
+    // self-explanatory
+    public int maxAmmo = 5;
+    private int currentAmmo;
+    private bool canShoot;
+
+
+    // The bullets the player shoots.
+    public GameObject m_Bullet = null;
+
     // The cooldown to shooting.
     public float m_ShootingCooldown = 0.0f;
 
@@ -98,8 +106,17 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         m_Material = GetComponent<Renderer>().material;
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
-        body = GetComponent<Rigidbody>();
 
+        currentAmmo = maxAmmo;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "ammopile")
+        {
+            currentAmmo = maxAmmo;
+            playerAmmoText.text = maxAmmo.ToString();
+        }
     }
 
     // Update the player.
@@ -109,6 +126,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         {
             case 0:
                 {
+
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
                     break;
@@ -117,31 +135,33 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
+
                     break;
                 }
             case 2:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
+
+
                     break;
                 }
             case 3:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
+
+
                     break;
                 }
         }
+
         //checks if there is input to the selected controls
         float translation = xAxis * m_CharacterSpeed;
         //so the player moves at playerSpeed units per sec not per frame
         translation *= Time.deltaTime;
         //moves the player
         transform.Translate(0, 0, translation);
-
-            body.velocity = new Vector3(0, 0, 0);
-
-
         // Move up a lane.
         if (yAxis > deadZone)
         {
@@ -165,6 +185,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
             }
             else
             {
+                Debug.Log("NO HIT FORWARDS");
             changeLanes(Lane.BackLane, "Rail (1)");
             }
         }
@@ -201,8 +222,16 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                     {
 		            if (XCI.GetButton(XboxButton.A, XboxController.First) && m_ShootingCooldown <= 0.0f)
 		            {
-		            	ShootBullet();
-		            	m_ShootingCooldown = m_MaxShootingCooldown;
+                            // check if ammo is not zero
+                            AmmoCheck();
+                            if (canShoot == true)
+                            {
+                                ShootBullet();
+                                m_ShootingCooldown = m_MaxShootingCooldown;
+                                // decrement this player's ammo upon shooting
+                                --currentAmmo;
+                                playerAmmoText.text = currentAmmo.ToString();
+                            }
 		            }
                         break;
                     }
@@ -210,8 +239,14 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                     {
                         if (XCI.GetButton(XboxButton.A, XboxController.Second) && m_ShootingCooldown <= 0.0f)
                         {
-                            ShootBullet();
-                            m_ShootingCooldown = m_MaxShootingCooldown;
+                            AmmoCheck();
+                            if (canShoot == true)
+                            {
+                                ShootBullet();
+                                m_ShootingCooldown = m_MaxShootingCooldown;
+                                --currentAmmo;
+                                playerAmmoText.text = currentAmmo.ToString();
+                            }
                         }
                         break;
                     }
@@ -219,8 +254,14 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                     {
                         if (XCI.GetButton(XboxButton.A, XboxController.Third) && m_ShootingCooldown <= 0.0f)
                         {
-                            ShootBullet();
-                            m_ShootingCooldown = m_MaxShootingCooldown;
+                            AmmoCheck();
+                            if (canShoot == true)
+                            {
+                                ShootBullet();
+                                m_ShootingCooldown = m_MaxShootingCooldown;
+                                --currentAmmo;
+                                playerAmmoText.text = currentAmmo.ToString();
+                            }
                         }
                         break;
                     }
@@ -228,8 +269,14 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                     {
                         if (XCI.GetButton(XboxButton.A, XboxController.Fourth) && m_ShootingCooldown <= 0.0f)
                         {
-                            ShootBullet();
-                            m_ShootingCooldown = m_MaxShootingCooldown;
+                            AmmoCheck();
+                            if (canShoot == true)
+                            {
+                                ShootBullet();
+                                m_ShootingCooldown = m_MaxShootingCooldown;
+                                --currentAmmo;
+                                playerAmmoText.text = currentAmmo.ToString();
+                            }
                         }
                         break;
                     }
@@ -238,7 +285,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         // Else if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)
         {
-        
             m_ShootingCooldown -= Time.deltaTime;
         }
 
@@ -248,14 +294,14 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 	// Shoot a bullet.
 	private void ShootBullet()
 	{
-		// The spawn point of the bullet.
-        Vector3 bulletSpawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), (transform.position.y + buttonSpawnHeight), transform.position.z);
+            // The spawn point of the bullet.
+            Vector3 bulletSpawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), (transform.position.y + buttonSpawnHeight), transform.position.z);
 
-		// Clone the bullet at the bullet spawn point.
-		GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
+            // Clone the bullet at the bullet spawn point.
+            GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
 
-		// Set the bullet's colour to this player's colour.
-		bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
+            // Set the bullet's colour to this player's colour.
+            bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
 	}
 
     private void changeLanes(Lane targetLane, string railName)
@@ -270,6 +316,19 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
             m_TargetLane.x = newLane.transform.position.x;
 
             m_ChangingLanes = true;
+        }
+    }
+
+    // checks if current ammo is not zero, sets canShoot variable to false if at 0
+    private void AmmoCheck()
+    {
+        if (currentAmmo > 0)
+        {
+            canShoot = true;
+        }
+        else
+        {
+            canShoot = false;
         }
     }
 }
