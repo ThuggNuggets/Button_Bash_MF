@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9d038bc720d24791b996a1845680f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
 --- !u!114 &7125014091218811919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 4
-  m_EndingTrigger: {fileID: 0}
   m_Colour: 0
 --- !u!1001 &4191534609723437984
 PrefabInstance:
@@ -99,6 +98,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055450918304122440, guid: efea7d2b49352564ab251a4711f00baa,
+        type: 3}
+      propertyPath: m_TagString
+      value: rubix
       objectReference: {fileID: 0}
     - target: {fileID: 5055450918304553576, guid: efea7d2b49352564ab251a4711f00baa,
         type: 3}

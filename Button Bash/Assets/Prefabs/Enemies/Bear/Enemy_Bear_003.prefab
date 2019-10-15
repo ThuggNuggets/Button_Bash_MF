@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d5ee40394d5a04081ad237979b3a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  scale: 0.5
+  health: 6
+  scale: 0.3
 --- !u!114 &7398950810085631545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ce70554c1d4dc438f584060edf13b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 3
-  m_EndingTrigger: {fileID: 0}
+  m_Speed: 4
   m_Colour: 1
 --- !u!1001 &287814144594010621
 PrefabInstance:
