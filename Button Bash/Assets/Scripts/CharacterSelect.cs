@@ -28,7 +28,8 @@ public class CharacterSelect : MonoBehaviour
 	// Which player's image box this is.
 	public int m_PlayerNumber;
 
-	private bool m_ControllerHasBeenReleased = false;
+	// If the controller stick has been released.
+	private bool m_LeftStickHasBeenReleased = false;
 
 	// On startup.
 	private void Awake()
@@ -93,7 +94,7 @@ public class CharacterSelect : MonoBehaviour
 		}
 
 		// If the left stick has been released, check it's direction.
-		if (m_ControllerHasBeenReleased == true)
+		if (m_LeftStickHasBeenReleased == true)
 		{
 			// If the left stick's x axis is greater than the dead zone, move to the next character.
 			if (m_XAxis > m_DeadZone)
@@ -108,41 +109,49 @@ public class CharacterSelect : MonoBehaviour
 			}
 
 			// Set that the stick has been released to false.
-			m_ControllerHasBeenReleased = false;
+			m_LeftStickHasBeenReleased = false;
 		}
 
 		// Else if the left stick's x axis is less than the dead zone and greater than the negative dead zone, set that the stick has been released to true.
 		else if (m_XAxis < m_DeadZone && m_XAxis > -m_DeadZone)
-			m_ControllerHasBeenReleased = true;
+			m_LeftStickHasBeenReleased = true;
 	}
 
 	// Move on to the next character.
 	public void NextCharacter()
 	{
-		// If the current image is less than the amount of portraits there are - 1, increment the current image.
-		if (m_CurrentImage < m_PlayerPortraits.Length - 1)
-			++m_CurrentImage;
+		// If a character hasn't been locked in, move to the next character.
+		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
+		{
+			// If the current image is less than the amount of portraits there are - 1, increment the current image.
+			if (m_CurrentImage < m_PlayerPortraits.Length - 1)
+				++m_CurrentImage;
 
-		// Else, set the current image to 0.
-		else
-			m_CurrentImage = 0;
+			// Else, set the current image to 0.
+			else
+				m_CurrentImage = 0;
 
-		// Set the portrait to the current image.
-		GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+			// Set the portrait to the current image.
+			GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+		}
 	}
 
 	public void PrevCharacter()
 	{
-		// If the current image is less than the amount of portraits there are - 1, decrement the current image.
-		if (m_CurrentImage > 0)
-			--m_CurrentImage;
+		// If a character hasn't been locked in, move to the previous character.
+		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
+		{
+			// If the current image is less than the amount of portraits there are - 1, decrement the current image.
+			if (m_CurrentImage > 0)
+				--m_CurrentImage;
 
-		// Else, set the current image to the amount of portraits there are - 1.
-		else
-			m_CurrentImage = m_PlayerPortraits.Length - 1;
+			// Else, set the current image to the amount of portraits there are - 1.
+			else
+				m_CurrentImage = m_PlayerPortraits.Length - 1;
 
-		// Set the portrait to the current image.
-		GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+			// Set the portrait to the current image.
+			GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+		}
 	}
 
 	// Get the current image of the image box.
