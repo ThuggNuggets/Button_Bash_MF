@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5096394947610743486}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,9 +140,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterSpeed: 10
+  playerAmmoText: {fileID: 0}
+  maxAmmo: 12
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_ShootingCooldown: 0.7
+  m_ShootingCooldown: 0.6
   playerNumber: 2
   m_Colour: 1
   buttonSpawnDistance: 0.5
