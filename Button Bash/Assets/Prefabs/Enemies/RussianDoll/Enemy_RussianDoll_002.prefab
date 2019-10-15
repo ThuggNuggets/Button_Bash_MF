@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 4
-  m_EndingTrigger: {fileID: 0}
   m_Colour: 0
 --- !u!65 &8213223668972232251
 BoxCollider:
@@ -145,6 +144,7 @@ MonoBehaviour:
   rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
   scale: 0.005
+  m_Colour: 0
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb915a1b8a4879443baa08e32d81b0e1, type: 2}
+  - {fileID: 2100000, guid: 2f4d7253f725a23459fc5a72f97ec926, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
