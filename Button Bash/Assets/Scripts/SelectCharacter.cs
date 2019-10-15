@@ -60,6 +60,7 @@ public class SelectCharacter : MonoBehaviour
 				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Fourth);
 				break;
 
+				// Something is wrong.
 			default:
 				Debug.Log("One of the image boxes doesn't have a player number assigned.");
 				break;
@@ -84,9 +85,12 @@ public class SelectCharacter : MonoBehaviour
 		int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
 
 		// Add the player image box to the game manager.
-		gm.GetComponent<GameManager>().AddPlayerCharacter(playerSelect, m_PlayerNumber - 1);
+		gm.GetComponent<GameManager>().AddPlayerCharacter(playerSelect, m_PlayerNumber);
 
 		// Set that the character has been locked in to true.
 		m_CharacterLockedIn = true;
+
+		// Set the select button to not be interactable (just for representation).
+		gameObject.transform.parent.GetChild(2).GetComponent<Button>().interactable = false;
 	}
 }
