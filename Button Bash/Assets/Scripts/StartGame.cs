@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using XboxCtrlrInput;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,9 @@ public class StartGame : MonoBehaviour
 	// The event to begin the game.
 	UnityEvent m_BeginEvent;
 
+	// If the players are out of the main menu.
+	private bool m_OutOfMainMenu = false;
+
 	// On startup.
 	private void Awake()
 	{
@@ -17,6 +21,14 @@ public class StartGame : MonoBehaviour
 
 		// Add the begin game function to the begin event.
 		m_BeginEvent.AddListener(BeginGame);
+	}
+
+	// Update.
+	private void Update()
+	{
+		// If the A button is pressed on a controller, move on to the next scene.
+		if (XCI.GetButton(XboxButton.A) == true && m_OutOfMainMenu)
+			BeginGame();
 	}
 
 	// Begin the game.
