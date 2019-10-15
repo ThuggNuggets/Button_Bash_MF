@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using XboxCtrlrInput;
 
 public class ReturnToMenu : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class ReturnToMenu : MonoBehaviour
 
 		// Add the return to main menu function to the event.
 		m_ReturnToMenuEvent.AddListener(ReturnMainMenuMenu);
+	}
+
+	private void Update()
+	{
+		if (XCI.GetButtonDown(XboxButton.A))
+		{
+			ReturnMainMenuMenu();
+		}
 	}
 
 	// Return the game to the main menu.

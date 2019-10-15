@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 	private static GameManager m_Instance = null;
 
 	// The player's and their selection of character.
-	public static RawImage[] m_PlayerCharacters;
+	public static int[] m_PlayerCharacters;
 
 	// The winning player.
 	private int m_WinningPlayer = 0;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 
 		// Initialise the player characters array.
-		m_PlayerCharacters = new RawImage[4];
+		m_PlayerCharacters = new int[4];
 	}
 
 	// Set the game state.
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
 	// Add a player character to the game manager.
 	// Params: the player character to add to the game manager, the index for the array.
-	public void AddPlayerCharacter(RawImage playerCharacter, int index)
+	public void AddPlayerCharacter(int playerCharacter, int index)
 	{
 		// The next player character is the player character that is passed in.
 		m_PlayerCharacters[index - 1] = playerCharacter;
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 	// Get a player character.
 	// Params: the index for the array of player characters.
 	// Returns: RawImage that is storing the player character information in CharacterSelect.
-	public RawImage GetPlayerCharacter(int index)
+	public int GetPlayerCharacter(int index)
 	{
 		return m_PlayerCharacters[index];
 	}

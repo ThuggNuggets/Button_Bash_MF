@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 1287192587}
   - component: {fileID: 1287192586}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ReturnToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 2077824532}
   - component: {fileID: 2077824531}
   - component: {fileID: 2077824530}
+  - component: {fileID: 2077824533}
   m_Layer: 5
   m_Name: win player portrats
   m_TagString: Untagged
@@ -888,6 +889,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
   - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  m_DeadZone: 0.05
+  m_PlayerNumber: 0
 --- !u!114 &2077824531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,3 +926,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077824528}
   m_CullTransparentMesh: 0
+--- !u!114 &2077824533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077824528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df19e2be0347f674da93d11f0884d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

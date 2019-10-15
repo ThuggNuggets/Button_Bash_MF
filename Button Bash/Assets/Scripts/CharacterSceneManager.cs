@@ -45,10 +45,5 @@ public class CharacterSceneManager : MonoBehaviour
 		//}
 		//
 		//Debug.Log(Input.GetJoystickNames().Length);
-
-		if (XCI.GetButtonUp(XboxButton.A))
-		{
-			GetComponentInChildren<StartGame>().BeginGame();
-		}
 	}
 }
