@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
 	private static GameManager m_Instance = null;
 
 	// The player's and their selection of character.
-	public static RawImage[] m_PlayerPortraits;
+	public static RawImage[] m_PlayerCharacters;
 
 	// The winning player.
-	private int m_WinningPlayer;
+	private int m_WinningPlayer = 0;
 
 	// On startup.
 	private void Awake()
@@ -36,9 +36,6 @@ public class GameManager : MonoBehaviour
 		// Get the current scene.
 		Scene currentScene = SceneManager.GetActiveScene();
 
-		// When a scene is loaded, call the function "OnSceneLoaded".
-		SceneManager.sceneLoaded += OnSceneLoaded;
-
 		// If the current scene is the main game, set the current state to playing.
 		if (currentScene.name == "ButtonBash Example")
 			// Set the current state to playing.
@@ -46,6 +43,9 @@ public class GameManager : MonoBehaviour
 
 		// Don't destroy the game manager when loading a new scene.
 		DontDestroyOnLoad(gameObject);
+
+		// Initialise the player characters array.
+		m_PlayerCharacters = new RawImage[4];
 	}
 
 	// Set the game state.
@@ -60,31 +60,6 @@ public class GameManager : MonoBehaviour
 	// Returns: this instance of the game manager.
 	public static GameManager GetInstance()	{ return m_Instance; }
 
-	// When a scene is loaded.
-	// Params: the scene, the load scene mode.
-	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-	{
-		Debug.Log(scene.name + " loaded");
-
-		// If the current scene is "ButtonBash Example", find the players and apply their player number.
-		if (scene.name == "ButtonBash")
-		{
-			// Get the player characters.
-			GameObject[] playerCharacters = GameObject.FindGameObjectsWithTag("Player");
-
-			// For each player character there is, assign it's player number.
-			for (int i = 0; i < playerCharacters.Length; ++i)
-			{
-				try
-				{
-					// Assign each player character's player number to their player's number. (If that didn't make sense, read it again.)
-					playerCharacters[i].GetComponent<TEMPORARYPLAYERCONTROLS>().playerNumber = m_PlayerPortraits[i].GetComponent<CharacterSelect>().GetCurrentImage();
-				}
-				catch { }
-			}
-		}
-	}
-
 	// Set which player won.
 	// Params: the winning player.
 	public void SetWinningPlayer(int winner) 	{ m_WinningPlayer = winner; }
@@ -92,4 +67,20 @@ public class GameManager : MonoBehaviour
 	// Get the player that won.
 	// Returns: the winning player.
 	public int GetWinningPlayer() { return m_WinningPlayer; }
+
+	// Add a player character to the game manager.
+	// Params: the player character to add to the game manager, the index for the array.
+	public void AddPlayerCharacter(RawImage playerCharacter, int index)
+	{
+		// The next player character is the player character that is passed in.
+		m_PlayerCharacters[index - 1] = playerCharacter;
+	}
+
+	// Get a player character.
+	// Params: the index for the array of player characters.
+	// Returns: RawImage that is storing the player character information in CharacterSelect.
+	public RawImage GetPlayerCharacter(int index)
+	{
+		return m_PlayerCharacters[index];
+	}
 }
