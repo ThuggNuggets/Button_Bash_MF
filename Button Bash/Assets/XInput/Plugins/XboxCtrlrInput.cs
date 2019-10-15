@@ -986,13 +986,46 @@ namespace XboxCtrlrInput
 		
 		public static void SetDeadzoneType(XboxController controller, GamePadDeadZone type)
 		{
-			int controllerNumber = (int)controller;
-			if (!IsControllerNumberValid(controllerNumber))
-				deadZoneType[0] = type;
+			if(controller == XboxController.All)
+			{
+				for(int i = 1; i <= 4; ++i)
+				{ 
+					SetDeadzoneType((XboxController)i, type);
+				}
+			}
+			else
+			{ 
+				int controllerNumber = (int)controller;
+				if (!IsControllerNumberValid(controllerNumber))
+					deadZoneType[0] = type;
 
-			deadZoneType[controllerNumber - 1] = type;
+				deadZoneType[controllerNumber - 1] = type;
+			}
 		}
 
+		public static void SetVibration(XboxController controller, float leftMotor, float rightMotor)
+		{
+			if(controller == XboxController.All)
+			{
+				for(int i = 1; i <= 4; ++i)
+				{ 
+					SetVibration((XboxController)i, leftMotor, rightMotor);
+				}
+			}
+			else
+			{ 
+				int controllerNumber = (int)controller;
+				if (IsControllerNumberValid(controllerNumber))
+				{ 
+					GamePad.SetVibration((PlayerIndex)(controllerNumber - 1), leftMotor, rightMotor);
+				}
+			}
+		}
+
+		public static void StopVibration(XboxController controller)
+		{
+			SetVibration(controller, 0.0f, 0.0f);
+		}
 
 		////
 		// ------------- Private -------------- //

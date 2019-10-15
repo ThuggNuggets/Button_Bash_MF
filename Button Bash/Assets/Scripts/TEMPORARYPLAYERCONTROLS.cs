@@ -49,9 +49,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     public int playerNumber;
 	public Colours.Colour m_Colour;
 
-    //used for stopping running into other player backs
-    private float halfWidth = 1.01f;
-
     //how far ahead the button will spawn
     public float buttonSpawnDistance = 0.5f;
     public float buttonSpawnHeight = 0.5f;
@@ -61,7 +58,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     private float yAxis;
     private float deadZone = 0.5f;
 
-
+    LineRenderer line = new LineRenderer();
     //stop running into the back of other players
     private Vector3 leftHand = new Vector3 (0, 0, -1);
     private Vector3 rightHand = new Vector3(0, 0, 1);
@@ -106,7 +103,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         m_Material = GetComponent<Renderer>().material;
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
-
+        line = GetComponent<LineRenderer>();
         currentAmmo = maxAmmo;
     }
 
@@ -162,6 +159,23 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         translation *= Time.deltaTime;
         //moves the player
         transform.Translate(0, 0, translation);
+        //removes drifting after colliding with other players
+        body.velocity = new Vector3(0, 0, 0);
+        //draw a raycast so players can see where the button will go
+
+
+
+        RaycastHit aim;
+        var ray = -transform.right;
+        if (Physics.Raycast(transform.position, ray, out aim, 5000)) 
+        {
+        Vector3[] points = new Vector3[2];
+        points[0] = transform.position;
+        points[1] = aim.point;
+        line.SetPositions(points);
+        }
+
+
         // Move up a lane.
         if (yAxis > deadZone)
         {
@@ -189,8 +203,9 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
             changeLanes(Lane.BackLane, "Rail (1)");
             }
         }
+       
         // If the character is currently moving between lanes.Z
-        if(laneChangingSpeed > 1)
+        if (laneChangingSpeed > 1)
         {
             laneChangingSpeed = 1;
         }
