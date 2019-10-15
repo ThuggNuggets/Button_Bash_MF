@@ -12448,6 +12448,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.46
       objectReference: {fileID: 0}
+    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[15]
+      value: 
+      objectReference: {fileID: 8760043877196883493, guid: 12b384bbbeaec4d4999af4d97c7fc647,
+        type: 3}
+    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[17]
+      value: 
+      objectReference: {fileID: 8760043877196883493, guid: b4eed32b5b26dc245accb4dda7f7222e,
+        type: 3}
+    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[28]
+      value: 
+      objectReference: {fileID: 8760043877196883493, guid: 0a7a3dc9d022f5245b291b9b13ffb367,
+        type: 3}
+    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[20]
+      value: 
+      objectReference: {fileID: 8760043877196883493, guid: 892ce419ecb28e44d897f6fa801eef30,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
 --- !u!4 &1323775464 stripped
@@ -13279,6 +13303,11 @@ PrefabInstance:
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
       propertyPath: m_CharacterSpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607457697793743523, guid: 3ad5de00e8caade47a99069d544733b9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
