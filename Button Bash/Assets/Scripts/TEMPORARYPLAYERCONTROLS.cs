@@ -27,7 +27,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
 
     // The bullets the player shoots.
-    public GameObject m_Bullet = null;
+    public GameObject m_Bullet;
 
     // The cooldown to shooting.
     public float m_ShootingCooldown = 0.0f;
@@ -62,6 +62,8 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     //stop running into the back of other players
     private Vector3 leftHand = new Vector3 (0, 0, -1);
     private Vector3 rightHand = new Vector3(0, 0, 1);
+    //rigidbody
+    private Rigidbody body;
     private void Start()
     {
         switch (playerNumber)
@@ -105,6 +107,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 		m_ShootingCooldown = 0.0f;
         line = GetComponent<LineRenderer>();
         currentAmmo = maxAmmo;
+        body = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -123,7 +126,6 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         {
             case 0:
                 {
-
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
                     break;
@@ -132,23 +134,18 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
-
                     break;
                 }
             case 2:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
-
-
                     break;
                 }
             case 3:
                 {
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
-
-
                     break;
                 }
         }
@@ -167,7 +164,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
 
         RaycastHit aim;
         var ray = -transform.right;
-        if (Physics.Raycast(transform.position, ray, out aim, 5000)) 
+        if (Physics.Raycast(transform.position, ray, out aim, 150)) 
         {
         Vector3[] points = new Vector3[2];
         points[0] = transform.position;
