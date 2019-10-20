@@ -85,7 +85,7 @@ public class SelectCharacter : MonoBehaviour
 		int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
 
 		// Add the player image box to the game manager.
-		gm.GetComponent<GameManager>().AddPlayerCharacter(playerSelect, m_PlayerNumber);
+		gm.GetComponent<GameManager>().AddPlayerCharacter(playerSelect, m_PlayerNumber - 1);
 
 		// Set that the character has been locked in to true.
 		m_CharacterLockedIn = true;
