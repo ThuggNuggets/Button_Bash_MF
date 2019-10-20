@@ -64,6 +64,8 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
     private Vector3 rightHand = new Vector3(0, 0, 1);
     //rigidbody
     private Rigidbody body;
+    //game manager
+    GameManager gm;
     private void Start()
     {
         switch (playerNumber)
@@ -108,6 +110,32 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         line = GetComponent<LineRenderer>();
         currentAmmo = maxAmmo;
         body = GetComponent<Rigidbody>();
+        gm = GameManager.GetInstance();
+        switch(gameObject.tag)
+        {
+                case "Player1":
+                {
+                    playerNumber = gm.GetPlayerCharacter(0);
+                    
+                    break;
+                }
+            case "Player2":
+                {
+                    playerNumber = gm.GetPlayerCharacter(1);
+                    break;
+                }
+            case "Player3":
+                {
+                    playerNumber = gm.GetPlayerCharacter(2);
+                    break;
+                }
+            case "Player4":
+                {
+                    playerNumber = gm.GetPlayerCharacter(3);
+                    break;
+                }
+        }
+        playerNumber++;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -161,16 +189,7 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
         //draw a raycast so players can see where the button will go
 
 
-
-        RaycastHit aim;
-        var ray = -transform.right;
-        if (Physics.Raycast(transform.position, ray, out aim, 150)) 
-        {
-        Vector3[] points = new Vector3[2];
-        points[0] = transform.position;
-        points[1] = aim.point;
-        line.SetPositions(points);
-        }
+       
 
 
         // Move up a lane.
@@ -223,12 +242,22 @@ public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
             }
 		}
 
-		
-		// If the current lane is lane 1, check for shooting.
-		if (m_CurrentLane == Lane.FrontLane)
+        RaycastHit aim;
+        Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        var ray = -transform.right;
+        if (Physics.Raycast(start, ray, out aim, 100))
+        {
+            Vector3[] points = new Vector3[2];
+            points[0] = transform.position;
+            points[1] = aim.point;
+            line.SetPositions(points);
+        }
+        // If the current lane is lane 1, check for shooting.
+        if (m_CurrentLane == Lane.FrontLane)
 		{
-			// Shoot a bullet.
-            switch(playerNumber)
+           
+            // Shoot a bullet.
+            switch (playerNumber)
             {
                 case 0:
                     {
