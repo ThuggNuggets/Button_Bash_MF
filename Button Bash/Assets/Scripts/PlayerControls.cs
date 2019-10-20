@@ -4,7 +4,7 @@ using UnityEngine;
 using XboxCtrlrInput;
 using UnityEngine.UI;
 
-public class TEMPORARYPLAYERCONTROLS : MonoBehaviour
+public class PlayerControls : MonoBehaviour
 {
 	// Enum of the lanes.
 	public enum Lane
