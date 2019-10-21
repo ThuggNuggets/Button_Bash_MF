@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7245673798508347742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46, y: 1.101, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3232552646242079949}
@@ -140,16 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CharacterSpeed: 10
+  m_CharacterSpeed: 1
   playerAmmoText: {fileID: 0}
-  maxAmmo: 12
+  maxAmmo: 5
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_ShootingCooldown: 0.6
-  playerNumber: 2
+  m_ShootingCooldown: 0
+  playerNumber: 0
   m_Colour: 1
   buttonSpawnDistance: 0.5
-  buttonSpawnHeight: 0
+  buttonSpawnHeight: 0.5
 --- !u!54 &5096394947610743486
 Rigidbody:
   m_ObjectHideFlags: 0
