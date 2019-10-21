@@ -34,31 +34,21 @@ public class CharacterSelect : MonoBehaviour
 	// On startup.
 	private void Awake()
 	{
-        // If the name of the image is "nemo", set the current image to 0.
-        if (GetComponent<RawImage>().texture.name == "nemo")
-        {
+		// Check the name of the current image showing the currently selected character
+		// and assign the index of the current image to match the current image in the array.
+		// Example: neilA is at index 1 of the array of images, so set the index to 1 at startup.
+
+		if (GetComponent<RawImage>().texture.name == "nemo")
             m_CurrentImage = 0;
-        }
-        // If the name of the image is "Naicim", set the current image to 1.
         else if (GetComponent<RawImage>().texture.name == "Naiciam")
-        {
             m_CurrentImage = 1;
-        }
-        // If the name of the image is "neilA", set the current image to 2.
         else if (GetComponent<RawImage>().texture.name == "neilA")
-        {
             m_CurrentImage = 2;
-        }
-        // If the name of the image is "sesame", set the current image to 3.
         else if (GetComponent<RawImage>().texture.name == "sesame")
-        {
             m_CurrentImage = 3;
-        }
 
-		// Create a new unity event.
+		// Create a new unity event to store the next character event.
 		m_NextCharacter = new UnityEvent();
-
-		// Add the next character selection function to the next character event.
 		m_NextCharacter.AddListener(NextCharacter);
 	}
 
@@ -71,25 +61,21 @@ public class CharacterSelect : MonoBehaviour
 				// Player 1.
 			case 0:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
-				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
 				break;
 
 				// Player 2.
 			case 1:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
-				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
 				break;
 
 				// Player 3.
 			case 2:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
-				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
 				break;
 
 				// Player 4.
 			case 3:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
-				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
 				break;
 
 				// Something is wrong.
