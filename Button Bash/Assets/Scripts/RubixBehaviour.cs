@@ -8,9 +8,26 @@ public class RubixBehaviour : MonoBehaviour
 {
     public float health = 3.0f;
     private Colours.Colour m_colour;
+    //flinging the enemy when they have no health
+    public float verticalFling = 50;
+    public float xFling = 10;
+    public float zFling = 10;
+    private Rigidbody rb;
     private void Awake()
     {
         m_colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
+        //get random fling values
+        xFling = Random.Range(-xFling, xFling);
+        zFling = Random.Range(-zFling, zFling);
+    }
+    private void FixedUpdate()
+    {
+        if (health <= 0)
+        {
+            transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+            //destroy self and bullet on collision
+            Destroy(gameObject, 2);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,13 +42,6 @@ public class RubixBehaviour : MonoBehaviour
             //changes its colour
             transform.Rotate(0, 90, 0, Space.Self);
             }
-            else
-            {
-                Destroy(gameObject);
-            }
-
-           
-
             switch (m_colour)
             {
                 case Colours.Colour.Blue:

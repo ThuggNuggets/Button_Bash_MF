@@ -35,7 +35,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         // Move fowards at it's speed.
         transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
-
     }
         
     private void OnCollisionEnter(Collision collision)

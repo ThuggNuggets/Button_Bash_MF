@@ -25,6 +25,11 @@ public class BabushkaBehaviour : MonoBehaviour
 
     // The material of the enemy.
     private Material m_Material;
+    //flinging the enemy when they have no health
+    public float verticalFling = 50;
+    public float xFling = 10;
+    public float zFling = 10;
+    private Rigidbody rb;
     private void Awake()
     {
         if(leftWall.transform.position.z + 13 > transform.position.z)
@@ -38,6 +43,20 @@ public class BabushkaBehaviour : MonoBehaviour
 
         // Get the material of this enemy.
         m_Material = GetComponent<Renderer>().material;
+        //get random fling values
+        xFling = Random.Range(-xFling, xFling);
+        zFling = Random.Range(-zFling, zFling);
+    }
+
+  
+    private void FixedUpdate()
+    {
+        if (health <= 0)
+        {
+            transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+            //destroy self and bullet on collision
+            Destroy(gameObject, 2);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -63,15 +82,9 @@ public class BabushkaBehaviour : MonoBehaviour
             }
             else
             {
-                // Destroy self if it is the small babushka.
-                Destroy(gameObject);
+                health = 0;
             }
 
-            if (health <= 0)
-            {
-                // Destroy self if no health left
-                Destroy(gameObject);
-            }
         }
     }
     

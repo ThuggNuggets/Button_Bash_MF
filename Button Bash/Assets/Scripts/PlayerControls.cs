@@ -64,42 +64,7 @@ public class PlayerControls : MonoBehaviour
     private Vector3 rightHand = new Vector3(0, 0, 1);
     //rigidbody
     private Rigidbody body;
-    //game manager
-    private void Start()
-    {
-        switch (playerNumber)
-        {
-            case 0:
-                {
-                    m_Colour = Colours.Colour.Blue;
-                    m_Material.color = Color.blue;
-                    break;
-                }
-            case 1:
-                {
-                    m_Colour = Colours.Colour.Red;
-                    m_Material.color = Color.red;
-                    break;
-                }
-            case 2:
-                {
-                    m_Colour = Colours.Colour.Green;
-                    m_Material.color = Color.green;
-                    break;
-                }
-            case 3:
-                {
-                    m_Colour = Colours.Colour.Yellow;
-                    m_Material.color = Color.yellow;
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
-
-    }
+   
     // Constructor.
     void Awake()
     {
@@ -152,7 +117,6 @@ public class PlayerControls : MonoBehaviour
                     xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)playerNumber+1);
                     yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)playerNumber+1);
   
-   ////////change tags
 
         //checks if there is input to the selected controls
         float translation = xAxis * m_CharacterSpeed;
@@ -218,20 +182,20 @@ public class PlayerControls : MonoBehaviour
             }
 		}
 
-        RaycastHit aim;
-        Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        var ray = -transform.right;
-        if (Physics.Raycast(start, ray, out aim, 100))
-        {
-            Vector3[] points = new Vector3[2];
-            points[0] = transform.position;
-            points[1] = aim.point;
-            line.SetPositions(points);
-        }
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
 		{
-           
+
+            RaycastHit aim;
+            Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            var ray = -transform.right;
+            if (Physics.Raycast(start, ray, out aim, 350))
+            {
+                Vector3[] points = new Vector3[2];
+                points[0] = transform.position;
+                points[1] = aim.point;
+                line.SetPositions(points);
+            }
             // Shoot a bullet.
             switch (playerNumber)
             {
@@ -299,6 +263,13 @@ public class PlayerControls : MonoBehaviour
                     }
             }
 		}
+        else if(m_CurrentLane == Lane.BackLane)
+        {
+            Vector3[] points = new Vector3[2];
+            points[0] = transform.position;
+            points[1] = transform.position;
+            line.SetPositions(points);
+        }
         // Else if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)
         {
