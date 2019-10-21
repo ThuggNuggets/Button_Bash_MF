@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GameManager
 {
 	// The player's and their selection of character.
-	private static int[] m_PlayerCharacters;
+	private static int[] m_PlayerCharacters = new int[4];
 
 	// The winning player.
 	private static int m_WinningPlayer = 0;

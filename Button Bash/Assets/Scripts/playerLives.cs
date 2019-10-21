@@ -172,11 +172,8 @@ public class playerLives : MonoBehaviour
 			else if (player4Lives > 0)
 				alivePlayer = 4;
 
-			// Get the game manager.
-			GameManager gm = GameManager.GetInstance();
-
-			// Store the final player in the game manager.
-			gm.SetWinningPlayer(alivePlayer);
+            // Store the final player in the game manager.
+            GameManager.SetWinningPlayer(alivePlayer);
 
 			// Load the end scene.
 			SceneManager.LoadScene(3);

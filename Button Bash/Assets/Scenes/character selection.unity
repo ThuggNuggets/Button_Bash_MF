@@ -996,7 +996,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
+  m_Texture: {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1024,12 +1024,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
+  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
   - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
   m_DeadZone: 0.01
-  m_PlayerNumber: 2
+  m_PlayerNumber: 1
 --- !u!1 &963739745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
+  m_Texture: {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1248,12 +1248,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
+  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
   - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
   m_DeadZone: 0.01
-  m_PlayerNumber: 3
+  m_PlayerNumber: 2
 --- !u!1 &1047908262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad24277ffe3897b4d88d5e3340406e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CurrentGameState: 0
 --- !u!4 &1310263761
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,12 +1766,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
+  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
   - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
   m_DeadZone: 0.01
-  m_PlayerNumber: 4
+  m_PlayerNumber: 3
 --- !u!1 &1481364282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,7 +2421,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
+  m_Texture: {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2450,12 +2449,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
+  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
   - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
   - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
   m_DeadZone: 0.01
-  m_PlayerNumber: 1
+  m_PlayerNumber: 0
 --- !u!1 &1833318121
 GameObject:
   m_ObjectHideFlags: 0

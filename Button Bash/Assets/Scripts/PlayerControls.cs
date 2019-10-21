@@ -65,7 +65,6 @@ public class PlayerControls : MonoBehaviour
     //rigidbody
     private Rigidbody body;
     //game manager
-    GameManager gm;
     private void Start()
     {
         switch (playerNumber)
@@ -110,28 +109,27 @@ public class PlayerControls : MonoBehaviour
         line = GetComponent<LineRenderer>();
         currentAmmo = maxAmmo;
         body = GetComponent<Rigidbody>();
-        gm = GameManager.GetInstance();
         switch(playerNumber)
         {
             case 0:
                 {
-                    playerNumber = gm.GetPlayerCharacter(0);
+                    playerNumber = GameManager.GetPlayerCharacter(0);
                     
                     break;
                 }
             case 1:
                 {
-                    playerNumber = gm.GetPlayerCharacter(1);
+                    playerNumber = GameManager.GetPlayerCharacter(1);
                     break;
                 }
             case 2:
                 {
-                    playerNumber = gm.GetPlayerCharacter(2);
+                    playerNumber = GameManager.GetPlayerCharacter(2);
                     break;
                 }
             case 3:
                 {
-                    playerNumber = gm.GetPlayerCharacter(3);
+                    playerNumber = GameManager.GetPlayerCharacter(3);
                     break;
                 }
         }
