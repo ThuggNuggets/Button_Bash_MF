@@ -140,12 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f462e09d74ec0f344826ad0be925f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CharacterSpeed: 1
+  m_CharacterSpeed: 10
   playerAmmoText: {fileID: 0}
   maxAmmo: 5
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_ShootingCooldown: 0
+  m_ShootingCooldown: 0.5
   playerNumber: 2
   m_Colour: 1
   buttonSpawnDistance: 0.5
