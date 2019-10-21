@@ -24,6 +24,7 @@ public class RubixBehaviour : MonoBehaviour
     {
         if (health <= 0)
         {
+           
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);

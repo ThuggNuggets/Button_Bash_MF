@@ -319,9 +319,4 @@ public class PlayerControls : MonoBehaviour
             canShoot = false;
         }
     }
-
-    private void setCharacter()
-    {
-
-    }
 }

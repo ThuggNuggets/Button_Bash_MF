@@ -13,7 +13,6 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
-    private Rigidbody rb;
 
     private void Awake()
     {

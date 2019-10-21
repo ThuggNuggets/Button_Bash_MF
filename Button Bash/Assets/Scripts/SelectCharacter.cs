@@ -42,22 +42,22 @@ public class SelectCharacter : MonoBehaviour
 		{
 				// Player 1.
 			case 0:
-				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.First);
+				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.First);
 				break;
 
 				// Player 2.
 			case 1:
-				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Second);
+				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Second);
 				break;
 
 				// Player 3.
 			case 2:
-				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Third);
+				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Third);
 				break;
 
 				// Player 4.
 			case 3:
-				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Fourth);
+				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Fourth);
 				break;
 
 				// Something is wrong.
