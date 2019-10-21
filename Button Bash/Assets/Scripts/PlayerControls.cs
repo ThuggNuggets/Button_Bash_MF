@@ -111,31 +111,31 @@ public class PlayerControls : MonoBehaviour
         currentAmmo = maxAmmo;
         body = GetComponent<Rigidbody>();
         gm = GameManager.GetInstance();
-        switch(gameObject.tag)
+        switch(playerNumber)
         {
-                case "Player1":
+            case 0:
                 {
                     playerNumber = gm.GetPlayerCharacter(0);
                     
                     break;
                 }
-            case "Player2":
+            case 1:
                 {
                     playerNumber = gm.GetPlayerCharacter(1);
                     break;
                 }
-            case "Player3":
+            case 2:
                 {
                     playerNumber = gm.GetPlayerCharacter(2);
                     break;
                 }
-            case "Player4":
+            case 3:
                 {
                     playerNumber = gm.GetPlayerCharacter(3);
                     break;
                 }
         }
-        playerNumber++;
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -150,33 +150,11 @@ public class PlayerControls : MonoBehaviour
     // Update the player.
     void FixedUpdate()
     {//movement on the Z-axis
-        switch (playerNumber)
-        {
-            case 0:
-                {
-                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
-                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
-                    break;
-                }
-            case 1:
-                {
-                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
-                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
-                    break;
-                }
-            case 2:
-                {
-                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
-                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
-                    break;
-                }
-            case 3:
-                {
-                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
-                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
-                    break;
-                }
-        }
+
+                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)playerNumber+1);
+                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)playerNumber+1);
+  
+   ////////change tags
 
         //checks if there is input to the selected controls
         float translation = xAxis * m_CharacterSpeed;
@@ -371,5 +349,10 @@ public class PlayerControls : MonoBehaviour
         {
             canShoot = false;
         }
+    }
+
+    private void setCharacter()
+    {
+
     }
 }

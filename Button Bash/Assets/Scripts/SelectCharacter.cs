@@ -41,22 +41,22 @@ public class SelectCharacter : MonoBehaviour
 		switch (m_PlayerNumber)
 		{
 				// Player 1.
-			case 1:
+			case 0:
 				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.First);
 				break;
 
 				// Player 2.
-			case 2:
+			case 1:
 				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Second);
 				break;
 
 				// Player 3.
-			case 3:
+			case 2:
 				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Third);
 				break;
 
 				// Player 4.
-			case 4:
+			case 3:
 				m_AButtonPressed = XCI.GetButton(XboxButton.A, XboxController.Fourth);
 				break;
 
@@ -78,11 +78,14 @@ public class SelectCharacter : MonoBehaviour
 	// Lock in the character.
 	public void LockInCharacter()
 	{
+		// Get the game manager.
+		GameManager gm = GameManager.GetInstance();
+
 		// Get the character the player selected.
 		int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
 
 		// Add the player image box to the game manager.
-		GameManager.AddPlayerCharacter(playerSelect, m_PlayerNumber - 1);
+		gm.GetComponent<GameManager>().AddPlayerCharacter(m_PlayerNumber, playerSelect);
 
 		// Set that the character has been locked in to true.
 		m_CharacterLockedIn = true;

@@ -19,6 +19,9 @@ public class CharacterSelect : MonoBehaviour
 	// The controller's x axis.
 	private float m_XAxis;
 
+	// The controller's y axis.
+	private float m_YAxis;
+
 	// Dead zone for the controllers.
 	public float m_DeadZone = 0.05f;
 
@@ -31,18 +34,26 @@ public class CharacterSelect : MonoBehaviour
 	// On startup.
 	private void Awake()
 	{
-		// Check the name of the current image showing the currently selected character
-		// and assign the index of the current image to match the current image in the array.
-		// Example: neilA is at index 1 of the array of images, so set the index to 1 at startup.
-
-		if (GetComponent<RawImage>().texture.name == "Naiciam")
-			m_CurrentImage = 0;
-		else if (GetComponent<RawImage>().texture.name == "neilA")
-			m_CurrentImage = 1;
-		else if (GetComponent<RawImage>().texture.name == "nemo")
-			m_CurrentImage = 2;
-		else if (GetComponent<RawImage>().texture.name == "sesame")
-			m_CurrentImage = 3;
+        // If the name of the image is "nemo", set the current image to 0.
+        if (GetComponent<RawImage>().texture.name == "nemo")
+        {
+            m_CurrentImage = 0;
+        }
+        // If the name of the image is "Naicim", set the current image to 1.
+        else if (GetComponent<RawImage>().texture.name == "Naiciam")
+        {
+            m_CurrentImage = 1;
+        }
+        // If the name of the image is "neilA", set the current image to 2.
+        else if (GetComponent<RawImage>().texture.name == "neilA")
+        {
+            m_CurrentImage = 2;
+        }
+        // If the name of the image is "sesame", set the current image to 3.
+        else if (GetComponent<RawImage>().texture.name == "sesame")
+        {
+            m_CurrentImage = 3;
+        }
 
 		// Create a new unity event.
 		m_NextCharacter = new UnityEvent();
@@ -58,23 +69,27 @@ public class CharacterSelect : MonoBehaviour
 		switch(m_PlayerNumber)
 		{
 				// Player 1.
-			case 1:
+			case 0:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
+				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.First);
 				break;
 
 				// Player 2.
-			case 2:
+			case 1:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
+				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Second);
 				break;
 
 				// Player 3.
-			case 3:
+			case 2:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
+				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Third);
 				break;
 
 				// Player 4.
-			case 4:
+			case 3:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
+				m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, XboxController.Fourth);
 				break;
 
 				// Something is wrong.
@@ -88,16 +103,21 @@ public class CharacterSelect : MonoBehaviour
 		{
 			// If the left stick's x axis is greater than the dead zone, move to the next character.
 			if (m_XAxis > m_DeadZone)
+			{
 				NextCharacter();
+			}
+
 			// Else if the left stick's x axis is less than negative the dead zone, move to the previous character.
 			else if (m_XAxis < -m_DeadZone)
+			{
 				PrevCharacter();
+			}
 
-			// Set that the left stick has been released to false.
+			// Set that the stick has been released to false.
 			m_LeftStickHasBeenReleased = false;
 		}
 
-		// Else if the left stick's x axis is less than the dead zone and greater than the negative dead zone, set that the left stick has been released to true.
+		// Else if the left stick's x axis is less than the dead zone and greater than the negative dead zone, set that the stick has been released to true.
 		else if (m_XAxis < m_DeadZone && m_XAxis > -m_DeadZone)
 			m_LeftStickHasBeenReleased = true;
 	}
@@ -109,10 +129,10 @@ public class CharacterSelect : MonoBehaviour
 		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
 		{
 			// If the current image is less than the amount of portraits there are - 1, increment the current image.
-			// So we don't go outside the array.
 			if (m_CurrentImage < m_PlayerPortraits.Length - 1)
 				++m_CurrentImage;
-			// Else, set the current image to 0, because we are at the end of the array.
+
+			// Else, set the current image to 0.
 			else
 				m_CurrentImage = 0;
 
@@ -127,10 +147,10 @@ public class CharacterSelect : MonoBehaviour
 		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
 		{
 			// If the current image is less than the amount of portraits there are - 1, decrement the current image.
-			// So we don't go outside the array.
 			if (m_CurrentImage > 0)
 				--m_CurrentImage;
-			// Else, set the current image to the amount of portraits there are - 1, because we are at the end of the array.
+
+			// Else, set the current image to the amount of portraits there are - 1.
 			else
 				m_CurrentImage = m_PlayerPortraits.Length - 1;
 
@@ -140,7 +160,7 @@ public class CharacterSelect : MonoBehaviour
 	}
 
 	// Get the current image of the image box.
-	// Returns: the index of current image of the image box.
+	// Returns: the current image of the image box.
 	public int GetCurrentImage() { return m_CurrentImage; }
 
 	// Get the player number.
