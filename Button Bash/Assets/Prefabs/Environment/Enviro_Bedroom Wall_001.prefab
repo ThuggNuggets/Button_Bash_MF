@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7512996274897774264}
   - component: {fileID: 7512996274898544280}
   - component: {fileID: 7512996274899543128}
+  - component: {fileID: 245072173}
   m_Layer: 0
   m_Name: Bedroom_Wall_left3
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &245072173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512996274897615512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4296927, y: 84.418, z: 125.672485}
+  m_Center: {x: -0.14287296, y: -109.2211, z: -0.0000057220473}
 --- !u!1 &7512996274897615514
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +114,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7512996274897615514}
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -72.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

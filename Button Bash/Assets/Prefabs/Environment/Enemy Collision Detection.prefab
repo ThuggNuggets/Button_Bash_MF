@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5252668965457007760}
   - component: {fileID: 8695477744522173808}
   - component: {fileID: 4890858906220733116}
+  - component: {fileID: 6808261314332480247}
   m_Layer: 0
   m_Name: Collider
   m_TagString: endingTrigger
@@ -91,6 +92,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.2562437, z: 32.398544}
   m_Center: {x: 0, y: 0.12812185, z: 0.97459984}
+--- !u!114 &6808261314332480247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808261314332480246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8da13a48a859ff48b5aeb4d49cf8467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player3: {fileID: 0}
+  player4: {fileID: 0}
 --- !u!1 &7602472435505701175
 GameObject:
   m_ObjectHideFlags: 0

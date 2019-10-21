@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552107870225001803}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 2.8, z: -5}
+  m_LocalPosition: {x: 10, y: 3.06, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8795633859476986802}
@@ -109,7 +109,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.687385, y: 7.5652914, z: 5.059069}
+  m_Size: {x: 2.687385, y: 7, z: 5.059069}
   m_Center: {x: 0, y: 0, z: -0.00000023841858}
 --- !u!114 &308056784
 MonoBehaviour:
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterSpeed: 10
   playerAmmoText: {fileID: 0}
-  maxAmmo: 5
+  maxAmmo: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
     type: 3}
-  m_ShootingCooldown: 0.5
+  m_ShootingCooldown: 0.8
   playerNumber: 1
   m_Colour: 0
   buttonSpawnDistance: 0.5
@@ -150,7 +150,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: fb46a3fffcc2fba47b2e29f1aa0eb0ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,7 +175,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:

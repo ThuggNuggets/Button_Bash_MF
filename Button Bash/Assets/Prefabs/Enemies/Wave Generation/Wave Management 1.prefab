@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: 4707640347980045822}
   - {fileID: 4881813708629735996}
   m_WaveTimer: 15
+  m_PlayerLivesCollider: {fileID: 0}
 --- !u!1 &1295850233441699238
 GameObject:
   m_ObjectHideFlags: 0
