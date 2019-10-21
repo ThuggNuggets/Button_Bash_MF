@@ -17,12 +17,6 @@ public class MoveToNextScene : MonoBehaviour
 
 	public void NextScene()
 	{
-		// Get the instance of the game manager.
-		GameManager gm = GameManager.GetInstance();
-
-		// Set the state of the game manager to playing.
-		gm.SetGameState(GameManager.GameStates.Playing);
-
 		// Load the next scene.
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
