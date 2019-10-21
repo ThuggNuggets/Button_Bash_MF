@@ -58,27 +58,27 @@ public class CharacterSelect : MonoBehaviour
 		// Check the player number of this character select instance.
 		switch(m_PlayerNumber)
 		{
-				// Player 1.
+			// Player 1 input.
 			case 0:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
 				break;
 
-				// Player 2.
+			// Player 2 input.
 			case 1:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
 				break;
 
-				// Player 3.
+			// Player 3 input.
 			case 2:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
 				break;
 
-				// Player 4.
+			// Player 4 input.
 			case 3:
 				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
 				break;
 
-				// Something is wrong.
+				// An image box doesn't have a proper player number assigned, display a message to reflect this.
 			default:
 				Debug.Log("One of the image boxes doesn't have a player number assigned.");
 				break;
@@ -89,15 +89,10 @@ public class CharacterSelect : MonoBehaviour
 		{
 			// If the left stick's x axis is greater than the dead zone, move to the next character.
 			if (m_XAxis > m_DeadZone)
-			{
 				NextCharacter();
-			}
-
 			// Else if the left stick's x axis is less than negative the dead zone, move to the previous character.
 			else if (m_XAxis < -m_DeadZone)
-			{
 				PrevCharacter();
-			}
 
 			// Set that the stick has been released to false.
 			m_LeftStickHasBeenReleased = false;
@@ -117,7 +112,6 @@ public class CharacterSelect : MonoBehaviour
 			// If the current image is less than the amount of portraits there are - 1, increment the current image.
 			if (m_CurrentImage < m_PlayerPortraits.Length - 1)
 				++m_CurrentImage;
-
 			// Else, set the current image to 0.
 			else
 				m_CurrentImage = 0;
@@ -135,7 +129,6 @@ public class CharacterSelect : MonoBehaviour
 			// If the current image is less than the amount of portraits there are - 1, decrement the current image.
 			if (m_CurrentImage > 0)
 				--m_CurrentImage;
-
 			// Else, set the current image to the amount of portraits there are - 1.
 			else
 				m_CurrentImage = m_PlayerPortraits.Length - 1;

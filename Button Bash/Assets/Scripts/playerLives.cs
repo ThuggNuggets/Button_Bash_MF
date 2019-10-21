@@ -30,6 +30,8 @@ public class playerLives : MonoBehaviour
     //holds colour variable
     Colours.Colour enemyColour = Colours.Colour.None;
 
+	public GameObject[] m_HealthBalloons;
+
 	// How many players have lost all their lives.
 	private int m_PlayerDeathIterator = 0;
 
@@ -45,7 +47,7 @@ public class playerLives : MonoBehaviour
         // If the enemy reaches the end trigger deal damage to specific player
         if(collision.gameObject.tag == "letterBlock" || collision.gameObject.tag == "teddyBear" || collision.gameObject.tag == "rubix" || collision.gameObject.tag == "babushkaSmall" || collision.gameObject.tag == "babushkaMedium" || collision.gameObject.tag == "babushkaLarge" )
         {
-        enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
+			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
         }
         else
         {
@@ -65,6 +67,8 @@ public class playerLives : MonoBehaviour
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (player1Lives == 0)
 							m_PlayerDeathIterator++;
+
+						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
                     }
                     break;
                 }
@@ -80,6 +84,8 @@ public class playerLives : MonoBehaviour
 						// If player 2's lives are 0, increase the amount of players that have no lives.
 						if (player2Lives == 0)
 							m_PlayerDeathIterator++;
+
+						m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }
@@ -94,6 +100,8 @@ public class playerLives : MonoBehaviour
 						// If player 3's lives are 0, increase the amount of players that have no lives.
 						if (player3Lives == 0)
 							m_PlayerDeathIterator++;
+
+						m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }
@@ -108,6 +116,8 @@ public class playerLives : MonoBehaviour
 						// If player 4's lives are 0, increase the amount of players that have no lives.
 						if (player4Lives == 0)
 							m_PlayerDeathIterator++;
+
+						m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }
