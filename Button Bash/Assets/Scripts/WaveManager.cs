@@ -31,6 +31,12 @@ public class WaveManager : MonoBehaviour
 	// Iterates through the enemies in the waves.
 	private int m_WaveEnemyIterator = 0;
 
+	// The script that is storing all the player's lives
+	private playerLives m_PlayerLives;
+
+	// The collider that holds the player lives.
+	public GameObject m_PlayerLivesCollider;
+
 	// Basically constructor.
     void Awake()
     {
@@ -42,6 +48,8 @@ public class WaveManager : MonoBehaviour
 
 		// Set the timer for spawns.
 		m_WaveEnemySpawningTimer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
+
+		m_PlayerLives = m_PlayerLivesCollider.GetComponent<playerLives>();
     }
 
     // Update the wave manager.
@@ -60,10 +68,9 @@ public class WaveManager : MonoBehaviour
 					if (m_CodeWaveTimer <= 0.0f)
 					{
 						// If the wave iterator does not equal the amount of waves there are - 1, increment the waves iterator.
+						// -1 because length is 1 more than the index of the final element of the array.
 						if (m_WaveIterator != m_Waves.Length - 1)
-							// Increment the wave iterator to the next wave.
 							++m_WaveIterator;
-
 						// Else, reset the wave iterator, restarting the waves.
 						else
 							m_WaveIterator = 0;
@@ -86,6 +93,68 @@ public class WaveManager : MonoBehaviour
 				// Else, spawn an enemy.
 				else
 				{
+					// Get the wave information.
+					WaveInformation waveInformation = m_Waves[m_WaveIterator].GetComponent<WaveInformation>();
+
+					// Check the colour of the up coming enemy.
+					switch (waveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponentInChildren<EnemyBehaviour>().m_Colour)
+					{
+							// If the enemy is blue.
+						case Colours.Colour.Blue:
+							// Get the lives of player 1 (the blue player.)
+							int p1Life;
+							int.TryParse(m_PlayerLives.player1.text, out p1Life);
+
+							// If player 1 is dead, skip over this enemy.
+							if (p1Life <= 0)
+							{
+								m_WaveEnemyIterator++;
+								return;
+							}
+							break;
+
+							// If the enemy is red.
+						case Colours.Colour.Red:
+							// Get the lives of player 2 (the red player.)
+							int p2Life;
+							int.TryParse(m_PlayerLives.player2.text, out p2Life);
+
+							// If player 2 is dead, skip over this enemy.
+							if (p2Life <= 0)
+							{
+								m_WaveEnemyIterator++;
+								return;
+							}
+							break;
+
+							// If the enemy is green.
+						case Colours.Colour.Green:
+							// Get the lives of player 3 (the green player.)
+							int p3Life;
+							int.TryParse(m_PlayerLives.player3.text, out p3Life);
+
+							// If player 3 is dead, skip over this enemy.
+							if (p3Life <= 0)
+							{
+								m_WaveEnemyIterator++;
+								return;
+							}
+							break;
+
+							// If the enemy is yellow.
+						case Colours.Colour.Yellow:
+							// Get the lives of player 4 (the yellow player.)
+							int p4Life;
+							int.TryParse(m_PlayerLives.player4.text, out p4Life);
+
+							// If player 4 is dead, skip over this enemy.
+							if (p4Life <= 0)
+							{
+								m_WaveEnemyIterator++;
+								return;
+							}
+							break;
+					}
 					// Try to spawn an enemy, if an exception is thrown, do nothing.
 					try
 					{
@@ -98,16 +167,12 @@ public class WaveManager : MonoBehaviour
 						// Increase the spawn point's y by 1, so the enemies don't spawn in the ground.
 						spawnPos.y += 1.0f;
 
-						// Get the wave information.
-						WaveInformation waveInformation = m_Waves[m_WaveIterator].GetComponent<WaveInformation>();
-
 						// Instantiate an enemy, getting what type it is from the wave's enemies, spawning at the spawn positoin, with the enemy spawn point's rotation.
 						GameObject enemy = Instantiate(waveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
 						// Reset the timer.
 						m_WaveEnemySpawningTimer = Random.Range(m_MinSpawnTime, m_MaxSpawnTime);
 					}
-					// If an exception was thrown, do nothing.
 					catch { }
 
 					// Increment the wave enemy iterator.
