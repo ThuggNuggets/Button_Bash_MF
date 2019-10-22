@@ -69,22 +69,20 @@ public class SelectCharacter : MonoBehaviour
 
 				// Something is wrong.
 			default:
-				Debug.Log("One of the image boxes doesn't have a player number assigned.");
+				Debug.Log("An image box has the player number " + m_PlayerNumber + " assigned. The player numbers are between 0 - 3.");
 				break;
 		}
 
-		// If the A button has been pressed, lock in the current character.
 		if (m_AButtonPressed == true)
 		{
-			// If a character hasn't been locked in.
+			// If a character hasn't been locked in, lock in the character.
 			if (m_CharacterLockedIn == false)
 				LockInCharacter();
 		}
 
-		// If the B button has been pressed, unlock the current character.
 		if (m_BButtonPressed == true)
 		{
-			// If a character has been locked in.
+			// If a character has been locked in, unlock the character.
 			if (m_CharacterLockedIn == true)
 				UnlockCharacter();
 		}
@@ -103,7 +101,7 @@ public class SelectCharacter : MonoBehaviour
 		m_CharacterLockedIn = true;
 
 		// Set the select button to not be interactable (just for representation).
-		gameObject.transform.parent.GetChild(2).GetComponent<Button>().interactable = false;
+		GetComponent<Button>().interactable = false;
 	}
 
 	// Unlock the currently selected character.
@@ -119,6 +117,6 @@ public class SelectCharacter : MonoBehaviour
 		m_CharacterLockedIn = false;
 
 		// Set the select button to be interactable (just for representation).
-		gameObject.transform.parent.GetChild(2).GetComponent<Button>().interactable = true;
+		GetComponent<Button>().interactable = true;
 	}
 }
