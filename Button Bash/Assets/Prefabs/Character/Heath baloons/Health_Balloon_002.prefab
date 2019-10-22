@@ -91,8 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0054b8312f4084240ba4725c811e74f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Timer: 3
+  m_DespawnTimer: 5
   m_BalloonUpwardFloatForce: 100
+  m_SwingOffset: 3.68
+  m_SwingSpeed: 1.2
 --- !u!54 &3086507702002203395
 Rigidbody:
   m_ObjectHideFlags: 0

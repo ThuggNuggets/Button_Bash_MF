@@ -149,9 +149,6 @@ MonoBehaviour:
   verticalFling: 85
   xFling: 80
   zFling: 50
-  verticalFling: 50
-  xFling: 10
-  zFling: 10
 --- !u!82 &7067780440680155516
 AudioSource:
   m_ObjectHideFlags: 0

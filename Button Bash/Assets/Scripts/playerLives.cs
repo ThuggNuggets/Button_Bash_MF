@@ -42,6 +42,9 @@ public class playerLives : MonoBehaviour
         if(collision.gameObject.tag == "letterBlock" || collision.gameObject.tag == "teddyBear" || collision.gameObject.tag == "rubix" || collision.gameObject.tag == "babushkaSmall" || collision.gameObject.tag == "babushkaMedium" || collision.gameObject.tag == "babushkaLarge" )
         {
 			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
+
+            // alex sound
+            GetComponent<AudioSource>().Play();
         }
         else
         {
