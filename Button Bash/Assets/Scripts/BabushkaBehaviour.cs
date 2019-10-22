@@ -20,11 +20,6 @@ public class BabushkaBehaviour : MonoBehaviour
     // the size reduction of the next level babushka
     public float scale = 1;
 
-    // The colour of the enemy.
-    public Colours.Colour m_Colour = Colours.Colour.None;
-
-    // The material of the enemy.
-    private Material m_Material;
     //flinging the enemy when they have no health
     public float verticalFling = 50;
     public float xFling = 10;
@@ -39,9 +34,6 @@ public class BabushkaBehaviour : MonoBehaviour
         {
             addedVector = new Vector3(0, 0, -3);
         }
-
-        // Get the material of this enemy.
-        m_Material = GetComponent<Renderer>().material;
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         xFling = Random.Range(-xFling, -minXFling);
