@@ -29,7 +29,6 @@ public class BabushkaBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
-    private Rigidbody rb;
     private void Awake()
     {
         if(leftWall.transform.position.z + 13 > transform.position.z)
@@ -44,7 +43,8 @@ public class BabushkaBehaviour : MonoBehaviour
         // Get the material of this enemy.
         m_Material = GetComponent<Renderer>().material;
         //get random fling values
-        xFling = Random.Range(-xFling, xFling);
+        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
+        xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
     }
 

@@ -12,12 +12,12 @@ public class RubixBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
-    private Rigidbody rb;
     private void Awake()
     {
         m_colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
         //get random fling values
-        xFling = Random.Range(-xFling, xFling);
+        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
+        xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
     }
     private void FixedUpdate()

@@ -17,7 +17,8 @@ public class TeddyBearBehaviour : MonoBehaviour
     private void Awake()
     {
         //get random fling values
-        xFling = Random.Range(-xFling, xFling);
+       float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
+        xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
     }
     private void FixedUpdate()

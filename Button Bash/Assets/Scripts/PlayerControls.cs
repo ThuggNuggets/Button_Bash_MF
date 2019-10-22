@@ -21,8 +21,8 @@ public class PlayerControls : MonoBehaviour
     public Text playerAmmoText;
 
     // self-explanatory
-    public int maxAmmo = 5;
-    private int currentAmmo;
+    public int m_maxAmmo = 5;
+    private int m_currentAmmo;
     private bool canShoot;
 
 
@@ -43,20 +43,20 @@ public class PlayerControls : MonoBehaviour
 
 	// If the character is currently changing lanes.
 	private bool m_ChangingLanes = false;
-    float laneChangingSpeed = 0.0f;
+    public float m_LaneChangingDistance = 0.0f;
 
     // The player's colour.
-    public int playerNumber;
+    public int m_playerNumber;
 	public Colours.Colour m_Colour;
 
     //how far ahead the button will spawn
-    public float buttonSpawnDistance = 0.5f;
-    public float buttonSpawnHeight = 0.5f;
+    public float m_buttonSpawnDistance = 0.5f;
+    public float m_buttonSpawnHeight = 0.5f;
 
     //input from controllers
-    private float xAxis;
-    private float yAxis;
-    private float deadZone = 0.5f;
+    private float m_xAxis;
+    private float m_yAxis;
+    private float m_deadZone = 0.5f;
 
     LineRenderer line = new LineRenderer();
     //stop running into the back of other players
@@ -64,7 +64,9 @@ public class PlayerControls : MonoBehaviour
     private Vector3 rightHand = new Vector3(0, 0, 1);
     //rigidbody
     private Rigidbody body;
-   
+
+    //lane changing speed
+    public float m_laneChangingSpeed = 1;
     // Constructor.
     void Awake()
     {
@@ -72,29 +74,29 @@ public class PlayerControls : MonoBehaviour
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
         line = GetComponent<LineRenderer>();
-        currentAmmo = maxAmmo;
+        m_currentAmmo = m_maxAmmo;
         body = GetComponent<Rigidbody>();
-        switch(playerNumber)
+        switch(m_playerNumber)
         {
             case 0:
                 {
-                    playerNumber = GameManager.GetPlayerCharacter(0);
+                    m_playerNumber = GameManager.GetPlayerCharacter(0);
                     
                     break;
                 }
             case 1:
                 {
-                    playerNumber = GameManager.GetPlayerCharacter(1);
+                    m_playerNumber = GameManager.GetPlayerCharacter(1);
                     break;
                 }
             case 2:
                 {
-                    playerNumber = GameManager.GetPlayerCharacter(2);
+                    m_playerNumber = GameManager.GetPlayerCharacter(2);
                     break;
                 }
             case 3:
                 {
-                    playerNumber = GameManager.GetPlayerCharacter(3);
+                    m_playerNumber = GameManager.GetPlayerCharacter(3);
                     break;
                 }
         }
@@ -105,8 +107,8 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "ammopile")
         {
-            currentAmmo = maxAmmo;
-            playerAmmoText.text = maxAmmo.ToString();
+            m_currentAmmo = m_maxAmmo;
+            playerAmmoText.text = m_maxAmmo.ToString();
         }
     }
 
@@ -114,12 +116,12 @@ public class PlayerControls : MonoBehaviour
     void FixedUpdate()
     {//movement on the Z-axis
 
-                    xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)playerNumber+1);
-                    yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)playerNumber+1);
+                    m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber+1);
+                    m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber+1);
   
 
         //checks if there is input to the selected controls
-        float translation = xAxis * m_CharacterSpeed;
+        float translation = m_xAxis * m_CharacterSpeed;
         //so the player moves at playerSpeed units per sec not per frame
         translation *= Time.deltaTime;
         //moves the player
@@ -133,51 +135,49 @@ public class PlayerControls : MonoBehaviour
 
 
         // Move up a lane.
-        if (yAxis > deadZone)
+        if (m_yAxis > m_deadZone)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position+leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1) || Physics.Raycast(transform.position +rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
+            if (!Physics.Raycast(transform.position+leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1)  &&  !Physics.Raycast(transform.position +rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
             {
-                Debug.Log("HIT forwards");
-            }
-            else
-            {
-            changeLanes(Lane.FrontLane, "Rail");
+                if (!m_ChangingLanes)
+                {
+                    changeLanes(Lane.FrontLane, "Rail");
+                }
             }
         }
 		// Move down a lane.
-		if (yAxis < -deadZone)
+		if (m_yAxis < -m_deadZone)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + leftHand, transform.TransformDirection(Vector3.right), out hit, 3, 1) || Physics.Raycast(transform.position + rightHand, transform.TransformDirection(Vector3.right), out hit, 3, 1))
+            if (!Physics.Raycast(transform.position + leftHand, transform.TransformDirection(Vector3.right), out hit, 3, 1) && !Physics.Raycast(transform.position + rightHand, transform.TransformDirection(Vector3.right), out hit, 3, 1))
             {
-                Debug.Log("HIT forwards");
-            }
-            else
-            {
-                Debug.Log("NO HIT FORWARDS");
-            changeLanes(Lane.BackLane, "Rail (1)");
+                if (!m_ChangingLanes)
+                {
+                    changeLanes(Lane.BackLane, "Rail (1)");
+                }
             }
         }
        
-        // If the character is currently moving between lanes.Z
-        if (laneChangingSpeed > 1)
+        // If the character is currently moving between lanes.x
+        if (m_LaneChangingDistance > 1)
         {
-            laneChangingSpeed = 1;
+            m_LaneChangingDistance = 1;
         }
 
         if (m_ChangingLanes)
 		{
-            if(laneChangingSpeed < 1)
+            if(m_LaneChangingDistance < 1)
             {
-                laneChangingSpeed +=  Time.deltaTime * m_CharacterSpeed;
+
+                m_LaneChangingDistance +=  Time.deltaTime * m_laneChangingSpeed;
                 m_TargetLane.z = transform.position.z;
                 m_TargetLane.y = transform.position.y;
-                transform.position = Vector3.Lerp(transform.position, m_TargetLane, laneChangingSpeed);
+                transform.position = Vector3.Lerp(transform.position, m_TargetLane, m_LaneChangingDistance);
             }
             else 
             {
-              laneChangingSpeed = 0.0f;
+              m_LaneChangingDistance = 0.0f;
 		      m_ChangingLanes = false;
             }
 		}
@@ -193,11 +193,11 @@ public class PlayerControls : MonoBehaviour
             {
                 Vector3[] points = new Vector3[2];
                 points[0] = transform.position;
-                points[1] = aim.point;
+                points[1] = new Vector3 (aim.point.x,transform.position.y,aim.point.z);
                 line.SetPositions(points);
             }
             // Shoot a bullet.
-            switch (playerNumber)
+            switch (m_playerNumber)
             {
                 case 0:
                     {
@@ -210,8 +210,8 @@ public class PlayerControls : MonoBehaviour
                                 ShootBullet();
                                 m_ShootingCooldown = m_MaxShootingCooldown;
                                 // decrement this player's ammo upon shooting
-                                --currentAmmo;
-                                playerAmmoText.text = currentAmmo.ToString();
+                                --m_currentAmmo;
+                                playerAmmoText.text = m_currentAmmo.ToString();
                             }
 		            }
                         break;
@@ -225,8 +225,8 @@ public class PlayerControls : MonoBehaviour
                             {
                                 ShootBullet();
                                 m_ShootingCooldown = m_MaxShootingCooldown;
-                                --currentAmmo;
-                                playerAmmoText.text = currentAmmo.ToString();
+                                --m_currentAmmo;
+                                playerAmmoText.text = m_currentAmmo.ToString();
                             }
                         }
                         break;
@@ -240,8 +240,8 @@ public class PlayerControls : MonoBehaviour
                             {
                                 ShootBullet();
                                 m_ShootingCooldown = m_MaxShootingCooldown;
-                                --currentAmmo;
-                                playerAmmoText.text = currentAmmo.ToString();
+                                --m_currentAmmo;
+                                playerAmmoText.text = m_currentAmmo.ToString();
                             }
                         }
                         break;
@@ -255,8 +255,8 @@ public class PlayerControls : MonoBehaviour
                             {
                                 ShootBullet();
                                 m_ShootingCooldown = m_MaxShootingCooldown;
-                                --currentAmmo;
-                                playerAmmoText.text = currentAmmo.ToString();
+                                --m_currentAmmo;
+                                playerAmmoText.text = m_currentAmmo.ToString();
                             }
                         }
                         break;
@@ -283,7 +283,7 @@ public class PlayerControls : MonoBehaviour
 	private void ShootBullet()
 	{
             // The spawn point of the bullet.
-            Vector3 bulletSpawnPoint = new Vector3((transform.position.x - buttonSpawnDistance), (transform.position.y + buttonSpawnHeight), transform.position.z);
+            Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 
             // Clone the bullet at the bullet spawn point.
             GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
@@ -310,7 +310,7 @@ public class PlayerControls : MonoBehaviour
     // checks if current ammo is not zero, sets canShoot variable to false if at 0
     private void AmmoCheck()
     {
-        if (currentAmmo > 0)
+        if (m_currentAmmo > 0)
         {
             canShoot = true;
         }
