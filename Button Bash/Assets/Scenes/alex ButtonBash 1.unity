@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -178,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -396,7 +396,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.8867924, g: 0.82277644, b: 0.3973834, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -445,11 +445,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -504,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -622,11 +622,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -682,6 +677,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (11)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
 --- !u!1001 &257598775
@@ -691,11 +691,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (14)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -750,6 +745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -844,6 +844,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335934767}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &399908601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399908603}
+  - component: {fileID: 399908602}
+  m_Layer: 0
+  m_Name: Directional Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &399908602
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399908601}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 0.509434, g: 0.37246352, b: 0.37246352, a: 0.78431374}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &399908603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399908601}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: -25.5, y: 78, z: -41.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &460534004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
@@ -857,11 +926,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -916,6 +980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -1149,11 +1218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1209,6 +1273,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (9)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
 --- !u!1001 &759084874
@@ -1218,11 +1287,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1277,6 +1341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -1386,11 +1455,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1446,6 +1510,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
 --- !u!1001 &1108196118
@@ -1455,11 +1524,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1514,6 +1578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -1750,11 +1819,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1809,6 +1873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -1910,11 +1979,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (16)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1969,6 +2033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -2043,35 +2112,35 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayerLivesCollider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1609854368}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.size
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[0]
       value: 
-      objectReference: {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b,
+      objectReference: {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[1]
       value: 
-      objectReference: {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc,
+      objectReference: {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[2]
       value: 
-      objectReference: {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0,
+      objectReference: {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[3]
       value: 
-      objectReference: {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703,
+      objectReference: {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
@@ -2385,6 +2454,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605542834}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1609854368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4454248130641911273, guid: 525438b306f917d46801f7451b3f56aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 506474975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1686592709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2392,11 +2467,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2452,6 +2522,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
 --- !u!4 &1742335704 stripped
@@ -2467,11 +2542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2526,6 +2596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
@@ -2627,11 +2702,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2687,6 +2757,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (12)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
 --- !u!1001 &1984288748
@@ -2704,7 +2779,7 @@ PrefabInstance:
     - target: {fileID: 5814669578405693385, guid: 154029635902eee47b6810a29a575f66,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5814669578405693381, guid: 154029635902eee47b6810a29a575f66,
         type: 3}
@@ -2889,11 +2964,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506474977}
     m_Modifications:
-    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_Book_001 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 46655942022040802, guid: 95ae0e0f76f36c241b366641bb0fd12f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2948,6 +3018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 46655942022205634, guid: 95ae0e0f76f36c241b366641bb0fd12f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_Book_001 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95ae0e0f76f36c241b366641bb0fd12f, type: 3}
