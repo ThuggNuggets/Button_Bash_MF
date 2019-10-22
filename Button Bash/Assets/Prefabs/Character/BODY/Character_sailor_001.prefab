@@ -156,14 +156,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterSpeed: 14
   playerAmmoText: {fileID: 0}
-  maxAmmo: 15
+  m_maxAmmo: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
     type: 3}
   m_ShootingCooldown: 0.65
-  playerNumber: 0
+  m_LaneChangingDistance: 0
+  m_playerNumber: 0
   m_Colour: 2
-  buttonSpawnDistance: 2
-  buttonSpawnHeight: 0.5
+  m_buttonSpawnDistance: 2
+  m_buttonSpawnHeight: 0.3
+  m_laneChangingSpeed: 2
 --- !u!120 &7319452716897844635
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -173,7 +175,7 @@ LineRenderer:
   m_GameObject: {fileID: 976318150993130304}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
