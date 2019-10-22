@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 
 //This code is used to write to 4 different texts on a UI and hold the remaining lives each player has
-//REQUIRES 4 Text inputs one for each player
 // player 1 - blue
 // player 2 - red
 // player 3 - green
@@ -18,15 +17,10 @@ public class playerLives : MonoBehaviour
     //starting lives for the players
     public int maxHealth = 5;
 
-    private int player1Lives;
-    private int player2Lives;
-    private int player3Lives;
-    private int player4Lives;
-    //stores the text that displayes lives
-    public Text player1;
-    public Text player2;
-    public Text player3;
-    public Text player4;
+    public int player1Lives;
+    public int player2Lives;
+    public int player3Lives;
+    public int player4Lives;
     //holds colour variable
     Colours.Colour enemyColour = Colours.Colour.None;
 
@@ -62,8 +56,6 @@ public class playerLives : MonoBehaviour
                     if (player1Lives > 0)
                     {
                         player1Lives -= 1;
-                        player1.text =  player1Lives.ToString();
-
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (player1Lives == 0)
 							m_PlayerDeathIterator++;
@@ -79,8 +71,6 @@ public class playerLives : MonoBehaviour
                     if (player2Lives > 0)
                     {
                         player2Lives -= 1;
-                        player2.text = player2Lives.ToString();
-
 						// If player 2's lives are 0, increase the amount of players that have no lives.
 						if (player2Lives == 0)
 							m_PlayerDeathIterator++;
@@ -95,8 +85,6 @@ public class playerLives : MonoBehaviour
                     if (player3Lives > 0)
                     {
                         player3Lives -= 1;
-                        player3.text = player3Lives.ToString();
-
 						// If player 3's lives are 0, increase the amount of players that have no lives.
 						if (player3Lives == 0)
 							m_PlayerDeathIterator++;
@@ -111,8 +99,6 @@ public class playerLives : MonoBehaviour
                     if (player4Lives > 0)
                     {
                         player4Lives -= 1;
-                        player4.text = player4Lives.ToString();
-
 						// If player 4's lives are 0, increase the amount of players that have no lives.
 						if (player4Lives == 0)
 							m_PlayerDeathIterator++;
