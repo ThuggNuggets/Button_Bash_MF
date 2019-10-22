@@ -42,6 +42,10 @@ public class TeddyBearBehaviour : MonoBehaviour
                 //increases size of bear
                 transform.localScale += new Vector3(scale, scale, scale);
                 }
+                //soud trest alex
+                {
+                GetComponent<AudioSource>().Play();
+                }
         }
     }
 
