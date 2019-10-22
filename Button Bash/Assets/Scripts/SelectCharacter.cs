@@ -19,6 +19,9 @@ public class SelectCharacter : MonoBehaviour
 	// If the A button was pressed on the controller.
 	private bool m_AButtonPressed = false;
 
+	// If the B button was pressed on the controller.
+	private bool m_BButtonPressed = false;
+
 	// If the character has been locked in.
 	private bool m_CharacterLockedIn = false;
 
@@ -43,21 +46,25 @@ public class SelectCharacter : MonoBehaviour
 				// Player 1.
 			case 0:
 				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.First);
+				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.First);
 				break;
 
 				// Player 2.
 			case 1:
 				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Second);
+				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Second);
 				break;
 
 				// Player 3.
 			case 2:
 				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Third);
+				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Third);
 				break;
 
 				// Player 4.
 			case 3:
 				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Fourth);
+				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Fourth);
 				break;
 
 				// Something is wrong.
@@ -72,6 +79,14 @@ public class SelectCharacter : MonoBehaviour
 			// If a character hasn't been locked in.
 			if (m_CharacterLockedIn == false)
 				LockInCharacter();
+		}
+
+		// If the B button has been pressed, unlock the current character.
+		if (m_BButtonPressed == true)
+		{
+			// If a character has been locked in.
+			if (m_CharacterLockedIn == true)
+				UnlockCharacter();
 		}
 	}
 
@@ -89,5 +104,21 @@ public class SelectCharacter : MonoBehaviour
 
 		// Set the select button to not be interactable (just for representation).
 		gameObject.transform.parent.GetChild(2).GetComponent<Button>().interactable = false;
+	}
+
+	// Unlock the currently selected character.
+	public void UnlockCharacter()
+	{
+		// Get the character the player selected.
+		int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
+
+		// Remove the player image box from the game manager.
+		GameManager.RemovePlayerCharacter(playerSelect);
+
+		// Set that the character has been locked in to false.
+		m_CharacterLockedIn = false;
+
+		// Set the select button to be interactable (just for representation).
+		gameObject.transform.parent.GetChild(2).GetComponent<Button>().interactable = true;
 	}
 }

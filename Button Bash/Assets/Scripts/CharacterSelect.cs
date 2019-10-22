@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -109,33 +110,63 @@ public class CharacterSelect : MonoBehaviour
 		// If a character hasn't been locked in, move to the next character.
 		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
 		{
-			// If the current image is less than the amount of portraits there are - 1, increment the current image.
+			// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
 			if (m_CurrentImage < m_PlayerPortraits.Length - 1)
 				++m_CurrentImage;
 			// Else, set the current image to 0.
 			else
 				m_CurrentImage = 0;
 
+			while (true)
+			{
+				if (GameManager.CheckIndex(-1, m_CurrentImage) == false)
+				{
+					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
+					if (m_CurrentImage < m_PlayerPortraits.Length - 1)
+						++m_CurrentImage;
+					// Else, set the current image to 0.
+					else
+						m_CurrentImage = 0;
+				}
+				else
+					break;
+			}
+
 			// Set the portrait to the current image.
 			GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
 		}
 	}
 
+	// Move on to the previous character.
 	public void PrevCharacter()
 	{
 		// If a character hasn't been locked in, move to the previous character.
 		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
 		{
-			// If the current image is less than the amount of portraits there are - 1, decrement the current image.
+			// If the current image is less than the amount of portraits there are - 1, select the previous image in the array.
 			if (m_CurrentImage > 0)
 				--m_CurrentImage;
 			// Else, set the current image to the amount of portraits there are - 1.
 			else
 				m_CurrentImage = m_PlayerPortraits.Length - 1;
 
-			// Set the portrait to the current image.
-			GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+			while (true)
+			{
+				if (GameManager.CheckIndex(-1, m_CurrentImage) == false)
+				{
+					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
+					if (m_CurrentImage > 0)
+						--m_CurrentImage;
+					// Else, set the current image to 0.
+					else
+						m_CurrentImage = m_PlayerPortraits.Length - 1;
+				}
+				else
+					break;
+			}
 		}
+		// Set the portrait to the current image.
+		GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
 	}
 
 	// Get the current image of the image box.

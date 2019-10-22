@@ -6,12 +6,19 @@ using XboxCtrlrInput;
 
 public class MoveToNextScene : MonoBehaviour
 {
+	// If the script should check controller input.
+	public bool m_UseControllerInputDirectly = true;
+
 	private void Update()
 	{
-		// If the A button is pressed, move on to the next scene.
-		if (XCI.GetButtonDown(XboxButton.A))
+		// If this script is to use controller input directly.
+		// Since the character select screen doesn't want to check if the A button has been pressed to move on to the next screen,
+		// but the start screen and end screen do.
+		if (m_UseControllerInputDirectly == true)
 		{
-			NextScene();
+			// If the A button is pressed, move on to the next scene.
+			if (XCI.GetButtonDown(XboxButton.A))
+				NextScene();
 		}
 	}
 
