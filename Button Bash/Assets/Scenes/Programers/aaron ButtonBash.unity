@@ -2082,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
       propertyPath: m_laneChangingSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
       propertyPath: m_maxAmmo
@@ -2090,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
       propertyPath: m_CharacterSpeed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3209868603416866298, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
@@ -5952,36 +5952,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c411153ea25bf3a42a867281c8f111ca, type: 3}
---- !u!1 &561458625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7245673798508347742, guid: 5ea4aad07d28c5844910d6e818ce694e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1180151418}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &561458633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561458625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db79ca954bfa9204ba908330444e2601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CharacterSpeed: 1
-  playerAmmoText: {fileID: 0}
-  m_maxAmmo: 5
-  m_Bullet: {fileID: 0}
-  m_ShootingCooldown: 0
-  m_LaneChangingDistance: 0
-  m_playerNumber: 2
-  m_Colour: 0
-  m_buttonSpawnDistance: 0.5
-  m_buttonSpawnHeight: 0.5
-  m_laneChangingSpeed: 1
-  width: 1
 --- !u!4 &563465395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6539216222360208648, guid: c411153ea25bf3a42a867281c8f111ca,
@@ -9241,7 +9211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
       propertyPath: m_laneChangingSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
       propertyPath: m_maxAmmo
@@ -9249,7 +9219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
       propertyPath: m_CharacterSpeed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1939201170365321297, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
@@ -9271,8 +9241,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
 --- !u!4 &936893288 stripped
 Transform:
@@ -11407,7 +11376,7 @@ PrefabInstance:
     - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_laneChangingSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -11417,7 +11386,7 @@ PrefabInstance:
     - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_CharacterSpeed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9154017000454596737, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -12559,37 +12528,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 789286771}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1316470831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1552107870225001803, guid: 150e4469d2b1bab428c8dc388c98ca78,
-    type: 3}
-  m_PrefabInstance: {fileID: 934340541}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1316470834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316470831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db79ca954bfa9204ba908330444e2601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CharacterSpeed: 10
-  playerAmmoText: {fileID: 524355213}
-  m_maxAmmo: 5
-  m_Bullet: {fileID: 3905374817873417468, guid: 659514ca393af844f8ed5ab6e32c8584,
-    type: 3}
-  m_ShootingCooldown: 0.5
-  m_LaneChangingDistance: 0
-  m_playerNumber: 1
-  m_Colour: 0
-  m_buttonSpawnDistance: 0.5
-  m_buttonSpawnHeight: 0.5
-  m_laneChangingSpeed: 2
-  width: 1
 --- !u!4 &1318767539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6539216222360208648, guid: c411153ea25bf3a42a867281c8f111ca,
@@ -13529,7 +13467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
       propertyPath: m_laneChangingSpeed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
       propertyPath: m_maxAmmo
@@ -13537,7 +13475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
       propertyPath: m_CharacterSpeed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7319452716897844635, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
@@ -13559,8 +13497,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 8.2000065
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
 --- !u!1001 &1411075237
 PrefabInstance:
@@ -18702,37 +18639,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 178891329}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1966687876 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 976318150993130304, guid: 3ad5de00e8caade47a99069d544733b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1406709640}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1966687884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966687876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db79ca954bfa9204ba908330444e2601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CharacterSpeed: 10
-  playerAmmoText: {fileID: 131771095}
-  m_maxAmmo: 5
-  m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
-    type: 3}
-  m_ShootingCooldown: 0.5
-  m_LaneChangingDistance: 0
-  m_playerNumber: 0
-  m_Colour: 2
-  m_buttonSpawnDistance: 0.5
-  m_buttonSpawnHeight: 0.5
-  m_laneChangingSpeed: 2
-  width: 1
 --- !u!4 &1969611197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6539216222360208648, guid: c411153ea25bf3a42a867281c8f111ca,
