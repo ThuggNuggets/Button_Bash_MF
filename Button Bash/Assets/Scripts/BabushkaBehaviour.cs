@@ -84,6 +84,10 @@ public class BabushkaBehaviour : MonoBehaviour
             {
                 health = 0;
             }
+            //soud trest alex
+            {
+                GetComponent<AudioSource>().Play();
+            }
 
         }
     }

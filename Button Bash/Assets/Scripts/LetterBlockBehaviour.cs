@@ -35,5 +35,10 @@ public class LetterBlockBehaviour : MonoBehaviour
             health--;
             Destroy(collision.gameObject);
         }
+         //soud trest alex
+        {
+         GetComponent<AudioSource>().Play();
+        }
+        
     }
 }
