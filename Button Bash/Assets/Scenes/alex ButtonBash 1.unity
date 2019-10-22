@@ -2691,7 +2691,7 @@ PrefabInstance:
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
       propertyPath: playerAmmoText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1753667077}
     - target: {fileID: 976318150993130316, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3162,6 +3162,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1180151418}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753667077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5814669578201457292, guid: 154029635902eee47b6810a29a575f66,
+    type: 3}
+  m_PrefabInstance: {fileID: 1984288748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1813993233
 PrefabInstance:
   m_ObjectHideFlags: 0

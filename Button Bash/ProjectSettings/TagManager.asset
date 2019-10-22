@@ -20,6 +20,7 @@ TagManager:
   - Player4
   - Select Button
   - ammopile
+  - music
   layers:
   - Default
   - TransparentFX
