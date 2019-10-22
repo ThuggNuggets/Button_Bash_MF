@@ -194,6 +194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5552887153589814567}
     m_Modifications:
+    - target: {fileID: 2484787535559304021, guid: d7b9a471c06b2e6458360df29152c87f,
+        type: 3}
+      propertyPath: m_Name
+      value: BigBear_Blockout (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2484787535559212917, guid: d7b9a471c06b2e6458360df29152c87f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,11 +313,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484787535559304021, guid: d7b9a471c06b2e6458360df29152c87f,
-        type: 3}
-      propertyPath: m_Name
-      value: BigBear_Blockout (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2484787535559304025, guid: d7b9a471c06b2e6458360df29152c87f,
         type: 3}
