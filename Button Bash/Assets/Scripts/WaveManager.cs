@@ -4,41 +4,65 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-	// The spawn point for the enemies.
+	/// <summary>
+	/// The spawn point for the enemies.
+	/// </summary>
 	public GameObject m_EnemySpawnpoint;
 
-	// The minimum time for enemies spawning.
+	/// <summary>
+	/// The minimum time for enemies spawning.
+	/// </summary>
 	public float m_MinSpawnTime;
 
-	// The maximum time for enemies spawning.
+	/// <summary>
+	/// The maximum time for enemies spawning.
+	/// </summary>
 	public float m_MaxSpawnTime;
 
-	// The waves.
+	/// <summary>
+	/// Array of the waves to spawn.
+	/// </summary>
 	public GameObject[] m_Waves;
 
-	// The wave enemy spawning timer.
+	/// <summary>
+	/// The wave enemy spawning timer.
+	/// </summary>
 	private float m_WaveEnemySpawningTimer;
 
-	// The timer for inbetween waves.
+	/// <summary>
+	/// The timer for inbetween waves.
+	/// </summary>
 	public float m_WaveTimer;
 
-	// Wave timer for use in code, other one is just for changing outside of code.
+	/// <summary>
+	/// Wave timer for use in code, other one is just for changing outside of code.
+	/// </summary>
 	private float m_CodeWaveTimer;
 
-	// Iterates through the waves.
+	/// <summary>
+	/// Iterates through the waves.
+	/// </summary>
 	private int m_WaveIterator = 0;
 
-	// Iterates through the enemies in the waves.
+	/// <summary>
+	/// Iterates through the enemies in the waves.
+	/// </summary>
 	private int m_WaveEnemyIterator = 0;
 
-	// The script that is storing all the player's lives
+	/// <summary>
+	/// The script that is storing all the player's lives.
+	/// </summary>
 	private playerLives m_PlayerLives;
 
-	// The collider that holds the player lives.
+	/// <summary>
+	/// The collider that holds the player lives.
+	/// </summary>
 	public GameObject m_PlayerLivesCollider;
 
-	// On startup.
-    void Awake()
+	/// <summary>
+	/// On startup.
+	/// </summary>
+	void Awake()
     {
 		// Seed the random number generator with the current time so the random number is different every time.
 		Random.InitState((int)System.DateTime.Now.Ticks);
@@ -53,8 +77,10 @@ public class WaveManager : MonoBehaviour
 		m_PlayerLives = m_PlayerLivesCollider.GetComponent<playerLives>();
     }
 
-    // Update the wave manager.
-    void Update()
+	/// <summary>
+	/// Update the wave manager.
+	/// </summary>
+	void Update()
     {
 		// If the timer is less than or equal to 0, check the conditions to spawn an enemy.
 		if (m_WaveEnemySpawningTimer <= 0.0f)

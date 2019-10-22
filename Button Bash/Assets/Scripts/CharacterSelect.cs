@@ -8,31 +8,44 @@ using XboxCtrlrInput;
 
 public class CharacterSelect : MonoBehaviour
 {
-	// Array of the player portraits.
+	/// <summary>
+	/// Array of the player portraits.
+	/// </summary>
 	public Texture[] m_PlayerPortraits;
 
-	// The current image.
+	/// <summary>
+	/// The current image.
+	/// </summary>
 	private int m_CurrentImage;
 
-	// The event to move on to the next character.
+	/// <summary>
+	/// The event to move on to the next character.
+	/// </summary>
 	UnityEvent m_NextCharacter;
 
-	// The controller's x axis.
+	/// <summary>
+	/// The controller's x axis.
+	/// </summary>
 	private float m_XAxis;
 
-	// The controller's y axis.
-	private float m_YAxis;
-
-	// Dead zone for the controllers.
+	/// <summary>
+	/// Dead zone for the controllers.
+	/// </summary>
 	public float m_DeadZone = 0.05f;
 
-	// Which player's image box this is.
+	/// <summary>
+	/// Which player's image box this is.
+	/// </summary>
 	public int m_PlayerNumber;
 
-	// If the controller stick has been released.
+	/// <summary>
+	/// If the controller stick has been released.
+	/// </summary>
 	private bool m_LeftStickHasBeenReleased = false;
 
-	// On startup.
+	/// <summary>
+	/// On startup.
+	/// </summary>
 	private void Awake()
 	{
 		// Check the name of the current image showing the currently selected character
@@ -53,7 +66,9 @@ public class CharacterSelect : MonoBehaviour
 		m_NextCharacter.AddListener(NextCharacter);
 	}
 
-	// Update.
+	/// <summary>
+	/// Update.
+	/// </summary>
 	private void Update()
 	{
 		// Check the player number of this character select instance.
@@ -104,7 +119,9 @@ public class CharacterSelect : MonoBehaviour
 			m_LeftStickHasBeenReleased = true;
 	}
 
-	// Move on to the next character.
+	/// <summary>
+	/// Move on to the next character.
+	/// </summary>
 	public void NextCharacter()
 	{
 		// If a character hasn't been locked in, move to the next character.
@@ -119,7 +136,7 @@ public class CharacterSelect : MonoBehaviour
 
 			while (true)
 			{
-				if (GameManager.CheckIndex(-1, m_CurrentImage) == false)
+				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 				{
 					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
 					if (m_CurrentImage < m_PlayerPortraits.Length - 1)
@@ -133,11 +150,13 @@ public class CharacterSelect : MonoBehaviour
 			}
 
 			// Set the portrait to the current image.
-			GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+			UpdateImage();
 		}
 	}
 
-	// Move on to the previous character.
+	/// <summary>
+	/// Move on to the previous character.
+	/// </summary>
 	public void PrevCharacter()
 	{
 		// If a character hasn't been locked in, move to the previous character.
@@ -152,12 +171,12 @@ public class CharacterSelect : MonoBehaviour
 
 			while (true)
 			{
-				if (GameManager.CheckIndex(-1, m_CurrentImage) == false)
+				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 				{
-					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
+					// If the current image is greater than 0, select the next image in the array.
 					if (m_CurrentImage > 0)
 						--m_CurrentImage;
-					// Else, set the current image to 0.
+					// Else, set the current image to the last image in the array.
 					else
 						m_CurrentImage = m_PlayerPortraits.Length - 1;
 				}
@@ -166,14 +185,23 @@ public class CharacterSelect : MonoBehaviour
 			}
 		}
 		// Set the portrait to the current image.
-		GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage];
+		UpdateImage();
 	}
 
-	// Get the current image of the image box.
-	// Returns: the current image of the image box.
+	/// <summary>
+	/// Get the current image of the image box.
+	/// </summary>
+	/// <returns>The current image of the image box.</returns>
 	public int GetCurrentImage() { return m_CurrentImage; }
 
-	// Get the player number.
-	// Returns: the player number.
+	/// <summary>
+	/// Get the player number.
+	/// </summary>
+	/// <returns>The player number.</returns>
 	public int GetPlayerNumber() { return m_PlayerNumber; }
+
+	/// <summary>
+	/// Update the current image.
+	/// </summary>
+	private void UpdateImage()	{ GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage]; }
 }

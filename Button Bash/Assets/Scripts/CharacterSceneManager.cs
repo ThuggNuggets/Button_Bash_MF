@@ -5,15 +5,22 @@ using XboxCtrlrInput;
 
 public class CharacterSceneManager : MonoBehaviour
 {
-	// How many players are ready.
+	/// <summary>
+	/// How many players are ready.
+	/// </summary>
 	private int m_PlayersReady = 0;
 
-	// If the players are ready.
+	/// <summary>
+	/// If the players are ready.
+	/// </summary>
 	private bool m_ReadyPlayerOne = false;
 	private bool m_ReadyPlayerTwo = false;
 	private bool m_ReadyPlayerThree = false;
 	private bool m_ReadyPlayerFour = false;
 
+	/// <summary>
+	/// Update.
+	/// </summary>
 	private void Update()
 	{
 		// Goes through each of the player's controllers and check that they have pressed a button:

@@ -7,24 +7,39 @@ using UnityEngine.Events;
 
 public class SelectCharacter : MonoBehaviour
 {
-	// The lock in character event.
+	/// <summary>
+	/// The lock in character event.
+	/// </summary>
 	UnityEvent m_LockInCharacter;
 
-	// The image box.
+	/// <summary>
+	/// The image box.
+	/// </summary>
 	public RawImage m_PlayerImageBox;
 
-	// The player number.
+	/// <summary>
+	/// The player number.
+	/// </summary>
 	private int m_PlayerNumber = 0;
 
-	// If the A button was pressed on the controller.
+	/// <summary>
+	/// If the A button was pressed on the controller.
+	/// </summary>
 	private bool m_AButtonPressed = false;
 
-	// If the B button was pressed on the controller.
+	/// <summary>
+	/// If the B button was pressed on the controller.
+	/// </summary>
 	private bool m_BButtonPressed = false;
 
-	// If the character has been locked in.
+	/// <summary>
+	/// If the character has been locked in.
+	/// </summary>
 	private bool m_CharacterLockedIn = false;
 
+	/// <summary>
+	/// On startup.
+	/// </summary>
 	private void Awake()
 	{
 		// Create the lock in character event.
@@ -37,7 +52,9 @@ public class SelectCharacter : MonoBehaviour
 		m_PlayerNumber = GetComponentInParent<CharacterSelect>().GetPlayerNumber();
 	}
 
-	// Update.
+	/// <summary>
+	/// Update.
+	/// </summary>
 	private void Update()
 	{
 		// Check the player number.
@@ -88,7 +105,9 @@ public class SelectCharacter : MonoBehaviour
 		}
 	}
 
-	// Lock in the character.
+	/// <summary>
+	/// Lock in the character.
+	/// </summary>
 	public void LockInCharacter()
 	{
 		// Get the character the player selected.
@@ -102,9 +121,30 @@ public class SelectCharacter : MonoBehaviour
 
 		// Set the select button to not be interactable (just for representation).
 		GetComponent<Button>().interactable = false;
+
+		// Find all the image boxes in the scene to compare them.
+		// So if two people have the same character selected, 
+		// the person that didn't lock them in gets moved on to the next unlocked character.
+		GameObject[] imgBoxes = GameObject.FindGameObjectsWithTag("Image Box");
+
+		// Go through each of the image boxes.
+		for (int i = 0; i < imgBoxes.Length; ++i)
+		{
+			// So we don't compare with ourself.
+			if (imgBoxes[i] != transform.parent.gameObject)
+			{
+				// If the current character of the other image box is the same as this one, move the other image box to the next character.
+				if (imgBoxes[i].GetComponent<CharacterSelect>().GetCurrentImage() == GetComponentInParent<CharacterSelect>().GetCurrentImage())
+				{
+					imgBoxes[i].GetComponent<CharacterSelect>().NextCharacter();
+				}
+			}
+		}
 	}
 
-	// Unlock the currently selected character.
+	/// <summary>
+	/// Unlock the currently selected character.
+	/// </summary>
 	public void UnlockCharacter()
 	{
 		// Get the character the player selected.
