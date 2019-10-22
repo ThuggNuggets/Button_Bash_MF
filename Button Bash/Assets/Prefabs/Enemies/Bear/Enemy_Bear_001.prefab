@@ -170,9 +170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 6
   scale: 0.3
-  verticalFling: 50
-  xFling: 10
-  zFling: 10
+  verticalFling: 70
+  xFling: 80
+  zFling: 50
 --- !u!114 &7398950810085631545
 MonoBehaviour:
   m_ObjectHideFlags: 0

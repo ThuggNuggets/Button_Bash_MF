@@ -43,8 +43,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   verticalFling: 85
-  xFling: 10
-  zFling: 20
+  xFling: 80
+  zFling: 50
 --- !u!114 &7634492165357889748
 MonoBehaviour:
   m_ObjectHideFlags: 0

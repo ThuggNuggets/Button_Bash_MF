@@ -145,6 +145,9 @@ MonoBehaviour:
     type: 3}
   scale: 0.005
   m_Colour: 1
+  verticalFling: 85
+  xFling: 80
+  zFling: 50
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0
