@@ -97,16 +97,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6306881111085767865}
     m_Modifications:
-    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Block_001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
-        type: 3}
-      propertyPath: m_TagString
-      value: letterBlock
-      objectReference: {fileID: 0}
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,12 +167,23 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Block_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_TagString
+      value: letterBlock
+      objectReference: {fileID: 0}
     - target: {fileID: 8897838330280665017, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e44872a54fb61574b814fe10aa4b9101, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6191271374016168753, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 46c6204ba0d9f854cb59997ad871dda7, type: 3}
 --- !u!1 &6386710517952015776 stripped
 GameObject:

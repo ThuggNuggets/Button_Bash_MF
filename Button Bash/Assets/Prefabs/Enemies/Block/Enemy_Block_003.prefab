@@ -29,22 +29,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.499996, y: 2.4999998, z: 2.499996}
   m_Center: {x: 0, y: -0.00000011920929, z: 0}
---- !u!114 &5064332928831978840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6386710517952015776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec5e53a34ba6024eb4c6ed516c37b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
-  verticalFling: 85
-  xFling: 80
-  zFling: 50
 --- !u!114 &7634492165357889748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,16 +81,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6306881111085767865}
     m_Modifications:
-    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Block_001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
-        type: 3}
-      propertyPath: m_TagString
-      value: letterBlock
-      objectReference: {fileID: 0}
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -176,6 +150,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Block_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_TagString
+      value: letterBlock
       objectReference: {fileID: 0}
     - target: {fileID: 8897838330280665017, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
