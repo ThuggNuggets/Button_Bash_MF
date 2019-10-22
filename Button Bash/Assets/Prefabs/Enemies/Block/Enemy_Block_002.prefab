@@ -56,6 +56,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  verticalFling: 85
+  xFling: 10
+  zFling: 10
 --- !u!1 &9127828091661151835
 GameObject:
   m_ObjectHideFlags: 0
