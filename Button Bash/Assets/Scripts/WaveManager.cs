@@ -106,12 +106,8 @@ public class WaveManager : MonoBehaviour
 						{
 							// If the enemy is blue.
 							case Colours.Colour.Blue:
-								// Get the lives of player 1 (the blue player.)
-								int p1Life;
-								int.TryParse(m_PlayerLives.player1.text, out p1Life);
-
 								// If player 1 is dead, skip over this enemy.
-								if (p1Life <= 0)
+								if (m_PlayerLives.player1Lives <= 0)
 								{
 									m_WaveEnemyIterator++;
 									return;
@@ -120,12 +116,8 @@ public class WaveManager : MonoBehaviour
 
 							// If the enemy is red.
 							case Colours.Colour.Red:
-								// Get the lives of player 2 (the red player.)
-								int p2Life;
-								int.TryParse(m_PlayerLives.player2.text, out p2Life);
-
 								// If player 2 is dead, skip over this enemy.
-								if (p2Life <= 0)
+								if (m_PlayerLives.player2Lives <= 0)
 								{
 									m_WaveEnemyIterator++;
 									return;
@@ -134,12 +126,8 @@ public class WaveManager : MonoBehaviour
 
 							// If the enemy is green.
 							case Colours.Colour.Green:
-								// Get the lives of player 3 (the green player.)
-								int p3Life;
-								int.TryParse(m_PlayerLives.player3.text, out p3Life);
-
 								// If player 3 is dead, skip over this enemy.
-								if (p3Life <= 0)
+								if (m_PlayerLives.player3Lives <= 0)
 								{
 									m_WaveEnemyIterator++;
 									return;
@@ -148,12 +136,8 @@ public class WaveManager : MonoBehaviour
 
 							// If the enemy is yellow.
 							case Colours.Colour.Yellow:
-								// Get the lives of player 4 (the yellow player.)
-								int p4Life;
-								int.TryParse(m_PlayerLives.player4.text, out p4Life);
-
-								// If player 4 is dead, skip over this enemy.
-								if (p4Life <= 0)
+							// If player 4 is dead, skip over this enemy.
+								if (m_PlayerLives.player4Lives <= 0)
 								{
 									m_WaveEnemyIterator++;
 									return;
