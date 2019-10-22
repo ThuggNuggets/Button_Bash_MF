@@ -2069,16 +2069,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1453303307}
     - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
-      propertyPath: buttonSpawnDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
-      propertyPath: m_CharacterSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
-      propertyPath: m_ShootingCooldown
-      value: 0.65
+      propertyPath: buttonSpawnHeight
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
@@ -9341,16 +9333,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524355213}
     - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
-      propertyPath: buttonSpawnDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
-      propertyPath: m_CharacterSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 308056784, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
-      propertyPath: m_ShootingCooldown
-      value: 0.65
+      propertyPath: buttonSpawnHeight
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
@@ -11452,18 +11436,8 @@ PrefabInstance:
       objectReference: {fileID: 1117646739}
     - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
-      propertyPath: buttonSpawnDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_CharacterSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430055649395856559, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_ShootingCooldown
-      value: 0.65
+      propertyPath: buttonSpawnHeight
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea4aad07d28c5844910d6e818ce694e, type: 3}
@@ -12673,54 +12647,6 @@ PrefabInstance:
       propertyPath: m_PlayerLivesCollider
       value: 
       objectReference: {fileID: 6808261314332480246}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[7]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[9]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[10]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[13]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[16]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf,
-        type: 3}
-    - target: {fileID: 7350479145738155915, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[28]
-      value: 
-      objectReference: {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366,
-        type: 3}
-    - target: {fileID: 7974491447809167947, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[13]
-      value: 
-      objectReference: {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647,
-        type: 3}
-    - target: {fileID: 7974491447809167947, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
-        type: 3}
-      propertyPath: m_WaveEnemies.Array.data[18]
-      value: 
-      objectReference: {fileID: 2590849142620533762, guid: 00d6793ffb5b7544281779f6741da113,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
 --- !u!4 &1323775464 stripped
@@ -13545,16 +13471,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 131771095}
     - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
-      propertyPath: buttonSpawnDistance
-      value: 2
+      propertyPath: buttonSpawnHeight
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
-      propertyPath: m_CharacterSpeed
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 159633991, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
-      propertyPath: m_ShootingCooldown
-      value: 0.65
+    - target: {fileID: 7319452716897844635, guid: 3ad5de00e8caade47a99069d544733b9,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
@@ -14970,7 +14893,12 @@ PrefabInstance:
     - target: {fileID: 5017599177660499479, guid: 8676c49b5b757e9479e2104ca4462174,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.454
+      value: 4.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017599177660499479, guid: 8676c49b5b757e9479e2104ca4462174,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.72439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8676c49b5b757e9479e2104ca4462174, type: 3}
