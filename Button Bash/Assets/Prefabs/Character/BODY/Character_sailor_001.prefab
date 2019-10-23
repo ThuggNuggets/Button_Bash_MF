@@ -156,11 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterSpeed: 14
   playerAmmoText: {fileID: 0}
-  m_maxAmmo: 15
+  m_maxAmmo: 100
   m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
     type: 3}
-  m_ShootingCooldown: 0.65
-  m_LaneChangingDistance: 0
+  m_ShootingCooldown: 0.1
   m_playerNumber: 0
   m_Colour: 2
   m_buttonSpawnDistance: 2

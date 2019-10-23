@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Bullet: {fileID: 3905374817873417468, guid: 4babf2c3e6872c148b63c953d6fb397e,
     type: 3}
   m_ShootingCooldown: 0.65
-  m_LaneChangingDistance: 0
   m_playerNumber: 3
   m_Colour: 3
   m_buttonSpawnDistance: 2
