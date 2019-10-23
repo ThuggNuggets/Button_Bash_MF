@@ -170,7 +170,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0118079de76001f43a8ce7f45ea9ab01, type: 2}
+  - {fileID: 2100000, guid: 367c6b8abcf9c0e40a165d4a9b8b9ec0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 8722164644897572049}
   - component: {fileID: 496738400}
   m_Layer: 0
-  m_Name: BB_Enemy_001_bear_Basemesh_Animated
+  m_Name: Enemy_Bear_004(1) 2
   m_TagString: teddyBear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
