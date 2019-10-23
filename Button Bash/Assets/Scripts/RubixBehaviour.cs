@@ -12,6 +12,15 @@ public class RubixBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
+
+    // The script that is storing all the player's lives
+    private playerLives m_PlayerLives;
+    // The collider that holds the player lives.
+    private GameObject m_PlayerLivesCollider;
+    //used to find the new colour for the next babushka level
+    private Colours.Colour newColour;
+    private bool valid = false;
+
     private void Awake()
     {
         m_colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
@@ -19,6 +28,10 @@ public class RubixBehaviour : MonoBehaviour
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
+
+        //finds the object that hold the player lives 
+        m_PlayerLivesCollider = GameObject.Find("Collider");
+        m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
     }
     private void FixedUpdate()
     {
@@ -38,37 +51,61 @@ public class RubixBehaviour : MonoBehaviour
             //destroy bullet
             Destroy(collision.gameObject);
             health--;
-            if(health > 0)
+            if (health > 0)
             {
-            //changes its colour
-            transform.Rotate(0, 90, 0, Space.Self);
-            }
-            switch (m_colour)
-            {
-                case Colours.Colour.Blue:
+               
+                valid = false;
+
+                //changes its colour
+                while (!valid)
+                {
+                    switch (m_colour)
                     {
-                        m_colour = Colours.Colour.Red;
-                        Debug.Log("change to red");
-                        break;
+                        case Colours.Colour.Blue:
+                            {
+                                m_colour = Colours.Colour.Red;
+                                transform.Rotate(0, 90, 0, Space.Self);
+                                if (m_PlayerLives.player2Lives > 0)
+                                {
+                                    valid = true;
+                                }
+                                break;
+                            }
+                        case Colours.Colour.Red:
+                            {
+                                m_colour = Colours.Colour.Green;
+                                transform.Rotate(0, 90, 0, Space.Self);
+                                if (m_PlayerLives.player3Lives > 0)
+                                {
+                                    valid = true;
+                                }
+                                break;
+                            }
+                        case Colours.Colour.Green:
+                            {
+                                m_colour = Colours.Colour.Yellow;
+                                transform.Rotate(0, 90, 0, Space.Self);
+                                if (m_PlayerLives.player4Lives > 0)
+                                {
+                                    valid = true;
+                                }
+
+                                break;
+                            }
+                        case Colours.Colour.Yellow:
+                            {
+                                m_colour = Colours.Colour.Blue;
+                                transform.Rotate(0, 90, 0, Space.Self);
+                                if (m_PlayerLives.player1Lives > 0)
+                                {
+                                    valid = true;
+                                }
+
+                                break;
+                            }
                     }
-                case Colours.Colour.Red:
-                    {
-                        m_colour = Colours.Colour.Green;
-                        Debug.Log("change to green");
-                        break;
-                    }
-                case Colours.Colour.Yellow:
-                    {
-                        m_colour = Colours.Colour.Blue;
-                        Debug.Log("change to blue");
-                        break;
-                    }
-                case Colours.Colour.Green:
-                    {
-                        m_colour = Colours.Colour.Yellow;
-                        Debug.Log("change to yellow");
-                        break;
-                    }
+                }
+                
             }
             gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
             //when hit rotate body

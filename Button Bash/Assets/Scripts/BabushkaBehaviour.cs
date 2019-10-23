@@ -30,11 +30,17 @@ public class BabushkaBehaviour : MonoBehaviour
     private playerLives m_PlayerLives;
     // The collider that holds the player lives.
     private GameObject m_PlayerLivesCollider;
-
-    private bool valid = false;
+    
+    //used to find the new colour for the next babushka level
     private Colours.Colour newColour;
+    private bool valid = false;
+
+
+    //comparing 2 forms of setting nect level colour
+    private List<Colours.Colour> playerColours;
     private void Awake()
     {
+        //dictates where the next babushka will spawn based on how close to the side walls they are
         if(leftWall.transform.position.z + 13 > transform.position.z)
         {
             addedVector = new Vector3(0, 0, 3);
@@ -48,10 +54,9 @@ public class BabushkaBehaviour : MonoBehaviour
         xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
 
+        //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
-            m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
-
-
+        m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
     }
 
   
@@ -59,6 +64,7 @@ public class BabushkaBehaviour : MonoBehaviour
     {
         if (health <= 0)
         {
+            //fling teh enemy
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
@@ -104,82 +110,50 @@ public class BabushkaBehaviour : MonoBehaviour
         GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
         enemy.transform.localScale -= new Vector3(scale, scale, scale);
         enemy.gameObject.tag = newTag;
-
-        while (!valid)
+        //changes teh enemy oclour based off who still has lives
+       while (!valid)
         {
-            switch(Random.Range(0,4))
-            {
-                case 0:
-                    {
-                        newColour = Colours.Colour.Blue;
-                        break;
-                    }
-                case 1:
-                    {
-                        newColour = Colours.Colour.Red;
-                        break;
-                    }
-                case 2:
-                    {
-                        newColour = Colours.Colour.Green;
-                        break;
-                    }
-                case 3:
-                    {
-                        newColour = Colours.Colour.Yellow;
-                        break;
-                    }
-            }
-            
-            switch(newColour)
-            {
-                case Colours.Colour.Blue:
-                    {
-                        int p1 = m_PlayerLives.player1Lives;
-                        if (p1 > 0)
-                        { 
-                            valid = true;
-                            Debug.Log("Blue");
-                        }
-                        break;
-                    }
-                case Colours.Colour.Red:
-                    {
-                        int p2 = m_PlayerLives.player2Lives;
-                        if (p2 > 0)
-                        { 
-                            valid = true;
-                            Debug.Log("Red");
-                        }
-                        break;
-                    }
-                case Colours.Colour.Green:
-                    {
-                        int p3 = m_PlayerLives.player3Lives;
-                        if (p3 > 0)
+                switch (Random.Range(0, 4))
+                {
+                    case 0:
                         {
-                            valid = true;
-                            Debug.Log("Green");
+                            if (m_PlayerLives.player1Lives > 0)
+                            {
+                                valid = true;
+                                newColour = Colours.Colour.Blue;
+                            }
+                            break;
                         }
-                        break;
-                    }
-                case Colours.Colour.Yellow:
-                    {
-                        int p4 = m_PlayerLives.player4Lives;
-                        if ( p4 > 0)
+                    case 1:
                         {
-                            valid = true;
-                            Debug.Log("Yellow");
+                            if (m_PlayerLives.player2Lives > 0)
+                            {
+                                valid = true;
+                                newColour = Colours.Colour.Red;
+                            }
+                            break;
                         }
-                        break;
-                    }
-
-            }
-
-
+                    case 2:
+                        {
+                            if (m_PlayerLives.player3Lives > 0)
+                            {
+                                valid = true;
+                                newColour = Colours.Colour.Green;
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (m_PlayerLives.player4Lives > 0)
+                            {
+                                valid = true;
+                                newColour = Colours.Colour.Yellow;
+                            }
+                            break;
+                        }
+                }
         }
-
-        enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)newColour);
+                enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)newColour);
         
         foreach (Transform child in transform)
         {
