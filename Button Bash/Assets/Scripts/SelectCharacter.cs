@@ -110,8 +110,12 @@ public class SelectCharacter : MonoBehaviour
 	/// </summary>
 	public void LockInCharacter()
 	{
-		// Get the character the player selected.
-		int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
+        //alex sound 
+        
+            GetComponent<AudioSource>().Play();
+       
+         // Get the character the player selected.
+        int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
 
 		// Add the player image box to the game manager.
 		GameManager.AddPlayerCharacter(m_PlayerNumber, playerSelect);
