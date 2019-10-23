@@ -44,7 +44,7 @@ public class playerLives : MonoBehaviour
 			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
 
             // alex sound
-            //GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
         }
         else
         {

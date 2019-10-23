@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 8722164644897572049}
   - component: {fileID: 496738400}
   m_Layer: 0
-  m_Name: BB_Enemy_001_bear_Basemesh_Animated
+  m_Name: Enemy_Bear_001(1)
   m_TagString: teddyBear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f98bb3b900a83e747b28229f9cb47dd7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
