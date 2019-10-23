@@ -105,10 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1Lives: 0
+  player2Lives: 0
+  player3Lives: 0
+  player4Lives: 0
+  m_HealthBalloons: []
 --- !u!1 &7602472435505701175
 GameObject:
   m_ObjectHideFlags: 0

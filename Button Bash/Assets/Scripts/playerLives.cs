@@ -44,7 +44,7 @@ public class playerLives : MonoBehaviour
 			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
 
             // alex sound
-            GetComponent<AudioSource>().Play();
+           // GetComponent<AudioSource>().Play();
         }
         else
         {
@@ -63,7 +63,7 @@ public class playerLives : MonoBehaviour
 						if (player1Lives == 0)
 							m_PlayerDeathIterator++;
 
-						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
+						//m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
                     }
                     break;
                 }
@@ -78,7 +78,7 @@ public class playerLives : MonoBehaviour
 						if (player2Lives == 0)
 							m_PlayerDeathIterator++;
 
-						m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
+						//m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }
@@ -92,7 +92,7 @@ public class playerLives : MonoBehaviour
 						if (player3Lives == 0)
 							m_PlayerDeathIterator++;
 
-						m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
+					//	m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }
@@ -106,7 +106,7 @@ public class playerLives : MonoBehaviour
 						if (player4Lives == 0)
 							m_PlayerDeathIterator++;
 
-						m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
+						//m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
                     break;
                 }

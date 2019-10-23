@@ -35,15 +35,15 @@ public class PlayerControls : MonoBehaviour
 	// The cooldown, for reseting the cooldown.
 	private float m_MaxShootingCooldown = 0.0f;
 
-	// The character's current lane.
-	private Lane m_CurrentLane = Lane.FrontLane;
-
 	// The z position of the target lane.
 	private Vector3 m_TargetLane = new Vector3();
 
+	// The character's current lane.
+	private Lane m_CurrentLane = Lane.FrontLane;
+
 	// If the character is currently changing lanes.
 	private bool m_ChangingLanes = false;
-    public float m_LaneChangingDistance = 0.0f;
+    private float m_LaneChangingDistance = 0.0f;
 
     // The player's colour.
     public int m_playerNumber;

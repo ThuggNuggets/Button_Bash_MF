@@ -24,6 +24,15 @@ public class BabushkaBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
+
+    //used to make sure the next babushka is a colour of the remaining players
+    // The script that is storing all the player's lives
+    private playerLives m_PlayerLives;
+    // The collider that holds the player lives.
+    private GameObject m_PlayerLivesCollider;
+
+    private bool valid = false;
+    private Colours.Colour newColour;
     private void Awake()
     {
         if(leftWall.transform.position.z + 13 > transform.position.z)
@@ -38,6 +47,11 @@ public class BabushkaBehaviour : MonoBehaviour
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
+
+        m_PlayerLivesCollider = GameObject.Find("Collider");
+            m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
+
+
     }
 
   
@@ -77,9 +91,9 @@ public class BabushkaBehaviour : MonoBehaviour
                 health = 0;
             }
             //soud trest alex
-            {
-                GetComponent<AudioSource>().Play();
-            }
+            
+              //  GetComponent<AudioSource>().Play();
+           
 
         }
     }
@@ -90,7 +104,82 @@ public class BabushkaBehaviour : MonoBehaviour
         GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
         enemy.transform.localScale -= new Vector3(scale, scale, scale);
         enemy.gameObject.tag = newTag;
-        enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)Random.Range((int)Colours.Colour.Red, (int)Colours.Colour.Count));
+
+        while (!valid)
+        {
+            switch(Random.Range(0,4))
+            {
+                case 0:
+                    {
+                        newColour = Colours.Colour.Blue;
+                        break;
+                    }
+                case 1:
+                    {
+                        newColour = Colours.Colour.Red;
+                        break;
+                    }
+                case 2:
+                    {
+                        newColour = Colours.Colour.Green;
+                        break;
+                    }
+                case 3:
+                    {
+                        newColour = Colours.Colour.Yellow;
+                        break;
+                    }
+            }
+            
+            switch(newColour)
+            {
+                case Colours.Colour.Blue:
+                    {
+                        int p1 = m_PlayerLives.player1Lives;
+                        if (p1 > 0)
+                        { 
+                            valid = true;
+                            Debug.Log("Blue");
+                        }
+                        break;
+                    }
+                case Colours.Colour.Red:
+                    {
+                        int p2 = m_PlayerLives.player2Lives;
+                        if (p2 > 0)
+                        { 
+                            valid = true;
+                            Debug.Log("Red");
+                        }
+                        break;
+                    }
+                case Colours.Colour.Green:
+                    {
+                        int p3 = m_PlayerLives.player3Lives;
+                        if (p3 > 0)
+                        {
+                            valid = true;
+                            Debug.Log("Green");
+                        }
+                        break;
+                    }
+                case Colours.Colour.Yellow:
+                    {
+                        int p4 = m_PlayerLives.player4Lives;
+                        if ( p4 > 0)
+                        {
+                            valid = true;
+                            Debug.Log("Yellow");
+                        }
+                        break;
+                    }
+
+            }
+
+
+        }
+
+        enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)newColour);
         
         foreach (Transform child in transform)
         {

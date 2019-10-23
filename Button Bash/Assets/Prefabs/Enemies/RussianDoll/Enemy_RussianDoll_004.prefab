@@ -145,10 +145,11 @@ MonoBehaviour:
   rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
   scale: 0.005
-  m_Colour: 3
   verticalFling: 85
   xFling: 80
   zFling: 50
+  m_PlayerLivesCollider: {fileID: 7602472435505701175, guid: f8c1b057495b92347a4c3ae41d2cdec5,
+    type: 3}
 --- !u!82 &4839814472968326325
 AudioSource:
   m_ObjectHideFlags: 0
