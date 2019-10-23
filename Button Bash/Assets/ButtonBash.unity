@@ -3569,36 +3569,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8695477744522173808, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: m_HealthBalloons.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player3
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player4
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
         type: 3}
       propertyPath: m_HealthBalloons.Array.data[0]
@@ -3619,26 +3589,6 @@ PrefabInstance:
       propertyPath: m_HealthBalloons.Array.data[3]
       value: 
       objectReference: {fileID: 306738684}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player1Lives
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player2Lives
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player3Lives
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: player4Lives
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c1b057495b92347a4c3ae41d2cdec5, type: 3}
 --- !u!1001 &3266317859506510609
