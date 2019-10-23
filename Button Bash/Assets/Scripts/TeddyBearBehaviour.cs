@@ -13,13 +13,14 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float verticalFling = 50;
     public float xFling = 10;
     public float zFling = 10;
-
+    private Rigidbody rb;
     private void Awake()
     {
         //get random fling values
        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
+        rb = gameObject.GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
     {
@@ -42,6 +43,10 @@ public class TeddyBearBehaviour : MonoBehaviour
                 {
                 //increases size of bear
                 transform.localScale += new Vector3(scale, scale, scale);
+                }
+                else
+                {
+                rb.constraints = RigidbodyConstraints.None;
                 }
                 //soud trest alex
                 {
