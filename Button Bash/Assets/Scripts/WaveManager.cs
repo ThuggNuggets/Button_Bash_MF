@@ -74,6 +74,29 @@ public class WaveManager : MonoBehaviour
 	/// </summary>
 	private int m_WaveEnemySpawnTimerIterator = 0;
 
+	// Variables for when a player is dead, replacing an enemy that shares a colour with the dead enemy.
+	//------------------------------------------------------------------------------------------------------------------
+	/// <summary>
+	/// Array of the block enemies.
+	/// </summary>
+	public GameObject[] m_BlockEnemies;
+
+	/// <summary>
+	/// Array of the teddy enemies.
+	/// </summary>
+	public GameObject[] m_TeddyEnemies;
+
+	/// <summary>
+	/// Array of the doll enemies.
+	/// </summary>
+	public GameObject[] m_DollEnemies;
+
+	/// <summary>
+	/// Array of the rubix enemies.
+	/// </summary>
+	public GameObject[] m_RubixEnemies;
+	//------------------------------------------------------------------------------------------------------------------
+
 	/// <summary>
 	/// On startup.
 	/// </summary>
@@ -138,54 +161,220 @@ public class WaveManager : MonoBehaviour
 						m_CodeWaveTimer -= Time.deltaTime;
 				}
 
-				// Else, spawn an enemy.
+				// ENEMY SPAWNING
+				//------------------------------------------------------------------------------------------------------------------
 				else
 				{
-					// Check the player that shares a colour with the upcoming enemy, if that player is dead, skip that enemy.
+					// Check the player that shares a colour with the upcoming enemy,
+					// if that player is dead, spawn a random enemy of the same type that doesn't share their colour with a dead player.
 
-					// Check the colour of the up coming enemy.
-					switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponentInChildren<EnemyBehaviour>().m_Colour)
+					// While the enemy shares a colour with a defeated player, spawn a different enemy of the same type.
+					while (CheckPlayerLivesForEnemySpawning() == false)
 					{
-						// If the enemy is blue.
-						case Colours.Colour.Blue:
-							// If player 1 is dead, skip over this enemy.
-							if (m_PlayerLives.player1Lives <= 0)
-							{
-								m_WaveEnemyIterator++;
-								return;
-							}
-							break;
+						// CHECK IF PLAYER OF THAT COLOUR IS ALIVE
+						//------------------------------------------------------------------------------------------------------------
+						// Check the tag of the enemy.
+						switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].tag)
+						{
+							// LETTER BLOCK
+							//---------------------------------------------------------------------------------------------------------
+							case "letterBlock":
+								// Check the colour of the up coming enemy.
+								switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour)
+								{
+									// If the enemy is blue.
+									case Colours.Colour.Blue:
+										// If player 1 is dead, skip over this enemy.
+										if (m_PlayerLives.player1Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+										}
+										break;
 
-						// If the enemy is red.
-						case Colours.Colour.Red:
-							// If player 2 is dead, skip over this enemy.
-							if (m_PlayerLives.player2Lives <= 0)
-							{
-								m_WaveEnemyIterator++;
-								return;
-							}
-							break;
+									// If the enemy is red.
+									case Colours.Colour.Red:
+										// If player 2 is dead, skip over this enemy.
+										if (m_PlayerLives.player2Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+										}
+										break;
 
-						// If the enemy is green.
-						case Colours.Colour.Green:
-							// If player 3 is dead, skip over this enemy.
-							if (m_PlayerLives.player3Lives <= 0)
-							{
-								m_WaveEnemyIterator++;
-								return;
-							}
-							break;
+									// If the enemy is green.
+									case Colours.Colour.Green:
+										// If player 3 is dead, skip over this enemy.
+										if (m_PlayerLives.player3Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+										}
+										break;
 
-						// If the enemy is yellow.
-						case Colours.Colour.Yellow:
-						// If player 4 is dead, skip over this enemy.
-							if (m_PlayerLives.player4Lives <= 0)
-							{
-								m_WaveEnemyIterator++;
-								return;
-							}
-							break;
+									// If the enemy is yellow.
+									case Colours.Colour.Yellow:
+										// If player 4 is dead, skip over this enemy.
+										if (m_PlayerLives.player4Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+										}
+										break;
+								}
+								break;
+							//---------------------------------------------------------------------------------------------------------
+
+							// TEDDY BEAR
+							//---------------------------------------------------------------------------------------------------------
+							case "teddyBear":
+								// Check the colour of the up coming enemy.
+								switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour)
+								{
+									// If the enemy is blue.
+									case Colours.Colour.Blue:
+										// If player 1 is dead, skip over this enemy.
+										if (m_PlayerLives.player1Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is red.
+									case Colours.Colour.Red:
+										// If player 2 is dead, skip over this enemy.
+										if (m_PlayerLives.player2Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is green.
+									case Colours.Colour.Green:
+										// If player 3 is dead, skip over this enemy.
+										if (m_PlayerLives.player3Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is yellow.
+									case Colours.Colour.Yellow:
+										// If player 4 is dead, skip over this enemy.
+										if (m_PlayerLives.player4Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+										}
+										break;
+								}
+								break;
+							//---------------------------------------------------------------------------------------------------------
+
+							// BABUSHKA DOLL
+							//---------------------------------------------------------------------------------------------------------
+							case "babushkaLarge":
+								// Check the colour of the up coming enemy.
+								switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour)
+								{
+									// If the enemy is blue.
+									case Colours.Colour.Blue:
+										// If player 1 is dead, skip over this enemy.
+										if (m_PlayerLives.player1Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is red.
+									case Colours.Colour.Red:
+										// If player 2 is dead, skip over this enemy.
+										if (m_PlayerLives.player2Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is green.
+									case Colours.Colour.Green:
+										// If player 3 is dead, skip over this enemy.
+										if (m_PlayerLives.player3Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is yellow.
+									case Colours.Colour.Yellow:
+										// If player 4 is dead, skip over this enemy.
+										if (m_PlayerLives.player4Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+										}
+										break;
+								}
+								//------------------------------------------------------------------------------------------------------
+								break;
+
+							// RUBIX CUBE
+							//---------------------------------------------------------------------------------------------------------
+							case "rubix":
+								// Check the colour of the up coming enemy.
+								switch (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour)
+								{
+									// If the enemy is blue.
+									case Colours.Colour.Blue:
+										// If player 1 is dead, skip over this enemy.
+										if (m_PlayerLives.player1Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is red.
+									case Colours.Colour.Red:
+										// If player 2 is dead, skip over this enemy.
+										if (m_PlayerLives.player2Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is green.
+									case Colours.Colour.Green:
+										// If player 3 is dead, skip over this enemy.
+										if (m_PlayerLives.player3Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+										}
+										break;
+
+									// If the enemy is yellow.
+									case Colours.Colour.Yellow:
+										// If player 4 is dead, skip over this enemy.
+										if (m_PlayerLives.player4Lives <= 0)
+										{
+											while (m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponent<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
+												m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator] = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+										}
+										break;
+								}
+								break;
+							//---------------------------------------------------------------------------------------------------------
+						}
 					}
+					//---------------------------------------------------------------------------------------------------------------
+
 					// The player that shares a colour with the next enemy is alive, therefore, spawn the enemy.
 					// Try to spawn an enemy, if an exception is thrown, output a message.
 					try
@@ -199,11 +388,15 @@ public class WaveManager : MonoBehaviour
 						// Instantiate an enemy, getting it from the wave's enemies, spawning at the spawn positoin, with the enemy spawn point's rotation.
 						GameObject enemy = Instantiate(m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator], spawnPos, m_EnemySpawnpoint.transform.rotation);
 
-						// Increment the spawn timer iterator.
-						m_WaveEnemySpawnTimerIterator++;
+						// So we don't go outside the bounds of the array.
+						if (m_WaveEnemySpawnTimerIterator < m_CurrentWaveInformation.m_WaveEnemySpawnTimes.Length - 1)
+						{
+							// Increment the spawn timer iterator.
+							m_WaveEnemySpawnTimerIterator++;
 
-						// Set the timer to the next timer in the wave's timer array.
-						m_WaveEnemySpawnCodeTimer = m_CurrentWaveInformation.m_WaveEnemySpawnTimes[m_WaveEnemySpawnTimerIterator];
+							// Set the timer to the next timer in the wave's timer array.
+							m_WaveEnemySpawnCodeTimer = m_CurrentWaveInformation.m_WaveEnemySpawnTimes[m_WaveEnemySpawnTimerIterator];
+						}
 					}
 					// An exception was thrown, output a message about which enemy in which wave caused the exception.
 					catch
@@ -214,12 +407,60 @@ public class WaveManager : MonoBehaviour
 					// Increment the wave enemy iterator.
 					++m_WaveEnemyIterator;
 				}
+				//------------------------------------------------------------------------------------------------------------------
 			}
 		}
 		// Else, decrease the timer by delta time.
 		else
 			m_WaveEnemySpawnCodeTimer -= Time.deltaTime;
 
-		Debug.Log(m_WaveEnemySpawnCodeTimer);
+		//Debug.Log(m_WaveEnemySpawnCodeTimer);
     }
+
+	private bool CheckPlayerLivesForEnemySpawning()
+	{
+		switch(m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator].GetComponentInChildren<EnemyBehaviour>().m_Colour)
+		{
+			// Enemy is blue.
+			case Colours.Colour.Blue:
+				// If the blue player is alive, return that the player is alive.
+				// Else return false.
+				if (m_PlayerLives.GetComponent<playerLives>().player1Lives > 0)
+					return true;
+				else
+					return false;
+
+			// Enemy is red.
+			case Colours.Colour.Red:
+				// If the red player is alive, return that the player is alive.
+				// Else return false.
+				if (m_PlayerLives.GetComponent<playerLives>().player2Lives > 0)
+					return true;
+				else
+					return false;
+
+			// Enemy is green.
+			case Colours.Colour.Green:
+				// If the green player is alive, return that the player is alive.
+				// Else return false.
+				if (m_PlayerLives.GetComponent<playerLives>().player3Lives > 0)
+					return true;
+				else
+					return false;
+
+			// Enemy is yellow.
+			case Colours.Colour.Yellow:
+				// If the yellow player is alive, return that the player is alive.
+				// Else return false.
+				if (m_PlayerLives.GetComponent<playerLives>().player4Lives > 0)
+					return true;
+				else
+					return false;
+
+				// Default to returning false.
+			default:
+				Debug.Log("Something went wrong with the wave manager checking alive players.");
+				return false;
+		}
+	}
 }
