@@ -14,6 +14,7 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float xFling = 10;
     public float zFling = 10;
     private Rigidbody rb;
+    //rotation
     private void Awake()
     {
         //get random fling values
@@ -29,6 +30,7 @@ public class TeddyBearBehaviour : MonoBehaviour
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
+            rb.AddForce(-100, 100, 100);
         }
     }
     private void OnCollisionEnter(Collision collision)
