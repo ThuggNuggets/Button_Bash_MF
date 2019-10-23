@@ -348,14 +348,18 @@ MonoBehaviour:
   - {fileID: 192447588265530366}
   - {fileID: 4707640347980045822}
   - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
-  - {fileID: 4881813708629735996}
+  - {fileID: 7285356327767963591}
+  - {fileID: 3935730192271263618}
+  - {fileID: 8860424776554200928}
+  - {fileID: 1273718842975741931}
+  - {fileID: 2164931263525898452}
+  - {fileID: 8331898923205906147}
   m_WaveTimer: 12
   m_PlayerLivesCollider: {fileID: 0}
+  m_BlockEnemies: []
+  m_TeddyEnemies: []
+  m_DollEnemies: []
+  m_RubixEnemies: []
 --- !u!1 &1295850233441699238
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,26 +697,26 @@ MonoBehaviour:
   - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
   m_WaveEnemySpawnTimes:
   - 0
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   - 1
   - 1
   - 1
@@ -766,27 +770,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WaveEnemies:
+  - {fileID: 2024104299056118155, guid: ca446061f34d53f4cb725ff3ba9e43af, type: 3}
+  - {fileID: 2024104299056118155, guid: b0a9a72cfec50fd42b88b1512c5a15f1, type: 3}
+  - {fileID: 2024104299056118155, guid: f4f753345a4030d4ba4c9eb48d82f902, type: 3}
+  - {fileID: 2024104299056118155, guid: 40326a37bdbdc7848aceac0768a439bb, type: 3}
   - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
   - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
-  - {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
-  - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
-  - {fileID: 285383254044644930, guid: 1dd1b6eb73b26914fb65daa7f4d0c27d, type: 3}
-  - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
-  - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
-  - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
   - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
-  - {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
-  - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
   - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
-  - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
-  - {fileID: 2590849142620533762, guid: 00d6793ffb5b7544281779f6741da113, type: 3}
+  - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
+  - {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b, type: 3}
+  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
+  - {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc, type: 3}
   - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
-  m_WaveEnemySpawnTimes: []
+  - {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0, type: 3}
+  - {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703, type: 3}
+  m_WaveEnemySpawnTimes:
+  - 0
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
+  - 0.75
 --- !u!1 &7285356327767963591
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,47 +845,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WaveEnemies:
-  - {fileID: 2590849142620533762, guid: a9451c012ba9ad841a71609487e78adc, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
-  - {fileID: 2590849142620533762, guid: 00d6793ffb5b7544281779f6741da113, type: 3}
-  - {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849, type: 3}
-  - {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647, type: 3}
-  - {fileID: 2590849142620533762, guid: 60e75b527127f1a428c171fdca802537, type: 3}
-  - {fileID: 285383254044644930, guid: 1dd1b6eb73b26914fb65daa7f4d0c27d, type: 3}
-  - {fileID: 2590849142620533762, guid: a9451c012ba9ad841a71609487e78adc, type: 3}
-  - {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647, type: 3}
-  - {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc, type: 3}
-  - {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647, type: 3}
-  - {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0, type: 3}
-  - {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6, type: 3}
-  - {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b, type: 3}
-  - {fileID: 285383254044644930, guid: 8ea5ffc455c773847a179e110cf56859, type: 3}
-  - {fileID: 2590849142620533762, guid: a9451c012ba9ad841a71609487e78adc, type: 3}
-  - {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703, type: 3}
-  - {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849, type: 3}
-  - {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849, type: 3}
-  - {fileID: 285383254044644930, guid: 1dd1b6eb73b26914fb65daa7f4d0c27d, type: 3}
   - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
-  - {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b, type: 3}
-  - {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0, type: 3}
-  - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
-  - {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc, type: 3}
-  - {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647, type: 3}
-  - {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703, type: 3}
-  - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
-  - {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b, type: 3}
-  - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
-  - {fileID: 4049320621646561682, guid: 647e1740325e80c4fbab0727423a0ec0, type: 3}
-  - {fileID: 2590849142620533762, guid: 60e75b527127f1a428c171fdca802537, type: 3}
-  - {fileID: 285383254044644930, guid: 5dbfed1456d46ec4abdf335f8d388bc6, type: 3}
   - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
-  - {fileID: 285383254044644930, guid: 6ba7d51f80998444e8a9ec72a0132849, type: 3}
-  - {fileID: 285383254044644930, guid: 8ea5ffc455c773847a179e110cf56859, type: 3}
-  - {fileID: 285383254044644930, guid: 1dd1b6eb73b26914fb65daa7f4d0c27d, type: 3}
-  - {fileID: 2590849142620533762, guid: 00d6793ffb5b7544281779f6741da113, type: 3}
-  - {fileID: 2590849142620533762, guid: 60e75b527127f1a428c171fdca802537, type: 3}
-  - {fileID: 2590849142620533762, guid: a9451c012ba9ad841a71609487e78adc, type: 3}
-  m_WaveEnemySpawnTimes: []
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  m_WaveEnemySpawnTimes:
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!1 &8331898923205906147
 GameObject:
   m_ObjectHideFlags: 0
