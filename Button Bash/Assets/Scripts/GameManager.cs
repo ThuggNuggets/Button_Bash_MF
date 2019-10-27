@@ -5,8 +5,15 @@ using UnityEngine;
 public static class GameManager
 {
 	/// <summary>
-	/// The player's and their selection of character.
+	/// The player's selection for each character.
+	/// The index is the character and the elements inside are which player selected that character.
 	/// </summary>
+	// Index:
+	//	0 = Sailor
+	//	1 = Magician
+	//	2 = Alien
+	//	3 = Cat
+	//	Example: if 3 is at index 1, then player 4 selected the magician.
 	private static int[] m_PlayerCharacters = new int[4] { -1, -1, -1 ,-1};
 
 	/// <summary>

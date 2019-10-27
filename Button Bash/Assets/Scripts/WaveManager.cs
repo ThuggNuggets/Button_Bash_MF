@@ -10,24 +10,9 @@ public class WaveManager : MonoBehaviour
 	public GameObject m_EnemySpawnpoint;
 
 	/// <summary>
-	/// The minimum time for enemies spawning.
-	/// </summary>
-	public float m_MinSpawnTime;
-
-	/// <summary>
-	/// The maximum time for enemies spawning.
-	/// </summary>
-	public float m_MaxSpawnTime;
-
-	/// <summary>
 	/// Array of the waves to spawn.
 	/// </summary>
 	public GameObject[] m_Waves;
-
-	/// <summary>
-	/// The wave enemy spawning timer.
-	/// </summary>
-	private float m_WaveEnemySpawningTimer;
 
 	/// <summary>
 	/// The timer for inbetween waves.
@@ -97,6 +82,9 @@ public class WaveManager : MonoBehaviour
 	public GameObject[] m_RubixEnemies;
 	//------------------------------------------------------------------------------------------------------------------
 
+	/// <summary>
+	/// The enemy to spawn.
+	/// </summary>
 	private GameObject m_EnemyToSpawn;
 
 	/// <summary>
@@ -130,7 +118,7 @@ public class WaveManager : MonoBehaviour
 			if (m_WaveIterator <= m_Waves.Length)
 			{
 				// If the wave enemy iterator is equal to the amount of enemies in the wave, move to the next wave.
-				if (m_WaveEnemyIterator == m_CurrentWaveInformation.m_WaveEnemies.Length)
+				if (m_WaveEnemyIterator == m_CurrentWaveInformation.m_WaveEnemies.Length - 1)
 				{
 					// If the code wave timer is equal to or less than 0, move on to the next wave.
 					if (m_CodeWaveTimer <= 0.0f)
@@ -188,7 +176,7 @@ public class WaveManager : MonoBehaviour
 								{
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
-										// If player 1 is dead, skip over this enemy.
+										// If player 1 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
@@ -200,7 +188,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is red.
 									case Colours.Colour.Red:
-										// If player 2 is dead, skip over this enemy.
+										// If player 2 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
@@ -210,7 +198,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is green.
 									case Colours.Colour.Green:
-										// If player 3 is dead, skip over this enemy.
+										// If player 3 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
@@ -220,7 +208,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
-										// If player 4 is dead, skip over this enemy.
+										// If player 4 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
@@ -239,7 +227,7 @@ public class WaveManager : MonoBehaviour
 								{
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
-										// If player 1 is dead, skip over this enemy.
+										// If player 1 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
@@ -249,7 +237,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is red.
 									case Colours.Colour.Red:
-										// If player 2 is dead, skip over this enemy.
+										// If player 2 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
@@ -259,7 +247,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is green.
 									case Colours.Colour.Green:
-										// If player 3 is dead, skip over this enemy.
+										// If player 3 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
@@ -269,7 +257,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
-										// If player 4 is dead, skip over this enemy.
+										// If player 4 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
@@ -288,7 +276,7 @@ public class WaveManager : MonoBehaviour
 								{
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
-										// If player 1 is dead, skip over this enemy.
+										// If player 1 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
@@ -298,7 +286,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is red.
 									case Colours.Colour.Red:
-										// If player 2 is dead, skip over this enemy.
+										// If player 2 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
@@ -308,7 +296,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is green.
 									case Colours.Colour.Green:
-										// If player 3 is dead, skip over this enemy.
+										// If player 3 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
@@ -318,7 +306,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
-										// If player 4 is dead, skip over this enemy.
+										// If player 4 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
@@ -337,7 +325,7 @@ public class WaveManager : MonoBehaviour
 								{
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
-										// If player 1 is dead, skip over this enemy.
+										// If player 1 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
@@ -347,7 +335,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is red.
 									case Colours.Colour.Red:
-										// If player 2 is dead, skip over this enemy.
+										// If player 2 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
@@ -357,7 +345,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is green.
 									case Colours.Colour.Green:
-										// If player 3 is dead, skip over this enemy.
+										// If player 3 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
@@ -367,7 +355,7 @@ public class WaveManager : MonoBehaviour
 
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
-										// If player 4 is dead, skip over this enemy.
+										// If player 4 is dead, replace the enemy with a different enemy.
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
