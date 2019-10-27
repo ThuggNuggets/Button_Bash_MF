@@ -11,12 +11,15 @@ public class LetterBlockBehaviour : MonoBehaviour
     public float xFling = 10;
     public float zFling = 10;
 
+    //flinging
+    int flingRotation;
     private void Awake()
     {
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         xFling = Random.Range(-xFling, -minXFling);
         zFling = Random.Range(-zFling, zFling);
+        flingRotation = Random.Range(0, 3);
     }
     private void FixedUpdate()
     {
@@ -26,6 +29,24 @@ public class LetterBlockBehaviour : MonoBehaviour
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
+            switch (flingRotation)
+            {
+                case 0:
+                    {
+                        transform.Rotate(10, 0, 0);
+                        break;
+                    }
+                case 1:
+                    {
+                        transform.Rotate(0, 10, 0);
+                        break;
+                    }
+                case 2:
+                    {
+                        transform.Rotate(0, 0, 10);
+                        break;
+                    }
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)

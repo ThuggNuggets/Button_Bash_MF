@@ -35,7 +35,8 @@ public class BabushkaBehaviour : MonoBehaviour
     private Colours.Colour newColour;
     private bool valid = false;
 
-
+    //flinging
+    int flingRotation;
     //comparing 2 forms of setting nect level colour
     private List<Colours.Colour> playerColours;
     private void Awake()
@@ -57,6 +58,8 @@ public class BabushkaBehaviour : MonoBehaviour
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
         m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
+
+        flingRotation = Random.Range(0, 2);
     }
 
   
@@ -68,6 +71,20 @@ public class BabushkaBehaviour : MonoBehaviour
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
+            switch (flingRotation)
+            {
+                case 0:
+                    {
+                        transform.Rotate(10, 0, 0);
+                        break;
+                    }
+                case 1:
+                    {
+                        transform.Rotate(0, 0, 10);
+                        break;
+                    }
+
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)
