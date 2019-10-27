@@ -844,7 +844,6 @@ GameObject:
   - component: {fileID: 2077824529}
   - component: {fileID: 2077824532}
   - component: {fileID: 2077824531}
-  - component: {fileID: 2077824530}
   - component: {fileID: 2077824533}
   m_Layer: 5
   m_Name: win player portrats
@@ -872,25 +871,6 @@ RectTransform:
   m_AnchoredPosition: {x: -11, y: -4.3}
   m_SizeDelta: {x: 122, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2077824530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077824528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9853bfd222eabd54ead777133c2a78a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerPortraits:
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
-  - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
-  - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
-  m_DeadZone: 0.05
-  m_PlayerNumber: 0
 --- !u!114 &2077824531
 MonoBehaviour:
   m_ObjectHideFlags: 0
