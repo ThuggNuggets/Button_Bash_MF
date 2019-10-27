@@ -192,7 +192,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
-												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
 
 											break;
 										}
@@ -204,7 +204,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
-												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
 										}
 										break;
 
@@ -214,7 +214,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
-												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
 										}
 										break;
 
@@ -224,7 +224,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
-												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length - 1)];
+												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
 										}
 										break;
 								}
@@ -243,7 +243,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
-												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
 										}
 										break;
 
@@ -253,7 +253,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
-												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
 										}
 										break;
 
@@ -263,7 +263,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
-												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
 										}
 										break;
 
@@ -273,7 +273,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
-												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length - 1)];
+												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
 										}
 										break;
 								}
@@ -292,7 +292,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
-												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
 										}
 										break;
 
@@ -302,7 +302,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
-												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
 										}
 										break;
 
@@ -312,7 +312,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
-												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
 										}
 										break;
 
@@ -322,7 +322,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
-												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length - 1)];
+												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
 										}
 										break;
 								}
@@ -341,7 +341,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
-												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
 										}
 										break;
 
@@ -351,7 +351,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
-												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
 										}
 										break;
 
@@ -361,7 +361,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
-												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
 										}
 										break;
 
@@ -371,7 +371,7 @@ public class WaveManager : MonoBehaviour
 										if (m_PlayerLives.player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
-												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length - 1)];
+												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
 										}
 										break;
 								}
