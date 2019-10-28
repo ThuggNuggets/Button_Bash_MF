@@ -50,7 +50,7 @@ public class CharacterSelect : MonoBehaviour
 	{
 		// Check the name of the current image showing the currently selected character
 		// and assign the index of the current image to match the current image in the array.
-		// Example: neilA is at index 1 of the array of images, so set the index to 1 at startup.
+		// Example: Naiciam is at index 1 of the array of images, so set the index to 1 at startup.
 
 		if (GetComponent<RawImage>().texture.name == "nemo")
             m_CurrentImage = 0;
@@ -71,34 +71,7 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		// Check the player number of this character select instance.
-		switch(m_PlayerNumber)
-		{
-			// Player 1 input.
-			case 0:
-				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.First);
-				break;
-
-			// Player 2 input.
-			case 1:
-				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Second);
-				break;
-
-			// Player 3 input.
-			case 2:
-				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Third);
-				break;
-
-			// Player 4 input.
-			case 3:
-				m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, XboxController.Fourth);
-				break;
-
-				// An image box doesn't have a proper player number assigned, display a message to reflect this.
-			default:
-				Debug.Log("One of the image boxes doesn't have a player number assigned.");
-				break;
-		}
+		m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_PlayerNumber + 1);
 
 		// If the left stick has been released, check it's direction.
 		if (m_LeftStickHasBeenReleased == true)
@@ -134,8 +107,11 @@ public class CharacterSelect : MonoBehaviour
 			else
 				m_CurrentImage = 0;
 
+			// This goes through the array of characters, finding the next character that someone hasn't selected.
 			while (true)
 			{
+				// If there isn't -1 at the index of the current image, select the next character.
+				// Else, break out of the loop.
 				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 				{
 					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
@@ -169,8 +145,11 @@ public class CharacterSelect : MonoBehaviour
 			else
 				m_CurrentImage = m_PlayerPortraits.Length - 1;
 
+			// This goes through the array of characters, finding the next character that someone hasn't selected.
 			while (true)
 			{
+				// If there isn't -1 at the index of the current image, select the previous character.
+				// Else, break out of the loop.
 				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 				{
 					// If the current image is greater than 0, select the next image in the array.

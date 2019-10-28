@@ -13,7 +13,7 @@ public static class GameManager
 	//	1 = Magician
 	//	2 = Alien
 	//	3 = Cat
-	//	Example: if 3 is at index 1, then player 4 selected the magician.
+	//	Example: if 3 is at index 1, then player 4 (3) selected the magician.
 	private static int[] m_PlayerCharacters = new int[4] { -1, -1, -1 ,-1};
 
 	/// <summary>

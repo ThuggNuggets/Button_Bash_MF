@@ -26,8 +26,14 @@ public class playerLives : MonoBehaviour
 
 	public GameObject[] m_HealthBalloons;
 
+	public GameObject[] m_DefeatedPlayerReticals;
+
 	// How many players have lost all their lives.
 	private int m_PlayerDeathIterator = 0;
+
+	private SoundManager m_SoundManager;
+
+	private GameObject m_SoundBucket;
 
     private void Awake()
     {
@@ -35,6 +41,9 @@ public class playerLives : MonoBehaviour
         player2Lives = maxHealth;
         player3Lives = maxHealth;
         player4Lives = maxHealth;
+
+		m_SoundBucket = GameObject.Find("Sound bucket");
+		m_SoundManager = m_SoundBucket.GetComponent<SoundManager>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -44,7 +53,7 @@ public class playerLives : MonoBehaviour
 			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
 
 			// alex sound
-			GetComponent<AudioSource>().clip = GameObject.Find("Sounds").GetComponent<SoundManager>().m_SoundClips[3];
+			GetComponent<AudioSource>().clip = m_SoundManager.m_SoundClips[3];
 			GetComponent<AudioSource>().Play();
         }
         else
@@ -133,6 +142,7 @@ public class playerLives : MonoBehaviour
             {
                 Destroy(nolife);
             }
+			Instantiate(m_DefeatedPlayerReticals[0], GameObject.Find("Character_sailor_001").transform.GetChild(0).transform.position, new Quaternion());
         }
         if (player2Lives <= 0)
         {
@@ -140,8 +150,9 @@ public class playerLives : MonoBehaviour
             foreach (GameObject nolife in noLivesLeft)
             {
                 Destroy(nolife);
-            } 
-        }
+            }
+			Instantiate(m_DefeatedPlayerReticals[1], GameObject.Find("Character_magic_001").transform.GetChild(0).transform.position, new Quaternion());
+		}
         if (player3Lives <= 0)
         {
             GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player3");
@@ -149,7 +160,8 @@ public class playerLives : MonoBehaviour
             {
                 Destroy(nolife);
             }
-        }
+			Instantiate(m_DefeatedPlayerReticals[2], GameObject.Find("Character_Alien_001").transform.GetChild(0).transform.position, new Quaternion());
+		}
         if (player4Lives <= 0)
         {
             GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player4");
@@ -157,7 +169,8 @@ public class playerLives : MonoBehaviour
             {
                 Destroy(nolife);
             }
-        }
+			Instantiate(m_DefeatedPlayerReticals[3], GameObject.Find("Character_Cat_001").transform.GetChild(0).transform.position, new Quaternion());
+		}
 		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.
 		if (m_PlayerDeathIterator == 3)
 		{

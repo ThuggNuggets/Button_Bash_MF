@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
 public class DeadPlayerReticle : MonoBehaviour
@@ -50,7 +51,12 @@ public class DeadPlayerReticle : MonoBehaviour
 	/// </summary>
     void Awake()
     {
+		// Assign the shooting cooldown to be used in code.
 		m_CodeShootingCooldown = m_ShootingCooldown;
+
+		// Add the scene loading event, so if the player's return to the scene,
+		// the reticals won't be there from the last round.
+		SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 	/// <summary>
@@ -96,5 +102,10 @@ public class DeadPlayerReticle : MonoBehaviour
 
 		// Rotate 90 degrees on the y axis to make up for the game being on a weird angle.
 		button.transform.Rotate(0.0f, 90, 0.0f);
+	}
+
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		Destroy(gameObject);
 	}
 }
