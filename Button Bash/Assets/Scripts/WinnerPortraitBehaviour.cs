@@ -16,6 +16,6 @@ public class WinnerPortraitBehaviour : MonoBehaviour
 		int winningPlayer = GameManager.GetWinningPlayer();
 
 		// Set the texture of the winning player's portrait to the portrait of the winning player.
-		GetComponent<RawImage>().texture = m_PlayerPortraits[winningPlayer];
+		GetComponent<RawImage>().texture = m_PlayerPortraits[winningPlayer - 1];
 	}
 }
