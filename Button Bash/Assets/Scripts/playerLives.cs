@@ -68,12 +68,17 @@ public class playerLives : MonoBehaviour
                         player1Lives -= 1;
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (player1Lives == 0)
+						{
 							m_PlayerDeathIterator++;
+							GameObject m_Sailor = GameObject.Find("Character_sailor_001");
+							Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
+							Destroy(m_Sailor);
+						}
 
 						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
 
 						GetComponent<AudioSource>().Play();
-                    }
+					}
                     break;
                 }
 
@@ -132,12 +137,6 @@ public class playerLives : MonoBehaviour
                 }
         }
 
-        if(player1Lives == 0)
-        {
-			GameObject m_Sailor = GameObject.Find("Character_sailor_001");
-            Destroy(m_Sailor);
-			Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
-        }
         if (player2Lives <= 0)
         {
             GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player2");
