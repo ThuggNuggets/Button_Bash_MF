@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WaveEnemies:
-  - {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef, type: 3}
+  - {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b, type: 3}
   - {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366, type: 3}
   - {fileID: 9127828091661151835, guid: fe3b7e0b98688db4b988f8897d9f75e6, type: 3}
   - {fileID: 9127828091661151835, guid: 29fb3e6c42b6d3d4480b2dd39fea5ecf, type: 3}
@@ -341,8 +341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnemySpawnpoint: {fileID: 1295850233441699238}
-  m_MinSpawnTime: 0.5
-  m_MaxSpawnTime: 2
   m_Waves:
   - {fileID: 1295850232319659906}
   - {fileID: 192447588265530366}
