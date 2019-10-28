@@ -100,8 +100,10 @@ public class HealthBalloonBehaviour : MonoBehaviour
 		// If the balloon has been set to active, have the balloon float up.
 		if (m_Active == true)
 		{
-			// Get the rigidbody of the balloon, to add force.
-			Rigidbody body = gameObject.GetComponent<Rigidbody>();
+            // alex sound
+            GetComponent<AudioSource>().Play();
+            // Get the rigidbody of the balloon, to add force.
+            Rigidbody body = gameObject.GetComponent<Rigidbody>();
 			// Unfreeze  position, just in case they are frozen.
 			body.constraints = RigidbodyConstraints.FreezeRotation;
 			// Add upwards force the the balloon.
