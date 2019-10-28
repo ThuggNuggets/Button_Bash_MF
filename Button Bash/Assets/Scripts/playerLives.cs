@@ -88,11 +88,15 @@ public class playerLives : MonoBehaviour
                     if (player2Lives > 0)
                     {
                         player2Lives -= 1;
-						// If player 2's lives are 0, increase the amount of players that have no lives.
-						if (player2Lives == 0)
-							m_PlayerDeathIterator++;
-
-						m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
+                        // If player 2's lives are 0, increase the amount of players that have no lives.
+                        if (player1Lives == 0)
+                        {
+                            m_PlayerDeathIterator++;
+                            GameObject m_Magic = GameObject.Find("Character_magic_001");
+                            Instantiate(m_DefeatedPlayerReticals[1], m_Magic.transform.GetChild(0).position, new Quaternion());
+                            Destroy(m_Magic);
+                        }
+                        m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
 
 						GetComponent<AudioSource>().Play();
 					}
@@ -104,11 +108,15 @@ public class playerLives : MonoBehaviour
                     if (player3Lives > 0)
                     {
                         player3Lives -= 1;
-						// If player 3's lives are 0, increase the amount of players that have no lives.
-						if (player3Lives == 0)
-							m_PlayerDeathIterator++;
-
-						m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
+                        // If player 3's lives are 0, increase the amount of players that have no lives.
+                        if (player1Lives == 0)
+                        {
+                            m_PlayerDeathIterator++;
+                            GameObject m_Alien = GameObject.Find("Character_Alien_001");
+                            Instantiate(m_DefeatedPlayerReticals[2], m_Alien.transform.GetChild(0).position, new Quaternion());
+                            Destroy(m_Alien);
+                        }
+                        m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 
 						GetComponent<AudioSource>().Play();
 					}
@@ -120,11 +128,15 @@ public class playerLives : MonoBehaviour
                     if (player4Lives > 0)
                     {
                         player4Lives -= 1;
-						// If player 4's lives are 0, increase the amount of players that have no lives.
-						if (player4Lives == 0)
-							m_PlayerDeathIterator++;
-
-						m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
+                        // If player 4's lives are 0, increase the amount of players that have no lives.
+                        if (player1Lives == 0)
+                        {
+                            m_PlayerDeathIterator++;
+                            GameObject m_Cat = GameObject.Find("Character_Cat_001");
+                            Instantiate(m_DefeatedPlayerReticals[3], m_Cat.transform.GetChild(0).position, new Quaternion());
+                            Destroy(m_Cat);
+                        }
+                        m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
 
 						GetComponent<AudioSource>().Play();
 					}
@@ -137,33 +149,6 @@ public class playerLives : MonoBehaviour
                 }
         }
 
-        if (player2Lives <= 0)
-        {
-            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player2");
-            foreach (GameObject nolife in noLivesLeft)
-            {
-                Destroy(nolife);
-            }
-			Instantiate(m_DefeatedPlayerReticals[1], GameObject.Find("Character_magic_001").transform.GetChild(0).transform.position, new Quaternion());
-		}
-        if (player3Lives <= 0)
-        {
-            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player3");
-            foreach (GameObject nolife in noLivesLeft)
-            {
-                Destroy(nolife);
-            }
-			Instantiate(m_DefeatedPlayerReticals[2], GameObject.Find("Character_Alien_001").transform.GetChild(0).transform.position, new Quaternion());
-		}
-        if (player4Lives <= 0)
-        {
-            GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player4");
-            foreach (GameObject nolife in noLivesLeft)
-            {
-                Destroy(nolife);
-            }
-			Instantiate(m_DefeatedPlayerReticals[3], GameObject.Find("Character_Cat_001").transform.GetChild(0).transform.position, new Quaternion());
-		}
 		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.
 		if (m_PlayerDeathIterator == 3)
 		{
