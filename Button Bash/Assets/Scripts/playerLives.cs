@@ -33,8 +33,6 @@ public class playerLives : MonoBehaviour
 
 	private SoundManager m_SoundManager;
 
-	private GameObject m_SoundBucket;
-
     private void Awake()
     {
         player1Lives = maxHealth;
@@ -42,8 +40,7 @@ public class playerLives : MonoBehaviour
         player3Lives = maxHealth;
         player4Lives = maxHealth;
 
-		m_SoundBucket = GameObject.Find("Sound bucket");
-		m_SoundManager = m_SoundBucket.GetComponent<SoundManager>();
+		m_SoundManager = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -135,14 +132,11 @@ public class playerLives : MonoBehaviour
                 }
         }
 
-        if(player1Lives <= 0)
+        if(player1Lives == 0)
         {
-           GameObject[] noLivesLeft = GameObject.FindGameObjectsWithTag("Player1");
-            foreach (GameObject nolife in noLivesLeft)
-            {
-                Destroy(nolife);
-            }
-			Instantiate(m_DefeatedPlayerReticals[0], GameObject.Find("Character_sailor_001").transform.GetChild(0).transform.position, new Quaternion());
+			GameObject m_Sailor = GameObject.Find("Character_sailor_001");
+            Destroy(m_Sailor);
+			Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
         }
         if (player2Lives <= 0)
         {

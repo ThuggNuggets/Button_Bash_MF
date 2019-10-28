@@ -100,12 +100,18 @@ public class DeadPlayerReticle : MonoBehaviour
 		// Rotate so the button looks at the reticle's transform, so it will shoot straight at it.
 		button.transform.LookAt(transform);
 
-		// Rotate 90 degrees on the y axis to make up for the game being on a weird angle.
+		// Rotate 90 degrees on the y axis to make up for the game being along the x axis rather than the z.
 		button.transform.Rotate(0.0f, 90, 0.0f);
 	}
 
+	/// <summary>
+	/// When the game scene is loaded and if the reticle is active, destroy the reticle.
+	/// </summary>
+	/// <param name="scene">The scene that was loaded.</param>
+	/// <param name="mode">Needed for the function, don't know what it does.</param>
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		Destroy(gameObject);
+		if (scene == SceneManager.GetSceneAt(2) && gameObject.activeSelf == true)
+			Destroy(gameObject);
 	}
 }
