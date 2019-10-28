@@ -115,7 +115,7 @@ public class BabushkaBehaviour : MonoBehaviour
             }
             //soud trest alex
             
-              //  GetComponent<AudioSource>().Play();
+             GetComponent<AudioSource>().Play();
            
 
         }
