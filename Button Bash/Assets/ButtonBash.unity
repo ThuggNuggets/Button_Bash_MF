@@ -528,21 +528,6 @@ PrefabInstance:
       propertyPath: playerAmmoText
       value: 
       objectReference: {fileID: 1453303307}
-    - target: {fileID: 9115786010933917628, guid: 475e1879bd3b34c4c8cf56380c87b444,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 4.60686
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115786010933917628, guid: 475e1879bd3b34c4c8cf56380c87b444,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.928061
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226982154034559728, guid: 475e1879bd3b34c4c8cf56380c87b444,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
 --- !u!4 &258315289 stripped
@@ -1090,6 +1075,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 42701327336704726, guid: 6c8c36ee1a1180344b72da2a44d3039a,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c8c36ee1a1180344b72da2a44d3039a, type: 3}
@@ -1871,21 +1861,6 @@ PrefabInstance:
       propertyPath: playerAmmoText
       value: 
       objectReference: {fileID: 524355213}
-    - target: {fileID: 4292179127142314511, guid: 150e4469d2b1bab428c8dc388c98ca78,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939201170365321297, guid: 150e4469d2b1bab428c8dc388c98ca78,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 4.033372
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939201170365321297, guid: 150e4469d2b1bab428c8dc388c98ca78,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.5235915
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150e4469d2b1bab428c8dc388c98ca78, type: 3}
 --- !u!1001 &970370625
@@ -2352,26 +2327,6 @@ PrefabInstance:
       propertyPath: playerAmmoText
       value: 
       objectReference: {fileID: 1117646739}
-    - target: {fileID: 4044416406418089204, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 4.7978096
-      objectReference: {fileID: 0}
-    - target: {fileID: 4044416406418089204, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.0016406775
-      objectReference: {fileID: 0}
-    - target: {fileID: 4044416406418089204, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.9789643
-      objectReference: {fileID: 0}
-    - target: {fileID: 5096394947610743486, guid: 5ea4aad07d28c5844910d6e818ce694e,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea4aad07d28c5844910d6e818ce694e, type: 3}
 --- !u!1001 &1200837643
@@ -2675,26 +2630,6 @@ PrefabInstance:
       propertyPath: playerAmmoText
       value: 
       objectReference: {fileID: 131771095}
-    - target: {fileID: 2959393516573678641, guid: 3ad5de00e8caade47a99069d544733b9,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.7387395
-      objectReference: {fileID: 0}
-    - target: {fileID: 2959393516573678641, guid: 3ad5de00e8caade47a99069d544733b9,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.551353
-      objectReference: {fileID: 0}
-    - target: {fileID: 5607457697793743523, guid: 3ad5de00e8caade47a99069d544733b9,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5607457697793743523, guid: 3ad5de00e8caade47a99069d544733b9,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
 --- !u!114 &1453303307 stripped
@@ -4055,11 +3990,6 @@ PrefabInstance:
       propertyPath: m_HealthBalloons.Array.data[3]
       value: 
       objectReference: {fileID: 306738684}
-    - target: {fileID: 6808261314332480252, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c1b057495b92347a4c3ae41d2cdec5, type: 3}
 --- !u!1001 &3266317859506510609
