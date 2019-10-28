@@ -64,6 +64,8 @@ public class playerLives : MonoBehaviour
 							m_PlayerDeathIterator++;
 
 						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
+
+						GetComponent<AudioSource>().Play();
                     }
                     break;
                 }
@@ -79,6 +81,8 @@ public class playerLives : MonoBehaviour
 							m_PlayerDeathIterator++;
 
 						m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
+
+						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
@@ -93,6 +97,8 @@ public class playerLives : MonoBehaviour
 							m_PlayerDeathIterator++;
 
 						m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
+
+						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
@@ -107,6 +113,8 @@ public class playerLives : MonoBehaviour
 							m_PlayerDeathIterator++;
 
 						m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
+
+						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }

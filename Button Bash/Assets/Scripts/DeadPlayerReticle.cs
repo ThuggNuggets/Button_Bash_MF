@@ -69,19 +69,19 @@ public class DeadPlayerReticle : MonoBehaviour
 	{
 		// Instantiate the projectile at the point for where the projectiles come from.
 		GameObject button = Instantiate(m_Button, m_ProjectileSpawnPoint.position, new Quaternion());
+
+		// Disable the Player Projectile script, so the button doesn't fly away.
 		button.GetComponent<PlayerProjectile>().enabled = false;
 
 		Rigidbody rb = button.GetComponent<Rigidbody>();
 
-		Vector3 p = transform.position;
-
 		float gravity = Physics.gravity.magnitude;
 
-		float angle = Mathf.Sqrt(Mathf.Tan((m_ProjectileSpawnPoint.transform.position.x - transform.position.x) / (m_ProjectileSpawnPoint.transform.position.y - transform.position.y)));
-		//float angle = m_InitialAngle * Mathf.Deg2Rad;
+		float angle = Mathf.Tan((m_ProjectileSpawnPoint.transform.position.x - transform.position.x) / (m_ProjectileSpawnPoint.transform.position.y - transform.position.y));
 
-		float distance = Vector3.Distance(p, m_ProjectileSpawnPoint.transform.position);
-		float yOffset = p.y - m_ProjectileSpawnPoint.transform.position.y;
+		float distance = Vector3.Distance(transform.position, m_ProjectileSpawnPoint.transform.position);
+		
+		float yOffset = transform.position.y - m_ProjectileSpawnPoint.transform.position.y;
 
 		float initialVelocity = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
 
