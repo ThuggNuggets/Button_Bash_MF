@@ -50,17 +50,17 @@ PrefabInstance:
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.72
+      value: 49.3
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11
+      value: -11.104
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
@@ -102,6 +102,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25575736
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35256
+      objectReference: {fileID: 0}
     - target: {fileID: 2342331032169087012, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_Size.x
@@ -137,6 +147,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3266317860624515168}
     m_Modifications:
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_dollhouserailing_002 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3675831152132768879, guid: 18d671ce0c694654dbd002e6f0f1bd66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,16 +212,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_dollhouserailing_002 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d671ce0c694654dbd002e6f0f1bd66, type: 3}
 --- !u!4 &2186328555179153408 stripped
@@ -217,6 +227,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3266317860624515168}
     m_Modifications:
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_dollhouserailing_002 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3675831152132768879, guid: 18d671ce0c694654dbd002e6f0f1bd66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,16 +292,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_dollhouserailing_002 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d671ce0c694654dbd002e6f0f1bd66, type: 3}
 --- !u!4 &2186328555129857777 stripped
@@ -305,17 +315,17 @@ PrefabInstance:
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.72
+      value: 49.3
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13
+      value: 13.14
       objectReference: {fileID: 0}
     - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
@@ -357,6 +367,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1423498668990583653, guid: 6b041ec452607a4498c83860b14fced2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.281528
+      objectReference: {fileID: 0}
     - target: {fileID: 2342331032169087012, guid: 6b041ec452607a4498c83860b14fced2,
         type: 3}
       propertyPath: m_Size.x
@@ -392,6 +407,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3266317860624515168}
     m_Modifications:
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_Name
+      value: Enviro_dollhouserailing_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3675831152132768879, guid: 18d671ce0c694654dbd002e6f0f1bd66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,16 +471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_Name
-      value: Enviro_dollhouserailing_002
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675831152133265487, guid: 18d671ce0c694654dbd002e6f0f1bd66,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d671ce0c694654dbd002e6f0f1bd66, type: 3}
