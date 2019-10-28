@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3232552646242079949}
   m_Layer: 0
-  m_Name: Character_Alien_001
+  m_Name: Character_Player_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: febcd89b94305af41b10ef6946c6ce44, type: 2}
+  - {fileID: 2100000, guid: 63f3cb6b629310d40a4ef008e9ca945c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

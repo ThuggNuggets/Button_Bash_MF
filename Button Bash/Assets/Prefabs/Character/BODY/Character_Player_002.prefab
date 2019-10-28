@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552107870225001803}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 3.06, z: -5}
+  m_LocalPosition: {x: 3.37, y: 3.06, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8795633859476986802}
@@ -151,7 +151,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb46a3fffcc2fba47b2e29f1aa0eb0ed, type: 2}
+  - {fileID: 2100000, guid: 51c483506ebd3944989eb227518806c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8795633859476986802}
   m_Layer: 0
-  m_Name: Character_magic_001
+  m_Name: Character_Player_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 4338928138229557469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1552107870225363307}
   m_Father: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6815664412322042890}
   m_Layer: 0
-  m_Name: Character_Cat_001
+  m_Name: Character_Player_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 502c4a7f44a240a459620e9408814cad, type: 2}
+  - {fileID: 2100000, guid: 065340a1ddef0ee40b1336c44fc73de5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

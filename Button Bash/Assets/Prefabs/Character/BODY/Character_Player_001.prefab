@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2427988442959640500}
   m_Layer: 0
-  m_Name: Character_sailor_001
+  m_Name: Character_Player_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4d9afd9c353d5243a427e6b68a2eeb4, type: 2}
+  - {fileID: 2100000, guid: 8390f781ba43a4341817c3c1299dbe99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
