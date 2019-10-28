@@ -51,7 +51,6 @@ public class DeadPlayerReticle : MonoBehaviour
     void Awake()
     {
 		m_CodeShootingCooldown = m_ShootingCooldown;
-		//gameObject.SetActive(false);
     }
 
 	/// <summary>
@@ -92,7 +91,10 @@ public class DeadPlayerReticle : MonoBehaviour
 		// Instantiate the projectile at the point for where the projectiles come from.
 		GameObject button = Instantiate(m_Button, m_ProjectileSpawnPoint.position, new Quaternion());
 
+		// Rotate so the button looks at the reticle's transform, so it will shoot straight at it.
 		button.transform.LookAt(transform);
+
+		// Rotate 90 degrees on the y axis to make up for the game being on a weird angle.
 		button.transform.Rotate(0.0f, 90, 0.0f);
 	}
 }
