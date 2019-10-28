@@ -35,13 +35,22 @@ public class DeadPlayerReticle : MonoBehaviour
 	/// </summary>
 	private float m_YAxis;
 
-	private float m_InitialAngle;
+	/// <summary>
+	/// The cooldown for shooting.
+	/// </summary>
+	public float m_ShootingCooldown;
+
+	/// <summary>
+	/// The cooldown to use in code.
+	/// </summary>
+	private float m_CodeShootingCooldown;
 
 	/// <summary>
 	/// On startup.
 	/// </summary>
     void Awake()
     {
+		m_CodeShootingCooldown = m_ShootingCooldown;
 		//gameObject.SetActive(false);
     }
 
@@ -60,37 +69,30 @@ public class DeadPlayerReticle : MonoBehaviour
 		translation *= Time.deltaTime;
 		transform.Translate(translation);
 
-		// Check if the A button is pressed, if it is, shoot a projectile.
-		if (XCI.GetButton(XboxButton.A, (XboxController)m_PlayerNumber + 1))
-			ShootProjectile();
+		// If the shooting cooldown is less than or equal to 0, check if the A button is pressed to shoot.
+		if (m_CodeShootingCooldown <= 0.0f)
+		{
+			// Check if the A button is pressed, if it is, shoot a projectile and reset the shooting cooldown.
+			if (XCI.GetButton(XboxButton.A, (XboxController)m_PlayerNumber + 1))
+			{
+				ShootProjectile();
+				m_CodeShootingCooldown = m_ShootingCooldown;
+			}
+		}
+		// Else, decrease the cooldown by deltaTime.
+		else
+			m_CodeShootingCooldown -= Time.deltaTime;
     }
 
+	/// <summary>
+	/// Shoot a projectile.
+	/// </summary>
 	private void ShootProjectile()
 	{
 		// Instantiate the projectile at the point for where the projectiles come from.
 		GameObject button = Instantiate(m_Button, m_ProjectileSpawnPoint.position, new Quaternion());
 
-		// Disable the Player Projectile script, so the button doesn't fly away.
-		button.GetComponent<PlayerProjectile>().enabled = false;
-
-		Rigidbody rb = button.GetComponent<Rigidbody>();
-
-		float gravity = Physics.gravity.magnitude;
-
-		float angle = Mathf.Tan((m_ProjectileSpawnPoint.transform.position.x - transform.position.x) / (m_ProjectileSpawnPoint.transform.position.y - transform.position.y));
-
-		float distance = Vector3.Distance(transform.position, m_ProjectileSpawnPoint.transform.position);
-		
-		float yOffset = transform.position.y - m_ProjectileSpawnPoint.transform.position.y;
-
-		float initialVelocity = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
-
-		Vector3 vel = new Vector3(0, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
-
-		float angleBetweenObjects = Vector3.Angle(-Vector3.right, transform.position - m_ProjectileSpawnPoint.transform.position);
-
-		Vector3 finalVel = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * vel;
-
-		rb.velocity = finalVel;
+		button.transform.LookAt(transform);
+		button.transform.Rotate(0.0f, 90, 0.0f);
 	}
 }
