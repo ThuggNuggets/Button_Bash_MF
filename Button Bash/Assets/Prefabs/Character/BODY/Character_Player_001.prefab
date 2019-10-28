@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 112924354684261012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 976318150993130316}
   m_Father: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976318150993130304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 2.78, z: -17.5}
+  m_LocalPosition: {x: 4, y: 1, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2427988442959640500}
@@ -124,8 +124,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3520622, y: 7.0360336, z: 5.059069}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8431511, y: 2.7360334, z: 1.9054575}
+  m_Center: {x: -0.045541763, y: 0.049999952, z: 0.023194313}
 --- !u!54 &5607457697793743523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,10 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CharacterSpeed: 14
   playerAmmoText: {fileID: 0}
-  m_maxAmmo: 100
+  m_maxAmmo: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 578a14aaea4a00a46a48633c47665256,
     type: 3}
-  m_ShootingCooldown: 0.1
+  m_ShootingCooldown: 0.65
   m_playerNumber: 0
   m_Colour: 2
   m_buttonSpawnDistance: 2

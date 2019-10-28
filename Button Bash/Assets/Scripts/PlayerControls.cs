@@ -172,7 +172,7 @@ public class PlayerControls : MonoBehaviour
 
                 m_LaneChangingDistance +=  Time.deltaTime * m_laneChangingSpeed;
                 m_TargetLane.z = transform.position.z;
-                m_TargetLane.y = transform.position.y;
+               // m_TargetLane.y = transform.position.y;
                 transform.position = Vector3.Lerp(transform.position, m_TargetLane, m_LaneChangingDistance);
             }
             else 
@@ -302,7 +302,7 @@ public class PlayerControls : MonoBehaviour
             m_TargetLane = transform.position;
 
             m_TargetLane.x = newLane.transform.position.x;
-
+            m_TargetLane.y = newLane.transform.position.y;
             m_ChangingLanes = true;
         }
     }
