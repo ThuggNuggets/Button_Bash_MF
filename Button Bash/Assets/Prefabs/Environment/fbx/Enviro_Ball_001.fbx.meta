@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 7eeff9f7be38fb74ab90bd733ee2da28
+guid: dddfd33b118e3fc4bb9c92f941e5e301
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert15
-    2100002: lambert16
+    2100000: Dark_Stripe
+    2100002: Light_Stripe
     2300000: //RootNode
     3300000: //RootNode
     4300000: Sports_Ball
