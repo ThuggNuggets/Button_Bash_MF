@@ -169,7 +169,6 @@ public class PlayerControls : MonoBehaviour
 		{
             if(m_LaneChangingDistance < 1)
             {
-
                 m_LaneChangingDistance +=  Time.deltaTime * m_laneChangingSpeed;
                 m_TargetLane.z = transform.position.z;
                // m_TargetLane.y = transform.position.y;
@@ -185,7 +184,6 @@ public class PlayerControls : MonoBehaviour
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
 		{
-
             RaycastHit aim;
             Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             var ray = -transform.right;
@@ -304,6 +302,7 @@ public class PlayerControls : MonoBehaviour
             m_TargetLane.x = newLane.transform.position.x;
             m_TargetLane.y = newLane.transform.position.y;
             m_ChangingLanes = true;
+
         }
     }
 
