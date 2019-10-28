@@ -35,10 +35,18 @@ public class BabushkaBehaviour : MonoBehaviour
     private Colours.Colour newColour;
     private bool valid = false;
 
+    //renderer
+    private Renderer rend;
+    //colour
+    private Colours.Colour m_ChildTopColour;
+    bool topColourcorrect = false;
+    //materials for other babushkas
+    ///-------put them in the list blue,red,green,yellow ------
+    public Material[] otherBabushkas;
     //flinging
     int flingRotation;
-    //comparing 2 forms of setting nect level colour
-    private List<Colours.Colour> playerColours;
+
+
     private void Awake()
     {
         //dictates where the next babushka will spawn based on how close to the side walls they are
@@ -57,17 +65,109 @@ public class BabushkaBehaviour : MonoBehaviour
 
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
-        m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
+        m_PlayerLives = m_PlayerLivesCollider.GetComponent<playerLives>();
 
         flingRotation = Random.Range(0, 2);
+
+        m_ChildTopColour = GetComponent<EnemyBehaviour>().m_Colour;
+            foreach (Transform child in transform)
+            {
+                switch (m_ChildTopColour)
+                {
+                    case Colours.Colour.Blue:
+                        {
+                            rend = child.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[0];
+                            break;
+                        }
+                    case Colours.Colour.Red:
+                        {
+                            rend = child.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[1];
+                            break;
+                        }
+                    case Colours.Colour.Green:
+                        {
+                            rend = child.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[2];
+                            break;
+                        }
+                    case Colours.Colour.Yellow:
+                        {
+                            rend = child.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[3];
+                            break;
+                        }
+
+                }
+         }
     }
 
   
     private void FixedUpdate()
     {
-        if (health <= 0)
+        if (!topColourcorrect)
         {
-            //fling teh enemy
+            m_ChildTopColour = GetComponent<EnemyBehaviour>().m_Colour;
+            topColourcorrect = true;
+            foreach (Transform hello in transform)
+            {
+                switch (m_ChildTopColour)
+                {
+                    case Colours.Colour.Blue:
+                        {
+                            rend = hello.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[0];
+                            break;
+                        }
+                    case Colours.Colour.Red:
+                        {
+                            rend = hello.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[1];
+                            break;
+                        }
+                    case Colours.Colour.Green:
+                        {
+                            rend = hello.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[2];
+                            break;
+                        }
+                    case Colours.Colour.Yellow:
+                        {
+                            rend = hello.GetComponent<Renderer>();
+                            rend.material = otherBabushkas[3];
+                            break;
+                        }
+
+                }
+            }
+        }
+            //flinging top half of babushka when hit
+            foreach (Transform child in transform)
+        {
+            if (health == 1)
+            {
+                child.transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+                Destroy(child.gameObject, 2);
+                switch (flingRotation)
+                {
+                    case 0:
+                        {
+                            child.transform.Rotate(10, 0, 0);
+                            break;
+                        }
+                    case 1:
+                        {
+                            child.transform.Rotate(0, 0, 10);
+                            break;
+                        }
+
+                }
+            }
+        }
+        if (health <= 0)
+          {
+            //fling the enemy
             transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
@@ -85,8 +185,10 @@ public class BabushkaBehaviour : MonoBehaviour
                     }
 
             }
-        }
+          }
     }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
@@ -127,8 +229,10 @@ public class BabushkaBehaviour : MonoBehaviour
         GameObject enemy = Instantiate(nextLevel, (transform.position + addedVector), transform.rotation);
         enemy.transform.localScale -= new Vector3(scale, scale, scale);
         enemy.gameObject.tag = newTag;
-        //changes teh enemy oclour based off who still has lives
-       while (!valid)
+
+        rend = enemy.GetComponent<Renderer>();
+        //changes the enemy oclour based off who still has lives
+        while (!valid)
         {
                 switch (Random.Range(0, 4))
                 {
@@ -138,7 +242,8 @@ public class BabushkaBehaviour : MonoBehaviour
                             {
                                 valid = true;
                                 newColour = Colours.Colour.Blue;
-                            }
+                                rend.material = otherBabushkas[0];
+                        }
                             break;
                         }
                     case 1:
@@ -147,7 +252,8 @@ public class BabushkaBehaviour : MonoBehaviour
                             {
                                 valid = true;
                                 newColour = Colours.Colour.Red;
-                            }
+                                rend.material = otherBabushkas[1];
+                        }
                             break;
                         }
                     case 2:
@@ -156,7 +262,8 @@ public class BabushkaBehaviour : MonoBehaviour
                             {
                                 valid = true;
                                 newColour = Colours.Colour.Green;
-                            }
+                                rend.material = otherBabushkas[2];
+                        }    
                             break;
                         }
                     case 3:
@@ -165,16 +272,17 @@ public class BabushkaBehaviour : MonoBehaviour
                             {
                                 valid = true;
                                 newColour = Colours.Colour.Yellow;
+                                rend.material = otherBabushkas[3];
                             }
                             break;
                         }
                 }
         }
-                enemy.GetComponent<EnemyBehaviour>().SetBabushkaColour((Colours.Colour)newColour);
+                enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)newColour);
         
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+            Destroy(child.gameObject,2);
         }
         
     }

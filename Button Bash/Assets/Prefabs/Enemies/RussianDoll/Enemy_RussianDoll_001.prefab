@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ce70554c1d4dc438f584060edf13b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 5
+  m_Speed: 2
   m_Colour: 2
 --- !u!65 &8213223668972232251
 BoxCollider:
@@ -148,6 +148,11 @@ MonoBehaviour:
   verticalFling: 85
   xFling: 80
   zFling: 50
+  otherBabushkas:
+  - {fileID: 2100000, guid: b2f87a7433809704482023f247883b07, type: 2}
+  - {fileID: 2100000, guid: c77828b7d94450346a09cd1c779ce27e, type: 2}
+  - {fileID: 2100000, guid: f1792f914c7439b47b7083086191f650, type: 2}
+  - {fileID: 2100000, guid: 869034ba1c8fbc24c8e37e0b7c0dce81, type: 2}
 --- !u!82 &7067780440680155516
 AudioSource:
   m_ObjectHideFlags: 0
