@@ -31,6 +31,8 @@ public class HealthBalloonBehaviour : MonoBehaviour
 	// If the balloon is to swing left or not.
 	private bool m_SwingLeft = true;
 
+	private bool m_PlayedPopSound = false;
+
 	// Update the balloon.
 	public void Update()
 	{
@@ -84,7 +86,16 @@ public class HealthBalloonBehaviour : MonoBehaviour
 
 			// If the timer is equal to or less than 0, despawn the balloon.
 			if (m_DespawnTimer <= 0.0f)
-				Destroy(gameObject);
+			{
+				if (m_PlayedPopSound == false)
+				{
+					SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+					AudioSource ac = GetComponent<AudioSource>();
+					ac.clip = sm.m_SoundClips[10];
+					ac.Play();
+				}
+				Destroy(gameObject, 2);
+			}
 			// Else, decrease the despawn timer.
 			else
 				m_DespawnTimer -= Time.deltaTime;
