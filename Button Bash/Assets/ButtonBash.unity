@@ -377,6 +377,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 192354233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &212763591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1842539976644807482, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_Name
+      value: Dead player button spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 53.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc3f900be5ad0b44e947499c3e234b39, type: 3}
 --- !u!1001 &218723600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2464,6 +2533,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295850233292013736, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
+      propertyPath: m_BlockEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295850233292013736, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_TeddyEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295850233292013736, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_DollEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295850233292013736, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_RubixEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295850233292013736, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
       propertyPath: m_PlayerLivesCollider
       value: 
       objectReference: {fileID: 6808261314332480246}
@@ -3842,11 +3931,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
         type: 3}
-      propertyPath: m_DefeatedPlayerReticals.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
       propertyPath: m_HealthBalloons.Array.data[0]
       value: 
       objectReference: {fileID: 306738688}
@@ -3865,12 +3949,6 @@ PrefabInstance:
       propertyPath: m_HealthBalloons.Array.data[3]
       value: 
       objectReference: {fileID: 306738684}
-    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
-        type: 3}
-      propertyPath: m_DefeatedPlayerReticals.Array.data[0]
-      value: 
-      objectReference: {fileID: 1654190746881821582, guid: c7d37c7d9f6611e4f85fe49153995f7b,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c1b057495b92347a4c3ae41d2cdec5, type: 3}
 --- !u!1001 &3266317859506510609

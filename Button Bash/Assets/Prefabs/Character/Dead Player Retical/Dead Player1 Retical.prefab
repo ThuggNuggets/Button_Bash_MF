@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427999475570951916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.3, y: 0.49812186, z: 1.0846}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8405222467876350972}
@@ -58,13 +58,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8405222467876350971}
-  m_LocalRotation: {x: -0.7071068, y: 0.00000019861236, z: -0.70710677, w: 0.00000019861234}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4123492693453016539}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: -179.99998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8405222467876350975
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -139,7 +139,5 @@ MonoBehaviour:
   m_PlayerNumber: 0
   m_MoveSpeed: 20
   m_Button: {fileID: 3905374817873417468, guid: 080b10ad75e6f1348ab1b2406d7b7800,
-    type: 3}
-  m_ProjectileSpawnPoint: {fileID: 1842539976644807485, guid: cc3f900be5ad0b44e947499c3e234b39,
     type: 3}
   m_ShootingCooldown: 0.5

@@ -115,6 +115,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_DefeatedPlayerReticals:
+  - {fileID: 3427999475570951916, guid: 51278344b6a28534dbb9eeb325b467a4, type: 3}
 --- !u!82 &6808261314332480252
 AudioSource:
   m_ObjectHideFlags: 0
