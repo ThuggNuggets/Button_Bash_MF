@@ -160,11 +160,11 @@ public class WaveManager : MonoBehaviour
 
 					m_EnemyToSpawn = m_CurrentWaveInformation.m_WaveEnemies[m_WaveEnemyIterator];
 
+					// CHECK IF PLAYER OF THAT COLOUR IS ALIVE
+					//---------------------------------------------------------------------------------------------------------------
 					// While the enemy shares a colour with a defeated player, spawn a different enemy of the same type.
 					while (CheckPlayerLivesForEnemySpawning() == false)
 					{
-						// CHECK IF PLAYER OF THAT COLOUR IS ALIVE
-						//------------------------------------------------------------------------------------------------------------
 						// Check the tag of the enemy.
 						switch (m_EnemyToSpawn.transform.GetChild(0).gameObject.tag)
 						{

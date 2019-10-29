@@ -89,7 +89,7 @@ public class playerLives : MonoBehaviour
                     {
                         player2Lives -= 1;
                         // If player 2's lives are 0, increase the amount of players that have no lives.
-                        if (player1Lives == 0)
+                        if (player2Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
@@ -109,7 +109,7 @@ public class playerLives : MonoBehaviour
                     {
                         player3Lives -= 1;
                         // If player 3's lives are 0, increase the amount of players that have no lives.
-                        if (player1Lives == 0)
+                        if (player3Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
@@ -129,7 +129,7 @@ public class playerLives : MonoBehaviour
                     {
                         player4Lives -= 1;
                         // If player 4's lives are 0, increase the amount of players that have no lives.
-                        if (player1Lives == 0)
+                        if (player4Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
