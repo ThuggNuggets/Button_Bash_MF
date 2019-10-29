@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4123492693453016539}
   m_Layer: 0
-  m_Name: Dead Player1 Retical
+  m_Name: Dead Player1 Retical 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbd22d34b1afab4f8ec6ffe66a934a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerNumber: 0
+  m_PlayerNumber: 3
   m_MoveSpeed: 20
-  m_Button: {fileID: 3905374817873417468, guid: 080b10ad75e6f1348ab1b2406d7b7800,
+  m_Button: {fileID: 3905374817873417468, guid: 8d36907b76afcd347ba6bf2b4420b835,
     type: 3}
   m_ShootingCooldown: 0.5

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Force: 0.8
-  m_Timer: 1.6
+  m_Timer: 1.55
 --- !u!65 &6827102401044953316
 BoxCollider:
   m_ObjectHideFlags: 0

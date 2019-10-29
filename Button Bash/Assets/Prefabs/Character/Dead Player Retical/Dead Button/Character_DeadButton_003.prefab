@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3905374817873709276}
   - component: {fileID: 3905374817874479356}
   - component: {fileID: 3905374817875610172}
-  - component: {fileID: 4574338376377080807}
   - component: {fileID: 6827102401044953316}
   - component: {fileID: 3285499480327720943}
+  - component: {fileID: 1266538887814426917}
   m_Layer: 0
   m_Name: Character_DeadButton_003
-  m_TagString: bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,20 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4574338376377080807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905374817873417468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219dfc18c3e6056488432e953b02577e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Force: 0.5
-  m_Timer: 1.6
 --- !u!65 &6827102401044953316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,3 +109,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1266538887814426917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905374817873417468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95170cbfd8761234ebc037149fcfc96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Force: 1
+  m_DespawnTimer: 3
