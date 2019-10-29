@@ -12,8 +12,7 @@ public class PlayerControls : MonoBehaviour
 		FrontLane,
 		BackLane
 	}
-    // the material the player is
-    private Material m_Material;
+
     // The character's speed.
     public float m_CharacterSpeed = 1.0f;
 
@@ -47,7 +46,6 @@ public class PlayerControls : MonoBehaviour
 
     // The player's colour.
     public int m_playerNumber;
-	public Colours.Colour m_Colour;
 
     //how far ahead the button will spawn
     public float m_buttonSpawnDistance = 0.5f;
@@ -71,7 +69,6 @@ public class PlayerControls : MonoBehaviour
     // Constructor.
     void Awake()
     {
-        m_Material = GetComponent<Renderer>().material;
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
         line = GetComponent<LineRenderer>();
@@ -251,9 +248,6 @@ public class PlayerControls : MonoBehaviour
 
             // Clone the bullet at the bullet spawn point.
             GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
-
-            // Set the bullet's colour to this player's colour.
-            bullet.GetComponent<PlayerProjectile>().SetColour(m_Colour);
 	}
 
     private void changeLanes(Lane targetLane, string railName)
