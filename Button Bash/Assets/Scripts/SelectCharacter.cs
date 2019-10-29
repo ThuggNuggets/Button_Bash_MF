@@ -57,38 +57,10 @@ public class SelectCharacter : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		// Check the player number.
-		switch (m_PlayerNumber)
-		{
-				// Player 1.
-			case 0:
-				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.First);
-				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.First);
-				break;
+		Debug.Log(XCI.GetNumPluggedCtrlrs());
 
-				// Player 2.
-			case 1:
-				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Second);
-				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Second);
-				break;
-
-				// Player 3.
-			case 2:
-				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Third);
-				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Third);
-				break;
-
-				// Player 4.
-			case 3:
-				m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, XboxController.Fourth);
-				m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, XboxController.Fourth);
-				break;
-
-				// Something is wrong.
-			default:
-				Debug.Log("An image box has the player number " + m_PlayerNumber + " assigned. The player numbers are between 0 - 3.");
-				break;
-		}
+		m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, (XboxController)m_PlayerNumber + 1);
+		m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, (XboxController)m_PlayerNumber + 1);
 
 		if (m_AButtonPressed == true)
 		{
@@ -137,11 +109,10 @@ public class SelectCharacter : MonoBehaviour
 				ac.clip = sm.m_SoundClips[9];
 				break;
 		}
-
 		ac.Play();
 
 		// Set the select button to not be interactable (just for representation).
-		GetComponent<Button>().interactable = false;
+		GetComponent<Button>().interactable = false; // Two buttons are getting input from the same controller.
 
 		// Find all the image boxes in the scene to compare them.
 		// So if two people have the same character selected, 
