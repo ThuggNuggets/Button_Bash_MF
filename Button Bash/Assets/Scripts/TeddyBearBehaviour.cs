@@ -16,7 +16,9 @@ public class TeddyBearBehaviour : MonoBehaviour
     private Rigidbody rb;
     //flinging
     int flingRotation;
-
+    /// <summary>
+    /// sets variables
+    /// </summary>
     private void Awake()
     {
         //get random fling values
@@ -26,6 +28,9 @@ public class TeddyBearBehaviour : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         flingRotation = Random.Range(0, 3);
     }
+    /// <summary>
+    /// turns collisions on object off and flings it
+    /// </summary>
     private void FixedUpdate()
     {
         if (health <= 0)
@@ -54,6 +59,10 @@ public class TeddyBearBehaviour : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// if collision with object with "bullet" tag then reduce health and grow bigger
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
@@ -73,8 +82,11 @@ public class TeddyBearBehaviour : MonoBehaviour
                 }
                 //soud trest alex
                 {
-                GetComponent<AudioSource>().Play();
-                }
+                SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+                AudioSource ac = GetComponent<AudioSource>();
+                ac.clip = sm.m_SoundClips[0];
+                ac.Play();
+            }
         }
     }
 

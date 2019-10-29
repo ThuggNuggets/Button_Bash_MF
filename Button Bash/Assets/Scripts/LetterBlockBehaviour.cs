@@ -13,6 +13,9 @@ public class LetterBlockBehaviour : MonoBehaviour
 
     //flinging
     int flingRotation;
+    /// <summary>
+    /// sets variables 
+    /// </summary>
     private void Awake()
     {
         //get random fling values
@@ -21,6 +24,9 @@ public class LetterBlockBehaviour : MonoBehaviour
         zFling = Random.Range(-zFling, zFling);
         flingRotation = Random.Range(0, 3);
     }
+    /// <summary>
+    /// fling when defeated
+    /// </summary>
     private void FixedUpdate()
     {
         if (health <= 0)
@@ -49,6 +55,10 @@ public class LetterBlockBehaviour : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// when it collides with an object if it has the "bullet" tag reduce health and if no health destroy self
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "bullet")
@@ -57,10 +67,12 @@ public class LetterBlockBehaviour : MonoBehaviour
             Destroy(collision.gameObject);
             //soud trest alex
             {
-                GetComponent<AudioSource>().Play();
+
+                SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+                AudioSource ac = GetComponent<AudioSource>();
+                ac.clip = sm.m_SoundClips[1];
+                ac.Play();
             }
         }
-         
-        
     }
 }

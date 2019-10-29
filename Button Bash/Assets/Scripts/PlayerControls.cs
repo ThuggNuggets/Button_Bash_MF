@@ -67,6 +67,9 @@ public class PlayerControls : MonoBehaviour
     //lane changing speed
     public float m_laneChangingSpeed = 1;
     // Constructor.
+    /// <summary>
+    /// sets player number and set up variables
+    /// </summary>
     void Awake()
     {
         m_MaxShootingCooldown = m_ShootingCooldown;
@@ -100,7 +103,10 @@ public class PlayerControls : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// when players collide with the ammo piles refil ammo to max
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "ammopile")
@@ -111,6 +117,9 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update the player.
+    /// <summary>
+    /// controls movement and button throwing
+    /// </summary>
     void FixedUpdate()
     {//movement on the Z-axis
 
@@ -241,6 +250,9 @@ public class PlayerControls : MonoBehaviour
     }
 
 	// Shoot a bullet.
+    /// <summary>
+    /// throws a bullet
+    /// </summary>
 	private void ShootBullet()
 	{
             // The spawn point of the bullet.
@@ -249,7 +261,11 @@ public class PlayerControls : MonoBehaviour
             // Clone the bullet at the bullet spawn point.
             GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
 	}
-
+    /// <summary>
+    /// changes the lane the player will move towards
+    /// </summary>
+    /// <param name="targetLane"></param>
+    /// <param name="railName"></param>
     private void changeLanes(Lane targetLane, string railName)
     {
         if (m_CurrentLane != targetLane)
@@ -267,6 +283,9 @@ public class PlayerControls : MonoBehaviour
     }
 
     // checks if current ammo is not zero, sets canShoot variable to false if at 0
+    /// <summary>
+    /// checks current ammo if the player can throw a button
+    /// </summary>
     private void AmmoCheck()
     {
         if (m_currentAmmo > 0)

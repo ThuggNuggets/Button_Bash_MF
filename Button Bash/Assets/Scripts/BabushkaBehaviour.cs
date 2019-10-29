@@ -46,7 +46,9 @@ public class BabushkaBehaviour : MonoBehaviour
     //flinging
     int flingRotation;
 
-
+    /// <summary>
+    /// sets all of the variables
+    /// </summary>
     private void Awake()
     {
         //dictates where the next babushka will spawn based on how close to the side walls they are
@@ -103,7 +105,9 @@ public class BabushkaBehaviour : MonoBehaviour
          }
     }
 
-  
+  /// <summary>
+  /// changes the top part of the next babushka colour to match and flings it when damage is taken
+  /// </summary>
     private void FixedUpdate()
     {
         if (!topColourcorrect)
@@ -188,7 +192,10 @@ public class BabushkaBehaviour : MonoBehaviour
           }
     }
 
-
+    /// <summary>
+    /// when the doll hits something if the object it hit had the "bullet" tag then take damage/spawn next doll
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
@@ -216,13 +223,20 @@ public class BabushkaBehaviour : MonoBehaviour
                 health = 0;
             }
             //soud trest alex
-            
-             GetComponent<AudioSource>().Play();
-           
+
+            SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.clip = sm.m_SoundClips[3];
+            ac.Play();
+
 
         }
     }
-    
+    /// <summary>
+    /// 
+    /// the creation of the next babushka doll 
+    /// </summary>
+    /// <param name="newTag"></param>
     private void createNextLevel(string newTag)
     {
         //creates next level babushka
@@ -278,7 +292,8 @@ public class BabushkaBehaviour : MonoBehaviour
                         }
                 }
         }
-                enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)newColour);
+        
+         enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)newColour);
         
         foreach (Transform child in transform)
         {

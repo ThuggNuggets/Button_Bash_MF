@@ -132,8 +132,10 @@ public class RubixBehaviour : MonoBehaviour
             }
             gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
             //when hit rotate body
-
-
+            SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.clip = sm.m_SoundClips[2];
+            ac.Play();
         }
     }
 }

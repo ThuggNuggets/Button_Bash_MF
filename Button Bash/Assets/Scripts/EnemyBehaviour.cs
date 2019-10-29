@@ -8,10 +8,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
     // Speed of the enemy.
     public float m_Speed = 2;
-
-    // The rigidbody.
-    private Rigidbody m_Rigidbody;
-
     // The colour of the enemy.
     public Colours.Colour m_Colour = Colours.Colour.None;
 
@@ -21,22 +17,21 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        // Get the material of this enemy.
-        m_Material = GetComponent<Renderer>().material;
-
-        // Get the rigidbody of this enemy.
-        m_Rigidbody = GetComponent<Rigidbody>();
-        //changes the colousr of the enemy when it is spawned
-       
     }
 
     // Update.
+    /// <summary>
+    /// moves the the enemy through the world along the x-axis
+    /// </summary>
     void FixedUpdate()
     {
         // Move fowards at it's speed.
         transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
     }
-        
+        /// <summary>
+        /// when it collides with the ending trigger which will destroy itself
+        /// </summary>
+        /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         // If the enemy reaches the end trigger x position, destroy the enemy.
@@ -73,37 +68,6 @@ public class EnemyBehaviour : MonoBehaviour
 
                 break;
 
-            // Set the material colour to magenta, something went WRONG!
-            default:
-                break;
-        }
-
-    }
-    public void SetBabushkaColour(Colours.Colour colour)
-    {
-        // Set the colour of the enemy's material.
-        switch ((int)colour)
-        {
-            // Set the material colour to red.
-            case 0:
-                m_Colour = Colours.Colour.Red;
-                m_Material.color = Color.red;
-                break;
-            // Set the material colour to green.
-            case 1:
-                m_Colour = Colours.Colour.Green;
-                m_Material.color = Color.green;
-                break;
-            // Set the material colour to blue.
-            case 2:
-                m_Colour = Colours.Colour.Blue;
-                m_Material.color = Color.blue;
-                break;
-            // Set the material colour to yellow.
-            case 3:
-                m_Colour = Colours.Colour.Yellow;
-                m_Material.color = Color.yellow;
-                break;
             // Set the material colour to magenta, something went WRONG!
             default:
                 break;
