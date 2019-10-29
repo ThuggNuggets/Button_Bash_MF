@@ -118,7 +118,7 @@ public class WaveManager : MonoBehaviour
 			if (m_WaveIterator <= m_Waves.Length)
 			{
 				// If the wave enemy iterator is equal to the amount of enemies in the wave, move to the next wave.
-				if (m_WaveEnemyIterator == m_CurrentWaveInformation.m_WaveEnemies.Length - 1)
+				if (m_WaveEnemyIterator == m_CurrentWaveInformation.m_WaveEnemies.Length)
 				{
 					// If the code wave timer is equal to or less than 0, move on to the next wave.
 					if (m_CodeWaveTimer <= 0.0f)

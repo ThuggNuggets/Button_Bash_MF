@@ -111,8 +111,7 @@ public class SelectCharacter : MonoBehaviour
 	public void LockInCharacter()
 	{
         //alex sound 
-        
-            GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().Play();
        
          // Get the character the player selected.
         int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
@@ -122,6 +121,27 @@ public class SelectCharacter : MonoBehaviour
 
 		// Set that the character has been locked in to true.
 		m_CharacterLockedIn = true;
+
+		// Play a sound when a character is selected, with the sound correlating with the character that was selected.
+		AudioSource ac = GetComponent<AudioSource>();
+		SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+		switch (playerSelect)
+		{
+			case 0:
+				ac.clip = sm.m_SoundClips[8];
+				break;
+			case 1:
+				ac.clip = sm.m_SoundClips[7];
+				break;
+			case 2:
+				ac.clip = sm.m_SoundClips[6];
+				break;
+			case 3:
+				ac.clip = sm.m_SoundClips[9];
+				break;
+		}
+
+		ac.Play();
 
 		// Set the select button to not be interactable (just for representation).
 		GetComponent<Button>().interactable = false;

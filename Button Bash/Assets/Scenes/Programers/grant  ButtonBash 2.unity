@@ -12812,31 +12812,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[0]
       value: 
-      objectReference: {fileID: 9127828091661151835, guid: e39735fe58673bf41b8037603be42366,
+      objectReference: {fileID: 9127828091661151835, guid: 131018ba845d1f54381b377b86f0e6ef,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[1]
       value: 
-      objectReference: {fileID: 7617839716588314869, guid: 1cd0e88ef02262640bc659cc19978e8c,
+      objectReference: {fileID: 7617839716588314869, guid: 981df89f574c0304a95efcffa655c40e,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[2]
       value: 
-      objectReference: {fileID: 2590849142620533762, guid: 00d6793ffb5b7544281779f6741da113,
+      objectReference: {fileID: 2590849142620533762, guid: 12b384bbbeaec4d4999af4d97c7fc647,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[3]
       value: 
-      objectReference: {fileID: 4049320621646561682, guid: 378f37923ef6ade4a8dd510ab7a387cc,
+      objectReference: {fileID: 4049320621646561682, guid: 96d734746e8e1eb4cb4aa0042987795b,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[4]
       value: 
-      objectReference: {fileID: 7617839716588314869, guid: 1cd0e88ef02262640bc659cc19978e8c,
+      objectReference: {fileID: 7617839716588314869, guid: 981df89f574c0304a95efcffa655c40e,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -20720,17 +20720,17 @@ PrefabInstance:
     - target: {fileID: 3570544563186495366, guid: 747d2d96edd365446846d94f9dc9a8cf,
         type: 3}
       propertyPath: m_Name
-      value: GameObject
+      value: Dead player button spawn
       objectReference: {fileID: 0}
     - target: {fileID: 3570544563186495365, guid: 747d2d96edd365446846d94f9dc9a8cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.92
+      value: 31.08
       objectReference: {fileID: 0}
     - target: {fileID: 3570544563186495365, guid: 747d2d96edd365446846d94f9dc9a8cf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.57
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3570544563186495365, guid: 747d2d96edd365446846d94f9dc9a8cf,
         type: 3}
