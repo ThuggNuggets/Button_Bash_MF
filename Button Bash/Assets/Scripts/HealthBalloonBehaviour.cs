@@ -93,8 +93,9 @@ public class HealthBalloonBehaviour : MonoBehaviour
 					AudioSource ac = GetComponent<AudioSource>();
 					ac.clip = sm.m_SoundClips[10];
 					ac.Play();
-				}
-				Destroy(gameObject, 2);
+                    m_PlayedPopSound = true;
+                }
+				Destroy(gameObject, 1);
 			}
 			// Else, decrease the despawn timer.
 			else
