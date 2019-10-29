@@ -109,10 +109,7 @@ public class SelectCharacter : MonoBehaviour
 	/// Lock in the character.
 	/// </summary>
 	public void LockInCharacter()
-	{
-        //alex sound 
-        GetComponent<AudioSource>().Play();
-       
+	{       
          // Get the character the player selected.
         int playerSelect = m_PlayerImageBox.GetComponent<CharacterSelect>().GetCurrentImage();
 
