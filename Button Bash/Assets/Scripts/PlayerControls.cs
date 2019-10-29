@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
@@ -64,7 +64,8 @@ public class PlayerControls : MonoBehaviour
     private Vector3 rightHand = new Vector3(0, 0, 1);
     //rigidbody
     private Rigidbody body;
-
+    //horizontal movement
+    float translation;
     //lane changing speed
     public float m_laneChangingSpeed = 1;
     // Constructor.
@@ -116,12 +117,29 @@ public class PlayerControls : MonoBehaviour
     void FixedUpdate()
     {//movement on the Z-axis
 
-                    m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber+1);
-                    m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber+1);
-  
-
-        //checks if there is input to the selected controls
-        float translation = m_xAxis * m_CharacterSpeed;
+        m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
+        m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
+        Debug.DrawRay(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f));
+        if (m_ChangingLanes)
+        {
+            if (m_yAxis < -m_deadZone || m_yAxis > m_deadZone)
+            {
+                RaycastHit check;
+                if (Physics.Raycast(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f), out check, 3, 1))
+                {
+                    //checks if there is input to the selected controls
+                    translation = 0;
+                }
+                else
+                {
+                    translation = m_xAxis * m_CharacterSpeed;
+                }
+            }
+        }
+        else
+        {
+            translation = m_xAxis * m_CharacterSpeed;
+        }
         //so the player moves at playerSpeed units per sec not per frame
         translation *= Time.deltaTime;
         //moves the player
@@ -131,14 +149,14 @@ public class PlayerControls : MonoBehaviour
         //draw a raycast so players can see where the button will go
 
 
-       
+
 
 
         // Move up a lane.
         if (m_yAxis > m_deadZone)
         {
             RaycastHit hit;
-            if (!Physics.Raycast(transform.position+leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1)  &&  !Physics.Raycast(transform.position +rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
+            if (!Physics.Raycast(transform.position + leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1) && !Physics.Raycast(transform.position + rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
             {
                 if (!m_ChangingLanes)
                 {
@@ -146,8 +164,8 @@ public class PlayerControls : MonoBehaviour
                 }
             }
         }
-		// Move down a lane.
-		if (m_yAxis < -m_deadZone)
+        // Move down a lane.
+        if (m_yAxis < -m_deadZone)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position + leftHand, transform.TransformDirection(Vector3.right), out hit, 3, 1) && !Physics.Raycast(transform.position + rightHand, transform.TransformDirection(Vector3.right), out hit, 3, 1))
@@ -158,7 +176,7 @@ public class PlayerControls : MonoBehaviour
                 }
             }
         }
-       
+
         // If the character is currently moving between lanes.x
         if (m_LaneChangingDistance > 1)
         {
@@ -166,24 +184,24 @@ public class PlayerControls : MonoBehaviour
         }
 
         if (m_ChangingLanes)
-		{
-            if(m_LaneChangingDistance < 1)
+        {
+            if (m_LaneChangingDistance < 1)
             {
-                m_LaneChangingDistance +=  Time.deltaTime * m_laneChangingSpeed;
+                m_LaneChangingDistance += Time.deltaTime * m_laneChangingSpeed;
                 m_TargetLane.z = transform.position.z;
-               // m_TargetLane.y = transform.position.y;
+                // m_TargetLane.y = transform.position.y;
                 transform.position = Vector3.Lerp(transform.position, m_TargetLane, m_LaneChangingDistance);
             }
-            else 
+            else
             {
-              m_LaneChangingDistance = 0.0f;
-		      m_ChangingLanes = false;
+                m_LaneChangingDistance = 0.0f;
+                m_ChangingLanes = false;
             }
-		}
+        }
 
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
-		{
+        {
             RaycastHit aim;
             Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             var ray = -transform.right;
@@ -191,77 +209,27 @@ public class PlayerControls : MonoBehaviour
             {
                 Vector3[] points = new Vector3[2];
                 points[0] = transform.position;
-                points[1] = new Vector3 (aim.point.x,transform.position.y,aim.point.z);
+                points[1] = new Vector3(aim.point.x, transform.position.y, aim.point.z);
                 line.SetPositions(points);
             }
             // Shoot a bullet.
-            switch (m_playerNumber)
+
+            if (XCI.GetButton(XboxButton.A, (XboxController)m_playerNumber + 1) && m_ShootingCooldown <= 0.0f)
             {
-                case 0:
-                    {
-		            if (XCI.GetButton(XboxButton.A, XboxController.First) && m_ShootingCooldown <= 0.0f)
-		            {
-                            // check if ammo is not zero
-                            AmmoCheck();
-                            if (canShoot == true)
-                            {
-                                ShootBullet();
-                                m_ShootingCooldown = m_MaxShootingCooldown;
-                                // decrement this player's ammo upon shooting
-                                --m_currentAmmo;
-                                playerAmmoText.text = m_currentAmmo.ToString();
-                            }
-		            }
-                        break;
-                    }
-                case 1:
-                    {
-                        if (XCI.GetButton(XboxButton.A, XboxController.Second) && m_ShootingCooldown <= 0.0f)
-                        {
-                            AmmoCheck();
-                            if (canShoot == true)
-                            {
-                                ShootBullet();
-                                m_ShootingCooldown = m_MaxShootingCooldown;
-                                --m_currentAmmo;
-                                playerAmmoText.text = m_currentAmmo.ToString();
-                            }
-                        }
-                        break;
-                    }
-                case 2:
-                    {
-                        if (XCI.GetButton(XboxButton.A, XboxController.Third) && m_ShootingCooldown <= 0.0f)
-                        {
-                            AmmoCheck();
-                            if (canShoot == true)
-                            {
-                                ShootBullet();
-                                m_ShootingCooldown = m_MaxShootingCooldown;
-                                --m_currentAmmo;
-                                playerAmmoText.text = m_currentAmmo.ToString();
-                            }
-                        }
-                        break;
-                    }
-                case 3:
-                    {
-                        if (XCI.GetButton(XboxButton.A, XboxController.Fourth) && m_ShootingCooldown <= 0.0f)
-                        {
-                            AmmoCheck();
-                            if (canShoot == true)
-                            {
-                                ShootBullet();
-                                m_ShootingCooldown = m_MaxShootingCooldown;
-                                --m_currentAmmo;
-                                playerAmmoText.text = m_currentAmmo.ToString();
-                            }
-                        }
-                        break;
-                    }
+                // check if ammo is not zero
+                AmmoCheck();
+                if (canShoot == true)
+                {
+                    ShootBullet();
+                    m_ShootingCooldown = m_MaxShootingCooldown;
+                    // decrement this player's ammo upon shooting
+                    --m_currentAmmo;
+                    playerAmmoText.text = m_currentAmmo.ToString();
+                }
             }
-		}
-        else if(m_CurrentLane == Lane.BackLane)
+
+        }
+        else if (m_CurrentLane == Lane.BackLane)
         {
             Vector3[] points = new Vector3[2];
             points[0] = transform.position;
@@ -273,9 +241,7 @@ public class PlayerControls : MonoBehaviour
         {
             m_ShootingCooldown -= Time.deltaTime;
         }
-
     }
-
 
 	// Shoot a bullet.
 	private void ShootBullet()
