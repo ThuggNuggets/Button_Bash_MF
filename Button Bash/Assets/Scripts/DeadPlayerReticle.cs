@@ -54,10 +54,28 @@ public class DeadPlayerReticle : MonoBehaviour
 		// Assign the shooting cooldown to be used in code.
 		m_CodeShootingCooldown = m_ShootingCooldown;
 
-		// Add the scene loading event, so if the player's return to the scene,
+		// Add the scene loading event, so if the player's return to the main game scene,
 		// the reticals won't be there from the last round.
 		SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+
+		// Change the colour of the reticle to represent which player's reticle it is.
+		Renderer renderer = GetComponent<Renderer>();
+		switch (m_PlayerNumber)
+		{
+			case 0:
+				renderer.material.color = Color.blue;
+				break;
+			case 1:
+				renderer.material.color = Color.red;
+				break;
+			case 2:
+				renderer.material.color = Color.green;
+				break;
+			case 3:
+				renderer.material.color = Color.yellow;
+				break;
+		}
+	}
 
 	/// <summary>
 	/// Update.
