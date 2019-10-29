@@ -24,7 +24,7 @@ public class DeadPlayerReticle : MonoBehaviour
 	/// <summary>
 	/// Where the projectile's are shot from.
 	/// </summary>
-	public Transform m_ProjectileSpawnPoint;
+	private Transform m_ProjectileSpawnPoint;
 
 	/// <summary>
 	/// The x axis of the controller input.
@@ -57,6 +57,8 @@ public class DeadPlayerReticle : MonoBehaviour
 		// Add the scene loading event, so if the player's return to the main game scene,
 		// the reticals won't be there from the last round.
 		SceneManager.sceneLoaded += OnSceneLoaded;
+
+		m_ProjectileSpawnPoint = GameObject.Find("Dead player button spawn").transform;
 
 		// Change the colour of the reticle to represent which player's reticle it is.
 		Renderer renderer = GetComponent<Renderer>();
