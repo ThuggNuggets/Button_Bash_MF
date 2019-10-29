@@ -125,28 +125,32 @@ public class PlayerControls : MonoBehaviour
 
         m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
         m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
+
+
         Debug.DrawRay(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f));
-        if (m_ChangingLanes)
-        {
-            if (m_yAxis < -m_deadZone || m_yAxis > m_deadZone)
-            {
-                RaycastHit check;
-                if (Physics.Raycast(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f), out check, 3, 1))
-                {
-                    //checks if there is input to the selected controls
-                    translation = 0;
-                }
-                else
-                {
-                    translation = m_xAxis * m_CharacterSpeed;
-                }
-            }
-        }
-        else
-        {
-            translation = m_xAxis * m_CharacterSpeed;
-        }
+        //if (m_ChangingLanes)
+        //{
+        //    if (m_yAxis < -m_deadZone || m_yAxis > m_deadZone)
+        //    {
+        //        RaycastHit check;
+        //        if (Physics.Raycast(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f), out check, 3, 1))
+        //        {
+        //            //checks if there is input to the selected controls
+        //            //translation = 0;
+        //            translation = m_xAxis * m_CharacterSpeed;
+        //        }
+        //        else
+        //        {
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    translation = m_xAxis * m_CharacterSpeed;
+        //}
         //so the player moves at playerSpeed units per sec not per frame
+
+        translation = m_xAxis * m_CharacterSpeed;
         translation *= Time.deltaTime;
         //moves the player
         transform.Translate(0, 0, translation);
@@ -157,12 +161,12 @@ public class PlayerControls : MonoBehaviour
 
 
 
-
-        // Move up a lane.
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z-1), new Vector3(transform.position.x+1, transform.position.y, transform.position.z - 1));
+        // Move to front lane
         if (m_yAxis > m_deadZone)
         {
             RaycastHit hit;
-            if (!Physics.Raycast(transform.position + leftHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1) && !Physics.Raycast(transform.position + rightHand, transform.TransformDirection(-Vector3.right), out hit, 3, 1))
+            if (!Physics.Raycast(new Vector3(transform.position.x , transform.position.y, transform.position.z - 1) , transform.TransformDirection(-Vector3.right), out hit, 3, 1) && !Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), transform.TransformDirection(-Vector3.right), out hit, 3, 1))
             {
                 if (!m_ChangingLanes)
                 {
@@ -170,7 +174,7 @@ public class PlayerControls : MonoBehaviour
                 }
             }
         }
-        // Move down a lane.
+        // Move to back lane
         if (m_yAxis < -m_deadZone)
         {
             RaycastHit hit;
@@ -184,10 +188,6 @@ public class PlayerControls : MonoBehaviour
         }
 
         // If the character is currently moving between lanes.x
-        if (m_LaneChangingDistance > 1)
-        {
-            m_LaneChangingDistance = 1;
-        }
 
         if (m_ChangingLanes)
         {
@@ -197,6 +197,10 @@ public class PlayerControls : MonoBehaviour
                 m_TargetLane.z = transform.position.z;
                 // m_TargetLane.y = transform.position.y;
                 transform.position = Vector3.Lerp(transform.position, m_TargetLane, m_LaneChangingDistance);
+                if(m_LaneChangingDistance > .65f)
+                {
+                    m_LaneChangingDistance = 1;
+                }
             }
             else
             {
@@ -205,6 +209,10 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
+        if (m_LaneChangingDistance > 1)
+        {
+            m_LaneChangingDistance = 1;
+        }
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
         {
@@ -233,7 +241,6 @@ public class PlayerControls : MonoBehaviour
                     playerAmmoText.text = m_currentAmmo.ToString();
                 }
             }
-
         }
         else if (m_CurrentLane == Lane.BackLane)
         {
@@ -242,7 +249,8 @@ public class PlayerControls : MonoBehaviour
             points[1] = transform.position;
             line.SetPositions(points);
         }
-        // Else if the cooldown is greater than 0, decrease the cooldown.
+
+        //if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)
         {
             m_ShootingCooldown -= Time.deltaTime;
@@ -251,7 +259,7 @@ public class PlayerControls : MonoBehaviour
 
 	// Shoot a bullet.
     /// <summary>
-    /// throws a bullet
+    /// throws a button
     /// </summary>
 	private void ShootBullet()
 	{
