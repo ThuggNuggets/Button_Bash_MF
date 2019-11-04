@@ -20,6 +20,16 @@ public class DeadProjectile : MonoBehaviour
 	public float m_DespawnTimer;
 
 	/// <summary>
+	/// If the dead player projectile has collided with something yet.
+	/// </summary>
+	private bool m_Collided = false;
+
+	/// <summary>
+	/// The speed at which the button is shot up into the air.
+	/// </summary>
+	public float m_FlingSpeed;
+
+	/// <summary>
 	/// On startup.
 	/// </summary>
 	private void Awake()
@@ -33,15 +43,29 @@ public class DeadProjectile : MonoBehaviour
 	/// Update.
 	/// </summary>
 	void Update()
-    {
-		// Move the projectile.
-		m_Rigidbody.MovePosition(transform.position + ((-transform.right) * m_Force * Time.deltaTime));
-
+	{
 		// Check the despawn timer, if it is less than or equal to 0, despawn the projectile,
-		// else decrease the timer.
+		// else decrease the timer and move the button.
 		if (m_DespawnTimer <= 0.0f)
 			Destroy(gameObject);
 		else
+		{
 			m_DespawnTimer -= Time.deltaTime;
+			if (m_Collided == false)
+				m_Rigidbody.MovePosition(transform.position + ((-transform.right) * m_Force * Time.deltaTime));
+			else
+				transform.Translate(Vector3.up * m_FlingSpeed * Time.deltaTime);
+		}
     }
+
+	/// <summary>
+	/// When the button collides.
+	/// </summary>
+	/// <param name="collision">What the button collided with.</param>
+	private void OnCollisionEnter(Collision collision)
+	{
+		// We want the button to fly up into the air when it collides with something.
+
+		m_Collided = true;
+	}
 }
