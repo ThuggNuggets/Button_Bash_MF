@@ -33,6 +33,8 @@ public class HealthBalloonBehaviour : MonoBehaviour
 
 	private bool m_PlayedPopSound = false;
 
+	public GameObject m_BalloonPop;
+
 	// Update the balloon.
 	public void Update()
 	{
@@ -87,14 +89,9 @@ public class HealthBalloonBehaviour : MonoBehaviour
 			// If the timer is equal to or less than 0, despawn the balloon.
 			if (m_DespawnTimer <= 0.0f)
 			{
-				if (m_PlayedPopSound == false)
-				{
-					SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
-					AudioSource ac = GetComponent<AudioSource>();
-					ac.clip = sm.m_SoundClips[10];
-					ac.Play();
-                    m_PlayedPopSound = true;
-                }
+				// Create an object to play the pop sound after the balloon is destroyed, so it can pop on screen.
+				Instantiate(m_BalloonPop, transform.position, transform.rotation);
+
 				Destroy(gameObject);
 			}
 			// Else, decrease the despawn timer.
