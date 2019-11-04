@@ -95,7 +95,7 @@ public class HealthBalloonBehaviour : MonoBehaviour
 					ac.Play();
                     m_PlayedPopSound = true;
                 }
-				Destroy(gameObject, 1);
+				Destroy(gameObject);
 			}
 			// Else, decrease the despawn timer.
 			else
