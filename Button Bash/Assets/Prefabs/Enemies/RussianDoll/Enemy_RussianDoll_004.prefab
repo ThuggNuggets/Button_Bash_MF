@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4049320621647060400}
   - component: {fileID: 4049320621645733266}
   - component: {fileID: 4049320621644635986}
-  - component: {fileID: 2389659210888240884}
   - component: {fileID: 8213223668972232251}
   - component: {fileID: 3349121209579034381}
-  - component: {fileID: 2778159219441451147}
   - component: {fileID: 4839814472968326325}
+  - component: {fileID: 1122385918164510445}
+  - component: {fileID: 3439621165178003998}
   m_Layer: 0
   m_Name: Russian_Doll_Bottom
   m_TagString: babushkaLarge
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2389659210888240884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4049320621646561680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ce70554c1d4dc438f584060edf13b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 5
-  m_Colour: 3
 --- !u!65 &8213223668972232251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,33 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2778159219441451147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4049320621646561680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3321ae6030a2ce545a4a7dbaa03eb96c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextLevel: {fileID: 4049320621646561680}
-  health: 2
-  leftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
-    type: 3}
-  rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
-    type: 3}
-  scale: 0.005
-  verticalFling: 85
-  xFling: 80
-  zFling: 50
-  otherBabushkas:
-  - {fileID: 2100000, guid: b2f87a7433809704482023f247883b07, type: 2}
-  - {fileID: 2100000, guid: c77828b7d94450346a09cd1c779ce27e, type: 2}
-  - {fileID: 2100000, guid: f1792f914c7439b47b7083086191f650, type: 2}
-  - {fileID: 2100000, guid: 869034ba1c8fbc24c8e37e0b7c0dce81, type: 2}
 --- !u!82 &4839814472968326325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -249,6 +208,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1122385918164510445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049320621646561680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3321ae6030a2ce545a4a7dbaa03eb96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: {fileID: 4049320621646561680}
+  health: 2
+  leftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
+    type: 3}
+  rightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
+    type: 3}
+  scale: 0.005
+  verticalFling: 85
+  xFling: 80
+  zFling: 50
+  otherBabushkas:
+  - {fileID: 2100000, guid: b2f87a7433809704482023f247883b07, type: 2}
+  - {fileID: 2100000, guid: c77828b7d94450346a09cd1c779ce27e, type: 2}
+  - {fileID: 2100000, guid: f1792f914c7439b47b7083086191f650, type: 2}
+  - {fileID: 2100000, guid: 869034ba1c8fbc24c8e37e0b7c0dce81, type: 2}
+--- !u!114 &3439621165178003998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049320621646561680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ce70554c1d4dc438f584060edf13b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 5
+  m_Colour: 3
 --- !u!1 &4049320621646561682
 GameObject:
   m_ObjectHideFlags: 0

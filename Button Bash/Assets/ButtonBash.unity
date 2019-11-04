@@ -2524,6 +2524,12 @@ PrefabInstance:
       propertyPath: m_PlayerLivesCollider
       value: 
       objectReference: {fileID: 6808261314332480246}
+    - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4049320621646561682, guid: 71ddd86d4b6cc7748a7728fd30170703,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
 --- !u!1001 &1406709640
