@@ -29,6 +29,8 @@ public class DeadProjectile : MonoBehaviour
 	/// </summary>
 	public float m_FlingSpeed;
 
+	private int m_RotationIterator = 0;
+
 	/// <summary>
 	/// On startup.
 	/// </summary>
@@ -45,16 +47,39 @@ public class DeadProjectile : MonoBehaviour
 	void Update()
 	{
 		// Check the despawn timer, if it is less than or equal to 0, despawn the projectile,
-		// else decrease the timer and move the button.
+		// else decrease the timer.
 		if (m_DespawnTimer <= 0.0f)
 			Destroy(gameObject);
 		else
 		{
 			m_DespawnTimer -= Time.deltaTime;
+			// If the button has not collided with something, move the button foward.
+			// Else, fling the button up into the air and rotate around.
 			if (m_Collided == false)
 				m_Rigidbody.MovePosition(transform.position + ((-transform.right) * m_Force * Time.deltaTime));
 			else
-				transform.Translate(Vector3.up * m_FlingSpeed * Time.deltaTime);
+			{
+				transform.Translate(Vector3.up * m_FlingSpeed * Time.deltaTime, Space.World);
+
+				// Rotate the button, so it isn't boring.
+				switch(m_RotationIterator)
+				{
+					case 0:
+						transform.Rotate(10, 0, 0);
+						m_RotationIterator = 1;
+						break;
+
+					case 1:
+						transform.Rotate(0, 10, 0);
+						m_RotationIterator = 2;
+						break;
+
+					case 2:
+						transform.Rotate(0, 0, 10);
+						m_RotationIterator = 0;
+						break;
+				}
+			}
 		}
     }
 
