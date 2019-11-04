@@ -12820,7 +12820,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5117354909545679390, guid: 131018ba845d1f54381b377b86f0e6ef,
+      objectReference: {fileID: 7617839716588314869, guid: 981df89f574c0304a95efcffa655c40e,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}
@@ -12838,7 +12838,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WaveEnemies.Array.data[4]
       value: 
-      objectReference: {fileID: 5117354909545679390, guid: 131018ba845d1f54381b377b86f0e6ef,
+      objectReference: {fileID: 7617839716588314869, guid: 981df89f574c0304a95efcffa655c40e,
         type: 3}
     - target: {fileID: 1295850232319659905, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
         type: 3}

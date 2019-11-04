@@ -31,6 +31,10 @@ public class DeadProjectile : MonoBehaviour
 
 	private int m_RotationIterator = 0;
 
+	public float m_XFling;
+
+	public float m_ZFling;
+
 	/// <summary>
 	/// On startup.
 	/// </summary>
@@ -39,6 +43,9 @@ public class DeadProjectile : MonoBehaviour
 		// Get the rigidbody of the projectile.
 		// For moving the projectile.
 		m_Rigidbody = GetComponent<Rigidbody>();
+
+		m_XFling = Random.Range(-m_XFling, m_XFling);
+		m_ZFling = Random.Range(-m_ZFling, m_ZFling);
 	}
 
 	/// <summary>
@@ -59,7 +66,7 @@ public class DeadProjectile : MonoBehaviour
 				m_Rigidbody.MovePosition(transform.position + ((-transform.right) * m_Force * Time.deltaTime));
 			else
 			{
-				transform.Translate(Vector3.up * m_FlingSpeed * Time.deltaTime, Space.World);
+				transform.Translate(new Vector3(m_XFling, m_FlingSpeed, m_ZFling) * Time.deltaTime, Space.World);
 
 				// Rotate the button, so it isn't boring.
 				switch(m_RotationIterator)
