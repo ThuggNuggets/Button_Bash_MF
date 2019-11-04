@@ -145,9 +145,8 @@ MonoBehaviour:
   m_maxAmmo: 15
   m_Bullet: {fileID: 3905374817873417468, guid: 049eb20dad56d394098d5c4316df273c,
     type: 3}
-  m_ShootingCooldown: 0.65
+  m_ShootingCooldown: 0.6
   m_playerNumber: 2
-  m_Colour: 1
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
