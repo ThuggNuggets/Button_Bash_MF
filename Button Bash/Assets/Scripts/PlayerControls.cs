@@ -56,16 +56,33 @@ public class PlayerControls : MonoBehaviour
     private float m_yAxis;
     private float m_deadZone = 0.5f;
 
+    
     LineRenderer line = new LineRenderer();
     //stop running into the back of other players
-    private Vector3 leftHand = new Vector3 (0, 0, -1);
-    private Vector3 rightHand = new Vector3(0, 0, 1);
+    private Vector3 leftHand   = new Vector3 (0,0,-1);
+    private Vector3 rightHand = new Vector3 (0, 0, 1);
     //rigidbody
     private Rigidbody body;
     //horizontal movement
     float translation;
     //lane changing speed
     public float m_laneChangingSpeed = 1;
+    //right Vector
+    Vector3 right;
+    //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
+    public float leftSide = -9.6f;
+    public float rightSide = 11.2f;
+    private float yRaycast = 0;
+    public float rayLegth = 4;
+    //box cast (raycast alternitive)
+    bool hitDetectBackLane;
+    bool hitDetectFrontLane;
+   
+
+    private float m_MaxDistance = 10;
+    Vector3 positionWithDifferentheight;
+    RaycastHit m_Hit;
+    Collider m_Collider;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
@@ -101,7 +118,9 @@ public class PlayerControls : MonoBehaviour
                     break;
                 }
         }
-
+        right = transform.TransformDirection(Vector3.right);
+        //box cast
+        m_Collider = GetComponent<Collider>();
     }
     /// <summary>
     /// when players collide with the ammo piles refil ammo to max
@@ -127,30 +146,18 @@ public class PlayerControls : MonoBehaviour
         m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
 
 
-        Debug.DrawRay(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f));
-        //if (m_ChangingLanes)
-        //{
-        //    if (m_yAxis < -m_deadZone || m_yAxis > m_deadZone)
-        //    {
-        //        RaycastHit check;
-        //        if (Physics.Raycast(transform.position, new Vector3(-m_yAxis * 1.1f, 0, m_xAxis * 1.1f), out check, 3, 1))
-        //        {
-        //            //checks if there is input to the selected controls
-        //            //translation = 0;
-        //            translation = m_xAxis * m_CharacterSpeed;
-        //        }
-        //        else
-        //        {
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    translation = m_xAxis * m_CharacterSpeed;
-        //}
-        //so the player moves at playerSpeed units per sec not per frame
 
         translation = m_xAxis * m_CharacterSpeed;
+
+        if(m_xAxis < 0 && transform.position.z < leftSide)
+        {
+            translation = 0;
+        }
+        else if(m_xAxis > 0 && transform.position.z > rightSide)
+        {
+            translation = 0;
+        }
+
         translation *= Time.deltaTime;
         //moves the player
         transform.Translate(0, 0, translation);
@@ -158,27 +165,40 @@ public class PlayerControls : MonoBehaviour
         body.velocity = new Vector3(0, 0, 0);
         //draw a raycast so players can see where the button will go
 
+        //hands raycast
+        Debug.DrawRay(transform.position + leftHand, new Vector3(-m_yAxis * rayLegth, 0, m_xAxis * 4));
+        Debug.DrawRay(transform.position + rightHand, new Vector3(-m_yAxis * rayLegth, 0, m_xAxis * 4));
 
-
-
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z-1), new Vector3(transform.position.x+1, transform.position.y, transform.position.z - 1));
-        // Move to front lane
-        if (m_yAxis > m_deadZone)
+        //box cast
+        
+        hitDetectFrontLane = Physics.BoxCast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Vector3(0.25f, .5f, 1), (-right), out m_Hit, transform.rotation, m_MaxDistance);
+        if (hitDetectFrontLane)
         {
-            RaycastHit hit;
-            if (!Physics.Raycast(new Vector3(transform.position.x , transform.position.y, transform.position.z - 1) , transform.TransformDirection(-Vector3.right), out hit, 3, 1) && !Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), transform.TransformDirection(-Vector3.right), out hit, 3, 1))
+            //Output the name of the Collider your Box hit
+            Debug.Log("HitFront : " + m_Hit.collider.gameObject.name);
+        }
+
+        // Move to front lane
+            if (m_yAxis > m_deadZone)
             {
+              if (!hitDetectFrontLane)
+              {
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.FrontLane, "Rail");
                 }
             }
         }
+        hitDetectBackLane = Physics.BoxCast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(0.25f, .5f, 1), right, out m_Hit, transform.rotation, m_MaxDistance);
+        if (hitDetectBackLane)
+        {
+            //Output the name of the Collider your Box hit
+            Debug.Log("HitBack : " + m_Hit.collider.gameObject.name);
+        }
         // Move to back lane
         if (m_yAxis < -m_deadZone)
         {
-            RaycastHit hit;
-            if (!Physics.Raycast(transform.position + leftHand, transform.TransformDirection(Vector3.right), out hit, 3, 1) && !Physics.Raycast(transform.position + rightHand, transform.TransformDirection(Vector3.right), out hit, 3, 1))
+            if (!hitDetectBackLane)
             {
                 if (!m_ChangingLanes)
                 {
@@ -216,6 +236,9 @@ public class PlayerControls : MonoBehaviour
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
         {
+            yRaycast = 0.5f;
+            leftHand = new Vector3(0, yRaycast, -0.9f);
+            rightHand = new Vector3(0, yRaycast, 0.9f);
             RaycastHit aim;
             Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             var ray = -transform.right;
@@ -244,6 +267,9 @@ public class PlayerControls : MonoBehaviour
         }
         else if (m_CurrentLane == Lane.BackLane)
         {
+            yRaycast = -0.5f;
+            leftHand = new Vector3(0, yRaycast,  -0.9f);
+            rightHand = new Vector3(0, yRaycast, 0.9f);
             Vector3[] points = new Vector3[2];
             points[0] = transform.position;
             points[1] = transform.position;
@@ -303,6 +329,48 @@ public class PlayerControls : MonoBehaviour
         else
         {
             canShoot = false;
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (m_CurrentLane == Lane.FrontLane)
+        {
+            //Check if there has been a hit yet
+            if (hitDetectFrontLane)
+            {
+                //Draw a Ray forward from GameObject toward the hit
+                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.right * m_Hit.distance);
+                //Draw a cube that extends to where the hit exists
+                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + transform.right * m_Hit.distance, new Vector3(0.5f, 1, 2));
+            }
+            //If there hasn't been a hit yet, draw the ray at the maximum distance
+            else
+            {
+                //Draw a Ray forward from GameObject toward the maximum distance
+                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.right * m_MaxDistance);
+                //Draw a cube at the maximum distance
+                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + transform.right * m_MaxDistance, new Vector3(0.5f, 1, 2));
+            }
+        }
+        if (m_CurrentLane == Lane.BackLane)
+        {
+            if (hitDetectBackLane)
+            {
+                //Draw a Ray forward from GameObject toward the hit
+                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -right * m_Hit.distance);
+                //Draw a cube that extends to where the hit exists
+                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + -right * m_Hit.distance, new Vector3(0.5f, 1, 2));
+            }
+            //If there hasn't been a hit yet, draw the ray at the maximum distance
+            else
+            {
+                //Draw a Ray forward from GameObject toward the maximum distance
+                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -right * m_MaxDistance);
+                //Draw a cube at the maximum distance
+                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + -right * m_MaxDistance, new Vector3(0.5f, 1, 2));
+            }
         }
     }
 }
