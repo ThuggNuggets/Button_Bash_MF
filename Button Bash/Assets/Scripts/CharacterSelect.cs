@@ -64,6 +64,11 @@ public class CharacterSelect : MonoBehaviour
 		// Create a new unity event to store the next character event.
 		m_NextCharacter = new UnityEvent();
 		m_NextCharacter.AddListener(NextCharacter);
+
+		// Reset the player characters from the previous round of play.
+		// Without this, the game manager will keep the players from the previous round of play, 
+		// which we don't want if the players are back on this screen.
+		GameManager.ResetPlayerCharacters();
 	}
 
 	/// <summary>
@@ -78,17 +83,26 @@ public class CharacterSelect : MonoBehaviour
 		{
 			// If the left stick's x axis is greater than the dead zone, move to the next character.
 			if (m_XAxis > m_DeadZone)
+			{
 				NextCharacter();
+				Debug.Log("Next character.");
+
+				// Set that the stick has been released to false.
+				m_LeftStickHasBeenReleased = false;
+			}
 			// Else if the left stick's x axis is less than negative the dead zone, move to the previous character.
 			else if (m_XAxis < -m_DeadZone)
+			{
 				PrevCharacter();
+				Debug.Log("Previous character.");
 
-			// Set that the stick has been released to false.
-			m_LeftStickHasBeenReleased = false;
+				// Set that the stick has been released to false.
+				m_LeftStickHasBeenReleased = false;
+			}
 		}
-
-		// Else if the left stick's x axis is less than the dead zone and greater than the negative dead zone, set that the stick has been released to true.
-		else if (m_XAxis < m_DeadZone && m_XAxis > -m_DeadZone)
+		// Else if the left stick's x axis is 0, therefore isn't being pushed, 
+		// set that the stick has been released to true.
+		else if (m_XAxis == 0)
 			m_LeftStickHasBeenReleased = true;
 	}
 

@@ -57,7 +57,7 @@ public class SelectCharacter : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		Debug.Log(XCI.GetNumPluggedCtrlrs());
+		//Debug.Log(XCI.GetNumPluggedCtrlrs());
 
 		m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, (XboxController)m_PlayerNumber + 1);
 		m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, (XboxController)m_PlayerNumber + 1);

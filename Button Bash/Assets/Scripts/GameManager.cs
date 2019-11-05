@@ -73,4 +73,15 @@ public static class GameManager
 		else
 			return false;
 	}
+
+	/// <summary>
+	/// Resets the player characters from the previous round of play.
+	/// </summary>
+	public static void ResetPlayerCharacters()
+	{
+		m_PlayerCharacters[0] = -1;
+		m_PlayerCharacters[1] = -1;
+		m_PlayerCharacters[2] = -1;
+		m_PlayerCharacters[3] = -1;
+	}
 }
