@@ -15,14 +15,17 @@ using UnityEngine.UI;
 public class playerLives : MonoBehaviour
 {
     //starting lives for the players
-    public int maxHealth = 5;
-
-    public int player1Lives;
-    public int player2Lives;
-    public int player3Lives;
-    public int player4Lives;
+    public int m_MaxHealth = 5;
+    [HideInInspector]
+    public int m_Player1Lives;
+    [HideInInspector]
+    public int m_Player2Lives;
+    [HideInInspector]
+    public int m_Player3Lives;
+    [HideInInspector]
+    public int m_Player4Lives;
     //holds colour variable
-    Colours.Colour enemyColour = Colours.Colour.None;
+    Colours.Colour m_EnemyColour = Colours.Colour.None;
 
 	public GameObject[] m_HealthBalloons;
 
@@ -35,10 +38,10 @@ public class playerLives : MonoBehaviour
 
     private void Awake()
     {
-        player1Lives = maxHealth;
-        player2Lives = maxHealth;
-        player3Lives = maxHealth;
-        player4Lives = maxHealth;
+        m_Player1Lives = m_MaxHealth;
+        m_Player2Lives = m_MaxHealth;
+        m_Player3Lives = m_MaxHealth;
+        m_Player4Lives = m_MaxHealth;
 
 		m_SoundManager = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
     }
@@ -47,7 +50,7 @@ public class playerLives : MonoBehaviour
         // If the enemy reaches the end trigger deal damage to specific player
         if(collision.gameObject.tag == "letterBlock" || collision.gameObject.tag == "teddyBear" || collision.gameObject.tag == "rubix" || collision.gameObject.tag == "babushkaSmall" || collision.gameObject.tag == "babushkaMedium" || collision.gameObject.tag == "babushkaLarge" )
         {
-			enemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
+			m_EnemyColour = collision.gameObject.GetComponent<EnemyBehaviour>().GetColour();
 
 			// alex sound
 			//GetComponent<AudioSource>().clip = m_SoundManager.m_SoundClips[3];
@@ -55,19 +58,19 @@ public class playerLives : MonoBehaviour
         }
         else
         {
-            enemyColour = Colours.Colour.None;
+            m_EnemyColour = Colours.Colour.None;
         }
 
-        switch (enemyColour)
+        switch (m_EnemyColour)
         {
             // Set the material colour to red.
             case Colours.Colour.Blue:
                 {
-                    if (player1Lives > 0)
+                    if (m_Player1Lives > 0)
                     {
-                        player1Lives -= 1;
+                        m_Player1Lives -= 1;
 						// If player 1's lives are 0, increase the amount of players that have no lives.
-						if (player1Lives == 0)
+						if (m_Player1Lives == 0)
 						{
 							m_PlayerDeathIterator++;
 							GameObject m_Sailor = GameObject.Find("Character_sailor_001");
@@ -85,11 +88,11 @@ public class playerLives : MonoBehaviour
             // Set the material colour to blue.
             case Colours.Colour.Red:
                 {
-                    if (player2Lives > 0)
+                    if (m_Player2Lives > 0)
                     {
-                        player2Lives -= 1;
+                        m_Player2Lives -= 1;
                         // If player 2's lives are 0, increase the amount of players that have no lives.
-                        if (player2Lives == 0)
+                        if (m_Player2Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
@@ -105,11 +108,11 @@ public class playerLives : MonoBehaviour
             // Set the material colour to green.
             case Colours.Colour.Green:
                 {
-                    if (player3Lives > 0)
+                    if (m_Player3Lives > 0)
                     {
-                        player3Lives -= 1;
+                        m_Player3Lives -= 1;
                         // If player 3's lives are 0, increase the amount of players that have no lives.
-                        if (player3Lives == 0)
+                        if (m_Player3Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
@@ -125,11 +128,11 @@ public class playerLives : MonoBehaviour
             // Set the material colour to yellow.
             case Colours.Colour.Yellow:
                 {
-                    if (player4Lives > 0)
+                    if (m_Player4Lives > 0)
                     {
-                        player4Lives -= 1;
+                        m_Player4Lives -= 1;
                         // If player 4's lives are 0, increase the amount of players that have no lives.
-                        if (player4Lives == 0)
+                        if (m_Player4Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
@@ -156,19 +159,19 @@ public class playerLives : MonoBehaviour
 			int alivePlayer = 0;
 
 			// If player 1 has more than 0 lives, player 1 is alive.
-			if (player1Lives > 0)
+			if (m_Player1Lives > 0)
 				alivePlayer = 1;
 
 			// If player 2 has more than 0 lives, player 1 is alive.
-			else if (player2Lives > 0)
+			else if (m_Player2Lives > 0)
 				alivePlayer = 2;
 
 			// If player 3 has more than 0 lives, player 1 is alive.
-			else if (player3Lives > 0)
+			else if (m_Player3Lives > 0)
 				alivePlayer = 3;
 
 			// If player 4 has more than 0 lives, player 1 is alive.
-			else if (player4Lives > 0)
+			else if (m_Player4Lives > 0)
 				alivePlayer = 4;
 
             // Store the final player in the game manager.

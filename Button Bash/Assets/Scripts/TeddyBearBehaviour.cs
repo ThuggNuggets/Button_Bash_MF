@@ -6,16 +6,16 @@ using UnityEngine;
 public class TeddyBearBehaviour : MonoBehaviour
 {
     //hits until it is defeated
-    public float health = 5;
+    public float m_Health = 5;
     // amount its size increased each time
-    public float scale = 0.5f;
+    public float m_Scale = 0.5f;
     //flinging the enemy when they have no health
-    public float verticalFling = 50;
-    public float xFling = 10;
-    public float zFling = 10;
-    private Rigidbody rb;
+    public float m_VerticalFling = 50;
+    public float m_XFling = 10;
+    public float m_ZFling = 10;
+    private Rigidbody m_Rb;
     //flinging
-    int flingRotation;
+    int m_FlingRotation;
     /// <summary>
     /// sets variables
     /// </summary>
@@ -23,23 +23,23 @@ public class TeddyBearBehaviour : MonoBehaviour
     {
         //get random fling values
        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        xFling = Random.Range(-xFling, -minXFling);
-        zFling = Random.Range(-zFling, zFling);
-        rb = gameObject.GetComponent<Rigidbody>();
-        flingRotation = Random.Range(0, 3);
+        m_XFling = Random.Range(-m_XFling, -minXFling);
+        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
+        m_Rb = gameObject.GetComponent<Rigidbody>();
+        m_FlingRotation = Random.Range(0, 3);
     }
     /// <summary>
     /// turns collisions on object off and flings it
     /// </summary>
     private void FixedUpdate()
     {
-        if (health <= 0)
+        if (m_Health <= 0)
         {
-            rb.detectCollisions = false;
-            transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+            m_Rb.detectCollisions = false;
+            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
-            switch (flingRotation)
+            switch (m_FlingRotation)
             {
                 case 0:
                     {
@@ -70,15 +70,15 @@ public class TeddyBearBehaviour : MonoBehaviour
         {
             //destroy the bullet
                 Destroy(collision.gameObject);
-                health--;
-                if (health > 0)
+                m_Health--;
+                if (m_Health > 0)
                 {
                 //increases size of bear
-                transform.localScale += new Vector3(scale, scale, scale);
+                transform.localScale += new Vector3(m_Scale, m_Scale, m_Scale);
                 }
                 else
                 {
-                rb.constraints = RigidbodyConstraints.None;
+                m_Rb.constraints = RigidbodyConstraints.None;
                 }
                 //soud trest alex
                 {

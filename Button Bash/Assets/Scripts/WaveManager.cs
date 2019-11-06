@@ -177,7 +177,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
 										// If player 1 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player1Lives <= 0)
+										if (m_PlayerLives.m_Player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
 												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
@@ -189,7 +189,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is red.
 									case Colours.Colour.Red:
 										// If player 2 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player2Lives <= 0)
+										if (m_PlayerLives.m_Player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
 												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
@@ -199,7 +199,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is green.
 									case Colours.Colour.Green:
 										// If player 3 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player3Lives <= 0)
+										if (m_PlayerLives.m_Player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
 												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
@@ -209,7 +209,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
 										// If player 4 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player4Lives <= 0)
+										if (m_PlayerLives.m_Player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
 												m_EnemyToSpawn = m_BlockEnemies[Random.Range(0, m_BlockEnemies.Length)];
@@ -228,7 +228,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
 										// If player 1 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player1Lives <= 0)
+										if (m_PlayerLives.m_Player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
 												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
@@ -238,7 +238,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is red.
 									case Colours.Colour.Red:
 										// If player 2 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player2Lives <= 0)
+										if (m_PlayerLives.m_Player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
 												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
@@ -248,7 +248,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is green.
 									case Colours.Colour.Green:
 										// If player 3 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player3Lives <= 0)
+										if (m_PlayerLives.m_Player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
 												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
@@ -258,7 +258,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
 										// If player 4 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player4Lives <= 0)
+										if (m_PlayerLives.m_Player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
 												m_EnemyToSpawn = m_TeddyEnemies[Random.Range(0, m_TeddyEnemies.Length)];
@@ -277,7 +277,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
 										// If player 1 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player1Lives <= 0)
+										if (m_PlayerLives.m_Player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
 												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
@@ -287,7 +287,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is red.
 									case Colours.Colour.Red:
 										// If player 2 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player2Lives <= 0)
+										if (m_PlayerLives.m_Player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
 												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
@@ -297,7 +297,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is green.
 									case Colours.Colour.Green:
 										// If player 3 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player3Lives <= 0)
+										if (m_PlayerLives.m_Player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
 												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
@@ -307,7 +307,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
 										// If player 4 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player4Lives <= 0)
+										if (m_PlayerLives.m_Player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
 												m_EnemyToSpawn = m_DollEnemies[Random.Range(0, m_DollEnemies.Length)];
@@ -326,7 +326,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is blue.
 									case Colours.Colour.Blue:
 										// If player 1 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player1Lives <= 0)
+										if (m_PlayerLives.m_Player1Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Blue)
 												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
@@ -336,7 +336,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is red.
 									case Colours.Colour.Red:
 										// If player 2 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player2Lives <= 0)
+										if (m_PlayerLives.m_Player2Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Red)
 												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
@@ -346,7 +346,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is green.
 									case Colours.Colour.Green:
 										// If player 3 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player3Lives <= 0)
+										if (m_PlayerLives.m_Player3Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Green)
 												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
@@ -356,7 +356,7 @@ public class WaveManager : MonoBehaviour
 									// If the enemy is yellow.
 									case Colours.Colour.Yellow:
 										// If player 4 is dead, replace the enemy with a different enemy.
-										if (m_PlayerLives.player4Lives <= 0)
+										if (m_PlayerLives.m_Player4Lives <= 0)
 										{
 											while (m_EnemyToSpawn.GetComponentInChildren<EnemyBehaviour>().m_Colour == Colours.Colour.Yellow)
 												m_EnemyToSpawn = m_RubixEnemies[Random.Range(0, m_RubixEnemies.Length)];
@@ -421,7 +421,7 @@ public class WaveManager : MonoBehaviour
 			case Colours.Colour.Blue:
 				// If the blue player is alive, return that the player is alive.
 				// Else return false.
-				if (m_PlayerLives.GetComponent<playerLives>().player1Lives > 0)
+				if (m_PlayerLives.GetComponent<playerLives>().m_Player1Lives > 0)
 					return true;
 				else
 					return false;
@@ -430,7 +430,7 @@ public class WaveManager : MonoBehaviour
 			case Colours.Colour.Red:
 				// If the red player is alive, return that the player is alive.
 				// Else return false.
-				if (m_PlayerLives.GetComponent<playerLives>().player2Lives > 0)
+				if (m_PlayerLives.GetComponent<playerLives>().m_Player2Lives > 0)
 					return true;
 				else
 					return false;
@@ -439,7 +439,7 @@ public class WaveManager : MonoBehaviour
 			case Colours.Colour.Green:
 				// If the green player is alive, return that the player is alive.
 				// Else return false.
-				if (m_PlayerLives.GetComponent<playerLives>().player3Lives > 0)
+				if (m_PlayerLives.GetComponent<playerLives>().m_Player3Lives > 0)
 					return true;
 				else
 					return false;
@@ -448,7 +448,7 @@ public class WaveManager : MonoBehaviour
 			case Colours.Colour.Yellow:
 				// If the yellow player is alive, return that the player is alive.
 				// Else return false.
-				if (m_PlayerLives.GetComponent<playerLives>().player4Lives > 0)
+				if (m_PlayerLives.GetComponent<playerLives>().m_Player4Lives > 0)
 					return true;
 				else
 					return false;

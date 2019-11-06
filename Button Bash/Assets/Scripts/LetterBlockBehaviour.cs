@@ -5,14 +5,14 @@ using UnityEngine;
 /*put this code on the Letter Block enemy*/
 public class LetterBlockBehaviour : MonoBehaviour
 {
-    public int health = 2;
+    public int m_Health = 2;
     //flinging the enemy when they have no health
-    public float verticalFling = 50;
-    public float xFling = 10;
-    public float zFling = 10;
+    public float m_VerticalFling = 50;
+    public float m_XFling = 10;
+    public float m_ZFling = 10;
 
     //flinging
-    int flingRotation;
+    int m_FlingRotation;
     /// <summary>
     /// sets variables 
     /// </summary>
@@ -20,22 +20,22 @@ public class LetterBlockBehaviour : MonoBehaviour
     {
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        xFling = Random.Range(-xFling, -minXFling);
-        zFling = Random.Range(-zFling, zFling);
-        flingRotation = Random.Range(0, 3);
+        m_XFling = Random.Range(-m_XFling, -minXFling);
+        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
+        m_FlingRotation = Random.Range(0, 3);
     }
     /// <summary>
     /// fling when defeated
     /// </summary>
     private void FixedUpdate()
     {
-        if (health <= 0)
+        if (m_Health <= 0)
         {
    
-            transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
-            switch (flingRotation)
+            switch (m_FlingRotation)
             {
                 case 0:
                     {
@@ -63,7 +63,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "bullet")
         {
-            health--;
+            m_Health--;
             Destroy(collision.gameObject);
             //soud trest alex
             {

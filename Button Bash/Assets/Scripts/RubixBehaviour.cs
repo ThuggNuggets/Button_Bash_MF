@@ -6,47 +6,47 @@ using UnityEngine;
 /*put this code on the Rubix enemy*/
 public class RubixBehaviour : MonoBehaviour
 {
-    public float health = 3.0f;
-    private Colours.Colour m_colour;
+    public float m_Health = 3.0f;
+    private Colours.Colour m_Colour;
     //flinging the enemy when they have no health
-    public float verticalFling = 50;
-    public float xFling = 10;
-    public float zFling = 10;
+    public float m_VerticalFling = 50;
+    public float m_XFling = 10;
+    public float m_ZFling = 10;
 
     // The script that is storing all the player's lives
     private playerLives m_PlayerLives;
     // The collider that holds the player lives.
     private GameObject m_PlayerLivesCollider;
     //used to find the new colour for the next babushka level
-    private Colours.Colour newColour;
-    private bool valid = false;
+    private Colours.Colour m_NewColour;
+    private bool m_Valid = false;
 
     //flinging
-    int flingRotation;
+    int m_FlingRotation;
     private void Awake()
     {
-        m_colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
+        m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        xFling = Random.Range(-xFling, -minXFling);
-        zFling = Random.Range(-zFling, zFling);
+        m_XFling = Random.Range(-m_XFling, -minXFling);
+        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
 
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
         m_PlayerLives = m_PlayerLivesCollider.GetComponentInChildren<playerLives>();
 
-        flingRotation = Random.Range(0, 3);
+        m_FlingRotation = Random.Range(0, 3);
     }
     private void FixedUpdate()
     {
-        if (health <= 0)
+        if (m_Health <= 0)
         {
-           
-            transform.Translate(new Vector3(xFling, verticalFling, zFling) * Time.deltaTime, Space.World);
+           //flinging
+            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
-
-            switch (flingRotation)
+            //rotates the object
+            switch (m_FlingRotation)
             {
                 case 0:
                     {
@@ -73,55 +73,55 @@ public class RubixBehaviour : MonoBehaviour
         {
             //destroy bullet
             Destroy(collision.gameObject);
-            health--;
-            if (health > 0)
+            m_Health--;
+            if (m_Health > 0)
             {
                
-                valid = false;
+                m_Valid = false;
 
                 //changes its colour
-                while (!valid)
+                while (!m_Valid)
                 {
-                    switch (m_colour)
+                    switch (m_Colour)
                     {
                         case Colours.Colour.Blue:
                             {
-                                m_colour = Colours.Colour.Red;
+                                m_Colour = Colours.Colour.Red;
                                 transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.player2Lives > 0)
+                                if (m_PlayerLives.m_Player2Lives > 0)
                                 {
-                                    valid = true;
+                                    m_Valid = true;
                                 }
                                 break;
                             }
                         case Colours.Colour.Red:
                             {
-                                m_colour = Colours.Colour.Green;
+                                m_Colour = Colours.Colour.Green;
                                 transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.player3Lives > 0)
+                                if (m_PlayerLives.m_Player3Lives > 0)
                                 {
-                                    valid = true;
+                                    m_Valid = true;
                                 }
                                 break;
                             }
                         case Colours.Colour.Green:
                             {
-                                m_colour = Colours.Colour.Yellow;
+                                m_Colour = Colours.Colour.Yellow;
                                 transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.player4Lives > 0)
+                                if (m_PlayerLives.m_Player4Lives > 0)
                                 {
-                                    valid = true;
+                                    m_Valid = true;
                                 }
 
                                 break;
                             }
                         case Colours.Colour.Yellow:
                             {
-                                m_colour = Colours.Colour.Blue;
+                                m_Colour = Colours.Colour.Blue;
                                 transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.player1Lives > 0)
+                                if (m_PlayerLives.m_Player1Lives > 0)
                                 {
-                                    valid = true;
+                                    m_Valid = true;
                                 }
 
                                 break;
@@ -130,8 +130,8 @@ public class RubixBehaviour : MonoBehaviour
                 }
                 
             }
-            gameObject.GetComponent<EnemyBehaviour>().SetColour(m_colour);
-            //when hit rotate body
+            gameObject.GetComponent<EnemyBehaviour>().SetColour(m_Colour);
+            // play a sound from the sound bucket
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
             AudioSource ac = GetComponent<AudioSource>();
             ac.clip = sm.m_SoundClips[2];

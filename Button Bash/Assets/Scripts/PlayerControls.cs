@@ -57,23 +57,22 @@ public class PlayerControls : MonoBehaviour
     private float m_deadZone = 0.5f;
 
     
-    LineRenderer line = new LineRenderer();
-    //stop running into the back of other players
-    private Vector3 leftHand   = new Vector3 (0,0,-1);
-    private Vector3 rightHand = new Vector3 (0, 0, 1);
+
+    private Vector3 m_LeftHand   = new Vector3 (0,0,-1);
+    private Vector3 m_RightHand = new Vector3 (0, 0, 1);
     //rigidbody
-    private Rigidbody body;
+    private Rigidbody m_Body;
     //horizontal movement
-    float translation;
+    float m_Translation;
     //lane changing speed
     public float m_laneChangingSpeed = 1;
     //right Vector
-    Vector3 right;
+    Vector3 m_Right;
     //shunting
-    public float shunt = 0.1f;
+    public float m_Shunt = 0.1f;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
-    bool colliding = false;
-    private GameObject collidingObject;
+    bool m_Colliding = false;
+    private GameObject m_CollidingObject;
     RaycastHit m_Hit;
     // Constructor.
     /// <summary>
@@ -83,9 +82,8 @@ public class PlayerControls : MonoBehaviour
     {
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
-        line = GetComponent<LineRenderer>();
         m_currentAmmo = m_maxAmmo;
-        body = GetComponent<Rigidbody>();
+        m_Body = GetComponent<Rigidbody>();
         switch(m_playerNumber)
         {
             case 0:
@@ -110,7 +108,7 @@ public class PlayerControls : MonoBehaviour
                     break;
                 }
         }
-        right = transform.TransformDirection(Vector3.right);
+        m_Right = transform.TransformDirection(Vector3.right);
     }
     /// <summary>
     /// when players collide with the ammo piles refil ammo to max
@@ -129,14 +127,14 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
         {
-            collidingObject = collision.gameObject;
-            colliding = true;
+            m_CollidingObject = collision.gameObject;
+            m_Colliding = true;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        colliding = false;
+        m_Colliding = false;
     }
     // Update the player.
     /// <summary>
@@ -150,29 +148,29 @@ public class PlayerControls : MonoBehaviour
 
 
 
-        translation = m_xAxis * m_CharacterSpeed;
-        translation *= Time.deltaTime;
+        m_Translation = m_xAxis * m_CharacterSpeed;
+        m_Translation *= Time.deltaTime;
         //moves the player
-        transform.position += new Vector3(0, 0, translation);
-        body.MovePosition(transform.position);
+        transform.position += new Vector3(0, 0, m_Translation);
+        m_Body.MovePosition(transform.position);
         //removes drifting after colliding with other players
-        if (!colliding)
+        if (!m_Colliding)
         {
-            body.velocity = new Vector3(0, 0, 0);
+            m_Body.velocity = new Vector3(0, 0, 0);
         }
         //move the players out of each other if overlapping also shunts when colliding with others
-        if (colliding)
+        if (m_Colliding)
         {
-            if (transform.position.z < collidingObject.transform.position.z)
+            if (transform.position.z < m_CollidingObject.transform.position.z)
             {
                 transform.position += new Vector3(0, 0, -1);
-                body.AddForce(new Vector3(0, 0, -shunt));
+                m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
 
             }
-            else if (transform.position.z > collidingObject.transform.position.z)
+            else if (transform.position.z > m_CollidingObject.transform.position.z)
             {
                 transform.position += new Vector3(0, 0, 1);
-                body.AddForce(new Vector3(0, 0, -shunt));
+                m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
             }
         }
         // Move to front lane
@@ -228,15 +226,13 @@ public class PlayerControls : MonoBehaviour
                 Vector3[] points = new Vector3[2];
                 points[0] = transform.position;
                 points[1] = new Vector3(aim.point.x, transform.position.y, aim.point.z);
-                line.SetPositions(points);
             }
             // Shoot a bullet.
 
             if (XCI.GetButton(XboxButton.A, (XboxController)m_playerNumber + 1) && m_ShootingCooldown <= 0.0f)
             {
                 // check if ammo is not zero
-                AmmoCheck();
-                if (canShoot == true)
+                if (m_currentAmmo > 0)
                 {
                     ShootBullet();
                     m_ShootingCooldown = m_MaxShootingCooldown;
@@ -251,7 +247,6 @@ public class PlayerControls : MonoBehaviour
             Vector3[] points = new Vector3[2];
             points[0] = transform.position;
             points[1] = transform.position;
-            line.SetPositions(points);
         }
 
         //if the cooldown is greater than 0, decrease the cooldown.
@@ -291,22 +286,6 @@ public class PlayerControls : MonoBehaviour
             m_TargetLane.y = newLane.transform.position.y;
             m_ChangingLanes = true;
 
-        }
-    }
-
-    // checks if current ammo is not zero, sets canShoot variable to false if at 0
-    /// <summary>
-    /// checks current ammo if the player can throw a button
-    /// </summary>
-    private void AmmoCheck()
-    {
-        if (m_currentAmmo > 0)
-        {
-            canShoot = true;
-        }
-        else
-        {
-            canShoot = false;
         }
     }
 
