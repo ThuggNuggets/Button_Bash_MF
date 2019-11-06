@@ -34,16 +34,12 @@ public class playerLives : MonoBehaviour
 	// How many players have lost all their lives.
 	private int m_PlayerDeathIterator = 0;
 
-	private SoundManager m_SoundManager;
-
     private void Awake()
     {
         m_Player1Lives = m_MaxHealth;
         m_Player2Lives = m_MaxHealth;
         m_Player3Lives = m_MaxHealth;
         m_Player4Lives = m_MaxHealth;
-
-		m_SoundManager = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -80,8 +76,6 @@ public class playerLives : MonoBehaviour
 						}
 
 						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
-
-						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
@@ -102,8 +96,6 @@ public class playerLives : MonoBehaviour
 							Destroy(m_Magic);
                         }
                         m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
-
-						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
@@ -123,8 +115,6 @@ public class playerLives : MonoBehaviour
 							Destroy(m_Alien);
                         }
                         m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
-
-                        GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
@@ -144,8 +134,6 @@ public class playerLives : MonoBehaviour
 							Destroy(m_Cat);
                         }
                         m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
-
-						GetComponent<AudioSource>().Play();
 					}
                     break;
                 }

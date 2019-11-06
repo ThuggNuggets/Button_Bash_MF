@@ -15,6 +15,8 @@ public class LetterBlockBehaviour : MonoBehaviour
     int m_FlingRotation;
 
     //flashing when hit
+    private Renderer m_Renderer;
+    public Material m_WhiteMaterial;
     bool m_Flash = false;
     private int m_FlashTimer = 10;
     public int m_MaxFlashTimer = 10;
@@ -24,6 +26,9 @@ public class LetterBlockBehaviour : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        m_FlashTimer = m_MaxFlashTimer;
+        m_OriginalMat = GetComponent<Renderer>().material;
+        m_Renderer = GetComponent<Renderer>();
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         m_XFling = Random.Range(-m_XFling, -minXFling);
@@ -35,9 +40,9 @@ public class LetterBlockBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        m_FlashTimer--;
         if (m_Health <= 0)
         {
-   
             transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
@@ -60,6 +65,18 @@ public class LetterBlockBehaviour : MonoBehaviour
                     }
             }
         }
+            if (m_Flash)
+            {
+                m_Renderer.material = m_WhiteMaterial;
+                if (m_FlashTimer < 0)
+                {
+                    m_Flash = false;
+                }
+            }
+            else
+            {
+                m_Renderer.material = m_OriginalMat;
+            }
     }
     /// <summary>
     /// when it collides with an object if it has the "bullet" tag reduce health and if no health destroy self
@@ -70,6 +87,8 @@ public class LetterBlockBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             m_Health--;
+            m_Flash = true;
+            m_FlashTimer = m_MaxFlashTimer;
             Destroy(collision.gameObject);
             //soud trest alex
             {
