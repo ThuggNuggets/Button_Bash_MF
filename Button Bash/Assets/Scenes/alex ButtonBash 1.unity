@@ -2767,6 +2767,16 @@ PrefabInstance:
       propertyPath: playerAmmoText
       value: 
       objectReference: {fileID: 131771095}
+    - target: {fileID: 7987455299978132850, guid: 3ad5de00e8caade47a99069d544733b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987455299978132850, guid: 3ad5de00e8caade47a99069d544733b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad5de00e8caade47a99069d544733b9, type: 3}
 --- !u!114 &1453303307 stripped
