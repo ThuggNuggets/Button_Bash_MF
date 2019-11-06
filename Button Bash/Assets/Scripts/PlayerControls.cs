@@ -69,20 +69,12 @@ public class PlayerControls : MonoBehaviour
     public float m_laneChangingSpeed = 1;
     //right Vector
     Vector3 right;
+    //shunting
+    public float shunt = 0.1f;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
-    public float leftSide = -9.6f;
-    public float rightSide = 11.2f;
-    private float yRaycast = 0;
-    public float rayLegth = 4;
-    //box cast (raycast alternitive)
-    bool hitDetectBackLane;
-    bool hitDetectFrontLane;
-   
-
-    private float m_MaxDistance = 10;
-    Vector3 positionWithDifferentheight;
+    bool colliding = false;
+    private GameObject collidingObject;
     RaycastHit m_Hit;
-    Collider m_Collider;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
@@ -119,8 +111,6 @@ public class PlayerControls : MonoBehaviour
                 }
         }
         right = transform.TransformDirection(Vector3.right);
-        //box cast
-        m_Collider = GetComponent<Collider>();
     }
     /// <summary>
     /// when players collide with the ammo piles refil ammo to max
@@ -135,6 +125,19 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
+        {
+            collidingObject = collision.gameObject;
+            colliding = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        colliding = false;
+    }
     // Update the player.
     /// <summary>
     /// controls movement and button throwing
@@ -148,65 +151,40 @@ public class PlayerControls : MonoBehaviour
 
 
         translation = m_xAxis * m_CharacterSpeed;
-
-        if(m_xAxis < 0 && transform.position.z < leftSide)
-        {
-            translation = 0;
-        }
-        else if(m_xAxis > 0 && transform.position.z > rightSide)
-        {
-            translation = 0;
-        }
-
         translation *= Time.deltaTime;
         //moves the player
-        transform.Translate(0, 0, translation);
+        transform.position += new Vector3(0, 0, translation);
+        body.MovePosition(transform.position);
         //removes drifting after colliding with other players
         body.velocity = new Vector3(0, 0, 0);
         //draw a raycast so players can see where the button will go
-
-        //hands raycast
-        Debug.DrawRay(transform.position + leftHand, new Vector3(-m_yAxis * rayLegth, 0, m_xAxis * 4));
-        Debug.DrawRay(transform.position + rightHand, new Vector3(-m_yAxis * rayLegth, 0, m_xAxis * 4));
-
-        //box cast
-        
-        hitDetectFrontLane = Physics.BoxCast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Vector3(0.25f, .5f, 1), (-right), out m_Hit, transform.rotation, m_MaxDistance);
-        if (hitDetectFrontLane)
+        if (colliding)
         {
-            //Output the name of the Collider your Box hit
-            Debug.Log("HitFront : " + m_Hit.collider.gameObject.name);
-        }
-
-        // Move to front lane
-            if (m_yAxis > m_deadZone)
+            if (transform.position.z < collidingObject.transform.position.z)
             {
-              if (!hitDetectFrontLane)
-              {
+                transform.position += new Vector3(0, 0, -shunt);
+            }
+            else if (transform.position.z > collidingObject.transform.position.z)
+            {
+                transform.position += new Vector3(0, 0, shunt);
+            }
+        }
+        // Move to front lane
+        if (m_yAxis > m_deadZone)
+        {
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.FrontLane, "Rail");
                 }
-            }
-        }
-        hitDetectBackLane = Physics.BoxCast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(0.25f, .5f, 1), right, out m_Hit, transform.rotation, m_MaxDistance);
-        if (hitDetectBackLane)
-        {
-            //Output the name of the Collider your Box hit
-            Debug.Log("HitBack : " + m_Hit.collider.gameObject.name);
         }
         // Move to back lane
         if (m_yAxis < -m_deadZone)
         {
-            if (!hitDetectBackLane)
-            {
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.BackLane, "Rail (1)");
                 }
-            }
         }
-
         // If the character is currently moving between lanes.x
 
         if (m_ChangingLanes)
@@ -236,9 +214,6 @@ public class PlayerControls : MonoBehaviour
         // If the current lane is lane 1, check for shooting.
         if (m_CurrentLane == Lane.FrontLane)
         {
-            yRaycast = 0.5f;
-            leftHand = new Vector3(0, yRaycast, -0.9f);
-            rightHand = new Vector3(0, yRaycast, 0.9f);
             RaycastHit aim;
             Vector3 start = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
             var ray = -transform.right;
@@ -267,9 +242,6 @@ public class PlayerControls : MonoBehaviour
         }
         else if (m_CurrentLane == Lane.BackLane)
         {
-            yRaycast = -0.5f;
-            leftHand = new Vector3(0, yRaycast,  -0.9f);
-            rightHand = new Vector3(0, yRaycast, 0.9f);
             Vector3[] points = new Vector3[2];
             points[0] = transform.position;
             points[1] = transform.position;
@@ -332,45 +304,4 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        if (m_CurrentLane == Lane.FrontLane)
-        {
-            //Check if there has been a hit yet
-            if (hitDetectFrontLane)
-            {
-                //Draw a Ray forward from GameObject toward the hit
-                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.right * m_Hit.distance);
-                //Draw a cube that extends to where the hit exists
-                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + transform.right * m_Hit.distance, new Vector3(0.5f, 1, 2));
-            }
-            //If there hasn't been a hit yet, draw the ray at the maximum distance
-            else
-            {
-                //Draw a Ray forward from GameObject toward the maximum distance
-                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.right * m_MaxDistance);
-                //Draw a cube at the maximum distance
-                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + transform.right * m_MaxDistance, new Vector3(0.5f, 1, 2));
-            }
-        }
-        if (m_CurrentLane == Lane.BackLane)
-        {
-            if (hitDetectBackLane)
-            {
-                //Draw a Ray forward from GameObject toward the hit
-                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -right * m_Hit.distance);
-                //Draw a cube that extends to where the hit exists
-                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + -right * m_Hit.distance, new Vector3(0.5f, 1, 2));
-            }
-            //If there hasn't been a hit yet, draw the ray at the maximum distance
-            else
-            {
-                //Draw a Ray forward from GameObject toward the maximum distance
-                Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -right * m_MaxDistance);
-                //Draw a cube at the maximum distance
-                Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z) + -right * m_MaxDistance, new Vector3(0.5f, 1, 2));
-            }
-        }
-    }
 }
