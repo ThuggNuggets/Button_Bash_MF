@@ -76,34 +76,39 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_PlayerNumber + 1);
-
-		// If the left stick has been released, check it's direction.
-		if (m_LeftStickHasBeenReleased == true)
+		// If a character hasn't been locked in, cycle through the characters.
+		if (transform.GetChild(2).GetComponent<SelectCharacter>().GetCharacterLockedIn() == false)
 		{
-			// If the left stick's x axis is greater than the dead zone, move to the next character.
-			if (m_XAxis > m_DeadZone)
-			{
-				NextCharacter();
-				Debug.Log("Next character.");
+			m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_PlayerNumber + 1);
 
-				// Set that the stick has been released to false.
-				m_LeftStickHasBeenReleased = false;
-			}
-			// Else if the left stick's x axis is less than negative the dead zone, move to the previous character.
-			else if (m_XAxis < -m_DeadZone)
+			// If the left stick has been released, check it's direction.
+			// So the character doesn't change every frame.
+			if (m_LeftStickHasBeenReleased == true)
 			{
-				PrevCharacter();
-				Debug.Log("Previous character.");
+				// If the left stick's x axis is greater than the dead zone, move to the next character.
+				if (m_XAxis > m_DeadZone)
+				{
+					NextCharacter();
+					Debug.Log("Next character.");
 
-				// Set that the stick has been released to false.
-				m_LeftStickHasBeenReleased = false;
+					// Set that the stick has been released to false.
+					m_LeftStickHasBeenReleased = false;
+				}
+				// Else if the left stick's x axis is less than negative the dead zone, move to the previous character.
+				else if (m_XAxis < -m_DeadZone)
+				{
+					PrevCharacter();
+					Debug.Log("Previous character.");
+
+					// Set that the stick has been released to false.
+					m_LeftStickHasBeenReleased = false;
+				}
 			}
+			// Else if the left stick's x axis is 0, therefore isn't being pushed, 
+			// set that the stick has been released to true.
+			else if (m_XAxis == 0)
+				m_LeftStickHasBeenReleased = true;
 		}
-		// Else if the left stick's x axis is 0, therefore isn't being pushed, 
-		// set that the stick has been released to true.
-		else if (m_XAxis == 0)
-			m_LeftStickHasBeenReleased = true;
 	}
 
 	/// <summary>
@@ -111,37 +116,34 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	public void NextCharacter()
 	{
-		// If a character hasn't been locked in, move to the next character.
-		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
+		// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
+		if (m_CurrentImage < m_PlayerPortraits.Length - 1)
+			++m_CurrentImage;
+		// Else, set the current image to 0.
+		else
+			m_CurrentImage = 0;
+
+		// This goes through the array of characters, finding the next character that someone hasn't selected.
+		while (true)
 		{
-			// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
-			if (m_CurrentImage < m_PlayerPortraits.Length - 1)
-				++m_CurrentImage;
-			// Else, set the current image to 0.
-			else
-				m_CurrentImage = 0;
-
-			// This goes through the array of characters, finding the next character that someone hasn't selected.
-			while (true)
+			// If there isn't -1 at the index of the current image, select the next character,
+			// as that character has been selected by someone else.
+			// Else, break out of the loop, since that character hasn't been selected.
+			if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 			{
-				// If there isn't -1 at the index of the current image, select the next character.
-				// Else, break out of the loop.
-				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
-				{
-					// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
-					if (m_CurrentImage < m_PlayerPortraits.Length - 1)
-						++m_CurrentImage;
-					// Else, set the current image to 0.
-					else
-						m_CurrentImage = 0;
-				}
+				// If the current image is less than the amount of portraits there are - 1, select the next image in the array.
+				if (m_CurrentImage < m_PlayerPortraits.Length - 1)
+					++m_CurrentImage;
+				// Else, set the current image to 0.
 				else
-					break;
+					m_CurrentImage = 0;
 			}
-
-			// Set the portrait to the current image.
-			UpdateImage();
+			else
+				break;
 		}
+
+		// Set the portrait to the current image.
+		UpdateImage();
 	}
 
 	/// <summary>
@@ -149,33 +151,29 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	public void PrevCharacter()
 	{
-		// If a character hasn't been locked in, move to the previous character.
-		if (transform.GetChild(2).GetComponent<Button>().interactable == true)
-		{
-			// If the current image is less than the amount of portraits there are - 1, select the previous image in the array.
-			if (m_CurrentImage > 0)
-				--m_CurrentImage;
-			// Else, set the current image to the amount of portraits there are - 1.
-			else
-				m_CurrentImage = m_PlayerPortraits.Length - 1;
+		// If the current image is less than the amount of portraits there are - 1, select the previous image in the array.
+		if (m_CurrentImage > 0)
+			--m_CurrentImage;
+		// Else, set the current image to the amount of portraits there are - 1.
+		else
+			m_CurrentImage = m_PlayerPortraits.Length - 1;
 
-			// This goes through the array of characters, finding the next character that someone hasn't selected.
-			while (true)
+		// This goes through the array of characters, finding the next character that someone hasn't selected.
+		while (true)
+		{
+			// If there isn't -1 at the index of the current image, select the previous character.
+			// Else, break out of the loop.
+			if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
 			{
-				// If there isn't -1 at the index of the current image, select the previous character.
-				// Else, break out of the loop.
-				if (GameManager.CheckPlayerCharactersIndex(-1, m_CurrentImage) == false)
-				{
-					// If the current image is greater than 0, select the next image in the array.
-					if (m_CurrentImage > 0)
-						--m_CurrentImage;
-					// Else, set the current image to the last image in the array.
-					else
-						m_CurrentImage = m_PlayerPortraits.Length - 1;
-				}
+				// If the current image is greater than 0, select the next image in the array.
+				if (m_CurrentImage > 0)
+					--m_CurrentImage;
+				// Else, set the current image to the last image in the array.
 				else
-					break;
+					m_CurrentImage = m_PlayerPortraits.Length - 1;
 			}
+			else
+				break;
 		}
 		// Set the portrait to the current image.
 		UpdateImage();

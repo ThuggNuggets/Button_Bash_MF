@@ -20,33 +20,47 @@ public class GamePause : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		// If someone presses the pause button, 
-		// pause the game and assign who pressed the pause button.
-		if (XCI.GetButtonDown(XboxButton.Start) == true && m_Paused == false)
+		// If the game isn't paused, check input to pause.
+		if (m_Paused == false)
 		{
-			// Will slow the game down the point that nothing will move.
-			Time.timeScale = 0.0f;
+			// Check which player pressed the pause button.
+			// Then pause the game, remembering which one player paused the game.
 
-			// Checks who pressed the pause button.
 			if (XCI.GetButtonDown(XboxButton.Start, XboxController.First) == true)
+			{
+				m_Paused = true;
+				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 1;
+			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Second) == true)
+			{
+				m_Paused = true;
+				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 2;
+			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Third) == true)
+			{
+				m_Paused = true;
+				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 3;
+			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Fourth) == true)
+			{
+				m_Paused = true;
+				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 4;
-
-			m_Paused = true;
+			}
 		}
-		// Else if the pause button was pressed by the person who paused the game, 
-		// unpause the game and unassign the player that paused the game.
-		else if (XCI.GetButtonDown(XboxButton.Start, (XboxController)m_PausedPlayerNumber) == true && m_Paused == true)
-		{
-			// Reset time and assign the player number to something not correlating to a controller.
-			Time.timeScale = 1.0f;
-			m_PausedPlayerNumber = -1;
-			m_Paused = false;
+		// Else if the game is paused, check if the player that paused the game pressed the pause button.
+		else if (m_Paused == true)
+		{ 
+			if (XCI.GetButtonDown(XboxButton.Start, (XboxController)m_PausedPlayerNumber) == true)
+			{
+				// Reset time and assign the player number to something not correlating to a controller.
+				Time.timeScale = 1.0f;
+				m_PausedPlayerNumber = -1;
+				m_Paused = false;
+			}
 		}
 	}
 }

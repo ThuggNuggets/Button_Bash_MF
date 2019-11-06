@@ -38,6 +38,11 @@ public class SelectCharacter : MonoBehaviour
 	private bool m_CharacterLockedIn = false;
 
 	/// <summary>
+	/// What colour to set the image box to when a character is selected.
+	/// </summary>
+	public Color m_LockedInDarkenColour;
+
+	/// <summary>
 	/// On startup.
 	/// </summary>
 	private void Awake()
@@ -132,6 +137,8 @@ public class SelectCharacter : MonoBehaviour
 				}
 			}
 		}
+		// Darken the image of the character to indicate it is selected.
+		m_PlayerImageBox.GetComponent<RawImage>().color = m_LockedInDarkenColour;
 	}
 
 	/// <summary>
@@ -150,5 +157,14 @@ public class SelectCharacter : MonoBehaviour
 
 		// Set the select button to be interactable (just for representation).
 		GetComponent<Button>().interactable = true;
+
+		// Reset the colour of the image of the character to indicate it is unlocked.
+		m_PlayerImageBox.GetComponent<RawImage>().color = Color.white;
 	}
+
+	/// <summary>
+	/// Returns if a character has been locked in.
+	/// </summary>
+	/// <returns>If a character has been locked in.</returns>
+	public bool GetCharacterLockedIn() { return m_CharacterLockedIn; }
 }

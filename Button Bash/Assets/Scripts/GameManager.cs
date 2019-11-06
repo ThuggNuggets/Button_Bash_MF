@@ -13,7 +13,7 @@ public static class GameManager
 	//	1 = Magician
 	//	2 = Alien
 	//	3 = Cat
-	//	Example: if 3 is at index 1, then player 4 (3) selected the magician.
+	//	Example: if the number 3 is at index 1, then player 4 (3) selected the magician.
 	private static int[] m_PlayerCharacters = new int[4] { -1, -1, -1 ,-1};
 
 	/// <summary>
@@ -60,7 +60,7 @@ public static class GameManager
 	public static void RemovePlayerCharacter(int index) { m_PlayerCharacters[index] = -1; }
 
 	/// <summary>
-	/// Check the specified index for a specified number.
+	/// Returns if the specified index has the item to check for.
 	/// </summary>
 	/// <param name="check">The item to check.</param>
 	/// <param name="index">The index to check.</param>
