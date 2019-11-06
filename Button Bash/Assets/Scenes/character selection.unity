@@ -609,8 +609,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 1000652619}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -854,8 +854,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 893127941}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1110,8 +1110,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 1000652619}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1238,8 +1238,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 893127941}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1349,7 +1349,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4481d547ab2620b4591cd557d500ba26, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1377,10 +1377,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
-  - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
-  - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  - {fileID: 2800000, guid: 623a58f5ea9b9cb47b78fbd0348d310f, type: 3}
+  - {fileID: 2800000, guid: 4481d547ab2620b4591cd557d500ba26, type: 3}
+  - {fileID: 2800000, guid: 07ca047203955c149a75a987ebc8faff, type: 3}
+  - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 1
 --- !u!1 &1000652619
@@ -1444,7 +1444,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
+  m_Texture: {fileID: 2800000, guid: 07ca047203955c149a75a987ebc8faff, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1472,10 +1472,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
-  - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
-  - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  - {fileID: 2800000, guid: 623a58f5ea9b9cb47b78fbd0348d310f, type: 3}
+  - {fileID: 2800000, guid: 4481d547ab2620b4591cd557d500ba26, type: 3}
+  - {fileID: 2800000, guid: 07ca047203955c149a75a987ebc8faff, type: 3}
+  - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 2
 --- !u!1 &1047908262
@@ -1635,8 +1635,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 1474611308}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1829,6 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerImageBox: {fileID: 1000652621}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &1315919412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1986,7 +1987,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  m_Texture: {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2014,10 +2015,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
-  - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
-  - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  - {fileID: 2800000, guid: 623a58f5ea9b9cb47b78fbd0348d310f, type: 3}
+  - {fileID: 2800000, guid: 4481d547ab2620b4591cd557d500ba26, type: 3}
+  - {fileID: 2800000, guid: 07ca047203955c149a75a987ebc8faff, type: 3}
+  - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 3
 --- !u!1 &1481364282
@@ -2177,8 +2178,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803910184}
-        m_MethodName: NextCharacter
+      - m_Target: {fileID: 1474611308}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2371,6 +2372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerImageBox: {fileID: 1803910182}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &1582929501
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2607,7 +2609,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
+  m_Texture: {fileID: 2800000, guid: 623a58f5ea9b9cb47b78fbd0348d310f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2635,10 +2637,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerPortraits:
-  - {fileID: 2800000, guid: 726636b96bb060d41957d922365e1227, type: 3}
-  - {fileID: 2800000, guid: 159ed47d407937b4cb959ee267d56929, type: 3}
-  - {fileID: 2800000, guid: defcea773960b7c4d883d2dc0b37e0c6, type: 3}
-  - {fileID: 2800000, guid: 56ab28fc47abe2a429c14acfee8e5f15, type: 3}
+  - {fileID: 2800000, guid: 623a58f5ea9b9cb47b78fbd0348d310f, type: 3}
+  - {fileID: 2800000, guid: 4481d547ab2620b4591cd557d500ba26, type: 3}
+  - {fileID: 2800000, guid: 07ca047203955c149a75a987ebc8faff, type: 3}
+  - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 0
 --- !u!1 &1833318121
@@ -3084,6 +3086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerImageBox: {fileID: 1474611310}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &2023713244
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3324,6 +3327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerImageBox: {fileID: 893127943}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &2108880614
 AudioSource:
   m_ObjectHideFlags: 0
