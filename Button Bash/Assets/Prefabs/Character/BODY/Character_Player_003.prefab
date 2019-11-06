@@ -151,9 +151,7 @@ MonoBehaviour:
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
-  leftSide: -9.6
-  rightSide: 11.2
-  rayLegth: 4
+  shunt: 0.1
 --- !u!54 &5096394947610743486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -280,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 2917484413224561225, guid: f51ba510ec504b14a9c28f9c97b2a674,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.26
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 2917484413224561225, guid: f51ba510ec504b14a9c28f9c97b2a674,
         type: 3}

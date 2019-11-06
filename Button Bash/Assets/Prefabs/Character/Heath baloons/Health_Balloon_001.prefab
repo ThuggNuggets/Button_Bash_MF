@@ -96,6 +96,8 @@ MonoBehaviour:
   m_BalloonUpwardFloatForce: 100
   m_SwingOffset: 2
   m_SwingSpeed: 1
+  m_BalloonPop: {fileID: 8608075514472837942, guid: 6e4fa2d6daeacc54baac74be2391ccc9,
+    type: 3}
 --- !u!54 &3086507702002203395
 Rigidbody:
   m_ObjectHideFlags: 0

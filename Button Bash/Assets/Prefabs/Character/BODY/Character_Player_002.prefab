@@ -110,8 +110,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4, z: 2}
-  m_Center: {x: 0, y: 0.5235915, z: -0.00000023841858}
+  m_Size: {x: 1, y: 3.2796702, z: 2}
+  m_Center: {x: 0, y: 0.16342664, z: -0.00000023841858}
 --- !u!114 &308056784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +134,7 @@ MonoBehaviour:
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
-  leftSide: -9.6
-  rightSide: 11.2
-  rayLegth: 4
+  shunt: 0.1
 --- !u!120 &1181189238895276264
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -278,12 +276,12 @@ PrefabInstance:
     - target: {fileID: 2917484413224561225, guid: 02bcd2504af9f174db8a9ba0d77b4e94,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.26
+      value: -37.54
       objectReference: {fileID: 0}
     - target: {fileID: 2917484413224561225, guid: 02bcd2504af9f174db8a9ba0d77b4e94,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.32
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 2917484413224561225, guid: 02bcd2504af9f174db8a9ba0d77b4e94,
         type: 3}
