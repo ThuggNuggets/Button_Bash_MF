@@ -44,6 +44,26 @@ public class CharacterSelect : MonoBehaviour
 	private bool m_LeftStickHasBeenReleased = false;
 
 	/// <summary>
+	/// If the A button was pressed on the controller.
+	/// </summary>
+	private bool m_AButtonPressed = false;
+
+	/// <summary>
+	/// If the B button was pressed on the controller.
+	/// </summary>
+	private bool m_BButtonPressed = false;
+
+	/// <summary>
+	/// If the character has been locked in.
+	/// </summary>
+	private bool m_CharacterLockedIn = false;
+
+	/// <summary>
+	/// What colour to set the image box to when a character is selected.
+	/// </summary>
+	public Color m_LockedInDarkenColour;
+
+	/// <summary>
 	/// On startup.
 	/// </summary>
 	private void Awake()
@@ -53,13 +73,13 @@ public class CharacterSelect : MonoBehaviour
 		// Example: Naiciam is at index 1 of the array of images, so set the index to 1 at startup.
 
 		if (GetComponent<RawImage>().texture.name == "nemo")
-            m_CurrentImage = 0;
-        else if (GetComponent<RawImage>().texture.name == "Naiciam")
-            m_CurrentImage = 1;
-        else if (GetComponent<RawImage>().texture.name == "neilA")
-            m_CurrentImage = 2;
-        else if (GetComponent<RawImage>().texture.name == "sesame")
-            m_CurrentImage = 3;
+			m_CurrentImage = 0;
+		else if (GetComponent<RawImage>().texture.name == "Naiciam")
+			m_CurrentImage = 1;
+		else if (GetComponent<RawImage>().texture.name == "neilA")
+			m_CurrentImage = 2;
+		else if (GetComponent<RawImage>().texture.name == "sesame")
+			m_CurrentImage = 3;
 
 		// Create a new unity event to store the next character event.
 		m_NextCharacter = new UnityEvent();
@@ -77,7 +97,7 @@ public class CharacterSelect : MonoBehaviour
 	private void Update()
 	{
 		// If a character hasn't been locked in, cycle through the characters.
-		if (transform.GetChild(2).GetComponent<SelectCharacter>().GetCharacterLockedIn() == false)
+		if (m_CharacterLockedIn == false)
 		{
 			m_XAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_PlayerNumber + 1);
 
@@ -109,6 +129,85 @@ public class CharacterSelect : MonoBehaviour
 			else if (m_XAxis == 0)
 				m_LeftStickHasBeenReleased = true;
 		}
+
+		m_AButtonPressed = XCI.GetButtonDown(XboxButton.A, (XboxController)m_PlayerNumber + 1);
+		m_BButtonPressed = XCI.GetButtonDown(XboxButton.B, (XboxController)m_PlayerNumber + 1);
+
+		if (m_AButtonPressed == true)
+		{
+			// If a character hasn't been locked in, lock in the character.
+			if (m_CharacterLockedIn == false)
+				LockInCharacter();
+		}
+
+		if (m_BButtonPressed == true)
+		{
+			// If a character has been locked in, unlock the character.
+			if (m_CharacterLockedIn == true)
+				UnlockCharacter();
+		}
+	}
+
+	public void LockInCharacter()
+	{
+		GameManager.AddPlayerCharacter(m_PlayerNumber, m_CurrentImage);
+
+		m_CharacterLockedIn = true;
+
+		try
+		{
+			// Play a sound when a character is selected, with the sound correlating with the character that was selected.
+			AudioSource ac = GetComponent<AudioSource>();
+			SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+			switch (m_CurrentImage)
+			{
+				case 0:
+					ac.clip = sm.m_SoundClips[8];
+					break;
+				case 1:
+					ac.clip = sm.m_SoundClips[7];
+					break;
+				case 2:
+					ac.clip = sm.m_SoundClips[6];
+					break;
+				case 3:
+					ac.clip = sm.m_SoundClips[9];
+					break;
+			}
+			ac.Play();
+		}
+		catch { }
+
+		transform.GetChild(0).GetComponent<Button>().interactable = false;
+
+		GameObject[] imgBoxes = GameObject.FindGameObjectsWithTag("Image Box");
+
+		// Go through each of the image boxes.
+		for (int i = 0; i < imgBoxes.Length; ++i)
+		{
+			// So we don't compare with ourself.
+			if (imgBoxes[i] != gameObject)
+			{
+				// If the current character of the other image box is the same as this one, move the other image box to the next character.
+				if (imgBoxes[i].GetComponent<CharacterSelect>().GetCurrentImage() == m_CurrentImage)
+				{
+					imgBoxes[i].GetComponent<CharacterSelect>().NextCharacter();
+				}
+			}
+		}
+		// Darken the image of the character to indicate it is selected.
+		GetComponent<RawImage>().color = m_LockedInDarkenColour;
+	}
+
+	public void UnlockCharacter()
+	{
+		GameManager.RemovePlayerCharacter(m_CurrentImage);
+
+		m_CharacterLockedIn = false;
+
+		transform.GetChild(0).GetComponent<Button>().interactable = false;
+
+		GetComponent<RawImage>().color = Color.white;
 	}
 
 	/// <summary>
