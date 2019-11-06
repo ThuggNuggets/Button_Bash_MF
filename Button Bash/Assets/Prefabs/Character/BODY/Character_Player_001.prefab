@@ -165,7 +165,7 @@ MonoBehaviour:
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
-  shunt: 0.1
+  m_Shunt: 0.1
 --- !u!120 &7319452716897844635
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -327,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917484413224561225, guid: e64d0045e23973f48a9b1910179d3988,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.09507221
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e64d0045e23973f48a9b1910179d3988, type: 3}

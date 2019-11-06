@@ -165,7 +165,7 @@ MonoBehaviour:
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
-  shunt: 0.1
+  m_Shunt: 0.1
 --- !u!120 &3209868603416866298
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 2917484413224561225, guid: a17fd2c11ef4f2a41bf443f17f41ad9b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.06
+      value: 0.098116666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17fd2c11ef4f2a41bf443f17f41ad9b, type: 3}
