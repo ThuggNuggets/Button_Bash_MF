@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class BalloonHealthUI : MonoBehaviour
 {
-	// Array of the balloons.
+	/// <summary>
+	/// Array of the balloons. 
+	/// </summary>
 	public GameObject[] m_Balloons;
 
-	// Iterates through the balloons in the array.
+	/// <summary>
+	/// Iterates through the balloons in the array. 
+	/// </summary>
 	private int m_BalloonIterator;
 
-	// Display that damage has been taken by having a balloon float up the screen.
+	/// <summary>
+	/// Display that damage has been taken by having a balloon float up the screen.
+	/// </summary>
 	public void TakeDamage()
 	{
 		// Make sure we don't try to access something outside the bounds of the array.

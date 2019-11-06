@@ -75,6 +75,7 @@ public class playerLives : MonoBehaviour
 							m_PlayerDeathIterator++;
 							GameObject m_Sailor = GameObject.Find("Character_sailor_001");
 							Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
+							GameManager.AddDefeatedCharacter(0);
 							Destroy(m_Sailor);
 						}
 
@@ -97,7 +98,8 @@ public class playerLives : MonoBehaviour
                             m_PlayerDeathIterator++;
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
                             Instantiate(m_DefeatedPlayerReticals[1], m_Magic.transform.GetChild(0).position, new Quaternion());
-                            Destroy(m_Magic);
+							GameManager.AddDefeatedCharacter(1);
+							Destroy(m_Magic);
                         }
                         m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
 
@@ -117,7 +119,8 @@ public class playerLives : MonoBehaviour
                             m_PlayerDeathIterator++;
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
                             Instantiate(m_DefeatedPlayerReticals[2], m_Alien.transform.GetChild(0).position, new Quaternion());
-                            Destroy(m_Alien);
+							GameManager.AddDefeatedCharacter(2);
+							Destroy(m_Alien);
                         }
                         m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 
@@ -137,7 +140,8 @@ public class playerLives : MonoBehaviour
                             m_PlayerDeathIterator++;
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
                             Instantiate(m_DefeatedPlayerReticals[3], m_Cat.transform.GetChild(0).position, new Quaternion());
-                            Destroy(m_Cat);
+							GameManager.AddDefeatedCharacter(3);
+							Destroy(m_Cat);
                         }
                         m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
 
@@ -155,27 +159,14 @@ public class playerLives : MonoBehaviour
 		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.
 		if (m_PlayerDeathIterator == 3)
 		{
-			// Which player is alive.
-			int alivePlayer = 0;
-
-			// If player 1 has more than 0 lives, player 1 is alive.
 			if (m_Player1Lives > 0)
-				alivePlayer = 1;
-
-			// If player 2 has more than 0 lives, player 1 is alive.
+				GameManager.AddDefeatedCharacter(0);
 			else if (m_Player2Lives > 0)
-				alivePlayer = 2;
-
-			// If player 3 has more than 0 lives, player 1 is alive.
+				GameManager.AddDefeatedCharacter(1);
 			else if (m_Player3Lives > 0)
-				alivePlayer = 3;
-
-			// If player 4 has more than 0 lives, player 1 is alive.
+				GameManager.AddDefeatedCharacter(2);
 			else if (m_Player4Lives > 0)
-				alivePlayer = 4;
-
-            // Store the final player in the game manager.
-            GameManager.SetWinningPlayer(alivePlayer);
+				GameManager.AddDefeatedCharacter(3);
 
 			// Load the end scene.
 			SceneManager.LoadScene(3);

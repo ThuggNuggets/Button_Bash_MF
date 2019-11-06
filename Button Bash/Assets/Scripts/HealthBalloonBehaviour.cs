@@ -4,38 +4,59 @@ using UnityEngine;
 
 public class HealthBalloonBehaviour : MonoBehaviour
 {
-	// If the balloon is active.
+	/// <summary>
+	/// If the balloon is active.
+	/// </summary>
 	private bool m_Active;
 
-	// The timer for despawning the balloons.
+	/// <summary>
+	/// The timer for despawning the balloons.
+	/// </summary>
 	public float m_DespawnTimer;
 
-	// The upwards float force for the balloon.
+	/// <summary>
+	/// The upwards float force for the balloon.
+	/// </summary>
 	public float m_BalloonUpwardFloatForce;
 
-	// How far out to swing the balloon while it is floating up.
+	/// <summary>
+	/// How far out to swing the balloon while it is floating up.
+	/// </summary>
 	public float m_SwingOffset;
 
-	// The speed at which the balloon swings at.
+	/// <summary>
+	/// The speed at which the balloon swings at.
+	/// </summary>
 	public float m_SwingSpeed;
 
-	// The time of the start of the lerp for the swing.
+	/// <summary>
+	/// The time of the start of the lerp for the swing.
+	/// </summary>
 	private float m_StartTime;
 
-	// The length of the lerp.
+	/// <summary>
+	/// The length of the lerp.
+	/// </summary>
 	private float m_JourneyLength;
 
-	// The end position of the lerp.
+	/// <summary>
+	/// The end position of the lerp.
+	/// </summary>
 	private Vector3 m_EndPosition;
 
-	// If the balloon is to swing left or not.
+	/// <summary>
+	/// If the balloon is to swing left or not.
+	/// </summary>
 	private bool m_SwingLeft = true;
 
-	private bool m_PlayedPopSound = false;
-
+	/// <summary>
+	/// The object for playing the balloon pop sound.
+	/// </summary>
 	public GameObject m_BalloonPop;
 
-	// Update the balloon.
+	/// <summary>
+	/// Update the balloon.
+	/// </summary>
 	public void Update()
 	{
 		// If the balloon is active, check the despawn timer.
@@ -100,8 +121,10 @@ public class HealthBalloonBehaviour : MonoBehaviour
 		}
 	}
 
-	// Set if the balloon is active or not.
-	// Params: if the balloon is active or not.
+	/// <summary>
+	/// Set if the balloon is active or not.
+	/// </summary>
+	/// <param name="newActive">If the balloon is active or not</param>
 	public void SetActive(bool newActive)
 	{
 		m_Active = newActive;
@@ -109,18 +132,21 @@ public class HealthBalloonBehaviour : MonoBehaviour
 		// If the balloon has been set to active, have the balloon float up.
 		if (m_Active == true)
 		{
-            // alex sound
             GetComponent<AudioSource>().Play();
+
             // Get the rigidbody of the balloon, to add force.
             Rigidbody body = gameObject.GetComponent<Rigidbody>();
+
 			// Unfreeze  position, just in case they are frozen.
 			body.constraints = RigidbodyConstraints.FreezeRotation;
+
 			// Add upwards force the the balloon.
 			body.AddForce(Vector3.up * m_BalloonUpwardFloatForce);
 			m_EndPosition = transform.position;
 			m_EndPosition.z = m_EndPosition.z + m_SwingOffset;
 
 			// Find the journey length between the balloon's position and the end position.
+			// For the balloon floating up.
 			m_JourneyLength = Vector3.Distance(transform.position, m_EndPosition);
 		}
 	}

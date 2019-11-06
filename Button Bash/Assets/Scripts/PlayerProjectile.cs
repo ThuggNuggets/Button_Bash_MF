@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-	// The force on the projectile.
+	/// <summary>
+	/// The force on the projectile.
+	/// </summary>
 	public float m_Force;
 
-	// The rigidbody on the projectile.
+	/// <summary>
+	/// The rigidbody on the projectile.
+	/// </summary>
 	private Rigidbody m_Rigidbody;
 
-	// The timer for the projectile.
+	/// <summary>
+	/// The timer for the projectile.
+	/// </summary>
 	public float m_Timer;
 
-   // Constructor.
+	/// <summary>
+	/// On startup.
+	/// </summary>
     void Awake()
     {
 		// Get the rigidbody of the projectile.
 		m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-   // Update the projectile. Fixed update for physics.
-    void FixedUpdate()
+	/// <summary>
+	/// Update the projectile. Fixed update for physics.
+	/// </summary>
+	void FixedUpdate()
     {
 		// Move the projectile by it's position + the foward direction (foward for the game's orientation, it's actually left) * the force on the projectile.
 		m_Rigidbody.MovePosition(transform.position + (-transform.right) * m_Force);

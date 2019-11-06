@@ -11,6 +11,9 @@ public class MoveToNextScene : MonoBehaviour
 	/// </summary>
 	public bool m_UseControllerInputDirectly = true;
 
+	/// <summary>
+	/// Update.
+	/// </summary>
 	private void Update()
 	{
 		// If this script is to use controller input directly.

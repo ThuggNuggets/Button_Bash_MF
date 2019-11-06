@@ -17,21 +17,31 @@ public static class GameManager
 	private static int[] m_PlayerCharacters = new int[4] { -1, -1, -1 ,-1};
 
 	/// <summary>
-	/// The winning player.
+	/// Array of the defeated players, in position of their place.
 	/// </summary>
-	private static int m_WinningPlayer = 0;
+	private static int[] m_DefeatedCharacters = new int[4] { -1, -1, -1, -1 };
 
 	/// <summary>
-	///  Set which player won.
-	///  </summary>
-	/// <param name="winner">The winning player.</param>
-	public static void SetWinningPlayer(int winner) 	{ m_WinningPlayer = winner; }
+	/// Iterates through the defeated players for adding.
+	/// </summary>
+	private static int m_DefeatedCharactersIterator = 3;
 
 	/// <summary>
-	/// Get the player that won.
+	/// Add a defeated character.
 	/// </summary>
-	/// <returns>The winning player.</returns>
-	public static int GetWinningPlayer() { return m_WinningPlayer; }
+	/// <param name="character">The character.</param>
+	public static void AddDefeatedCharacter(int character)
+	{
+		m_DefeatedCharacters[m_DefeatedCharactersIterator] = character;
+		--m_DefeatedCharactersIterator;
+	}
+
+	/// <summary>
+	/// Get the defeated character at the specified index.
+	/// </summary>
+	/// <param name="index">The index to get the defeated character from.</param>
+	/// <returns>The defeated character at the index.</returns>
+	public static int GetDefeatedCharacter(int index) { return m_DefeatedCharacters[index]; }
 
 	/// <summary>
 	/// Add a player character to the game manager.

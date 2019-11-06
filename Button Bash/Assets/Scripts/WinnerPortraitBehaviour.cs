@@ -10,12 +10,16 @@ public class WinnerPortraitBehaviour : MonoBehaviour
 	/// </summary>
 	public Texture[] m_PlayerPortraits;
 
+	/// <summary>
+	/// Position of players this portrait will display.
+	/// </summary>
+	public int m_PositionNumber;
+
+	/// <summary>
+	/// On startup.
+	/// </summary>
 	void Awake()
 	{
-		// Get the winning player.
-		int winningPlayer = GameManager.GetWinningPlayer();
-
-		// Set the texture of the winning player's portrait to the portrait of the winning player.
-		GetComponent<RawImage>().texture = m_PlayerPortraits[winningPlayer - 1];
+		GetComponent<RawImage>().texture = m_PlayerPortraits[GameManager.GetDefeatedCharacter(m_PositionNumber)];
 	}
 }
