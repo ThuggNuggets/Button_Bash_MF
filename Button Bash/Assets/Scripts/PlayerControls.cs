@@ -156,17 +156,23 @@ public class PlayerControls : MonoBehaviour
         transform.position += new Vector3(0, 0, translation);
         body.MovePosition(transform.position);
         //removes drifting after colliding with other players
-        body.velocity = new Vector3(0, 0, 0);
-        //draw a raycast so players can see where the button will go
+        if (!colliding)
+        {
+            body.velocity = new Vector3(0, 0, 0);
+        }
+        //move the players out of each other if overlapping also shunts when colliding with others
         if (colliding)
         {
             if (transform.position.z < collidingObject.transform.position.z)
             {
-                transform.position += new Vector3(0, 0, -shunt);
+                transform.position += new Vector3(0, 0, -1);
+                body.AddForce(new Vector3(0, 0, -shunt));
+
             }
             else if (transform.position.z > collidingObject.transform.position.z)
             {
-                transform.position += new Vector3(0, 0, shunt);
+                transform.position += new Vector3(0, 0, 1);
+                body.AddForce(new Vector3(0, 0, -shunt));
             }
         }
         // Move to front lane

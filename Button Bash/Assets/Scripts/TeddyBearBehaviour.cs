@@ -84,6 +84,7 @@ public class TeddyBearBehaviour : MonoBehaviour
                 {
                 SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
                 AudioSource ac = GetComponent<AudioSource>();
+                ac.pitch = Random.Range(0, 3);
                 ac.clip = sm.m_SoundClips[0];
                 ac.Play();
             }

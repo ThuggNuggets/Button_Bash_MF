@@ -71,6 +71,7 @@ public class LetterBlockBehaviour : MonoBehaviour
                 SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
                 AudioSource ac = GetComponent<AudioSource>();
                 ac.clip = sm.m_SoundClips[1];
+                ac.pitch = Random.Range(0, 3);
                 ac.Play();
             }
         }

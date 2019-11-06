@@ -118,7 +118,7 @@ public class playerLives : MonoBehaviour
                         }
                         m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 
-						GetComponent<AudioSource>().Play();
+                        GetComponent<AudioSource>().Play();
 					}
                     break;
                 }
