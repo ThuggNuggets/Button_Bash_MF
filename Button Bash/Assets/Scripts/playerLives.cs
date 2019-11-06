@@ -137,11 +137,6 @@ public class playerLives : MonoBehaviour
 					}
                     break;
                 }
-            // Set the material colour to magenta, something went WRONG!
-            default:
-                {
-                    break;
-                }
         }
 
 		// If 3 players have run out of lives, one player stands, check which one is alive and move on to the end screen.

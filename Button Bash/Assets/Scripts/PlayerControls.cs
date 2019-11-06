@@ -71,11 +71,13 @@ public class PlayerControls : MonoBehaviour
     //right Vector
     Vector3 m_Right;
     //shunting
-    public float m_Shunt = 0.1f;
+    public float m_Shunt = 10.0f;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
     RaycastHit m_Hit;
+    public float m_MaxBounceTimer = 1.5f;
+    float m_BounceTimer = 1.5f;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
@@ -153,29 +155,35 @@ public class PlayerControls : MonoBehaviour
 
         m_Translation = m_xAxis * m_CharacterSpeed;
         m_Translation *= Time.deltaTime;
-        //moves the player
-        transform.position += new Vector3(0, 0, m_Translation);
-        m_Body.MovePosition(transform.position);
         //removes drifting after colliding with other players
-        if (!m_Colliding)
+        if(m_BounceTimer >= 0)
+        {
+            m_BounceTimer -= Time.deltaTime;
+        }
+       else  if (m_BounceTimer < 0)
         {
             m_Body.velocity = new Vector3(0, 0, 0);
         }
         //move the players out of each other if overlapping also shunts when colliding with others
         if (m_Colliding)
         {
+            //m_Translation = 0;
             if (transform.position.z < m_CollidingObject.transform.position.z)
             {
-                transform.position += new Vector3(0, 0, -1);
+                //transform.position += new Vector3(0, 0, -1);
                 m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
-
+                m_BounceTimer = m_MaxBounceTimer;
             }
-            else if (transform.position.z > m_CollidingObject.transform.position.z)
+            else if (transform.position.z >= m_CollidingObject.transform.position.z)
             {
-                transform.position += new Vector3(0, 0, 1);
+               // transform.position += new Vector3(0, 0, 1);
                 m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
+                m_BounceTimer = m_MaxBounceTimer;
             }
         }
+        //moves the player
+        transform.position += new Vector3(0, 0, m_Translation);
+        m_Body.MovePosition(transform.position);
         // Move to front lane
         if (m_yAxis > m_deadZone)
         {
