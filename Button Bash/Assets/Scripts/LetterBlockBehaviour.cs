@@ -7,12 +7,18 @@ public class LetterBlockBehaviour : MonoBehaviour
 {
     public int m_Health = 2;
     //flinging the enemy when they have no health
-    public float m_VerticalFling = 50;
-    public float m_XFling = 10;
-    public float m_ZFling = 10;
+    public float m_VerticalFling = 85;
+    public float m_XFling = 80;
+    public float m_ZFling = 50;
 
     //flinging
     int m_FlingRotation;
+
+    //flashing when hit
+    bool m_Flash = false;
+    private int m_FlashTimer = 10;
+    public int m_MaxFlashTimer = 10;
+    Material m_OriginalMat;
     /// <summary>
     /// sets variables 
     /// </summary>

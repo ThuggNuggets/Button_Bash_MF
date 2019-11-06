@@ -9,9 +9,9 @@ public class RubixBehaviour : MonoBehaviour
     public float m_Health = 3.0f;
     private Colours.Colour m_Colour;
     //flinging the enemy when they have no health
-    public float m_VerticalFling = 50;
-    public float m_XFling = 10;
-    public float m_ZFling = 10;
+    public float m_VerticalFling = 85;
+    public float m_XFling = 80;
+    public float m_ZFling = 50;
 
     // The script that is storing all the player's lives
     private playerLives m_PlayerLives;

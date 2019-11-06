@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 //increases object size the more it gets hit with objects tagged with "bullet"
 /*put this code on the Teddy bear enemy*/
 public class TeddyBearBehaviour : MonoBehaviour
@@ -10,17 +8,28 @@ public class TeddyBearBehaviour : MonoBehaviour
     // amount its size increased each time
     public float m_Scale = 0.5f;
     //flinging the enemy when they have no health
-    public float m_VerticalFling = 50;
-    public float m_XFling = 10;
-    public float m_ZFling = 10;
+    public float m_VerticalFling = 85;
+    public float m_XFling = 80;
+    public float m_ZFling = 50;
     private Rigidbody m_Rb;
+    private Renderer m_Renderer;
     //flinging
     int m_FlingRotation;
+    //white material
+    public Material m_WhiteMaterial;
+
+    bool m_Flash = false;
+    private int m_FlashTimer = 10;
+    public int m_MaxFlashTimer = 10;
+    Material m_OriginalMat;
     /// <summary>
     /// sets variables
     /// </summary>
     private void Awake()
     {
+        m_FlashTimer = m_MaxFlashTimer;
+        m_OriginalMat = transform.GetChild(0).GetComponent<Renderer>().material;
+        m_Renderer = transform.GetChild(0).GetComponent<Renderer>();
         //get random fling values
        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         m_XFling = Random.Range(-m_XFling, -minXFling);
@@ -33,6 +42,7 @@ public class TeddyBearBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        m_FlashTimer--;
         if (m_Health <= 0)
         {
             m_Rb.detectCollisions = false;
@@ -58,6 +68,19 @@ public class TeddyBearBehaviour : MonoBehaviour
                     }
             }
         }
+        if(m_Flash)
+        {
+            m_Renderer.material = m_WhiteMaterial;
+            if (m_FlashTimer < 0)
+            {
+                m_Flash = false;
+            }
+        }
+        else
+        {
+            m_Renderer.material = m_OriginalMat;
+        }
+
     }
     /// <summary>
     /// if collision with object with "bullet" tag then reduce health and grow bigger
@@ -68,8 +91,10 @@ public class TeddyBearBehaviour : MonoBehaviour
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
         if (collision.gameObject.tag == "bullet")
         {
+            m_Flash = true;
+            m_FlashTimer = m_MaxFlashTimer;
             //destroy the bullet
-                Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
                 m_Health--;
                 if (m_Health > 0)
                 {

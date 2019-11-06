@@ -21,9 +21,9 @@ public class BabushkaBehaviour : MonoBehaviour
     public float m_Scale = 1;
 
     //flinging the enemy when they have no health
-    public float m_VerticalFling = 50;
-    public float m_XFling = 10;
-    public float zm_ZFling = 10;
+    public float m_VerticalFling = 85;
+    public float m_XFling = 80;
+    public float m_ZFling = 50;
 
     //used to make sure the next babushka is a colour of the remaining players
     // The script that is storing all the player's lives
@@ -63,7 +63,7 @@ public class BabushkaBehaviour : MonoBehaviour
         //get random fling values
         float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         m_XFling = Random.Range(-m_XFling, -minXFling);
-        zm_ZFling = Random.Range(-zm_ZFling, zm_ZFling);
+        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
 
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
@@ -152,7 +152,7 @@ public class BabushkaBehaviour : MonoBehaviour
             if (m_Health == 1)
             {
                 //fling the top half of the babushka
-                child.transform.Translate(new Vector3(m_XFling, m_VerticalFling, zm_ZFling) * Time.deltaTime, Space.World);
+                child.transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
                 Destroy(child.gameObject, 2);
                 switch (m_FlingRotation)
                 {
@@ -173,7 +173,7 @@ public class BabushkaBehaviour : MonoBehaviour
         if (m_Health <= 0)
           {
             //fling the bottom half of the babushka
-            transform.Translate(new Vector3(m_XFling, m_VerticalFling, zm_ZFling) * Time.deltaTime, Space.World);
+            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
             switch (m_FlingRotation)

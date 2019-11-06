@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PlayerControls : MonoBehaviour
 
     // The character's speed.
     public float m_CharacterSpeed = 1.0f;
-
+    //animator
+    private Animator m_Animator;
     // character's personal ammunition text
     public Text playerAmmoText;
 
@@ -80,6 +82,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        m_Animator = GetComponent<Animator>();
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
         m_currentAmmo = m_maxAmmo;
@@ -262,6 +265,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
+        m_Animator.Play("IsThrow");
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 
