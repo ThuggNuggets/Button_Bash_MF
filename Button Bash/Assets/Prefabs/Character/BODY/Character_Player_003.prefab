@@ -65,6 +65,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5432696888618249878}
+  - {fileID: 5291992998680811855}
   m_Father: {fileID: 3232552646242079949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -123,7 +124,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7245673798508347742}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 308cf997190a11d4b841a05ae9ba66c5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_buttonSpawnDistance: 2
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
-  m_Shunt: 0.1
+  m_Shunt: 0.2
   m_MaxBounceTimer: 1.5
 --- !u!54 &5096394947610743486
 Rigidbody:
@@ -264,6 +265,81 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!1001 &2734159050332604334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7245673798508584318}
+    m_Modifications:
+    - target: {fileID: 7818601568088900225, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_Name
+      value: Character_AmmoRing_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 117349ca4b93e7c46bc8e68ee1a3541b, type: 3}
+--- !u!4 &5291992998680811855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7818601568089399009, guid: 117349ca4b93e7c46bc8e68ee1a3541b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2734159050332604334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7140507325517317343
 PrefabInstance:
   m_ObjectHideFlags: 0
