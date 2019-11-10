@@ -19,11 +19,6 @@ public class CharacterSelect : MonoBehaviour
 	private int m_CurrentImage;
 
 	/// <summary>
-	/// The event to move on to the next character.
-	/// </summary>
-	UnityEvent m_NextCharacter;
-
-	/// <summary>
 	/// The controller's x axis.
 	/// </summary>
 	private float m_XAxis;
@@ -80,10 +75,6 @@ public class CharacterSelect : MonoBehaviour
 			m_CurrentImage = 2;
 		else if (GetComponent<RawImage>().texture.name == "sesame")
 			m_CurrentImage = 3;
-
-		// Create a new unity event to store the next character event.
-		m_NextCharacter = new UnityEvent();
-		m_NextCharacter.AddListener(NextCharacter);
 
 		// Reset the player characters from the previous round of play.
 		// Without this, the game manager will keep the players from the previous round of play, 
@@ -148,12 +139,18 @@ public class CharacterSelect : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Lock in the current character.
+	/// </summary>
 	public void LockInCharacter()
 	{
+		// Add the current character to the game manager.
+		// So it can be accessed in the main game scene.
 		GameManager.AddPlayerCharacter(m_PlayerNumber, m_CurrentImage);
 
 		m_CharacterLockedIn = true;
 
+		// Try to play a sound, right now doesn't have audio sources on the portraits.
 		try
 		{
 			// Play a sound when a character is selected, with the sound correlating with the character that was selected.
@@ -178,8 +175,10 @@ public class CharacterSelect : MonoBehaviour
 		}
 		catch { }
 
+		// Represent the select button being used.
 		transform.GetChild(0).GetComponent<Button>().interactable = false;
 
+		// Find all the image boxes in the scene, so we can check their current character.
 		GameObject[] imgBoxes = GameObject.FindGameObjectsWithTag("Image Box");
 
 		// Go through each of the image boxes.
@@ -199,13 +198,17 @@ public class CharacterSelect : MonoBehaviour
 		GetComponent<RawImage>().color = m_LockedInDarkenColour;
 	}
 
+	/// <summary>
+	/// Unlock the current character.
+	/// </summary>
 	public void UnlockCharacter()
 	{
+		// Remove the character from the game manager.
 		GameManager.RemovePlayerCharacter(m_CurrentImage);
 
 		m_CharacterLockedIn = false;
 
-		transform.GetChild(0).GetComponent<Button>().interactable = false;
+		transform.GetChild(0).GetComponent<Button>().interactable = true;
 
 		GetComponent<RawImage>().color = Color.white;
 	}
