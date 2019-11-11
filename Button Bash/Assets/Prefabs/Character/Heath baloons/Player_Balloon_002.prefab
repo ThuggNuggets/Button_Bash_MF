@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 5643888662483389306}
   - component: {fileID: 1807165956}
   m_Layer: 0
-  m_Name: Player_Balloon_001
+  m_Name: Player_Balloon_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,14 +182,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3670779851502219611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.61327887, z: -0, w: 0.78986645}
+  m_LocalPosition: {x: 0.01906642, y: 0, z: 0.01292433}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 3670779851502316921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -75.65401, z: 0}
 --- !u!137 &3670779851505400923
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -207,8 +207,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d13e8f0d37ebc8b45b5f626c01e1b12c, type: 3}
-  - {fileID: 2100002, guid: d13e8f0d37ebc8b45b5f626c01e1b12c, type: 3}
+  - {fileID: 2100000, guid: 64d37a60289dc214fb6d21e239716c60, type: 2}
+  - {fileID: 2100000, guid: 64d37a60289dc214fb6d21e239716c60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
