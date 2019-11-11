@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using XboxCtrlrInput;
 
 public class GamePause : MonoBehaviour
@@ -52,6 +53,7 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 1;
 				m_PauseScreen.SetActive(true);
+				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Second) == true)
 			{
@@ -59,6 +61,7 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 2;
 				m_PauseScreen.SetActive(true);
+				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Third) == true)
 			{
@@ -66,6 +69,7 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 3;
 				m_PauseScreen.SetActive(true);
+				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 			}
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Fourth) == true)
 			{
@@ -73,6 +77,7 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 4;
 				m_PauseScreen.SetActive(true);
+				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 			}
 		}
 		// Else if the game is paused, check if the player that paused the game pressed the pause button.
@@ -87,6 +92,12 @@ public class GamePause : MonoBehaviour
 				m_PausedPlayerNumber = -1;
 				m_Paused = false;
 				m_PauseScreen.SetActive(false);
+			}
+
+			if (XCI.GetButtonDown(XboxButton.A, (XboxController)m_PausedPlayerNumber) == true)
+			{
+				Debug.Log("Return to menu!");
+				GetComponent<ReturnToMenu>().ReturnMainMenuMenu();
 			}
 		}
 	}
