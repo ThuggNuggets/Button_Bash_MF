@@ -85,6 +85,7 @@ public class PlayerControls : MonoBehaviour
     public float m_MaxCollisionWaitTimer = 0.5f;
     bool left = false;
     bool right = false;
+    public float m_BounceSpeed = 2;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
@@ -217,11 +218,11 @@ public class PlayerControls : MonoBehaviour
         //drift slightly
         if(left && m_CollisionWaitTimer > 0)
         {
-            transform.position += new Vector3(0, 0, -2*Time.deltaTime);
+            transform.position += new Vector3(0, 0, -m_BounceSpeed * Time.deltaTime);
         }
         else if (right && m_CollisionWaitTimer > 0)
         {
-            transform.position += new Vector3(0, 0, 2*Time.deltaTime);
+            transform.position += new Vector3(0, 0, m_BounceSpeed * Time.deltaTime);
         }
 
         //moves the player
