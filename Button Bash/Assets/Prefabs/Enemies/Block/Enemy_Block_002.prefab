@@ -113,6 +113,16 @@ PrefabInstance:
       propertyPath: m_Pitch
       value: 1.33
       objectReference: {fileID: 0}
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_WhiteMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 4593ba72815ec7848a434218a1fe9b06, type: 2}
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_MaxFlashTimer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7634492165357889748, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Colour
