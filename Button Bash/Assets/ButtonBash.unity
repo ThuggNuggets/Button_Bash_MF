@@ -2481,6 +2481,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5117354909545679390, guid: 131018ba845d1f54381b377b86f0e6ef,
         type: 3}
+    - target: {fileID: 7974491447809167947, guid: 3b538d6d9cbc72f4d8bce7f16217550c,
+        type: 3}
+      propertyPath: m_WaveEnemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 7617839716588314869, guid: 981df89f574c0304a95efcffa655c40e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b538d6d9cbc72f4d8bce7f16217550c, type: 3}
 --- !u!1001 &1406709640
