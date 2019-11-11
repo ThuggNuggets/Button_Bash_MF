@@ -74,6 +74,7 @@ public class PlayerControls : MonoBehaviour
 
 	private GameObject m_AmmoRing;
     private GameObject m_AimingLine;
+    private GameObject m_BaseMesh;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
@@ -85,19 +86,24 @@ public class PlayerControls : MonoBehaviour
     bool left = false;
     bool right = false;
     public float m_BounceSpeed = 2;
+    //is player in throwing animation
+    private float m_ThrowingTimer = -1;
+    public float m_ThrowingAnimationSpeed = 3;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
     /// </summary>
     void Awake()
     {
+        m_Right = transform.TransformDirection(Vector3.right);
         m_AimingLine = transform.GetChild(0).gameObject;
         m_AmmoRing = transform.GetChild(1).gameObject;
-        m_Animator = GetComponent<Animator>();
+        m_BaseMesh = transform.GetChild(2).gameObject;
+        m_Animator = m_BaseMesh.GetComponent<Animator>();
         m_MaxShootingCooldown = m_ShootingCooldown;
-		m_ShootingCooldown = 0.0f;
-        m_currentAmmo = m_maxAmmo;
         m_Body = GetComponent<Rigidbody>();
+        m_currentAmmo = m_maxAmmo;
+		m_ShootingCooldown = 0.0f;
         switch(m_playerNumber)
         {
             case 0:
@@ -122,7 +128,6 @@ public class PlayerControls : MonoBehaviour
                     break;
                 }
         }
-        m_Right = transform.TransformDirection(Vector3.right);
     }
     /// <summary>
     /// when players collide with the ammo piles refill ammo to max
@@ -140,6 +145,7 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    //player bounce
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
@@ -158,6 +164,7 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    //not colliding anymore
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
@@ -181,10 +188,33 @@ public class PlayerControls : MonoBehaviour
         }
        else  if (m_BounceTimer < 0)
         {
+            
 			//m_Body.velocity -= new Vector3(0, 0, .1f);
 			m_Body.velocity = new Vector3(0, 0, 0);
         }
-
+        
+        if(m_ThrowingTimer> 0)
+        {
+            m_ThrowingTimer -= Time.deltaTime;
+        }
+        if (m_Translation > 0 && m_ThrowingTimer < 0)
+        {
+            m_BaseMesh.GetComponent<Animator>().Play("Run");
+            Quaternion target = Quaternion.Euler(0, 90, 0);
+            m_BaseMesh.transform.rotation = target;
+        }
+        else if (m_Translation < 0 && m_ThrowingTimer < 0)
+        {
+            m_BaseMesh.GetComponent<Animator>().Play("Run");
+            Quaternion target = Quaternion.Euler(0, -90, 0);
+            m_BaseMesh.transform.rotation = target;
+        }
+        else if (m_Translation == 0 && m_ThrowingTimer < 0)
+        {
+            m_BaseMesh.GetComponent<Animator>().Play("Idle");
+            Quaternion target = Quaternion.Euler(0, 0, 0);
+            m_BaseMesh.transform.rotation = target;
+        }
         m_Translation = m_xAxis * m_CharacterSpeed;
         m_Translation *= Time.deltaTime;
 
@@ -318,13 +348,19 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
-            //m_Animator.Play("IsThrow");
+           Quaternion target = Quaternion.Euler(0, 0, 0);
+           m_BaseMesh.transform.rotation = target;
+           m_BaseMesh.GetComponent<Animator>().Play("Throw");
+           m_ThrowingTimer = m_Animator.GetCurrentAnimatorStateInfo(0).length;
+           m_ThrowingTimer /= m_ThrowingAnimationSpeed;
+
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 
             // Clone the bullet at the bullet spawn point.
             GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
-	}
+  
+    }
     /// <summary>
     /// changes the lane the player will move towards
     /// </summary>
