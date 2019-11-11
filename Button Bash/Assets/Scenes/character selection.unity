@@ -1636,7 +1636,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 1
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
 --- !u!1 &1000652619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 2
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
 --- !u!1 &1047908262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 3
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
 --- !u!1 &1481364282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,7 +2895,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b7647383599dc42499590841f6c41a04, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 0
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0}
+  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
 --- !u!1 &1833318121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,5 +3771,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3955823305021985834, guid: 5c319541bc82b71419b7a0d0431dc213,
+        type: 3}
+      propertyPath: m_SoundClips.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ccc8342d1dfbc24389f67bbb637804a, type: 3}
+    - target: {fileID: 3955823305021985834, guid: 5c319541bc82b71419b7a0d0431dc213,
+        type: 3}
+      propertyPath: m_SoundClips.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: c970c9b73c3914f4787303b4b3453d26, type: 3}
+    - target: {fileID: 3955823305021985834, guid: 5c319541bc82b71419b7a0d0431dc213,
+        type: 3}
+      propertyPath: m_SoundClips.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 586892dfcd4a40643b2db97eee93297f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c319541bc82b71419b7a0d0431dc213, type: 3}
