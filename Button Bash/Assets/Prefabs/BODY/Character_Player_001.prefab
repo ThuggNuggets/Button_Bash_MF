@@ -127,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8431511, y: 2.864283, z: 1.9054575}
-  m_Center: {x: -0.045541763, y: 0.114124775, z: 0.023194313}
+  m_Size: {x: 0.8431511, y: 3.3332753, z: 2.2784295}
+  m_Center: {x: -0.045541763, y: 0.3486209, z: -0.004689932}
 --- !u!54 &5607457697793743523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_buttonSpawnHeight: 0.3
   m_laneChangingSpeed: 2
   m_Shunt: 0.3
-  m_MaxBounceTimer: 0.2
-  m_MaxCollisionWaitTimer: 0.3
-  m_BounceSpeed: 4
+  m_MaxBounceTimer: 0.1
+  m_MaxCollisionWaitTimer: 0.15
+  m_BounceSpeed: 6
 --- !u!120 &7319452716897844635
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 4952654994244936400, guid: f8bfa17f938eb7c41b9d4c3482c6efa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.33
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4952654994244936400, guid: f8bfa17f938eb7c41b9d4c3482c6efa0,
         type: 3}
@@ -348,6 +348,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4952654994254744882, guid: f8bfa17f938eb7c41b9d4c3482c6efa0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9398596e0a0da9b449266b6c585a91d4, type: 2}
+    - target: {fileID: 4952654994259031026, guid: f8bfa17f938eb7c41b9d4c3482c6efa0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9f1a289aff2184db50b28a65457a1a, type: 2}
+    - target: {fileID: 4952654994247360562, guid: f8bfa17f938eb7c41b9d4c3482c6efa0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ee639974342a914f88e621d4278bce7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8bfa17f938eb7c41b9d4c3482c6efa0, type: 3}
 --- !u!4 &7978567552597987186 stripped
