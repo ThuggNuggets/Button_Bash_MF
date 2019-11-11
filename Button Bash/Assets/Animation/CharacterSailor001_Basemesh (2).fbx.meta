@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 566310f8126322947927a74c88b9b396
+guid: 533cc4224bbea274995d6f729230ab44
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Alien_helmet
-    100002: bashmesh_refined
-    100004: //RootNode
-    100006: chest
-    100008: head
-    100010: L_ankle
-    100012: L_clavicle
-    100014: L_elbow
-    100016: L_hip
-    100018: L_knee
-    100020: L_shoulder
-    100022: L_wrist
-    100024: neckbase
-    100026: pelvis
-    100028: R_ankle
-    100030: R_clavicle
-    100032: R_elbow
-    100034: R_hip
-    100036: R_knee
-    100038: R_shoulder
-    100040: R_wrist
+    100000: bashmesh_refined
+    100002: //RootNode
+    100004: chest
+    100006: head
+    100008: L_ankle
+    100010: L_clavicle
+    100012: L_elbow
+    100014: L_hip
+    100016: L_knee
+    100018: L_shoulder
+    100020: L_wrist
+    100022: neckbase
+    100024: pelvis
+    100026: R_ankle
+    100028: R_clavicle
+    100030: R_elbow
+    100032: R_hip
+    100034: R_knee
+    100036: R_shoulder
+    100038: R_wrist
+    100040: sailor_hat
     100042: waist
-    400000: Alien_helmet
-    400002: bashmesh_refined
-    400004: //RootNode
-    400006: chest
-    400008: head
-    400010: L_ankle
-    400012: L_clavicle
-    400014: L_elbow
-    400016: L_hip
-    400018: L_knee
-    400020: L_shoulder
-    400022: L_wrist
-    400024: neckbase
-    400026: pelvis
-    400028: R_ankle
-    400030: R_clavicle
-    400032: R_elbow
-    400034: R_hip
-    400036: R_knee
-    400038: R_shoulder
-    400040: R_wrist
+    400000: bashmesh_refined
+    400002: //RootNode
+    400004: chest
+    400006: head
+    400008: L_ankle
+    400010: L_clavicle
+    400012: L_elbow
+    400014: L_hip
+    400016: L_knee
+    400018: L_shoulder
+    400020: L_wrist
+    400022: neckbase
+    400024: pelvis
+    400026: R_ankle
+    400028: R_clavicle
+    400030: R_elbow
+    400032: R_hip
+    400034: R_knee
+    400036: R_shoulder
+    400038: R_wrist
+    400040: sailor_hat
     400042: waist
-    2100000: lambert5
+    2100000: lambert4
     2100002: lambert1
-    2300000: Alien_helmet
-    3300000: Alien_helmet
+    2300000: sailor_hat
+    3300000: sailor_hat
     4300000: bashmesh_refined
-    4300002: Alien_helmet
+    4300002: sailor_hat
     9500000: //RootNode
     13700000: bashmesh_refined
   externalObjects: {}
