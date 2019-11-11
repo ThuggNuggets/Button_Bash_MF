@@ -79,8 +79,12 @@ public class PlayerControls : MonoBehaviour
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
     RaycastHit m_Hit;
-    public float m_MaxBounceTimer = 1.5f;
-    float m_BounceTimer = 1.5f;
+    public float m_MaxBounceTimer = 0.2f;
+    float m_BounceTimer = 0.2f;
+    private float m_CollisionWaitTimer = 0.5f;
+    public float m_MaxCollisionWaitTimer = 0.5f;
+    bool left = false;
+    bool right = false;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
@@ -121,7 +125,7 @@ public class PlayerControls : MonoBehaviour
         m_Right = transform.TransformDirection(Vector3.right);
     }
     /// <summary>
-    /// when players collide with the ammo piles refil ammo to max
+    /// when players collide with the ammo piles refill ammo to max
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter(Collider collision)
@@ -143,13 +147,25 @@ public class PlayerControls : MonoBehaviour
         if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
         {
             m_CollidingObject = collision.gameObject;
+            m_CollisionWaitTimer = m_MaxCollisionWaitTimer;
             m_Colliding = true;
+            if (transform.position.z > m_CollidingObject.transform.position.z)
+            {
+                right = true;
+            }
+            else
+            {
+                left = true;
+            }
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        m_Colliding = false;
+        if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
+        {
+            m_Colliding = false;
+        }
     }
     // Update the player.
     /// <summary>
@@ -157,14 +173,8 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {//movement on the Z-axis
-
-        m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
-        m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
-
-
-
-        m_Translation = m_xAxis * m_CharacterSpeed;
-        m_Translation *= Time.deltaTime;
+            m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
+            m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
         //removes drifting after colliding with other players
         if(m_BounceTimer >= 0)
         {
@@ -176,26 +186,49 @@ public class PlayerControls : MonoBehaviour
 			//m_Body.velocity -= new Vector3(0, 0, .1f);
 			m_Body.velocity = new Vector3(0, 0, 0);
         }
-        //move the players out of each other if overlapping also shunts when colliding with others
+
+        m_Translation = m_xAxis * m_CharacterSpeed;
+        m_Translation *= Time.deltaTime;
+
+        //move the players out of each other if overlapping
         if (m_Colliding)
         {
             //m_Translation = 0;
             if (transform.position.z < m_CollidingObject.transform.position.z)
             {
-				transform.position += new Vector3(0, 0, -1);
-                m_Body.AddForce(new Vector3(0, 0, -m_Shunt) * Time.deltaTime);
-                m_BounceTimer = m_MaxBounceTimer;
+                transform.position += new Vector3(0, 0, -m_Shunt*Time.deltaTime);
             }
             else if (transform.position.z >= m_CollidingObject.transform.position.z)
             {
-				transform.position += new Vector3(0, 0, 1);
-				m_Body.AddForce(new Vector3(0, 0, m_Shunt) * Time.deltaTime);
-                m_BounceTimer = m_MaxBounceTimer;
+                 transform.position += new Vector3(0, 0, m_Shunt*Time.deltaTime);
             }
         }
+        //stops player z input while timer is greater than 0
+        if(m_CollisionWaitTimer > 0)
+        {
+            m_CollisionWaitTimer -= Time.deltaTime;
+            m_Translation = 0;
+        }
+        else if(m_CollisionWaitTimer <= 0)
+        {
+            left = false;
+            right = false;
+        }
+        //drift slightly
+        if(left && m_CollisionWaitTimer > 0)
+        {
+            transform.position += new Vector3(0, 0, -2*Time.deltaTime);
+        }
+        else if (right && m_CollisionWaitTimer > 0)
+        {
+            transform.position += new Vector3(0, 0, 2*Time.deltaTime);
+        }
+
         //moves the player
         transform.position += new Vector3(0, 0, m_Translation);
         m_Body.MovePosition(transform.position);
+
+
         // Move to front lane
         if (m_yAxis > m_deadZone)
         {
@@ -286,7 +319,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
-       // m_Animator.Play("IsThrow");
+            //m_Animator.Play("IsThrow");
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 

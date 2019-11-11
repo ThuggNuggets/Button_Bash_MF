@@ -228,7 +228,7 @@ public class BabushkaBehaviour : MonoBehaviour
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
             AudioSource ac = GetComponent<AudioSource>();
             ac.clip = sm.m_SoundClips[3];
-            ac.pitch = Random.Range(0, 3);
+            ac.pitch = Random.Range(1, 3);
             ac.Play();
 
 
@@ -295,7 +295,7 @@ public class BabushkaBehaviour : MonoBehaviour
                 }
         }
         
-         enemy.GetComponent<EnemyBehaviour>().SetColour((Colours.Colour)m_NewColour);
+         enemy.GetComponent<EnemyBehaviour>().SetColour(m_NewColour);
         
         foreach (Transform child in transform)
         {
