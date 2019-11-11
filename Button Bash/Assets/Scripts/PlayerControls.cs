@@ -19,7 +19,6 @@ public class PlayerControls : MonoBehaviour
     //animator
     private Animator m_Animator;
     // character's personal ammunition text
-    public Text playerAmmoText;
 
     // self-explanatory
     public int m_maxAmmo = 5;
@@ -74,7 +73,7 @@ public class PlayerControls : MonoBehaviour
     public float m_Shunt = 10.0f;
 
 	private GameObject m_AmmoRing;
-	private int m_AmmoRingIterator;
+    private GameObject m_AimingLine;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
@@ -92,8 +91,8 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void Awake()
     {
-		m_AmmoRing = transform.GetChild(1).gameObject;
-		m_AmmoRingIterator = m_AmmoRing.transform.childCount - 1;
+        m_AimingLine = transform.GetChild(0).gameObject;
+        m_AmmoRing = transform.GetChild(1).gameObject;
         m_Animator = GetComponent<Animator>();
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
@@ -138,8 +137,6 @@ public class PlayerControls : MonoBehaviour
 				m_AmmoRing.transform.GetChild(i).gameObject.SetActive(true);
 			}
             m_currentAmmo = m_maxAmmo;
-            playerAmmoText.text = m_maxAmmo.ToString();
-
         }
     }
 
@@ -236,6 +233,7 @@ public class PlayerControls : MonoBehaviour
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.FrontLane, "Rail");
+                    m_AimingLine.SetActive(true);
                 }
         }
         // Move to back lane
@@ -244,7 +242,8 @@ public class PlayerControls : MonoBehaviour
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.BackLane, "Rail (1)");
-                }
+                m_AimingLine.SetActive(false);
+            }
         }
         // If the character is currently moving between lanes.x
 
@@ -296,8 +295,7 @@ public class PlayerControls : MonoBehaviour
                     // decrement this player's ammo upon shooting
                     --m_currentAmmo;
 					m_AmmoRing.transform.GetChild(m_currentAmmo).gameObject.SetActive(false);
-                    playerAmmoText.text = m_currentAmmo.ToString();
-				}
+         		}
             }
         }
         else if (m_CurrentLane == Lane.BackLane)
