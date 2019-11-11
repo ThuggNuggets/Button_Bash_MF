@@ -162,16 +162,16 @@ public class CharacterSelect : MonoBehaviour
 			switch (m_CurrentImage)
 			{
 				case 0:
-					ac.clip = sm.m_SoundClips[8];
+					ac.clip = sm.m_SoundClips[5];
 					break;
 				case 1:
-					ac.clip = sm.m_SoundClips[7];
+					ac.clip = sm.m_SoundClips[12];
 					break;
 				case 2:
-					ac.clip = sm.m_SoundClips[6];
+					ac.clip = sm.m_SoundClips[13];
 					break;
 				case 3:
-					ac.clip = sm.m_SoundClips[9];
+					ac.clip = sm.m_SoundClips[14];
 					break;
 			}
 			ac.Play();
