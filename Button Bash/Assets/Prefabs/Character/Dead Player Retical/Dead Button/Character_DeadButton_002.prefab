@@ -123,3 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Force: 50
   m_DespawnTimer: 3
+  m_FlingSpeed: 50
+  m_XFling: 0
+  m_ZFling: 50
