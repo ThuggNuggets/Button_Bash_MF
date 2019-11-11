@@ -72,6 +72,9 @@ public class PlayerControls : MonoBehaviour
     Vector3 m_Right;
     //shunting
     public float m_Shunt = 10.0f;
+
+	private GameObject m_AmmoRing;
+	private int m_AmmoRingIterator;
     //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
@@ -84,6 +87,8 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     void Awake()
     {
+		m_AmmoRing = transform.GetChild(1).gameObject;
+		m_AmmoRingIterator = m_AmmoRing.transform.childCount - 1;
         m_Animator = GetComponent<Animator>();
         m_MaxShootingCooldown = m_ShootingCooldown;
 		m_ShootingCooldown = 0.0f;
@@ -123,8 +128,13 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "ammopile")
         {
+			for (int i = m_currentAmmo; i < m_maxAmmo; ++i)
+			{
+				m_AmmoRing.transform.GetChild(i).gameObject.SetActive(true);
+			}
             m_currentAmmo = m_maxAmmo;
             playerAmmoText.text = m_maxAmmo.ToString();
+
         }
     }
 
@@ -159,10 +169,12 @@ public class PlayerControls : MonoBehaviour
         if(m_BounceTimer >= 0)
         {
             m_BounceTimer -= Time.deltaTime;
+			m_Translation = 0;
         }
        else  if (m_BounceTimer < 0)
         {
-            m_Body.velocity = new Vector3(0, 0, 0);
+			//m_Body.velocity -= new Vector3(0, 0, .1f);
+			m_Body.velocity = new Vector3(0, 0, 0);
         }
         //move the players out of each other if overlapping also shunts when colliding with others
         if (m_Colliding)
@@ -170,14 +182,14 @@ public class PlayerControls : MonoBehaviour
             //m_Translation = 0;
             if (transform.position.z < m_CollidingObject.transform.position.z)
             {
-                //transform.position += new Vector3(0, 0, -1);
-                m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
+				transform.position += new Vector3(0, 0, -1);
+                m_Body.AddForce(new Vector3(0, 0, -m_Shunt) * Time.deltaTime);
                 m_BounceTimer = m_MaxBounceTimer;
             }
             else if (transform.position.z >= m_CollidingObject.transform.position.z)
             {
-               // transform.position += new Vector3(0, 0, 1);
-                m_Body.AddForce(new Vector3(0, 0, -m_Shunt));
+				transform.position += new Vector3(0, 0, 1);
+				m_Body.AddForce(new Vector3(0, 0, m_Shunt) * Time.deltaTime);
                 m_BounceTimer = m_MaxBounceTimer;
             }
         }
@@ -249,8 +261,9 @@ public class PlayerControls : MonoBehaviour
                     m_ShootingCooldown = m_MaxShootingCooldown;
                     // decrement this player's ammo upon shooting
                     --m_currentAmmo;
+					m_AmmoRing.transform.GetChild(m_currentAmmo).gameObject.SetActive(false);
                     playerAmmoText.text = m_currentAmmo.ToString();
-                }
+				}
             }
         }
         else if (m_CurrentLane == Lane.BackLane)
@@ -273,7 +286,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
-      //  m_Animator.Play("IsThrow");
+       // m_Animator.Play("IsThrow");
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 
