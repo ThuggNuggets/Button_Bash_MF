@@ -79,7 +79,10 @@ public class CharacterSelect : MonoBehaviour
 		// Reset the player characters from the previous round of play.
 		// Without this, the game manager will keep the players from the previous round of play, 
 		// which we don't want if the players are back on this screen.
-		GameManager.ResetPlayerCharacters();
+		//GameManager.ResetPlayerCharacters();
+
+		// Set locked in to false.
+		UnlockCharacter();
 	}
 
 	/// <summary>
@@ -287,11 +290,7 @@ public class CharacterSelect : MonoBehaviour
 	/// <returns>The current image of the image box.</returns>
 	public int GetCurrentImage() { return m_CurrentImage; }
 
-	/// <summary>
-	/// Get the player number.
-	/// </summary>
-	/// <returns>The player number.</returns>
-	public int GetPlayerNumber() { return m_PlayerNumber; }
+	public void SetCurrentImage(int newCurrentImage) { m_CurrentImage = newCurrentImage; }
 
 	/// <summary>
 	/// Update the current image.

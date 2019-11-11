@@ -19,6 +19,18 @@ public class CharacterSceneManager : MonoBehaviour
 	private bool m_ReadyPlayerFour = false;
 
 	/// <summary>
+	/// On startup.
+	/// </summary>
+	private void Awake()
+	{
+		// Reset the character selection portraits.
+		transform.GetChild(2).GetComponent<CharacterSelect>().SetCurrentImage(0);
+		transform.GetChild(3).GetComponent<CharacterSelect>().SetCurrentImage(1);
+		transform.GetChild(4).GetComponent<CharacterSelect>().SetCurrentImage(2);
+		transform.GetChild(5).GetComponent<CharacterSelect>().SetCurrentImage(3);
+	}
+
+	/// <summary>
 	/// Update.
 	/// </summary>
 	private void Update()
