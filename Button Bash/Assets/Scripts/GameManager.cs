@@ -94,4 +94,16 @@ public static class GameManager
 		m_PlayerCharacters[2] = -1;
 		m_PlayerCharacters[3] = -1;
 	}
+	
+	/// <summary>
+	/// Reset the defeated characters from the previous round of play.
+	/// </summary>
+	public static void ResetDefeatedCharacters()
+	{
+		m_DefeatedCharacters[0] = -1;
+		m_DefeatedCharacters[1] = -1;
+		m_DefeatedCharacters[2] = -1;
+		m_DefeatedCharacters[3] = -1;
+		m_DefeatedCharactersIterator = 3;
+	}
 }

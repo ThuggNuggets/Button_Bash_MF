@@ -79,7 +79,7 @@ public class CharacterSelect : MonoBehaviour
 		// Reset the player characters from the previous round of play.
 		// Without this, the game manager will keep the players from the previous round of play, 
 		// which we don't want if the players are back on this screen.
-		//GameManager.ResetPlayerCharacters();
+		GameManager.ResetDefeatedCharacters();
 
 		// Set locked in to false.
 		UnlockCharacter();

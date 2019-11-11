@@ -40,6 +40,7 @@ public class playerLives : MonoBehaviour
         m_Player2Lives = m_MaxHealth;
         m_Player3Lives = m_MaxHealth;
         m_Player4Lives = m_MaxHealth;
+		m_PlayerDeathIterator = 0;
     }
     private void OnCollisionEnter(Collision collision)
     {
