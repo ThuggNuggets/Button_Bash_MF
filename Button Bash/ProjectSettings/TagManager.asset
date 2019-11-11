@@ -59,3 +59,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: cat
+    uniqueID: 3644794527
+    locked: 0
+  - name: ui
+    uniqueID: 3246643667
+    locked: 0
