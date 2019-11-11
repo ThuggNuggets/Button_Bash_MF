@@ -273,7 +273,7 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
-        m_Animator.Play("IsThrow");
+      //  m_Animator.Play("IsThrow");
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 

@@ -1,60 +1,30 @@
 fileFormatVersion: 2
-guid: d3adcfd3d20a1c64eadb3a034d7be3c9
+guid: d13e8f0d37ebc8b45b5f626c01e1b12c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: bashmesh_refined
-    100002: Cat_hat
-    100004: //RootNode
-    100006: chest
-    100008: head
-    100010: L_ankle
-    100012: L_clavicle
-    100014: L_elbow
-    100016: L_hip
-    100018: L_knee
-    100020: L_shoulder
-    100022: L_wrist
-    100024: neckbase
-    100026: pelvis
-    100028: R_ankle
-    100030: R_clavicle
-    100032: R_elbow
-    100034: R_hip
-    100036: R_knee
-    100038: R_shoulder
-    100040: R_wrist
-    100042: waist
-    400000: bashmesh_refined
-    400002: Cat_hat
-    400004: //RootNode
-    400006: chest
-    400008: head
-    400010: L_ankle
-    400012: L_clavicle
-    400014: L_elbow
-    400016: L_hip
-    400018: L_knee
-    400020: L_shoulder
-    400022: L_wrist
-    400024: neckbase
-    400026: pelvis
-    400028: R_ankle
-    400030: R_clavicle
-    400032: R_elbow
-    400034: R_hip
-    400036: R_knee
-    400038: R_shoulder
-    400040: R_wrist
-    400042: waist
-    2100000: lambert4
-    2100002: lambert1
-    2300000: Cat_hat
-    3300000: Cat_hat
-    4300000: bashmesh_refined
-    4300002: Cat_hat
+    100000: //RootNode
+    100002: joint1
+    100004: joint2
+    100006: joint3
+    100008: joint4
+    100010: joint5
+    100012: joint6
+    100014: joint7
+    400000: //RootNode
+    400002: joint1
+    400004: joint2
+    400006: joint3
+    400008: joint4
+    400010: joint5
+    400012: joint6
+    400014: joint7
+    2100000: String
+    2100002: Balloon
+    4300000: Balloon_Anim
+    7400000: Take 001
     9500000: //RootNode
-    13700000: bashmesh_refined
+    13700000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,7 +52,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
