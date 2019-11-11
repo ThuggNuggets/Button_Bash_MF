@@ -138,16 +138,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3321ae6030a2ce545a4a7dbaa03eb96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NextLevel: {fileID: 4049320621646561682}
+  m_NextLevel: {fileID: 4049320621646561680}
   m_Health: 2
   m_LeftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
     type: 3}
   m_RightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
-  m_Scale: 1
+  m_Scale: 0.005
   m_VerticalFling: 85
   m_XFling: 80
-  zm_ZFling: 50
+  m_ZFling: 50
   m_OtherBabushkas:
   - {fileID: 2100000, guid: 241dcde377475ad43833f0f28a0e6a0e, type: 2}
   - {fileID: 2100000, guid: c77828b7d94450346a09cd1c779ce27e, type: 2}

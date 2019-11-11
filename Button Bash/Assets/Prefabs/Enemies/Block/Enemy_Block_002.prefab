@@ -111,8 +111,13 @@ PrefabInstance:
     - target: {fileID: 2229313213069429137, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Pitch
-      value: 1.33
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2229313213069429137, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e28219339e90e1442a398ef881830fe8, type: 3}
     - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_WhiteMaterial

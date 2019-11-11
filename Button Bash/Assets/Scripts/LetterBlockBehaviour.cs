@@ -91,14 +91,11 @@ public class LetterBlockBehaviour : MonoBehaviour
             m_FlashTimer = m_MaxFlashTimer;
             Destroy(collision.gameObject);
             //soud trest alex
-            {
-
                 SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
                 AudioSource ac = GetComponent<AudioSource>();
                 ac.clip = sm.m_SoundClips[1];
                 ac.pitch = Random.Range(1, 3);
                 ac.Play();
-            }
         }
     }
 }
