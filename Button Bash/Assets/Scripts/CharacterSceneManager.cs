@@ -24,10 +24,10 @@ public class CharacterSceneManager : MonoBehaviour
 	private void Awake()
 	{
 		// Reset the character selection portraits.
-		transform.GetChild(2).GetComponent<CharacterSelect>().SetCurrentImage(0);
-		transform.GetChild(3).GetComponent<CharacterSelect>().SetCurrentImage(1);
-		transform.GetChild(4).GetComponent<CharacterSelect>().SetCurrentImage(2);
-		transform.GetChild(5).GetComponent<CharacterSelect>().SetCurrentImage(3);
+		transform.GetChild(0).GetComponent<CharacterSelect>().SetCurrentImage(0);
+		transform.GetChild(1).GetComponent<CharacterSelect>().SetCurrentImage(1);
+		transform.GetChild(2).GetComponent<CharacterSelect>().SetCurrentImage(2);
+		transform.GetChild(3).GetComponent<CharacterSelect>().SetCurrentImage(3);
 	}
 
 	/// <summary>

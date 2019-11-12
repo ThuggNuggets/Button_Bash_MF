@@ -58,6 +58,8 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	public Color m_LockedInDarkenColour;
 
+	public Button m_SelectButton;
+
 	/// <summary>
 	/// On startup.
 	/// </summary>
@@ -177,7 +179,7 @@ public class CharacterSelect : MonoBehaviour
 		catch { }
 
 		// Represent the select button being used.
-		transform.GetChild(0).GetComponent<Button>().interactable = false;
+		m_SelectButton.interactable = false;
 
 		// Find all the image boxes in the scene, so we can check their current character.
 		GameObject[] imgBoxes = GameObject.FindGameObjectsWithTag("Image Box");
@@ -209,7 +211,7 @@ public class CharacterSelect : MonoBehaviour
 
 		m_CharacterLockedIn = false;
 
-		transform.GetChild(0).GetComponent<Button>().interactable = true;
+		m_SelectButton.interactable = true;
 
 		GetComponent<SpriteRenderer>().color = Color.white;
 	}
