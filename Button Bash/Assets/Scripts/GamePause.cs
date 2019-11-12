@@ -94,7 +94,7 @@ public class GamePause : MonoBehaviour
 				m_PauseScreen.SetActive(false);
 			}
 
-			if (XCI.GetButtonDown(XboxButton.A, (XboxController)m_PausedPlayerNumber) == true)
+			if (XCI.GetButtonDown(XboxButton.Back, (XboxController)m_PausedPlayerNumber) == true)
 			{
 				Debug.Log("Return to menu!");
 				GetComponent<ReturnToMenu>().ReturnMainMenuMenu();
