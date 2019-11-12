@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MusicDestroy : MonoBehaviour
 {
-    private int number = 0;
+    private int number;
     // Start is called before the first frame update
     private void Awake()
     {
 		gameObject.SetActive(true);
+		number = 0;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoad;
     }
