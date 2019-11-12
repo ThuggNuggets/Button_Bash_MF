@@ -27,10 +27,10 @@ public class LetterBlockBehaviour : MonoBehaviour
     private void Awake()
     {
         m_FlashTimer = m_MaxFlashTimer;
-        m_OriginalMat = GetComponent<Renderer>().material;
-        m_Renderer = GetComponent<Renderer>();
-        //get random fling values
-        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
+        m_Renderer = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
+        m_OriginalMat = m_Renderer.material;
+		//get random fling values
+		float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         m_XFling = Random.Range(-m_XFling, -minXFling);
         m_ZFling = Random.Range(-m_ZFling, m_ZFling);
         m_FlingRotation = Random.Range(0, 3);
