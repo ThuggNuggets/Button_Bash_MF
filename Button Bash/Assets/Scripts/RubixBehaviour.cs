@@ -24,6 +24,12 @@ public class RubixBehaviour : MonoBehaviour
 
     //flinging
     int m_FlingRotation;
+    //speed of rotation after being hit by a button
+    public float m_RubixSpinSpeed = 1;
+    private float m_RubixSpinSpeedAmount = 0;
+    bool m_Rotating;
+
+    Quaternion m_Target;
     private void Awake()
     {
         m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
@@ -66,6 +72,21 @@ public class RubixBehaviour : MonoBehaviour
                     }
             }
         }
+
+        if(m_Rotating)
+        {
+            m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, m_Target, m_RubixSpinSpeedAmount);
+            if(m_RubixSpinSpeedAmount > 1)
+            {
+                m_RubixSpinSpeedAmount = 1;
+            }
+             if(transform.rotation == m_Target)
+            {
+                m_Rotating = false;
+                m_RubixSpinSpeedAmount = 0;
+            }
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -83,51 +104,57 @@ public class RubixBehaviour : MonoBehaviour
                 //changes its colour
                 while (!m_Valid)
                 {
-                    switch (m_Colour)
+                    ///-------------------------------------------------------------------------------------------
+                    switch (Random.Range(0, 4))
                     {
-                        case Colours.Colour.Blue:
+                        case 0:
                             {
-                                m_Colour = Colours.Colour.Red;
-                                transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.m_Player2Lives > 0)
-                                {
-                                    m_Valid = true;
-                                }
-                                break;
-                            }
-                        case Colours.Colour.Red:
-                            {
-                                m_Colour = Colours.Colour.Green;
-                                transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.m_Player3Lives > 0)
-                                {
-                                    m_Valid = true;
-                                }
-                                break;
-                            }
-                        case Colours.Colour.Green:
-                            {
-                                m_Colour = Colours.Colour.Yellow;
-                                transform.Rotate(0, 90, 0, Space.Self);
-                                if (m_PlayerLives.m_Player4Lives > 0)
-                                {
-                                    m_Valid = true;
-                                }
-
-                                break;
-                            }
-                        case Colours.Colour.Yellow:
-                            {
-                                m_Colour = Colours.Colour.Blue;
-                                transform.Rotate(0, 90, 0, Space.Self);
                                 if (m_PlayerLives.m_Player1Lives > 0)
                                 {
+                                    m_Rotating = true;
                                     m_Valid = true;
+                                    m_Colour = Colours.Colour.Red;
+                                    m_Target = Quaternion.Euler(0, 0, 0);
+                                    
+                                }
+                                break;
+                            }
+                        case 1:
+                            {
+                                if (m_PlayerLives.m_Player2Lives > 0)
+                                {
+                                    m_Rotating = true;
+                                    m_Valid = true;
+                                    m_Colour = Colours.Colour.Green;
+                                    m_Target = Quaternion.Euler(0, 90, 0);
+                                }
+                                break;
+                            }
+                        case 2:
+                        {
+                            if (m_PlayerLives.m_Player4Lives > 0)
+                            {
+                                    m_Rotating = true;
+                                    m_Valid = true;
+                                    m_Colour = Colours.Colour.Yellow;
+                                    m_Target = Quaternion.Euler(0, 180, 0);
+                            }
+                            break;
+                        }
+                        case 3:
+                            {
+                                if (m_PlayerLives.m_Player1Lives > 0)
+                                {
+                                    m_Rotating = true;
+                                    m_Valid = true;
+                                    m_Colour = Colours.Colour.Blue;
+                                    m_Target = Quaternion.Euler(0, -90, 0);
                                 }
 
                                 break;
                             }
                     }
+                    ///
                 }
                 
             }

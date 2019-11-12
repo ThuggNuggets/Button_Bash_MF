@@ -204,16 +204,19 @@ public class PlayerControls : MonoBehaviour
         if (m_Translation > 0 && m_ThrowingTimer < 0)
         {
             m_BaseMesh.transform.eulerAngles = new Vector3(0, 90, 0);
+            m_BaseMesh.transform.position = transform.position + new Vector3(0.2f, -1.4f, 0);
             m_BaseMesh.GetComponent<Animator>().Play("Run");
         }
         else if (m_Translation < 0 && m_ThrowingTimer < 0)
         {
             m_BaseMesh.transform.eulerAngles = new Vector3(0, -90, 0);
+            m_BaseMesh.transform.position = transform.position + new Vector3(-0.6f, -1.4f, 0);
             m_BaseMesh.GetComponent<Animator>().Play("Run");
         }
         else if (m_Translation == 0 && m_ThrowingTimer < 0)
         {
             m_BaseMesh.transform.eulerAngles = new Vector3(0, 0, 0);
+            m_BaseMesh.transform.position = transform.position + new Vector3(0, -1.4f, 0.5f);
             m_BaseMesh.GetComponent<Animator>().Play("Idle");
         }
         m_Translation = m_xAxis * m_CharacterSpeed;
