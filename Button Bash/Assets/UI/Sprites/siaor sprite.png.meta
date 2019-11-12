@@ -18,6 +18,22 @@ TextureImporter:
     21300026: ezgif.com-gif-maker (3)_13
     21300028: ezgif.com-gif-maker (3)_14
     21300030: ezgif.com-gif-maker (3)_15
+    21300032: siaor sprite_0
+    21300034: siaor sprite_1
+    21300036: siaor sprite_2
+    21300038: siaor sprite_3
+    21300040: siaor sprite_4
+    21300042: siaor sprite_5
+    21300044: siaor sprite_6
+    21300046: siaor sprite_7
+    21300048: siaor sprite_8
+    21300050: siaor sprite_9
+    21300052: siaor sprite_10
+    21300054: siaor sprite_11
+    21300056: siaor sprite_12
+    21300058: siaor sprite_13
+    21300060: siaor sprite_14
+    21300062: siaor sprite_15
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -133,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_0
+      name: siaor sprite_0
       rect:
         serializedVersion: 2
-        x: 93
-        y: 3293
-        width: 346
-        height: 574
+        x: 0
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,19 +163,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae61948066625254991028c8899a9858
+      spriteID: eb4561a01a146b645970da253de1d1ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_1
+      name: siaor sprite_1
       rect:
         serializedVersion: 2
-        x: 599
-        y: 3293
-        width: 356
-        height: 572
+        x: 512
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,19 +183,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a932ca5715d65a64e91239645964354a
+      spriteID: 7a3355581a0c91c409e52be07885e094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_2
+      name: siaor sprite_2
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 3293
-        width: 363
-        height: 568
+        x: 1024
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,19 +203,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7649bd4bf2cf0248b698634d31f436d
+      spriteID: e2bcc211291646b43a640f56a53328ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_3
+      name: siaor sprite_3
       rect:
         serializedVersion: 2
-        x: 1617
-        y: 3293
-        width: 368
-        height: 564
+        x: 1536
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,19 +223,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78e94c0dc3faca479d3d3b54c159084
+      spriteID: d1bbf0499db1ca144bd1ee4849ebe907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_4
+      name: siaor sprite_4
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 3293
-        width: 374
-        height: 562
+        x: 2048
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,19 +243,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3c241ed68cbe2e45a55b108a41c9a0e
+      spriteID: bdcc36dd1bcf5ad4faefd09ae329a251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_5
+      name: siaor sprite_5
       rect:
         serializedVersion: 2
-        x: 75
-        y: 2269
-        width: 381
-        height: 558
+        x: 0
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,19 +263,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb544ace2607a3e4495712766b391a3b
+      spriteID: 09ea779b98a61414fb5cafecc64065c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_6
+      name: siaor sprite_6
       rect:
         serializedVersion: 2
-        x: 583
-        y: 2269
-        width: 386
-        height: 554
+        x: 512
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,19 +283,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 186ae99a73b6b2e479c63a5dadbc61c9
+      spriteID: 1c7e4dc69f7e5214a92e9f197491ebaa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_7
+      name: siaor sprite_7
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 2269
-        width: 394
-        height: 552
+        x: 1024
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,19 +303,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d06c30fdd9eeacd41967d519f5583274
+      spriteID: b3e3db9e37e496048a68f266b3e02373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_8
+      name: siaor sprite_8
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 2271
-        width: 399
-        height: 546
+        x: 1536
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,19 +323,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 454bcd0d30d33044b8b5f8dbeb2198d6
+      spriteID: 5b297f377373aa346a188bb363f71053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_9
+      name: siaor sprite_9
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 2269
-        width: 394
-        height: 552
+        x: 2048
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,19 +343,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe6143fb56b6b384da3fce844858b0af
+      spriteID: 6c136adcffe304840acdfd50ced4e5e1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_10
+      name: siaor sprite_10
       rect:
         serializedVersion: 2
-        x: 71
-        y: 1245
-        width: 386
-        height: 554
+        x: 0
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,19 +363,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361cd7b1879b76a4f896d4eb414c791e
+      spriteID: dea72e629b375c7478535265c9c8a956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_11
+      name: siaor sprite_11
       rect:
         serializedVersion: 2
-        x: 587
-        y: 1245
-        width: 381
-        height: 558
+        x: 512
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,19 +383,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf372636e4e833548be09b96a3f4e7de
+      spriteID: b189b70400357d041a1b927d49a2e663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_12
+      name: siaor sprite_12
       rect:
         serializedVersion: 2
-        x: 1101
-        y: 1245
-        width: 374
-        height: 562
+        x: 1024
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,19 +403,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1065fc946bb2f4486cff9d7f118536
+      spriteID: 90dc23b0d72ea3e408ec8078c8c27a20
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_13
+      name: siaor sprite_13
       rect:
         serializedVersion: 2
-        x: 1617
-        y: 1245
-        width: 368
-        height: 564
+        x: 1536
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,19 +423,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae91aa8ba425c484fa75c2eb43db177a
+      spriteID: 5c8956d853527e74ca00ad8dda2c0bf4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_14
+      name: siaor sprite_14
       rect:
         serializedVersion: 2
-        x: 2133
-        y: 1245
-        width: 363
-        height: 568
+        x: 2048
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,19 +443,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a54310211d9e234cbc3b9705eeff6ae
+      spriteID: 45c3079be4ddc8641aa70d03111822a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (3)_15
+      name: siaor sprite_15
       rect:
         serializedVersion: 2
-        x: 87
-        y: 221
-        width: 356
-        height: 572
+        x: 0
+        y: 0
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,7 +463,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1ff8576d096bfe479d12880fcacee30
+      spriteID: 8128aca085ba68e42b15a8fb8d2e0a12
       vertices: []
       indices: 
       edges: []

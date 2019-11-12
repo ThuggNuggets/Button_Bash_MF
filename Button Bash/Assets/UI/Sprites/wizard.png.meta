@@ -18,6 +18,710 @@ TextureImporter:
     21300026: wizard_13
     21300028: wizard_14
     21300030: wizard_15
+    21300032: wizard_16
+    21300034: wizard_17
+    21300036: wizard_18
+    21300038: wizard_19
+    21300040: wizard_20
+    21300042: wizard_21
+    21300044: wizard_22
+    21300046: wizard_23
+    21300048: wizard_24
+    21300050: wizard_25
+    21300052: wizard_26
+    21300054: wizard_27
+    21300056: wizard_28
+    21300058: wizard_29
+    21300060: wizard_30
+    21300062: wizard_31
+    21300064: wizard_32
+    21300066: wizard_33
+    21300068: wizard_34
+    21300070: wizard_35
+    21300072: wizard_36
+    21300074: wizard_37
+    21300076: wizard_38
+    21300078: wizard_39
+    21300080: wizard_40
+    21300082: wizard_41
+    21300084: wizard_42
+    21300086: wizard_43
+    21300088: wizard_44
+    21300090: wizard_45
+    21300092: wizard_46
+    21300094: wizard_47
+    21300096: wizard_48
+    21300098: wizard_49
+    21300100: wizard_50
+    21300102: wizard_51
+    21300104: wizard_52
+    21300106: wizard_53
+    21300108: wizard_54
+    21300110: wizard_55
+    21300112: wizard_56
+    21300114: wizard_57
+    21300116: wizard_58
+    21300118: wizard_59
+    21300120: wizard_60
+    21300122: wizard_61
+    21300124: wizard_62
+    21300126: wizard_63
+    21300128: wizard_64
+    21300130: wizard_65
+    21300132: wizard_66
+    21300134: wizard_67
+    21300136: wizard_68
+    21300138: wizard_69
+    21300140: wizard_70
+    21300142: wizard_71
+    21300144: wizard_72
+    21300146: wizard_73
+    21300148: wizard_74
+    21300150: wizard_75
+    21300152: wizard_76
+    21300154: wizard_77
+    21300156: wizard_78
+    21300158: wizard_79
+    21300160: wizard_80
+    21300162: wizard_81
+    21300164: wizard_82
+    21300166: wizard_83
+    21300168: wizard_84
+    21300170: wizard_85
+    21300172: wizard_86
+    21300174: wizard_87
+    21300176: wizard_88
+    21300178: wizard_89
+    21300180: wizard_90
+    21300182: wizard_91
+    21300184: wizard_92
+    21300186: wizard_93
+    21300188: wizard_94
+    21300190: wizard_95
+    21300192: wizard_96
+    21300194: wizard_97
+    21300196: wizard_98
+    21300198: wizard_99
+    21300200: wizard_100
+    21300202: wizard_101
+    21300204: wizard_102
+    21300206: wizard_103
+    21300208: wizard_104
+    21300210: wizard_105
+    21300212: wizard_106
+    21300214: wizard_107
+    21300216: wizard_108
+    21300218: wizard_109
+    21300220: wizard_110
+    21300222: wizard_111
+    21300224: wizard_112
+    21300226: wizard_113
+    21300228: wizard_114
+    21300230: wizard_115
+    21300232: wizard_116
+    21300234: wizard_117
+    21300236: wizard_118
+    21300238: wizard_119
+    21300240: wizard_120
+    21300242: wizard_121
+    21300244: wizard_122
+    21300246: wizard_123
+    21300248: wizard_124
+    21300250: wizard_125
+    21300252: wizard_126
+    21300254: wizard_127
+    21300256: wizard_128
+    21300258: wizard_129
+    21300260: wizard_130
+    21300262: wizard_131
+    21300264: wizard_132
+    21300266: wizard_133
+    21300268: wizard_134
+    21300270: wizard_135
+    21300272: wizard_136
+    21300274: wizard_137
+    21300276: wizard_138
+    21300278: wizard_139
+    21300280: wizard_140
+    21300282: wizard_141
+    21300284: wizard_142
+    21300286: wizard_143
+    21300288: wizard_144
+    21300290: wizard_145
+    21300292: wizard_146
+    21300294: wizard_147
+    21300296: wizard_148
+    21300298: wizard_149
+    21300300: wizard_150
+    21300302: wizard_151
+    21300304: wizard_152
+    21300306: wizard_153
+    21300308: wizard_154
+    21300310: wizard_155
+    21300312: wizard_156
+    21300314: wizard_157
+    21300316: wizard_158
+    21300318: wizard_159
+    21300320: wizard_160
+    21300322: wizard_161
+    21300324: wizard_162
+    21300326: wizard_163
+    21300328: wizard_164
+    21300330: wizard_165
+    21300332: wizard_166
+    21300334: wizard_167
+    21300336: wizard_168
+    21300338: wizard_169
+    21300340: wizard_170
+    21300342: wizard_171
+    21300344: wizard_172
+    21300346: wizard_173
+    21300348: wizard_174
+    21300350: wizard_175
+    21300352: wizard_176
+    21300354: wizard_177
+    21300356: wizard_178
+    21300358: wizard_179
+    21300360: wizard_180
+    21300362: wizard_181
+    21300364: wizard_182
+    21300366: wizard_183
+    21300368: wizard_184
+    21300370: wizard_185
+    21300372: wizard_186
+    21300374: wizard_187
+    21300376: wizard_188
+    21300378: wizard_189
+    21300380: wizard_190
+    21300382: wizard_191
+    21300384: wizard_192
+    21300386: wizard_193
+    21300388: wizard_194
+    21300390: wizard_195
+    21300392: wizard_196
+    21300394: wizard_197
+    21300396: wizard_198
+    21300398: wizard_199
+    21300400: wizard_200
+    21300402: wizard_201
+    21300404: wizard_202
+    21300406: wizard_203
+    21300408: wizard_204
+    21300410: wizard_205
+    21300412: wizard_206
+    21300414: wizard_207
+    21300416: wizard_208
+    21300418: wizard_209
+    21300420: wizard_210
+    21300422: wizard_211
+    21300424: wizard_212
+    21300426: wizard_213
+    21300428: wizard_214
+    21300430: wizard_215
+    21300432: wizard_216
+    21300434: wizard_217
+    21300436: wizard_218
+    21300438: wizard_219
+    21300440: wizard_220
+    21300442: wizard_221
+    21300444: wizard_222
+    21300446: wizard_223
+    21300448: wizard_224
+    21300450: wizard_225
+    21300452: wizard_226
+    21300454: wizard_227
+    21300456: wizard_228
+    21300458: wizard_229
+    21300460: wizard_230
+    21300462: wizard_231
+    21300464: wizard_232
+    21300466: wizard_233
+    21300468: wizard_234
+    21300470: wizard_235
+    21300472: wizard_236
+    21300474: wizard_237
+    21300476: wizard_238
+    21300478: wizard_239
+    21300480: wizard_240
+    21300482: wizard_241
+    21300484: wizard_242
+    21300486: wizard_243
+    21300488: wizard_244
+    21300490: wizard_245
+    21300492: wizard_246
+    21300494: wizard_247
+    21300496: wizard_248
+    21300498: wizard_249
+    21300500: wizard_250
+    21300502: wizard_251
+    21300504: wizard_252
+    21300506: wizard_253
+    21300508: wizard_254
+    21300510: wizard_255
+    21300512: wizard_256
+    21300514: wizard_257
+    21300516: wizard_258
+    21300518: wizard_259
+    21300520: wizard_260
+    21300522: wizard_261
+    21300524: wizard_262
+    21300526: wizard_263
+    21300528: wizard_264
+    21300530: wizard_265
+    21300532: wizard_266
+    21300534: wizard_267
+    21300536: wizard_268
+    21300538: wizard_269
+    21300540: wizard_270
+    21300542: wizard_271
+    21300544: wizard_272
+    21300546: wizard_273
+    21300548: wizard_274
+    21300550: wizard_275
+    21300552: wizard_276
+    21300554: wizard_277
+    21300556: wizard_278
+    21300558: wizard_279
+    21300560: wizard_280
+    21300562: wizard_281
+    21300564: wizard_282
+    21300566: wizard_283
+    21300568: wizard_284
+    21300570: wizard_285
+    21300572: wizard_286
+    21300574: wizard_287
+    21300576: wizard_288
+    21300578: wizard_289
+    21300580: wizard_290
+    21300582: wizard_291
+    21300584: wizard_292
+    21300586: wizard_293
+    21300588: wizard_294
+    21300590: wizard_295
+    21300592: wizard_296
+    21300594: wizard_297
+    21300596: wizard_298
+    21300598: wizard_299
+    21300600: wizard_300
+    21300602: wizard_301
+    21300604: wizard_302
+    21300606: wizard_303
+    21300608: wizard_304
+    21300610: wizard_305
+    21300612: wizard_306
+    21300614: wizard_307
+    21300616: wizard_308
+    21300618: wizard_309
+    21300620: wizard_310
+    21300622: wizard_311
+    21300624: wizard_312
+    21300626: wizard_313
+    21300628: wizard_314
+    21300630: wizard_315
+    21300632: wizard_316
+    21300634: wizard_317
+    21300636: wizard_318
+    21300638: wizard_319
+    21300640: wizard_320
+    21300642: wizard_321
+    21300644: wizard_322
+    21300646: wizard_323
+    21300648: wizard_324
+    21300650: wizard_325
+    21300652: wizard_326
+    21300654: wizard_327
+    21300656: wizard_328
+    21300658: wizard_329
+    21300660: wizard_330
+    21300662: wizard_331
+    21300664: wizard_332
+    21300666: wizard_333
+    21300668: wizard_334
+    21300670: wizard_335
+    21300672: wizard_336
+    21300674: wizard_337
+    21300676: wizard_338
+    21300678: wizard_339
+    21300680: wizard_340
+    21300682: wizard_341
+    21300684: wizard_342
+    21300686: wizard_343
+    21300688: wizard_344
+    21300690: wizard_345
+    21300692: wizard_346
+    21300694: wizard_347
+    21300696: wizard_348
+    21300698: wizard_349
+    21300700: wizard_350
+    21300702: wizard_351
+    21300704: wizard_352
+    21300706: wizard_353
+    21300708: wizard_354
+    21300710: wizard_355
+    21300712: wizard_356
+    21300714: wizard_357
+    21300716: wizard_358
+    21300718: wizard_359
+    21300720: wizard_360
+    21300722: wizard_361
+    21300724: wizard_362
+    21300726: wizard_363
+    21300728: wizard_364
+    21300730: wizard_365
+    21300732: wizard_366
+    21300734: wizard_367
+    21300736: wizard_368
+    21300738: wizard_369
+    21300740: wizard_370
+    21300742: wizard_371
+    21300744: wizard_372
+    21300746: wizard_373
+    21300748: wizard_374
+    21300750: wizard_375
+    21300752: wizard_376
+    21300754: wizard_377
+    21300756: wizard_378
+    21300758: wizard_379
+    21300760: wizard_380
+    21300762: wizard_381
+    21300764: wizard_382
+    21300766: wizard_383
+    21300768: wizard_384
+    21300770: wizard_385
+    21300772: wizard_386
+    21300774: wizard_387
+    21300776: wizard_388
+    21300778: wizard_389
+    21300780: wizard_390
+    21300782: wizard_391
+    21300784: wizard_392
+    21300786: wizard_393
+    21300788: wizard_394
+    21300790: wizard_395
+    21300792: wizard_396
+    21300794: wizard_397
+    21300796: wizard_398
+    21300798: wizard_399
+    21300800: wizard_400
+    21300802: wizard_401
+    21300804: wizard_402
+    21300806: wizard_403
+    21300808: wizard_404
+    21300810: wizard_405
+    21300812: wizard_406
+    21300814: wizard_407
+    21300816: wizard_408
+    21300818: wizard_409
+    21300820: wizard_410
+    21300822: wizard_411
+    21300824: wizard_412
+    21300826: wizard_413
+    21300828: wizard_414
+    21300830: wizard_415
+    21300832: wizard_416
+    21300834: wizard_417
+    21300836: wizard_418
+    21300838: wizard_419
+    21300840: wizard_420
+    21300842: wizard_421
+    21300844: wizard_422
+    21300846: wizard_423
+    21300848: wizard_424
+    21300850: wizard_425
+    21300852: wizard_426
+    21300854: wizard_427
+    21300856: wizard_428
+    21300858: wizard_429
+    21300860: wizard_430
+    21300862: wizard_431
+    21300864: wizard_432
+    21300866: wizard_433
+    21300868: wizard_434
+    21300870: wizard_435
+    21300872: wizard_436
+    21300874: wizard_437
+    21300876: wizard_438
+    21300878: wizard_439
+    21300880: wizard_440
+    21300882: wizard_441
+    21300884: wizard_442
+    21300886: wizard_443
+    21300888: wizard_444
+    21300890: wizard_445
+    21300892: wizard_446
+    21300894: wizard_447
+    21300896: wizard_448
+    21300898: wizard_449
+    21300900: wizard_450
+    21300902: wizard_451
+    21300904: wizard_452
+    21300906: wizard_453
+    21300908: wizard_454
+    21300910: wizard_455
+    21300912: wizard_456
+    21300914: wizard_457
+    21300916: wizard_458
+    21300918: wizard_459
+    21300920: wizard_460
+    21300922: wizard_461
+    21300924: wizard_462
+    21300926: wizard_463
+    21300928: wizard_464
+    21300930: wizard_465
+    21300932: wizard_466
+    21300934: wizard_467
+    21300936: wizard_468
+    21300938: wizard_469
+    21300940: wizard_470
+    21300942: wizard_471
+    21300944: wizard_472
+    21300946: wizard_473
+    21300948: wizard_474
+    21300950: wizard_475
+    21300952: wizard_476
+    21300954: wizard_477
+    21300956: wizard_478
+    21300958: wizard_479
+    21300960: wizard_480
+    21300962: wizard_481
+    21300964: wizard_482
+    21300966: wizard_483
+    21300968: wizard_484
+    21300970: wizard_485
+    21300972: wizard_486
+    21300974: wizard_487
+    21300976: wizard_488
+    21300978: wizard_489
+    21300980: wizard_490
+    21300982: wizard_491
+    21300984: wizard_492
+    21300986: wizard_493
+    21300988: wizard_494
+    21300990: wizard_495
+    21300992: wizard_496
+    21300994: wizard_497
+    21300996: wizard_498
+    21300998: wizard_499
+    21301000: wizard_500
+    21301002: wizard_501
+    21301004: wizard_502
+    21301006: wizard_503
+    21301008: wizard_504
+    21301010: wizard_505
+    21301012: wizard_506
+    21301014: wizard_507
+    21301016: wizard_508
+    21301018: wizard_509
+    21301020: wizard_510
+    21301022: wizard_511
+    21301024: wizard_512
+    21301026: wizard_513
+    21301028: wizard_514
+    21301030: wizard_515
+    21301032: wizard_516
+    21301034: wizard_517
+    21301036: wizard_518
+    21301038: wizard_519
+    21301040: wizard_520
+    21301042: wizard_521
+    21301044: wizard_522
+    21301046: wizard_523
+    21301048: wizard_524
+    21301050: wizard_525
+    21301052: wizard_526
+    21301054: wizard_527
+    21301056: wizard_528
+    21301058: wizard_529
+    21301060: wizard_530
+    21301062: wizard_531
+    21301064: wizard_532
+    21301066: wizard_533
+    21301068: wizard_534
+    21301070: wizard_535
+    21301072: wizard_536
+    21301074: wizard_537
+    21301076: wizard_538
+    21301078: wizard_539
+    21301080: wizard_540
+    21301082: wizard_541
+    21301084: wizard_542
+    21301086: wizard_543
+    21301088: wizard_544
+    21301090: wizard_545
+    21301092: wizard_546
+    21301094: wizard_547
+    21301096: wizard_548
+    21301098: wizard_549
+    21301100: wizard_550
+    21301102: wizard_551
+    21301104: wizard_552
+    21301106: wizard_553
+    21301108: wizard_554
+    21301110: wizard_555
+    21301112: wizard_556
+    21301114: wizard_557
+    21301116: wizard_558
+    21301118: wizard_559
+    21301120: wizard_560
+    21301122: wizard_561
+    21301124: wizard_562
+    21301126: wizard_563
+    21301128: wizard_564
+    21301130: wizard_565
+    21301132: wizard_566
+    21301134: wizard_567
+    21301136: wizard_568
+    21301138: wizard_569
+    21301140: wizard_570
+    21301142: wizard_571
+    21301144: wizard_572
+    21301146: wizard_573
+    21301148: wizard_574
+    21301150: wizard_575
+    21301152: wizard_576
+    21301154: wizard_577
+    21301156: wizard_578
+    21301158: wizard_579
+    21301160: wizard_580
+    21301162: wizard_581
+    21301164: wizard_582
+    21301166: wizard_583
+    21301168: wizard_584
+    21301170: wizard_585
+    21301172: wizard_586
+    21301174: wizard_587
+    21301176: wizard_588
+    21301178: wizard_589
+    21301180: wizard_590
+    21301182: wizard_591
+    21301184: wizard_592
+    21301186: wizard_593
+    21301188: wizard_594
+    21301190: wizard_595
+    21301192: wizard_596
+    21301194: wizard_597
+    21301196: wizard_598
+    21301198: wizard_599
+    21301200: wizard_600
+    21301202: wizard_601
+    21301204: wizard_602
+    21301206: wizard_603
+    21301208: wizard_604
+    21301210: wizard_605
+    21301212: wizard_606
+    21301214: wizard_607
+    21301216: wizard_608
+    21301218: wizard_609
+    21301220: wizard_610
+    21301222: wizard_611
+    21301224: wizard_612
+    21301226: wizard_613
+    21301228: wizard_614
+    21301230: wizard_615
+    21301232: wizard_616
+    21301234: wizard_617
+    21301236: wizard_618
+    21301238: wizard_619
+    21301240: wizard_620
+    21301242: wizard_621
+    21301244: wizard_622
+    21301246: wizard_623
+    21301248: wizard_624
+    21301250: wizard_625
+    21301252: wizard_626
+    21301254: wizard_627
+    21301256: wizard_628
+    21301258: wizard_629
+    21301260: wizard_630
+    21301262: wizard_631
+    21301264: wizard_632
+    21301266: wizard_633
+    21301268: wizard_634
+    21301270: wizard_635
+    21301272: wizard_636
+    21301274: wizard_637
+    21301276: wizard_638
+    21301278: wizard_639
+    21301280: wizard_640
+    21301282: wizard_641
+    21301284: wizard_642
+    21301286: wizard_643
+    21301288: wizard_644
+    21301290: wizard_645
+    21301292: wizard_646
+    21301294: wizard_647
+    21301296: wizard_648
+    21301298: wizard_649
+    21301300: wizard_650
+    21301302: wizard_651
+    21301304: wizard_652
+    21301306: wizard_653
+    21301308: wizard_654
+    21301310: wizard_655
+    21301312: wizard_656
+    21301314: wizard_657
+    21301316: wizard_658
+    21301318: wizard_659
+    21301320: wizard_660
+    21301322: wizard_661
+    21301324: wizard_662
+    21301326: wizard_663
+    21301328: wizard_664
+    21301330: wizard_665
+    21301332: wizard_666
+    21301334: wizard_667
+    21301336: wizard_668
+    21301338: wizard_669
+    21301340: wizard_670
+    21301342: wizard_671
+    21301344: wizard_672
+    21301346: wizard_673
+    21301348: wizard_674
+    21301350: wizard_675
+    21301352: wizard_676
+    21301354: wizard_677
+    21301356: wizard_678
+    21301358: wizard_679
+    21301360: wizard_680
+    21301362: wizard_681
+    21301364: wizard_682
+    21301366: wizard_683
+    21301368: wizard_684
+    21301370: wizard_685
+    21301372: wizard_686
+    21301374: wizard_687
+    21301376: wizard_688
+    21301378: wizard_689
+    21301380: wizard_690
+    21301382: wizard_691
+    21301384: wizard_692
+    21301386: wizard_693
+    21301388: wizard_694
+    21301390: wizard_695
+    21301392: wizard_696
+    21301394: wizard_697
+    21301396: wizard_698
+    21301398: wizard_699
+    21301400: wizard_700
+    21301402: wizard_701
+    21301404: wizard_702
+    21301406: wizard_703
+    21301408: wizard_704
+    21301410: wizard_705
+    21301412: wizard_706
+    21301414: wizard_707
+    21301416: wizard_708
+    21301418: wizard_709
+    21301420: wizard_710
+    21301422: wizard_711
+    21301424: wizard_712
+    21301426: wizard_713
+    21301428: wizard_714
+    21301430: wizard_715
+    21301432: wizard_716
+    21301434: wizard_717
+    21301436: wizard_718
+    21301438: wizard_719
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -136,10 +840,10 @@ TextureImporter:
       name: wizard_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 3301
-        width: 342
-        height: 587
+        x: 0
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,7 +851,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e1900c538a61c5488786ab719f52a6d
+      spriteID: f81f49aec95ea6a4784cbd3cc95f7bef
       vertices: []
       indices: 
       edges: []
@@ -156,10 +860,10 @@ TextureImporter:
       name: wizard_1
       rect:
         serializedVersion: 2
-        x: 595
-        y: 3301
-        width: 352
-        height: 579
+        x: 512
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,7 +871,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3826b55ce0670f84b8e120518f369f3d
+      spriteID: 5bce82904f09e9b4ea8d7d21c9b28c3e
       vertices: []
       indices: 
       edges: []
@@ -176,10 +880,10 @@ TextureImporter:
       name: wizard_2
       rect:
         serializedVersion: 2
-        x: 1105
-        y: 3301
-        width: 359
-        height: 574
+        x: 1024
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +891,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5283931e68737284ebc6bd9a9319e500
+      spriteID: 3a2329420c516384ebda25ef5f2ae15e
       vertices: []
       indices: 
       edges: []
@@ -196,10 +900,10 @@ TextureImporter:
       name: wizard_3
       rect:
         serializedVersion: 2
-        x: 1615
-        y: 3301
-        width: 360
-        height: 572
+        x: 1536
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,7 +911,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f76d76bff32aca4fb040ea4082c5fad
+      spriteID: 21248b050460c4047865abc9d549913f
       vertices: []
       indices: 
       edges: []
@@ -216,10 +920,10 @@ TextureImporter:
       name: wizard_4
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 3301
-        width: 364
-        height: 571
+        x: 2048
+        y: 3072
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,7 +931,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c894d1b0fed6d34499edb7386672b00
+      spriteID: 453561c92de1392489eff5bfd770deb4
       vertices: []
       indices: 
       edges: []
@@ -236,10 +940,10 @@ TextureImporter:
       name: wizard_5
       rect:
         serializedVersion: 2
-        x: 72
-        y: 2277
-        width: 371
-        height: 564
+        x: 0
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +951,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4aa38d8637ea5f439b5b33399215133
+      spriteID: a42d58488603fe64db05940ff4c10560
       vertices: []
       indices: 
       edges: []
@@ -256,10 +960,10 @@ TextureImporter:
       name: wizard_6
       rect:
         serializedVersion: 2
-        x: 583
-        y: 2277
-        width: 376
-        height: 558
+        x: 512
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,7 +971,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3aee759740291647bf573daa550aa78
+      spriteID: cd5877096c54f744fb8c9c9b93c11f9a
       vertices: []
       indices: 
       edges: []
@@ -276,10 +980,10 @@ TextureImporter:
       name: wizard_7
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 2277
-        width: 372
-        height: 563
+        x: 1024
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,7 +991,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f7caf40b283f3249bdad3221c1bfd04
+      spriteID: 3c8ffc1f1f56fe84d833e5864456aa26
       vertices: []
       indices: 
       edges: []
@@ -296,10 +1000,10 @@ TextureImporter:
       name: wizard_8
       rect:
         serializedVersion: 2
-        x: 1607
-        y: 2277
-        width: 372
-        height: 563
+        x: 1536
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,7 +1011,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 847706d34c5a5ac4d84cb7d63be0da9f
+      spriteID: 0211a30ee51d6614d8bec35af340a6f3
       vertices: []
       indices: 
       edges: []
@@ -316,10 +1020,10 @@ TextureImporter:
       name: wizard_9
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 2277
-        width: 366
-        height: 566
+        x: 2048
+        y: 2048
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,7 +1031,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42b399594b1963d4eae0c95656c87545
+      spriteID: 4b3ee294066d68c4ba6cdd00b61536f7
       vertices: []
       indices: 
       edges: []
@@ -336,10 +1040,10 @@ TextureImporter:
       name: wizard_10
       rect:
         serializedVersion: 2
-        x: 77
-        y: 1253
-        width: 364
-        height: 571
+        x: 0
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,7 +1051,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 300760179639ac94d847074d743d1540
+      spriteID: 1d5b211100e0a2648bbb8724c220a3a4
       vertices: []
       indices: 
       edges: []
@@ -356,10 +1060,10 @@ TextureImporter:
       name: wizard_11
       rect:
         serializedVersion: 2
-        x: 591
-        y: 1253
-        width: 360
-        height: 572
+        x: 512
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,7 +1071,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f1680f4b013fc3428b5d001952e23b7
+      spriteID: 96a9a6e66eb40e0428301e64aab8b37f
       vertices: []
       indices: 
       edges: []
@@ -376,10 +1080,10 @@ TextureImporter:
       name: wizard_12
       rect:
         serializedVersion: 2
-        x: 1105
-        y: 1253
-        width: 356
-        height: 574
+        x: 1024
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,7 +1091,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59abf8bf0c389e84f89b7a2bbb2c2810
+      spriteID: dac21c549c4061247a5d966c510d93e2
       vertices: []
       indices: 
       edges: []
@@ -396,10 +1100,10 @@ TextureImporter:
       name: wizard_13
       rect:
         serializedVersion: 2
-        x: 1617
-        y: 1253
-        width: 354
-        height: 576
+        x: 1536
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,7 +1111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 105d70c3429c7144c835fb2f6a5db5a9
+      spriteID: 0d5c28d78de495b40b869fd52642456d
       vertices: []
       indices: 
       edges: []
@@ -416,10 +1120,10 @@ TextureImporter:
       name: wizard_14
       rect:
         serializedVersion: 2
-        x: 2131
-        y: 1253
-        width: 350
-        height: 580
+        x: 2048
+        y: 1024
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,7 +1131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35a9896d82418b045bcc0c7353a329cc
+      spriteID: 593eae57333d7f84d93a42acefa7cbb0
       vertices: []
       indices: 
       edges: []
@@ -436,10 +1140,10 @@ TextureImporter:
       name: wizard_15
       rect:
         serializedVersion: 2
-        x: 85
-        y: 229
-        width: 348
-        height: 582
+        x: 0
+        y: 0
+        width: 512
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,7 +1151,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 350842cc410664b408550e6e48347b36
+      spriteID: a66ff618412fcaa47959566c2affaab1
       vertices: []
       indices: 
       edges: []
