@@ -459,4 +459,10 @@ public class WaveManager : MonoBehaviour
 				return false;
 		}
 	}
+
+	/// <summary>
+	/// Returns the current wave.
+	/// </summary>
+	/// <returns>The current wave.</returns>
+	public int GetCurrentWave() { return m_WaveIterator; }
 }
