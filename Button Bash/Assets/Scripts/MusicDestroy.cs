@@ -9,6 +9,7 @@ public class MusicDestroy : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+		gameObject.SetActive(true);
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoad;
     }
@@ -18,7 +19,7 @@ public class MusicDestroy : MonoBehaviour
         number++;
         if (number == 3)
         {
-            Destroy(gameObject);
+			gameObject.SetActive(false);
         }
     }
 }
