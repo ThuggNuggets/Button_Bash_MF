@@ -30,6 +30,7 @@ public class RubixBehaviour : MonoBehaviour
     bool m_Rotating;
 
     Quaternion m_Target;
+    Quaternion m_Start;
     private void Awake()
     {
         m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
@@ -44,7 +45,7 @@ public class RubixBehaviour : MonoBehaviour
 
         m_FlingRotation = Random.Range(0, 3);
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (m_Health <= 0)
         {
@@ -76,12 +77,9 @@ public class RubixBehaviour : MonoBehaviour
         if(m_Rotating)
         {
             m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
-            transform.rotation = Quaternion.Slerp(transform.rotation, m_Target, m_RubixSpinSpeedAmount);
+            Debug.Log(m_RubixSpinSpeedAmount);
+            transform.rotation = Quaternion.Slerp(m_Start, m_Target, m_RubixSpinSpeedAmount);
             if(m_RubixSpinSpeedAmount > 1)
-            {
-                m_RubixSpinSpeedAmount = 1;
-            }
-             if(transform.rotation == m_Target)
             {
                 m_Rotating = false;
                 m_RubixSpinSpeedAmount = 0;
@@ -109,11 +107,12 @@ public class RubixBehaviour : MonoBehaviour
                     {
                         case 0:
                             {
-                                if (m_PlayerLives.m_Player1Lives > 0)
+                                if (m_PlayerLives.m_Player2Lives > 0)
                                 {
                                     m_Rotating = true;
                                     m_Valid = true;
                                     m_Colour = Colours.Colour.Red;
+                                     m_Start = transform.rotation;
                                     m_Target = Quaternion.Euler(0, 0, 0);
                                     
                                 }
@@ -121,11 +120,12 @@ public class RubixBehaviour : MonoBehaviour
                             }
                         case 1:
                             {
-                                if (m_PlayerLives.m_Player2Lives > 0)
+                                if (m_PlayerLives.m_Player3Lives > 0)
                                 {
                                     m_Rotating = true;
                                     m_Valid = true;
                                     m_Colour = Colours.Colour.Green;
+                                    m_Start = transform.rotation;
                                     m_Target = Quaternion.Euler(0, 90, 0);
                                 }
                                 break;
@@ -137,6 +137,7 @@ public class RubixBehaviour : MonoBehaviour
                                     m_Rotating = true;
                                     m_Valid = true;
                                     m_Colour = Colours.Colour.Yellow;
+                                    m_Start = transform.rotation;
                                     m_Target = Quaternion.Euler(0, 180, 0);
                             }
                             break;
@@ -147,6 +148,7 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Rotating = true;
                                     m_Valid = true;
+                                    m_Start = transform.rotation;
                                     m_Colour = Colours.Colour.Blue;
                                     m_Target = Quaternion.Euler(0, -90, 0);
                                 }
