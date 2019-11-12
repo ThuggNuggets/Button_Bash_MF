@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NextLevel: {fileID: 4049320621646561680}
+  m_DeathPA: {fileID: 4359194395656651146, guid: 98501a81521c37f4e838b12968e206f0,
+    type: 3}
   m_Health: 2
   m_LeftWall: {fileID: 8702608443609397959, guid: ff0449675a3ca8f41ad5f53f44a30904,
     type: 3}

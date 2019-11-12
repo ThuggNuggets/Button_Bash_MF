@@ -5,6 +5,7 @@ using UnityEngine;
 /*put this code on the Letter Block enemy*/
 public class LetterBlockBehaviour : MonoBehaviour
 {
+    public GameObject m_DeathPA;
     public int m_Health = 2;
     //flinging the enemy when they have no health
     public float m_VerticalFling = 85;
@@ -96,6 +97,10 @@ public class LetterBlockBehaviour : MonoBehaviour
                 ac.clip = sm.m_SoundClips[1];
                 ac.pitch = Random.Range(1, 3);
                 ac.Play();
+            if (m_Health == 0)
+            {
+                Instantiate(m_DeathPA, transform.position,transform.rotation);
+            }
         }
     }
 }

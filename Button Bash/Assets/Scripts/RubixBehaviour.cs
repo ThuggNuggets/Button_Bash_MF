@@ -6,6 +6,7 @@ using UnityEngine;
 /*put this code on the Rubix enemy*/
 public class RubixBehaviour : MonoBehaviour
 {
+    public GameObject m_DeathPA;
     public float m_Health = 3.0f;
     private Colours.Colour m_Colour;
     //flinging the enemy when they have no health
@@ -137,6 +138,10 @@ public class RubixBehaviour : MonoBehaviour
             ac.clip = sm.m_SoundClips[2];
             ac.pitch = Random.Range(1, 3);
             ac.Play();
+            if (m_Health == 0)
+            {
+                Instantiate(m_DeathPA, transform.position, transform.rotation);
+            }
         }
     }
 }

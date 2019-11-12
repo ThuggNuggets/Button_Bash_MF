@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7092109607636250353}
     m_Modifications:
+    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Block
+      objectReference: {fileID: 0}
     - target: {fileID: 8897838330278763865, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93,11 +98,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8897838330278396281, guid: 46c6204ba0d9f854cb59997ad871dda7,
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
-      propertyPath: m_Name
-      value: Enemy_Block
-      objectReference: {fileID: 0}
+      propertyPath: m_DeathPA
+      value: 
+      objectReference: {fileID: 4359194395656651146, guid: 98501a81521c37f4e838b12968e206f0,
+        type: 3}
     - target: {fileID: 7250116900984544399, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Center.y

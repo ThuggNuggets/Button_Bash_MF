@@ -3,6 +3,7 @@
 /*put this code on the Teddy bear enemy*/
 public class TeddyBearBehaviour : MonoBehaviour
 {
+    public GameObject m_DeathPA;
     //hits until it is defeated
     public float m_Health = 5;
     // amount its size increased each time
@@ -112,6 +113,10 @@ public class TeddyBearBehaviour : MonoBehaviour
                 ac.pitch = Random.Range(1, 3);
                 ac.clip = sm.m_SoundClips[0];
                 ac.Play();
+                    if(m_Health ==0)
+                    {
+                       Instantiate(m_DeathPA, transform.position, transform.rotation);
+                    }
             }
         }
     }

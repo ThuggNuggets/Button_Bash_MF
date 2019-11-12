@@ -9,6 +9,7 @@ using UnityEngine;
 public class BabushkaBehaviour : MonoBehaviour
 {
     public GameObject m_NextLevel;
+    public GameObject m_DeathPA;
     //where the new babushka doll spawns
     private Vector3 m_AddedVector =new Vector3 (-3,0,0);
     //health for the babushka
@@ -232,6 +233,10 @@ public class BabushkaBehaviour : MonoBehaviour
             ac.Play();
 
 
+            if (m_Health == 0)
+            {
+                Instantiate(m_DeathPA, transform.position, transform.rotation);
+            }
         }
     }
     /// <summary>
