@@ -11,12 +11,12 @@ public class CharacterSelect : MonoBehaviour
 	/// <summary>
 	/// Array of the player portraits.
 	/// </summary>
-	public Texture[] m_PlayerPortraits;
+	public GameObject[] m_PlayerPortraits;
 
 	/// <summary>
 	/// The current image.
 	/// </summary>
-	private int m_CurrentImage;
+	private int m_CurrentImage = 0;
 
 	/// <summary>
 	/// The controller's x axis.
@@ -67,21 +67,19 @@ public class CharacterSelect : MonoBehaviour
 		// and assign the index of the current image to match the current image in the array.
 		// Example: Naiciam is at index 1 of the array of images, so set the index to 1 at startup.
 
-		if (GetComponent<RawImage>().texture.name == "nemo")
+		if (GetComponent<RawImage>().name == "nemo")
 			m_CurrentImage = 0;
-		else if (GetComponent<RawImage>().texture.name == "Naiciam")
+		else if (GetComponent<RawImage>().name == "Naiciam")
 			m_CurrentImage = 1;
-		else if (GetComponent<RawImage>().texture.name == "neilA")
+		else if (GetComponent<RawImage>().name == "neilA")
 			m_CurrentImage = 2;
-		else if (GetComponent<RawImage>().texture.name == "sesame")
+		else if (GetComponent<RawImage>().name == "sesame")
 			m_CurrentImage = 3;
 
-		// Reset the player characters from the previous round of play.
-		// Without this, the game manager will keep the players from the previous round of play, 
-		// which we don't want if the players are back on this screen.
+		// Reset the defeated player characters, so when we go to the next scene, the main game, the defeated players will have been reset.
 		GameManager.ResetDefeatedCharacters();
 
-		// Set locked in to false.
+		// Unlock the character on startup, in case we are returning to this scene.
 		UnlockCharacter();
 	}
 
@@ -198,7 +196,7 @@ public class CharacterSelect : MonoBehaviour
 			}
 		}
 		// Darken the image of the character to indicate it is selected.
-		GetComponent<RawImage>().color = m_LockedInDarkenColour;
+		GetComponent<SpriteRenderer>().color = m_LockedInDarkenColour;
 	}
 
 	/// <summary>
@@ -211,9 +209,9 @@ public class CharacterSelect : MonoBehaviour
 
 		m_CharacterLockedIn = false;
 
-		transform.GetChild(0).GetComponent<Button>().interactable = true;
+		transform.GetChild(1).GetComponent<Button>().interactable = true;
 
-		GetComponent<RawImage>().color = Color.white;
+		GetComponent<SpriteRenderer>().color = Color.white;
 	}
 
 	/// <summary>
@@ -290,10 +288,19 @@ public class CharacterSelect : MonoBehaviour
 	/// <returns>The current image of the image box.</returns>
 	public int GetCurrentImage() { return m_CurrentImage; }
 
+	/// <summary>
+	/// Set the current image.
+	/// </summary>
+	/// <param name="newCurrentImage">The image for the current image to be set to.</param>
 	public void SetCurrentImage(int newCurrentImage) { m_CurrentImage = newCurrentImage; }
 
 	/// <summary>
 	/// Update the current image.
 	/// </summary>
-	private void UpdateImage()	{ GetComponent<RawImage>().texture = m_PlayerPortraits[m_CurrentImage]; }
+	private void UpdateImage()
+	{
+		// Get the sprite and the animator controller of the game object in the array and set it to this objects sprite renderer and animator.
+		GetComponent<SpriteRenderer>().sprite = m_PlayerPortraits[m_CurrentImage].GetComponent<SpriteRenderer>().sprite;
+		GetComponent<Animator>().runtimeAnimatorController = m_PlayerPortraits[m_CurrentImage].GetComponent<Animator>().runtimeAnimatorController;
+	}
 }
