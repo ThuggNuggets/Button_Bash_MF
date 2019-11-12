@@ -126,6 +126,7 @@ MonoBehaviour:
   m_MaxBounceTimer: 0.1
   m_MaxCollisionWaitTimer: 0.15
   m_BounceSpeed: 6
+  m_ThrowingAnimationSpeed: 3
 --- !u!120 &1181189238895276264
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -460,12 +461,12 @@ PrefabInstance:
     - target: {fileID: 1067022680839212540, guid: 92f53c8662835304b96c3aaf65277277,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.51
+      value: -73.18
       objectReference: {fileID: 0}
     - target: {fileID: 1067022680839212540, guid: 92f53c8662835304b96c3aaf65277277,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.61
+      value: -1.335
       objectReference: {fileID: 0}
     - target: {fileID: 1067022680839212540, guid: 92f53c8662835304b96c3aaf65277277,
         type: 3}

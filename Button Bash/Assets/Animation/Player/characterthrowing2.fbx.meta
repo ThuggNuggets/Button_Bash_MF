@@ -81,7 +81,7 @@ ModelImporter:
     - serializedVersion: 16
       name: throwing2
       takeName: throwing2
-      firstFrame: 0
+      firstFrame: 3
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0

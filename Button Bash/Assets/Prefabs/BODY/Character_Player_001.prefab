@@ -170,6 +170,7 @@ MonoBehaviour:
   m_MaxBounceTimer: 0.1
   m_MaxCollisionWaitTimer: 0.15
   m_BounceSpeed: 6
+  m_ThrowingAnimationSpeed: 3
 --- !u!120 &7319452716897844635
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -385,12 +386,12 @@ PrefabInstance:
     - target: {fileID: 1067022680839212540, guid: c668b6960cdfbdd4090ecad3cb758cf1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -73.03
+      value: -65.97
       objectReference: {fileID: 0}
     - target: {fileID: 1067022680839212540, guid: c668b6960cdfbdd4090ecad3cb758cf1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.319
+      value: -1.323
       objectReference: {fileID: 0}
     - target: {fileID: 1067022680839212540, guid: c668b6960cdfbdd4090ecad3cb758cf1,
         type: 3}
@@ -437,6 +438,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1067022680839212540, guid: c668b6960cdfbdd4090ecad3cb758cf1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.89891
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067022680836919068, guid: c668b6960cdfbdd4090ecad3cb758cf1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ed4cb2dedbf08743be058f4c75a03e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c668b6960cdfbdd4090ecad3cb758cf1, type: 3}
 --- !u!4 &5642945596086631715 stripped
