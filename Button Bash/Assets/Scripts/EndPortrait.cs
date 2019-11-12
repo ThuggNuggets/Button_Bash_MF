@@ -8,7 +8,7 @@ public class EndPortrait : MonoBehaviour
 	/// <summary>
 	/// The portraits of the players.
 	/// </summary>
-	public Texture[] m_PlayerPortraits;
+	public GameObject[] m_PlayerPortraits;
 
 	/// <summary>
 	/// Position of players this portrait will display.
@@ -20,6 +20,9 @@ public class EndPortrait : MonoBehaviour
 	/// </summary>
 	void Awake()
 	{
-		GetComponent<RawImage>().texture = m_PlayerPortraits[GameManager.GetDefeatedCharacter(m_PositionNumber)];
+		// Set the sprite of the player in this position to be the character in this position.
+		GetComponent<SpriteRenderer>().sprite = m_PlayerPortraits[GameManager.GetDefeatedCharacter(m_PositionNumber)].GetComponent<SpriteRenderer>().sprite;
+		// Set the animator controller of the player in this position to be the character in this position.
+		GetComponent<Animator>().runtimeAnimatorController = m_PlayerPortraits[GameManager.GetDefeatedCharacter(m_PositionNumber)].GetComponent<Animator>().runtimeAnimatorController;
 	}
 }
