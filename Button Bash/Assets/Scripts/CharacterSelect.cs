@@ -209,7 +209,7 @@ public class CharacterSelect : MonoBehaviour
 
 		m_CharacterLockedIn = false;
 
-		transform.GetChild(1).GetComponent<Button>().interactable = true;
+		transform.GetChild(0).GetComponent<Button>().interactable = true;
 
 		GetComponent<SpriteRenderer>().color = Color.white;
 	}
