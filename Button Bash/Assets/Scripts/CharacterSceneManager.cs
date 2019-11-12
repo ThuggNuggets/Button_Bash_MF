@@ -90,7 +90,7 @@ public class CharacterSceneManager : MonoBehaviour
 		// If all the players are ready, move on to the next scene.
 		if (m_PlayersReady == 4)
 		{
-			GetComponentInChildren<MoveToNextScene>().NextScene();
+			GetComponent<MoveToNextScene>().NextScene();
 		}
 	}
 }
