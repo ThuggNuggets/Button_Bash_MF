@@ -54,6 +54,8 @@ public class HealthBalloonBehaviour : MonoBehaviour
 	/// </summary>
 	public GameObject m_BalloonPop;
 
+	public float m_PopSpawnOffset;
+
 	/// <summary>
 	/// Update the balloon.
 	/// </summary>
@@ -111,7 +113,9 @@ public class HealthBalloonBehaviour : MonoBehaviour
 			if (m_DespawnTimer <= 0.0f)
 			{
 				// Create an object to play the pop sound after the balloon is destroyed, so it can pop on screen.
-				Instantiate(m_BalloonPop, transform.position, transform.rotation);
+				GameObject pop = Instantiate(m_BalloonPop, transform.position, transform.rotation);
+
+				pop.transform.position = new Vector3(pop.transform.position.x, pop.transform.position.y + m_PopSpawnOffset, pop.transform.position.z);
 
 				Destroy(gameObject);
 			}
