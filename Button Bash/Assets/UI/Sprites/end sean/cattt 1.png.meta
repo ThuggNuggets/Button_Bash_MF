@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 82a5d1cde90bbd54cb59bca6025c06d4
+guid: 9c50380505fcad64ba76db91c716fbeb
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ezgif.com-gif-maker (7)_1
-    21300002: ezgif.com-gif-maker (7)_2
+    21300000: cattt 1_0
+    21300002: cattt 1_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 2
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (7)_1
+      name: cattt 1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 43
-        width: 343
-        height: 572
+        x: 68
+        y: 29
+        width: 378
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,19 +133,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22f287eb18c03d44aa7f5f52091bfdc
+      spriteID: d52df8ec5f462634a992cff91b10e179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-maker (7)_2
+      name: cattt 1_1
       rect:
         serializedVersion: 2
-        x: 607
-        y: 43
-        width: 367
-        height: 572
+        x: 586
+        y: 29
+        width: 389
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,7 +153,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354dfc4ac9059dc428a2d42725756766
+      spriteID: b2c9f7dc6f44d5648b37bb8ebc677d39
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dab87c7fa8f91954f9205b0fc434758c
+    spriteID: c65040d6b1fa3bf4c899c1450373adbd
     vertices: []
     indices: 
     edges: []
