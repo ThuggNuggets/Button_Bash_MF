@@ -89,7 +89,7 @@ public class GamePause : MonoBehaviour
 			{
 				// Reset time and assign the player number to something not correlating to a controller.
 				Time.timeScale = 1.0f;
-				m_PausedPlayerNumber = -1;
+				//m_PausedPlayerNumber = -1;
 				m_Paused = false;
 				m_PauseScreen.SetActive(false);
 			}
@@ -97,6 +97,7 @@ public class GamePause : MonoBehaviour
 			if (XCI.GetButtonDown(XboxButton.Back, (XboxController)m_PausedPlayerNumber) == true)
 			{
 				Debug.Log("Return to menu!");
+				Time.timeScale = 1.0f;
 				GetComponent<ReturnToMenu>().ReturnMainMenuMenu();
 			}
 		}
