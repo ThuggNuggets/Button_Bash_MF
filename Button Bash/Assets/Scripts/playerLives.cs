@@ -71,7 +71,8 @@ public class playerLives : MonoBehaviour
 						{
 							m_PlayerDeathIterator++;
 							GameObject m_Sailor = GameObject.Find("Character_sailor_001");
-							Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
+							GameObject reticle = Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
+							reticle.GetComponent<DeadPlayerReticle>().m_PlayerNumber = m_Sailor.GetComponent<PlayerControls>().m_playerNumber;
 							GameManager.AddDefeatedCharacter(0);
 							Destroy(m_Sailor);
 						}
@@ -92,8 +93,9 @@ public class playerLives : MonoBehaviour
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
-                            Instantiate(m_DefeatedPlayerReticals[1], m_Magic.transform.GetChild(0).position, new Quaternion());
+                            GameObject reticle = Instantiate(m_DefeatedPlayerReticals[1], m_Magic.transform.GetChild(0).position, new Quaternion());
 							GameManager.AddDefeatedCharacter(1);
+							reticle.GetComponent<DeadPlayerReticle>().m_PlayerNumber = m_Magic.GetComponent<PlayerControls>().m_playerNumber;
 							Destroy(m_Magic);
                         }
                         m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
@@ -111,7 +113,8 @@ public class playerLives : MonoBehaviour
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
-                            Instantiate(m_DefeatedPlayerReticals[2], m_Alien.transform.GetChild(0).position, new Quaternion());
+							GameObject reticle = Instantiate(m_DefeatedPlayerReticals[2], m_Alien.transform.GetChild(0).position, new Quaternion());
+							reticle.GetComponent<DeadPlayerReticle>().m_PlayerNumber = m_Alien.GetComponent<PlayerControls>().m_playerNumber;
 							GameManager.AddDefeatedCharacter(2);
 							Destroy(m_Alien);
                         }
@@ -130,7 +133,8 @@ public class playerLives : MonoBehaviour
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
-                            Instantiate(m_DefeatedPlayerReticals[3], m_Cat.transform.GetChild(0).position, new Quaternion());
+							GameObject reticle = Instantiate(m_DefeatedPlayerReticals[3], m_Cat.transform.GetChild(0).position, new Quaternion());
+							reticle.GetComponent<DeadPlayerReticle>().m_PlayerNumber = m_Cat.GetComponent<PlayerControls>().m_playerNumber;
 							GameManager.AddDefeatedCharacter(3);
 							Destroy(m_Cat);
                         }
