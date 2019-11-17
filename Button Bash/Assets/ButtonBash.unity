@@ -7645,6 +7645,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 5.57
       objectReference: {fileID: 0}
+    - target: {fileID: 108007769754920042, guid: f51dba3ffa88f2e4198807c00cfcd0f2,
+        type: 3}
+      propertyPath: m_PopSpawnOffset
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51dba3ffa88f2e4198807c00cfcd0f2, type: 3}
 --- !u!4 &6287308370927189187 stripped
