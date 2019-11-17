@@ -59,24 +59,6 @@ public class DeadPlayerReticle : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoaded;
 
 		m_ProjectileSpawnPoint = GameObject.Find("Dead player button spawn").transform;
-
-		// Change the colour of the reticle to represent which player's reticle it is.
-		Renderer renderer = GetComponent<Renderer>();
-		switch (m_PlayerNumber)
-		{
-			case 0:
-				renderer.material.color = Color.blue;
-				break;
-			case 1:
-				renderer.material.color = Color.red;
-				break;
-			case 2:
-				renderer.material.color = Color.green;
-				break;
-			case 3:
-				renderer.material.color = Color.yellow;
-				break;
-		}
 	}
 
 	/// <summary>
@@ -89,7 +71,7 @@ public class DeadPlayerReticle : MonoBehaviour
 		m_YAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_PlayerNumber + 1);
 
 		// Move the reticle by the x and y of the left stick of the controller.
-		Vector3 translation = new Vector3(-m_YAxis, 0, m_XAxis);
+		Vector3 translation = new Vector3(-m_XAxis, 0, -m_YAxis);
 		translation *= m_MoveSpeed;
 		translation *= Time.deltaTime;
 		transform.Translate(translation);
