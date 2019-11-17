@@ -58,6 +58,9 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	public Color m_LockedInDarkenColour;
 
+	/// <summary>
+	/// The select button.
+	/// </summary>
 	public Button m_SelectButton;
 
 	/// <summary>
@@ -65,22 +68,6 @@ public class CharacterSelect : MonoBehaviour
 	/// </summary>
 	private void Awake()
 	{
-		// Check the name of the current image showing the currently selected character
-		// and assign the index of the current image to match the current image in the array.
-		// Example: Naiciam is at index 1 of the array of images, so set the index to 1 at startup.
-
-		if (GetComponent<RawImage>().name == "nemo")
-			m_CurrentImage = 0;
-		else if (GetComponent<RawImage>().name == "Naiciam")
-			m_CurrentImage = 1;
-		else if (GetComponent<RawImage>().name == "neilA")
-			m_CurrentImage = 2;
-		else if (GetComponent<RawImage>().name == "sesame")
-			m_CurrentImage = 3;
-
-		// Reset the defeated player characters, so when we go to the next scene, the main game, the defeated players will have been reset.
-		GameManager.ResetDefeatedCharacters();
-
 		// Unlock the character on startup, in case we are returning to this scene.
 		UnlockCharacter();
 	}

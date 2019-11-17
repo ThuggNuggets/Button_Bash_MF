@@ -23,6 +23,9 @@ public class CharacterSceneManager : MonoBehaviour
 	/// </summary>
 	private void Awake()
 	{
+		// Reset the defeated player characters, so when we go to the next scene, the main game, the defeated players will have been reset.
+		GameManager.ResetDefeatedCharacters();
+
 		// Reset the character selection portraits.
 		transform.GetChild(0).GetComponent<CharacterSelect>().SetCurrentImage(0);
 		transform.GetChild(1).GetComponent<CharacterSelect>().SetCurrentImage(1);
