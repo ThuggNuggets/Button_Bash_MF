@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4123492693453016539}
   m_Layer: 0
-  m_Name: Dead Player1 Retical
+  m_Name: Dead Player1 Retical 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1154510725250487318}
+  - {fileID: 8405222467876350972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1154510725250487318}
+  - component: {fileID: 8405222467876350972}
   - component: {fileID: 8405222467876350975}
   - component: {fileID: 8405222467876350974}
   - component: {fileID: 8405222467876350969}
@@ -51,25 +51,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1154510725250487318
-RectTransform:
+--- !u!4 &8405222467876350972
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8405222467876350971}
   m_LocalRotation: {x: 0.3319665, y: 0.62433827, z: -0.3319665, w: 0.62433827}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.26400003, y: 0.26400003, z: 0.26400003}
+  m_LocalPosition: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 0.264, y: 0.264, z: 0.264}
   m_Children: []
   m_Father: {fileID: 4123492693453016539}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 56, y: 90, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 1}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &8405222467876350975
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54d0fafb25dbaa94299323106007df3e, type: 2}
+  - {fileID: 2100000, guid: e43bd110de54c754e8c2ec5bd13a62f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbd22d34b1afab4f8ec6ffe66a934a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerNumber: 0
+  m_PlayerNumber: 1
   m_MoveSpeed: 20
-  m_Button: {fileID: 3905374817873417468, guid: 080b10ad75e6f1348ab1b2406d7b7800,
+  m_Button: {fileID: 3905374817873417468, guid: b269b1c95b7b3e54f9819477906933fd,
     type: 3}
   m_ShootingCooldown: 0.5
