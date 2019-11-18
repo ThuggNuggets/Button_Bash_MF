@@ -104,6 +104,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4359194395656651146, guid: 98501a81521c37f4e838b12968e206f0,
         type: 3}
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_LeftWall
+      value: 
+      objectReference: {fileID: 8702608443609397952, guid: ff0449675a3ca8f41ad5f53f44a30904,
+        type: 3}
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_RightWall
+      value: 
+      objectReference: {fileID: 4567360447113795920, guid: 59c9f22fd68275349ad8d32859dec9c6,
+        type: 3}
+    - target: {fileID: 2577206822335414331, guid: 46c6204ba0d9f854cb59997ad871dda7,
+        type: 3}
+      propertyPath: m_VerticalFling
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7250116900984544399, guid: 46c6204ba0d9f854cb59997ad871dda7,
         type: 3}
       propertyPath: m_Center.y
