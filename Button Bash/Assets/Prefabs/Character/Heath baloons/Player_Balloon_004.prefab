@@ -298,7 +298,7 @@ MonoBehaviour:
   m_BalloonUpwardFloatForce: 100
   m_SwingOffset: 0
   m_SwingSpeed: 1
-  m_BalloonPop: {fileID: 2216944026832306873, guid: c13d219af73994f4a8ca9c7d41475d4a,
+  m_BalloonPop: {fileID: 2230361403548991445, guid: 913e5df71c353444fb25bb63841c1b44,
     type: 3}
   m_PopSpawnOffset: 3
 --- !u!82 &1807165956

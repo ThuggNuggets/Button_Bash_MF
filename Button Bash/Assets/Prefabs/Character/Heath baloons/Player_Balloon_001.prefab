@@ -294,11 +294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0054b8312f4084240ba4725c811e74f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DespawnTimer: 1.5
+  m_DespawnTimer: 1
   m_BalloonUpwardFloatForce: 100
   m_SwingOffset: 0
   m_SwingSpeed: 1
-  m_BalloonPop: {fileID: 3520225681621750489, guid: a7e62f7cee240b94685bb9b3338cba20,
+  m_BalloonPop: {fileID: 2247324078722843589, guid: 131914242783fc6449dbb3a7cdd1eb55,
     type: 3}
   m_PopSpawnOffset: 3
 --- !u!82 &1807165956
