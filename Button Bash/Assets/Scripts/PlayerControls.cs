@@ -57,10 +57,6 @@ public class PlayerControls : MonoBehaviour
     private float m_yAxis;
     private float m_deadZone = 0.5f;
 
-    
-
-    private Vector3 m_LeftHand   = new Vector3 (0,0,-1);
-    private Vector3 m_RightHand = new Vector3 (0, 0, 1);
     //rigidbody
     private Rigidbody m_Body;
     //horizontal movement
@@ -88,17 +84,13 @@ public class PlayerControls : MonoBehaviour
     public float m_BounceSpeed = 2;
     //is player in throwing animation
     private float m_ThrowingTimer = -1;
-    public float m_ThrowingAnimationSpeed = 3;
     private bool m_IsShooting = false;
-    public float m_RotationSpeed = 1;
-    private float m_RotationAmount = 0;
     // Constructor.
     /// <summary>
     /// sets player number and set up variables
     /// </summary>
     void Awake()
     {
-        m_RotationSpeed *= Time.deltaTime;
         m_Right = transform.TransformDirection(Vector3.right);
         m_AimingLine = transform.GetChild(0).gameObject;
         m_AmmoRing = transform.GetChild(1).gameObject;
@@ -107,7 +99,6 @@ public class PlayerControls : MonoBehaviour
         m_MaxShootingCooldown = m_ShootingCooldown;
         m_Body = GetComponent<Rigidbody>();
         m_currentAmmo = m_maxAmmo;
-		m_ShootingCooldown = 0.0f;
         switch(m_playerNumber)
         {
             case 0:
@@ -181,26 +172,23 @@ public class PlayerControls : MonoBehaviour
     /// controls movement and button throwing
     /// </summary>
     void FixedUpdate()
-    {//movement on the Z-axis
-            m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
-            m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
-        //removes drifting after colliding with other players
+    {
+        //movement on the Z-axis
+        m_xAxis = XCI.GetAxis(XboxAxis.LeftStickX, (XboxController)m_playerNumber + 1);
+        m_yAxis = XCI.GetAxis(XboxAxis.LeftStickY, (XboxController)m_playerNumber + 1);
+        //bounces the player when they hit another player
         if(m_BounceTimer >= 0)
         {
             m_BounceTimer -= Time.deltaTime;
 			m_Translation = 0;
         }
+        //removes drifting after colliding with other players
        else  if (m_BounceTimer < 0)
         {
-            
-			//m_Body.velocity -= new Vector3(0, 0, .1f);
-			m_Body.velocity = new Vector3(0, 0, 0);
+            m_Body.velocity = new Vector3(0, 0, 0);
         }
-        
-        if(m_ThrowingTimer> 0)
-        {
-            m_ThrowingTimer -= Time.deltaTime;
-        }
+  
+        //gets the player player input and makes sure the throwing animation is not playering then rotates the player
         if (m_Translation > 0 && m_ThrowingTimer < 0)
         {
             m_BaseMesh.transform.eulerAngles = new Vector3(0, 90, 0);
@@ -276,8 +264,9 @@ public class PlayerControls : MonoBehaviour
                 if (!m_ChangingLanes)
                 {
                     changeLanes(Lane.BackLane, "Rail (1)");
-                m_AimingLine.SetActive(false);
-            }
+                    m_AimingLine.SetActive(false);
+                    m_IsShooting = false;
+                }
         }
         // If the character is currently moving between lanes.x
 
@@ -317,39 +306,37 @@ public class PlayerControls : MonoBehaviour
                 points[0] = transform.position;
                 points[1] = new Vector3(aim.point.x, transform.position.y, aim.point.z);
             }
-            // Shoot a bullet.
 
-            if (XCI.GetButton(XboxButton.A, (XboxController)m_playerNumber + 1) && m_ShootingCooldown <= 0.0f)
+            if(XCI.GetButton(XboxButton.A, (XboxController)m_playerNumber + 1) && m_currentAmmo > 0 && m_ShootingCooldown <= 0)
             {
                 m_IsShooting = true;
             }
-                // check if ammo is not zero
-                if (m_currentAmmo > 0 && m_IsShooting)
+            if (m_IsShooting && m_ShootingCooldown <= 0)
+            {
+                  
+                ///----------------------------------------animation--------------------------------------------------
+                m_BaseMesh.transform.eulerAngles = new Vector3(0, 0, 0);
+                m_Animator.Play("Throw");
+                m_ThrowingTimer = m_Animator.GetCurrentAnimatorClipInfo(0).Length;
+                m_ThrowingTimer /= 2;
+                ///--------------------------------------end animation -----------------------------------------------
+                // Shoot a bullet
+                if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3f && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6f)
                 {
-                    Quaternion target = Quaternion.Euler(0, 0, 0);
-                    m_BaseMesh.transform.rotation = target;
-                    m_BaseMesh.GetComponent<Animator>().Play("Throw");
-                    m_ThrowingTimer = m_Animator.GetCurrentAnimatorStateInfo(0).length;
-                    m_ThrowingTimer /= m_ThrowingAnimationSpeed;
-                    if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f&& m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.55f)
-                    {
-                        ShootBullet();
-                        m_ShootingCooldown = m_MaxShootingCooldown;
-                        --m_currentAmmo;
-                        m_AmmoRing.transform.GetChild(m_currentAmmo).gameObject.SetActive(false);
-                        m_IsShooting = false;
-                    }
-                    // decrement this player's ammo upon shooting
+                    ShootBullet();
+                    --m_currentAmmo;
+                    m_AmmoRing.transform.GetChild(m_currentAmmo).gameObject.SetActive(false);
+                    m_ShootingCooldown = m_MaxShootingCooldown;
+                    m_IsShooting = false;
                 }
             }
-        
-        else if (m_CurrentLane == Lane.BackLane)
-        {
-            Vector3[] points = new Vector3[2];
-            points[0] = transform.position;
-            points[1] = transform.position;
+                
         }
-
+        //throwing cooldown
+        if (m_ThrowingTimer > 0.0f)
+        {
+            m_ThrowingTimer -= Time.deltaTime;
+        }
         //if the cooldown is greater than 0, decrease the cooldown.
         if (m_ShootingCooldown > 0.0f)
         {
@@ -363,14 +350,11 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
 	private void ShootBullet()
 	{
-
-
             // The spawn point of the bullet.
             Vector3 bulletSpawnPoint = new Vector3((transform.position.x - m_buttonSpawnDistance), (transform.position.y + m_buttonSpawnHeight), transform.position.z);
 
             // Clone the bullet at the bullet spawn point.
             GameObject bullet = Instantiate(m_Bullet, bulletSpawnPoint, transform.rotation);
-  
     }
     /// <summary>
     /// changes the lane the player will move towards

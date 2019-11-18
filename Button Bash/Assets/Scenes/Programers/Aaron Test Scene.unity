@@ -728,6 +728,10 @@ PrefabInstance:
       propertyPath: m_Shunt
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1472710295, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
+      propertyPath: m_ShootingCooldown
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5914207633451769167, guid: 475e1879bd3b34c4c8cf56380c87b444,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -767,6 +771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919987038377194077, guid: 475e1879bd3b34c4c8cf56380c87b444,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475e1879bd3b34c4c8cf56380c87b444, type: 3}
@@ -1683,6 +1692,11 @@ PrefabInstance:
       propertyPath: m_Health
       value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 7107899627150516560, guid: 12b384bbbeaec4d4999af4d97c7fc647,
+        type: 3}
+      propertyPath: m_RubixSpinSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8151343831839148343, guid: 12b384bbbeaec4d4999af4d97c7fc647,
         type: 3}
       propertyPath: m_Speed
@@ -2023,7 +2037,7 @@ PrefabInstance:
     - target: {fileID: 4338928138229557469, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8795633859476986802, guid: 150e4469d2b1bab428c8dc388c98ca78,
         type: 3}
@@ -2736,7 +2750,7 @@ PrefabInstance:
     - target: {fileID: 4359889052610473254, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3232552646242079949, guid: 5ea4aad07d28c5844910d6e818ce694e,
         type: 3}
@@ -3312,7 +3326,7 @@ PrefabInstance:
     - target: {fileID: 112924354684261012, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2427988442959640500, guid: 3ad5de00e8caade47a99069d544733b9,
         type: 3}
