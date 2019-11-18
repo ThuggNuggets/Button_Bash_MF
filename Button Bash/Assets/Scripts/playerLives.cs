@@ -31,10 +31,66 @@ public class playerLives : MonoBehaviour
 
 	public GameObject[] m_DefeatedPlayerReticals;
 
-	// How many players have lost all their lives.
-	private int m_PlayerDeathIterator = 0;
+    //are players flashing
+    bool m_Player1Flash = false;
+    bool m_Player2Flash = false;
+    bool m_Player3Flash = false;
+    bool m_Player4Flash = false;
+    //how long the flash is
+    private int m_P1FlashTimer = 0;
+    private int m_P2FlashTimer = 0;
+    private int m_P3FlashTimer = 0;
+    private int m_P4FlashTimer = 0;
+    //origional materials
+    Material m_OriginalP1Mat;
+    Material m_OriginalP2Mat;
+    Material m_OriginalP3Mat;
+    Material m_OriginalP4Mat;
+    //origional hat materials
+    Material m_P1HatMat;
+    Material m_P2HatMat;
+    Material m_P3HatMat;
+    Material m_P4HatMat;
+    //renderer of the players
+    Renderer m_Player1Rend;
+    Renderer m_Player2Rend;
+    Renderer m_Player3Rend;
+    Renderer m_Player4Rend;
+    // renderer of the players hats
+    Renderer m_P1HatRend;
+    Renderer m_P2HatRend;
+    Renderer m_P3HatRend;
+    Renderer m_P4HatRend;
+    //player array
+    public GameObject[] m_players;
+    //player hat array
+    public GameObject[] m_Hats;
+    //flash material
+    public Material m_WhiteMaterial;
 
 	public GameObject m_EnemyHitParticleEffect;
+
+    //make flashing occur multiple times
+    public int m_MaxFlashTimer = 10;
+    public int m_flashAmount = 3;
+    public int m_MaxFlashDelay = 5;
+    // how long to stay unflashed
+    private int m_P1FlashDelay;
+    private int m_P2FlashDelay;
+    private int m_P3FlashDelay;
+    private int m_P4FlashDelay;
+    //how many times each player has flashed
+    private int m_P1FlashIterator;
+    private int m_P2FlashIterator;
+    private int m_P3FlashIterator;
+    private int m_P4FlashIterator;
+    //have the players been hit
+    private bool m_P1Hit = false;
+    private bool m_P2Hit = false;
+    private bool m_P3Hit = false;
+    private bool m_P4Hit = false;
+    // How many players have lost all their lives.
+    private int m_PlayerDeathIterator = 0;
 
     private void Awake()
     {
@@ -42,7 +98,32 @@ public class playerLives : MonoBehaviour
         m_Player2Lives = m_MaxHealth;
         m_Player3Lives = m_MaxHealth;
         m_Player4Lives = m_MaxHealth;
-		m_PlayerDeathIterator = 0;
+
+        m_Player1Rend = m_players[0].GetComponent<Renderer>();
+        m_Player2Rend = m_players[1].GetComponent<Renderer>();
+        m_Player3Rend = m_players[2].GetComponent<Renderer>();
+        m_Player4Rend = m_players[3].GetComponent<Renderer>();
+
+        m_P1HatRend = m_Hats[0].GetComponent<Renderer>();
+        m_P2HatRend = m_Hats[1].GetComponent<Renderer>();
+        m_P3HatRend = m_Hats[2].GetComponent<Renderer>();
+        m_P4HatRend = m_Hats[3].GetComponent<Renderer>();
+
+        m_OriginalP1Mat = m_Player1Rend.material;
+        m_OriginalP2Mat = m_Player2Rend.material;
+        m_OriginalP3Mat = m_Player3Rend.material;
+        m_OriginalP4Mat = m_Player4Rend.material;
+
+        m_P1HatMat = m_P1HatRend.material;
+        m_P2HatMat = m_P2HatRend.material;
+        m_P3HatMat = m_P3HatRend.material;
+        m_P4HatMat = m_P4HatRend.material;
+
+        m_P1FlashDelay = m_MaxFlashDelay;
+        m_P1FlashDelay = m_MaxFlashDelay;
+        m_P1FlashDelay = m_MaxFlashDelay;
+        m_P1FlashDelay = m_MaxFlashDelay;
+        m_PlayerDeathIterator = 0;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -67,6 +148,9 @@ public class playerLives : MonoBehaviour
                 {
                     if (m_Player1Lives > 0)
                     {
+                        m_P1Hit = true;
+                        m_Player1Flash = true;
+                        m_P1FlashTimer = m_MaxFlashTimer;
                         m_Player1Lives -= 1;
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (m_Player1Lives == 0)
@@ -89,6 +173,8 @@ public class playerLives : MonoBehaviour
                     if (m_Player2Lives > 0)
                     {
                         m_Player2Lives -= 1;
+                        m_P2Hit = true;
+                        m_P2FlashTimer = m_MaxFlashTimer;
                         // If player 2's lives are 0, increase the amount of players that have no lives.
                         if (m_Player2Lives == 0)
                         {
@@ -108,6 +194,8 @@ public class playerLives : MonoBehaviour
                     if (m_Player3Lives > 0)
                     {
                         m_Player3Lives -= 1;
+                        m_P3Hit = true;
+                        m_P3FlashTimer = m_MaxFlashTimer;
                         // If player 3's lives are 0, increase the amount of players that have no lives.
                         if (m_Player3Lives == 0)
                         {
@@ -127,6 +215,8 @@ public class playerLives : MonoBehaviour
                     if (m_Player4Lives > 0)
                     {
                         m_Player4Lives -= 1;
+                        m_P4Hit = true;
+                        m_P4FlashTimer = m_MaxFlashTimer;
                         // If player 4's lives are 0, increase the amount of players that have no lives.
                         if (m_Player4Lives == 0)
                         {
@@ -159,4 +249,146 @@ public class playerLives : MonoBehaviour
 		}
 		Instantiate(m_EnemyHitParticleEffect, collision.transform.position, new Quaternion());
     }
- }
+
+    private void Update()
+    {
+        //player 1 flash
+        if (m_P1Hit)
+        {
+            if (m_Player1Flash)
+            {
+                m_Player1Rend.material = m_WhiteMaterial;
+                m_P1HatRend.material = m_WhiteMaterial;
+                m_P1FlashTimer--;
+                if (m_P1FlashTimer < 0)
+                {
+                    m_Player1Flash = false;
+                    m_P1FlashTimer = m_MaxFlashTimer;
+                }
+            }
+            else
+            {
+                m_Player1Rend.material = m_OriginalP1Mat;
+                m_P1HatRend.material = m_P1HatMat;
+                m_P1FlashIterator++;
+                m_P1FlashTimer--;
+                if (m_P1FlashIterator <= m_flashAmount)
+                {
+                    m_Player1Flash = true;
+                }
+                else
+                {
+                    m_P1FlashIterator = 0;
+                    m_Player1Flash = false;
+                    m_P1Hit = false;
+                }
+            }
+        }
+
+
+
+
+
+
+        //player 2 flash
+        if (m_P2Hit)
+        {
+            if (m_Player2Flash)
+            {
+                m_Player2Rend.material = m_WhiteMaterial;
+                m_P2HatRend.material = m_WhiteMaterial;
+                m_P2FlashTimer--;
+                if (m_P2FlashTimer < 0)
+                {
+                    m_Player2Flash = false;
+                    m_P2FlashTimer = m_MaxFlashTimer;
+                }
+            }
+            else
+            {
+                m_Player2Rend.material = m_OriginalP2Mat;
+                m_P2HatRend.material = m_P2HatMat;
+                m_P2FlashIterator++;
+                m_P2FlashTimer--;
+                if (m_P2FlashIterator <= m_flashAmount)
+                {
+                    m_Player2Flash = true;
+                }
+                else
+                {
+                    m_P2FlashIterator = 0;
+                    m_Player2Flash = false;
+                    m_P2Hit = false;
+                }
+            }
+        }
+        //player 3 flash
+        if (m_P3Hit)
+        {
+            if (m_Player3Flash)
+            {
+                m_Player3Rend.material = m_WhiteMaterial;
+                m_P3HatRend.material = m_WhiteMaterial;
+                m_P3FlashTimer--;
+                if (m_P3FlashTimer < 0)
+                {
+                    m_Player3Flash = false;
+                    m_P3FlashTimer = m_MaxFlashTimer;
+                }
+            }
+            else
+            {
+                m_Player3Rend.material = m_OriginalP3Mat;
+                m_P3HatRend.material = m_P3HatMat;
+                m_P3FlashIterator++;
+                m_P3FlashTimer--;
+                if (m_P3FlashIterator <= m_flashAmount)
+                {
+                    m_Player3Flash = true;
+                }
+                else
+                {
+                    m_P3FlashIterator = 0;
+                    m_Player3Flash = false;
+                    m_P3Hit = false;
+                }
+            }
+        }
+        //Player 4 flash
+        if (m_P4Hit)
+        {
+            if (m_Player4Flash)
+            {
+                m_Player4Rend.material = m_WhiteMaterial;
+                m_P4HatRend.material = m_WhiteMaterial;
+                m_P4FlashTimer--;
+                if (m_P4FlashTimer < 0)
+                {
+                    m_Player4Flash = false;
+                    m_P4FlashTimer = m_MaxFlashTimer;
+                }
+            }
+            else
+            {
+                m_Player4Rend.material = m_OriginalP4Mat;
+                m_P4HatRend.material = m_P4HatMat;
+                m_P4FlashIterator++;
+                m_P4FlashTimer--;
+                if (m_P4FlashIterator <= m_flashAmount)
+                {
+                    m_Player4Flash = true;
+                }
+                else
+                {
+                    m_P4FlashIterator = 0;
+                    m_Player4Flash = false;
+                    m_P4Hit = false;
+                }
+            }
+        }
+
+
+
+    }
+
+}

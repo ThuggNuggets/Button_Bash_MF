@@ -29,8 +29,8 @@ public class RubixBehaviour : MonoBehaviour
     private float m_RubixSpinSpeedAmount = 0;
     bool m_Rotating;
 
-    Quaternion m_Target;
-    Quaternion m_Start;
+    Quaternion m_TargetRotation;
+    Quaternion m_StartRotation;
     private void Awake()
     {
         m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
@@ -78,7 +78,7 @@ public class RubixBehaviour : MonoBehaviour
         {
             m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
             Debug.Log(m_RubixSpinSpeedAmount);
-            transform.rotation = Quaternion.Slerp(m_Start, m_Target, m_RubixSpinSpeedAmount);
+            transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
             if(m_RubixSpinSpeedAmount > 1)
             {
                 m_Rotating = false;
@@ -109,11 +109,11 @@ public class RubixBehaviour : MonoBehaviour
                             {
                                 if (m_PlayerLives.m_Player2Lives > 0)
                                 {
-                                    m_Rotating = true;
                                     m_Valid = true;
+                                    m_Rotating = true;
                                     m_Colour = Colours.Colour.Red;
-                                     m_Start = transform.rotation;
-                                    m_Target = Quaternion.Euler(0, 0, 0);
+                                    m_StartRotation = transform.rotation;
+                                    m_TargetRotation = Quaternion.Euler(0, 0, 0);
                                     
                                 }
                                 break;
@@ -122,11 +122,11 @@ public class RubixBehaviour : MonoBehaviour
                             {
                                 if (m_PlayerLives.m_Player3Lives > 0)
                                 {
-                                    m_Rotating = true;
                                     m_Valid = true;
+                                    m_Rotating = true;
                                     m_Colour = Colours.Colour.Green;
-                                    m_Start = transform.rotation;
-                                    m_Target = Quaternion.Euler(0, 90, 0);
+                                    m_StartRotation = transform.rotation;
+                                    m_TargetRotation = Quaternion.Euler(0, 90, 0);
                                 }
                                 break;
                             }
@@ -134,11 +134,11 @@ public class RubixBehaviour : MonoBehaviour
                         {
                             if (m_PlayerLives.m_Player4Lives > 0)
                             {
-                                    m_Rotating = true;
                                     m_Valid = true;
+                                    m_Rotating = true;
                                     m_Colour = Colours.Colour.Yellow;
-                                    m_Start = transform.rotation;
-                                    m_Target = Quaternion.Euler(0, 180, 0);
+                                    m_StartRotation = transform.rotation;
+                                    m_TargetRotation = Quaternion.Euler(0, 180, 0);
                             }
                             break;
                         }
@@ -146,11 +146,11 @@ public class RubixBehaviour : MonoBehaviour
                             {
                                 if (m_PlayerLives.m_Player1Lives > 0)
                                 {
-                                    m_Rotating = true;
                                     m_Valid = true;
-                                    m_Start = transform.rotation;
+                                    m_Rotating = true;
                                     m_Colour = Colours.Colour.Blue;
-                                    m_Target = Quaternion.Euler(0, -90, 0);
+                                    m_StartRotation = transform.rotation;
+                                    m_TargetRotation = Quaternion.Euler(0, -90, 0);
                                 }
 
                                 break;

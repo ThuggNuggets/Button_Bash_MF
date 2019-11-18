@@ -313,7 +313,8 @@ public class PlayerControls : MonoBehaviour
             }
             if (m_IsShooting && m_ShootingCooldown <= 0)
             {
-                  
+                m_BaseMesh.transform.eulerAngles = new Vector3(0, 0, 0);
+                m_BaseMesh.transform.position = transform.position + new Vector3(0, -1.4f, 0.5f);
                 ///----------------------------------------animation--------------------------------------------------
                 m_BaseMesh.transform.eulerAngles = new Vector3(0, 0, 0);
                 m_Animator.Play("Throw");
