@@ -65,6 +65,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+		// Timer for each roll in the animation.
 		if (m_RollTimer > 0)
 			m_RollTimer -= Time.deltaTime;
 		else
@@ -72,6 +73,7 @@ public class LetterBlockBehaviour : MonoBehaviour
 			m_RollTimer = m_RollAnimationLength / 8;
 		}
 
+		// Letter block is chaning lanes.
 		if (m_ChangingLanes == true)
 		{
 			if (m_RollTimer <= 0.0f)
@@ -85,6 +87,7 @@ public class LetterBlockBehaviour : MonoBehaviour
 			}
 		}
 
+		// Rotate the block after it got hit and when it isn't in the middle of rolling.
 		if (m_GotHit == true)
 		{
 			if (m_RollTimer <= 0.0f)

@@ -16,9 +16,15 @@ public class EnemyBehaviour : MonoBehaviour
 
 	private bool m_LetterBlock = false;
 
+	private BabushkaBehaviour m_BabushkaBehaviour;
+
     // Start is called before the first frame update
     void Awake()
     {
+		if (gameObject.tag == "babushkaLarge")
+		{
+			m_BabushkaBehaviour = GetComponent<BabushkaBehaviour>();
+		}
     }
 
     // Update.
@@ -28,8 +34,16 @@ public class EnemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
 		if (m_LetterBlock == false)
-			// Move fowards at it's speed.
-			transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
+			try
+			{
+				if (m_BabushkaBehaviour.m_Health > 0)
+					// Move fowards at it's speed.
+					transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
+			}
+			catch
+			{
+				transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
+			}
     }
         /// <summary>
         /// when it collides with the ending trigger which will destroy itself
