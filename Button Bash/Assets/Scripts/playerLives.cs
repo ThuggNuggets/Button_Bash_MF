@@ -34,6 +34,8 @@ public class playerLives : MonoBehaviour
 	// How many players have lost all their lives.
 	private int m_PlayerDeathIterator = 0;
 
+	public GameObject m_EnemyHitParticleEffect;
+
     private void Awake()
     {
         m_Player1Lives = m_MaxHealth;
@@ -155,6 +157,6 @@ public class playerLives : MonoBehaviour
 			// Load the end scene.
 			SceneManager.LoadScene(3);
 		}
-
+		Instantiate(m_EnemyHitParticleEffect, collision.transform.position, new Quaternion());
     }
  }
