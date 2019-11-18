@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4027084928988191689}
   - component: {fileID: 1794839111057422355}
   - component: {fileID: 3165766717935590204}
+  - component: {fileID: 9084892}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -111,7 +112,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 5
   m_DataSource: 0
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 5
   m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
@@ -126,6 +127,27 @@ VideoPlayer:
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
+--- !u!114 &9084892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66784268915804805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2fbd6cd766e7b4eb5d6f2ca022df17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WaveVideoClips:
+  - {fileID: 32900000, guid: ec9f2a1039d910c4495a2301a9f5e7b1, type: 3}
+  - {fileID: 32900000, guid: 2b5e046747237ba4eaf7b9a325544c0e, type: 3}
+  - {fileID: 32900000, guid: 8aa8a7b501a170a4c977eb536f8f03b8, type: 3}
+  - {fileID: 32900000, guid: 05efe6820ec51ce43bbda080e7f6ad41, type: 3}
+  - {fileID: 32900000, guid: 1a4be117505e9dc45a2ae1aa68b17cc1, type: 3}
+  - {fileID: 32900000, guid: 1f134a18e3b35ef4eb8081eb4d445eea, type: 3}
+  - {fileID: 32900000, guid: 2a041eb52c4b82746b5e37ea67ae7ad4, type: 3}
+  m_WaveManager: {fileID: 0}
 --- !u!1 &743090352260602133
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +159,7 @@ GameObject:
   - component: {fileID: 743090352260695349}
   - component: {fileID: 743090352263562517}
   - component: {fileID: 743090352262596565}
+  - component: {fileID: 1717308439}
   m_Layer: 0
   m_Name: Enviro_Etchasketch_001
   m_TagString: Untagged
@@ -151,7 +174,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743090352260602133}
-  m_LocalRotation: {x: -0, y: 0.77163744, z: -0, w: 0.6360626}
+  m_LocalRotation: {x: 0, y: 0.7716357, z: 0, w: 0.6360648}
   m_LocalPosition: {x: 15.73, y: 4.19, z: -36.299995}
   m_LocalScale: {x: 0.76755047, y: 0.7675499, z: 0.7675504}
   m_Children:
@@ -204,3 +227,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1717308439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743090352260602133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.050357, y: 11.775898, z: 15.694691}
+  m_Center: {x: 0, y: 0, z: 0}

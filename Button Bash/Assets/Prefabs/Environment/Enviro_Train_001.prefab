@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 3098408719884309641}
   - component: {fileID: 3098408719882982571}
   - component: {fileID: 3098408719881885291}
+  - component: {fileID: 460415639}
   m_Layer: 0
   m_Name: Front_Train
   m_TagString: Untagged
@@ -238,6 +239,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &460415639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098408719884142761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07775117, y: 0.013269298, z: 0.010519743}
+  m_Center: {x: 0.029030394, y: -0.0025293755, z: -0.00000003960189}
 --- !u!1 &3098408719884142763
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,6 +120,22 @@ MonoBehaviour:
   - {fileID: 3427999475570951916, guid: c13c653b0b3bbaa45a6bd87d46e38bff, type: 3}
   - {fileID: 3427999475570951916, guid: 3baa3e68af0a7d54f94a87b4873c4f17, type: 3}
   - {fileID: 3427999475570951916, guid: 6fa398a826c765f47b9f0825601fedc0, type: 3}
+  m_players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_Hats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_WhiteMaterial: {fileID: 2100000, guid: 4593ba72815ec7848a434218a1fe9b06, type: 2}
+  m_EnemyHitParticleEffect: {fileID: 4985881173749272532, guid: 63f80c812e8ae274bb89b74159c8f8d5,
+    type: 3}
+  m_MaxFlashTimer: 4
+  m_flashAmount: 3
+  m_MaxFlashDelay: 1
 --- !u!82 &6808261314332480252
 AudioSource:
   m_ObjectHideFlags: 0
