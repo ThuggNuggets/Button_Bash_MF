@@ -14,6 +14,8 @@ public class EnemyBehaviour : MonoBehaviour
     // The material of the enemy.
     private Material m_Material;
 
+	private bool m_LetterBlock = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,8 +27,9 @@ public class EnemyBehaviour : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        // Move fowards at it's speed.
-        transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
+		if (m_LetterBlock == false)
+			// Move fowards at it's speed.
+			transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
     }
         /// <summary>
         /// when it collides with the ending trigger which will destroy itself
@@ -74,4 +77,9 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
     }
+
+	public void AmLetterBlock()
+	{
+		m_LetterBlock = true;
+	}
 }
