@@ -34,6 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
 		if (m_LetterBlock == false)
+		{
 			try
 			{
 				if (m_BabushkaBehaviour.m_Health > 0)
@@ -44,6 +45,7 @@ public class EnemyBehaviour : MonoBehaviour
 			{
 				transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime, Space.World);
 			}
+		}
     }
         /// <summary>
         /// when it collides with the ending trigger which will destroy itself

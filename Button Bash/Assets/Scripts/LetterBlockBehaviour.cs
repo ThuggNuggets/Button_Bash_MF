@@ -9,6 +9,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     public int m_Health = 2;
     //flinging the enemy when they have no health
     public float m_VerticalFling = 40;
+	public float m_BackForce;
 
     //flinging
     int m_FlingRotation;
@@ -126,7 +127,7 @@ public class LetterBlockBehaviour : MonoBehaviour
 		m_FlashTimer--;
         if (m_Health <= 0)
         {
-            transform.Translate(new Vector3(-50, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
             //destroy self and bullet on collision
             Destroy(gameObject, 2);
             switch (m_FlingRotation)
