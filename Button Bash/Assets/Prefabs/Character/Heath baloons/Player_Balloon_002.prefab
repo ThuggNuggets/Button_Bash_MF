@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DespawnTimer: 1.5
   m_BalloonUpwardFloatForce: 100
-  m_SwingOffset: 2
+  m_SwingOffset: 0
   m_SwingSpeed: 1
   m_BalloonPop: {fileID: 552535346872271315, guid: db0d80c6f45483b468ac3054547db555,
     type: 3}
