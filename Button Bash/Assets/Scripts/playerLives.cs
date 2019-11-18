@@ -159,7 +159,7 @@ public class playerLives : MonoBehaviour
 							GameObject m_Sailor = GameObject.Find("Character_sailor_001");
 							Instantiate(m_DefeatedPlayerReticals[0], m_Sailor.transform.GetChild(0).position, new Quaternion());
 							GameManager.AddDefeatedCharacter(0);
-							Destroy(m_Sailor);
+							m_Sailor.SetActive(false);
 						}
 
 						m_HealthBalloons[0].GetComponent<BalloonHealthUI>().TakeDamage();
@@ -182,7 +182,7 @@ public class playerLives : MonoBehaviour
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
                             Instantiate(m_DefeatedPlayerReticals[1], m_Magic.transform.GetChild(0).position, new Quaternion());
 							GameManager.AddDefeatedCharacter(1);
-							Destroy(m_Magic);
+							m_Magic.SetActive(false);
                         }
                         m_HealthBalloons[1].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
@@ -203,7 +203,7 @@ public class playerLives : MonoBehaviour
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
                             Instantiate(m_DefeatedPlayerReticals[2], m_Alien.transform.GetChild(0).position, new Quaternion());
 							GameManager.AddDefeatedCharacter(2);
-							Destroy(m_Alien);
+							m_Alien.SetActive(false);
                         }
                         m_HealthBalloons[2].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
@@ -224,7 +224,7 @@ public class playerLives : MonoBehaviour
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
                             Instantiate(m_DefeatedPlayerReticals[3], m_Cat.transform.GetChild(0).position, new Quaternion());
 							GameManager.AddDefeatedCharacter(3);
-							Destroy(m_Cat);
+							m_Cat.SetActive(false);
                         }
                         m_HealthBalloons[3].GetComponent<BalloonHealthUI>().TakeDamage();
 					}
@@ -263,20 +263,22 @@ public class playerLives : MonoBehaviour
                 if (m_P1FlashTimer < 0)
                 {
                     m_Player1Flash = false;
-                    m_P1FlashTimer = m_MaxFlashTimer;
+                    m_P1FlashDelay = m_MaxFlashDelay;
                 }
             }
             else
             {
                 m_Player1Rend.material = m_OriginalP1Mat;
                 m_P1HatRend.material = m_P1HatMat;
-                m_P1FlashIterator++;
-                m_P1FlashTimer--;
-                if (m_P1FlashIterator <= m_flashAmount)
+                m_P1FlashDelay--;
+                if (m_P1FlashDelay < 0)
                 {
+                m_P1FlashIterator++;
                     m_Player1Flash = true;
+                    m_P1FlashTimer = m_MaxFlashTimer;
                 }
-                else
+
+                if(m_P1FlashIterator >= m_flashAmount)
                 {
                     m_P1FlashIterator = 0;
                     m_Player1Flash = false;
@@ -301,20 +303,22 @@ public class playerLives : MonoBehaviour
                 if (m_P2FlashTimer < 0)
                 {
                     m_Player2Flash = false;
-                    m_P2FlashTimer = m_MaxFlashTimer;
+                    m_P2FlashDelay = m_MaxFlashDelay;
                 }
             }
             else
             {
                 m_Player2Rend.material = m_OriginalP2Mat;
                 m_P2HatRend.material = m_P2HatMat;
-                m_P2FlashIterator++;
-                m_P2FlashTimer--;
-                if (m_P2FlashIterator <= m_flashAmount)
+                m_P2FlashDelay--;
+                if (m_P2FlashDelay < 0)
                 {
+                    m_P2FlashIterator++;
                     m_Player2Flash = true;
+                    m_P2FlashTimer = m_MaxFlashTimer;
                 }
-                else
+
+                if (m_P2FlashIterator >= m_flashAmount)
                 {
                     m_P2FlashIterator = 0;
                     m_Player2Flash = false;
@@ -322,6 +326,7 @@ public class playerLives : MonoBehaviour
                 }
             }
         }
+
         //player 3 flash
         if (m_P3Hit)
         {
@@ -333,20 +338,22 @@ public class playerLives : MonoBehaviour
                 if (m_P3FlashTimer < 0)
                 {
                     m_Player3Flash = false;
-                    m_P3FlashTimer = m_MaxFlashTimer;
+                    m_P3FlashDelay = m_MaxFlashDelay;
                 }
             }
             else
             {
                 m_Player3Rend.material = m_OriginalP3Mat;
                 m_P3HatRend.material = m_P3HatMat;
-                m_P3FlashIterator++;
-                m_P3FlashTimer--;
-                if (m_P3FlashIterator <= m_flashAmount)
+                m_P3FlashDelay--;
+                if (m_P3FlashDelay < 0)
                 {
+                    m_P3FlashIterator++;
                     m_Player3Flash = true;
+                    m_P3FlashTimer = m_MaxFlashTimer;
                 }
-                else
+
+                if (m_P3FlashIterator >= m_flashAmount)
                 {
                     m_P3FlashIterator = 0;
                     m_Player3Flash = false;
@@ -354,6 +361,7 @@ public class playerLives : MonoBehaviour
                 }
             }
         }
+
         //Player 4 flash
         if (m_P4Hit)
         {
@@ -365,20 +373,22 @@ public class playerLives : MonoBehaviour
                 if (m_P4FlashTimer < 0)
                 {
                     m_Player4Flash = false;
-                    m_P4FlashTimer = m_MaxFlashTimer;
+                    m_P4FlashDelay = m_MaxFlashDelay;
                 }
             }
             else
             {
                 m_Player4Rend.material = m_OriginalP4Mat;
                 m_P4HatRend.material = m_P4HatMat;
-                m_P4FlashIterator++;
-                m_P4FlashTimer--;
-                if (m_P4FlashIterator <= m_flashAmount)
+                m_P4FlashDelay--;
+                if (m_P4FlashDelay < 0)
                 {
+                    m_P4FlashIterator++;
                     m_Player4Flash = true;
+                    m_P4FlashTimer = m_MaxFlashTimer;
                 }
-                else
+
+                if (m_P4FlashIterator >= m_flashAmount)
                 {
                     m_P4FlashIterator = 0;
                     m_Player4Flash = false;
@@ -386,6 +396,7 @@ public class playerLives : MonoBehaviour
                 }
             }
         }
+
 
 
 
