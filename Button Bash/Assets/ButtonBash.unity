@@ -6233,7 +6233,7 @@ PrefabInstance:
     - target: {fileID: 860284822587439679, guid: d9a0a7e2fb4e58d42a90bc6c5f7e3514,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.96
+      value: 7.06
       objectReference: {fileID: 0}
     - target: {fileID: 860284822587439679, guid: d9a0a7e2fb4e58d42a90bc6c5f7e3514,
         type: 3}
@@ -7365,7 +7365,7 @@ PrefabInstance:
     - target: {fileID: 860284822587439679, guid: d9a0a7e2fb4e58d42a90bc6c5f7e3514,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.94
+      value: -6.23
       objectReference: {fileID: 0}
     - target: {fileID: 860284822587439679, guid: d9a0a7e2fb4e58d42a90bc6c5f7e3514,
         type: 3}
@@ -8546,6 +8546,16 @@ PrefabInstance:
       propertyPath: m_Hats.Array.data[3]
       value: 
       objectReference: {fileID: 1074448214}
+    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
+        type: 3}
+      propertyPath: m_MaxFlashDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
+        type: 3}
+      propertyPath: m_MaxFlashTimer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c1b057495b92347a4c3ae41d2cdec5, type: 3}
 --- !u!1001 &3266317859506510609
@@ -9031,6 +9041,11 @@ PrefabInstance:
     - target: {fileID: 5705118082345367176, guid: f51dba3ffa88f2e4198807c00cfcd0f2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5705118081771308308, guid: f51dba3ffa88f2e4198807c00cfcd0f2,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
