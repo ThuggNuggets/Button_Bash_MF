@@ -147,6 +147,9 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 1a4be117505e9dc45a2ae1aa68b17cc1, type: 3}
   - {fileID: 32900000, guid: 1f134a18e3b35ef4eb8081eb4d445eea, type: 3}
   - {fileID: 32900000, guid: 2a041eb52c4b82746b5e37ea67ae7ad4, type: 3}
+  - {fileID: 32900000, guid: 2e6e2204faebf9646b3e64b5ba800ada, type: 3}
+  - {fileID: 32900000, guid: efbdc26516f81e74da79706f40de180f, type: 3}
+  - {fileID: 32900000, guid: b582be9c121f4e44fa4871d7138529bb, type: 3}
   m_WaveManager: {fileID: 0}
 --- !u!1 &743090352260602133
 GameObject:

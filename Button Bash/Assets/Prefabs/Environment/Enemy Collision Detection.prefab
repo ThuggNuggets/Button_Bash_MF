@@ -133,9 +133,9 @@ MonoBehaviour:
   m_WhiteMaterial: {fileID: 2100000, guid: 4593ba72815ec7848a434218a1fe9b06, type: 2}
   m_EnemyHitParticleEffect: {fileID: 4985881173749272532, guid: 63f80c812e8ae274bb89b74159c8f8d5,
     type: 3}
-  m_MaxFlashTimer: 4
+  m_MaxFlashTimer: 3
   m_flashAmount: 3
-  m_MaxFlashDelay: 1
+  m_MaxFlashDelay: 5
 --- !u!82 &6808261314332480252
 AudioSource:
   m_ObjectHideFlags: 0
