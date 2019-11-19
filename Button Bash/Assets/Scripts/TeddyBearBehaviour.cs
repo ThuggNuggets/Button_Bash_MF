@@ -16,6 +16,7 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float m_despawnTimer = 10;
     private Rigidbody m_Rb;
     private Renderer m_Renderer;
+    BoxCollider m_Collider;
     //flinging
     int m_FlingRotation;
     //white material
@@ -36,6 +37,7 @@ public class TeddyBearBehaviour : MonoBehaviour
         //get random fling values
         m_Rb = gameObject.GetComponent<Rigidbody>();
         m_FlingRotation = Random.Range(0, 2);
+        m_Collider = GetComponent<BoxCollider>();
     }
     /// <summary>
     /// turns collisions on object off and flings it
@@ -119,7 +121,7 @@ public class TeddyBearBehaviour : MonoBehaviour
                 ac.Play();
                     if(m_Health ==0)
                     {
-                    m_Rb.detectCollisions = false;
+                    m_Collider.size = new Vector3(m_Collider.size.x, 0.5f, 0.5f);
                     m_fallTimer = m_MaxFallTimer;
                        Instantiate(m_DeathPA, transform.position, transform.rotation);
                     }
