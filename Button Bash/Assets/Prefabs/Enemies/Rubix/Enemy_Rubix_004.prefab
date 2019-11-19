@@ -171,9 +171,10 @@ MonoBehaviour:
   m_DeathPA: {fileID: 4359194395656651146, guid: 98501a81521c37f4e838b12968e206f0,
     type: 3}
   m_Health: 3
-  m_VerticalFling: 85
-  m_XFling: 80
-  m_ZFling: 50
+  m_VerticalFling: 40
+  m_BackForce: 50
+  m_MaxFallTimer: 3
+  m_RubixSpinSpeed: 1.5
 --- !u!114 &8151343831839148343
 MonoBehaviour:
   m_ObjectHideFlags: 0

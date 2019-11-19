@@ -129,6 +129,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4359194395656651146, guid: 98501a81521c37f4e838b12968e206f0,
         type: 3}
+    - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
+        type: 3}
+      propertyPath: m_VerticalFling
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
+        type: 3}
+      propertyPath: m_BackForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
+        type: 3}
+      propertyPath: m_MaxFallTimer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2024104299050841227, guid: 40326a37bdbdc7848aceac0768a439bb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

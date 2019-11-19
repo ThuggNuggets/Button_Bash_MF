@@ -148,9 +148,9 @@ MonoBehaviour:
   m_RightWall: {fileID: 4567360447113795923, guid: 59c9f22fd68275349ad8d32859dec9c6,
     type: 3}
   m_Scale: 0.005
-  m_VerticalFling: 85
-  m_XFling: 80
-  m_ZFling: 50
+  m_VerticalFling: 40
+  m_BackForce: 50
+  m_MaxFallTimer: 3
   m_OtherBabushkas:
   - {fileID: 2100000, guid: 241dcde377475ad43833f0f28a0e6a0e, type: 2}
   - {fileID: 2100000, guid: c77828b7d94450346a09cd1c779ce27e, type: 2}
