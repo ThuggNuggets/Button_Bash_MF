@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4839814472968326325}
   - component: {fileID: 1122385918164510445}
   - component: {fileID: 3439621165178003998}
-  - component: {fileID: 4114298663863467122}
+  - component: {fileID: 5684959788095269157}
   m_Layer: 0
   m_Name: Russian_Doll_Bottom
   m_TagString: babushkaLarge
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 5
   m_Colour: 3
---- !u!95 &4114298663863467122
+--- !u!95 &5684959788095269157
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ Animator:
   m_GameObject: {fileID: 4049320621646561680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07344695aa7986a4e99ba421d772cf7c, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb4f609ac5ef46945a6c7dfeaa667525, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
