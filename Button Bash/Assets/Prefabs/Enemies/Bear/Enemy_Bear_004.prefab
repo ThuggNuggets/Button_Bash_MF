@@ -132,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
         type: 3}
       propertyPath: m_VerticalFling
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
         type: 3}
@@ -143,6 +143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MaxFallTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722164644897572049, guid: 40326a37bdbdc7848aceac0768a439bb,
+        type: 3}
+      propertyPath: m_despawnTimer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2024104299050841227, guid: 40326a37bdbdc7848aceac0768a439bb,
         type: 3}
