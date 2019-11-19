@@ -9,8 +9,8 @@ public class LetterBlockBehaviour : MonoBehaviour
     public int m_Health = 2;
     //flinging the enemy when they have no health
     public float m_VerticalFling = 40;
-	public float m_BackForce;
-
+	public float m_BackForce = 20;
+    public float m_fallTimer = 5;
     //flinging
     int m_FlingRotation;
 
@@ -48,7 +48,6 @@ public class LetterBlockBehaviour : MonoBehaviour
         m_Renderer = transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>();
         m_OriginalMat = m_Renderer.material;
 		//get random fling values
-		float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
         m_FlingRotation = Random.Range(0, 3);
 
 		GetComponent<EnemyBehaviour>().AmLetterBlock();
@@ -127,9 +126,18 @@ public class LetterBlockBehaviour : MonoBehaviour
 		m_FlashTimer--;
         if (m_Health <= 0)
         {
-            transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            m_fallTimer -= Time.deltaTime;
+            if (m_fallTimer > 2.5f)
+            {
+                transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                m_FlingRotation = 3;
+                transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
+            }
             //destroy self and bullet on collision
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 10);
             switch (m_FlingRotation)
             {
                 case 0:
@@ -145,6 +153,11 @@ public class LetterBlockBehaviour : MonoBehaviour
                 case 2:
                     {
                         transform.Rotate(0, 0, 10);
+                        break;
+                    }
+                case 3:
+                    {
+                        transform.Rotate(0, 0, 0);
                         break;
                     }
             }
@@ -183,6 +196,8 @@ public class LetterBlockBehaviour : MonoBehaviour
 			m_GotHit = true;
             if (m_Health == 0)
             {
+                m_fallTimer = 5;
+                m_Speed = 0;
                 Instantiate(m_DeathPA, transform.position,transform.rotation);
             }
         }

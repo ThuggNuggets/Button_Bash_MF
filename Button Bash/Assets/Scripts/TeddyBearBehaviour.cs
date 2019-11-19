@@ -10,8 +10,8 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float m_Scale = 0.5f;
     //flinging the enemy when they have no health
     public float m_VerticalFling = 85;
-    public float m_XFling = 80;
-    public float m_ZFling = 50;
+    public float m_BackForce = 20;
+    public float m_fallTimer = 5;
     private Rigidbody m_Rb;
     private Renderer m_Renderer;
     //flinging
@@ -32,11 +32,8 @@ public class TeddyBearBehaviour : MonoBehaviour
         m_OriginalMat = transform.GetChild(0).GetComponent<Renderer>().material;
         m_Renderer = transform.GetChild(0).GetComponent<Renderer>();
         //get random fling values
-       float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        m_XFling = Random.Range(-m_XFling, -minXFling);
-        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
         m_Rb = gameObject.GetComponent<Rigidbody>();
-        m_FlingRotation = Random.Range(0, 3);
+        m_FlingRotation = Random.Range(0, 2);
     }
     /// <summary>
     /// turns collisions on object off and flings it
@@ -45,11 +42,20 @@ public class TeddyBearBehaviour : MonoBehaviour
     {
         m_FlashTimer--;
         if (m_Health <= 0)
-        {
-            m_Rb.detectCollisions = false;
-            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
+        {            
+            m_fallTimer -= Time.deltaTime;
+            if (m_fallTimer > 2.5f)
+            {
+                transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                m_Rb.detectCollisions = true;
+                m_FlingRotation = 3;
+                transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
+            }
             //destroy self and bullet on collision
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 10);
             switch (m_FlingRotation)
             {
                 case 0:
@@ -59,12 +65,12 @@ public class TeddyBearBehaviour : MonoBehaviour
                     }
                 case 1:
                     {
-                        transform.Rotate(0, 10, 0);
+                       transform.Rotate(0, 10, 0);
                         break;
                     }
                 case 2:
                     {
-                        transform.Rotate(0, 0, 10);
+                       transform.Rotate(0, 0, 10);
                         break;
                     }
             }
@@ -102,10 +108,6 @@ public class TeddyBearBehaviour : MonoBehaviour
                 //increases size of bear
                 transform.localScale += new Vector3(m_Scale, m_Scale, m_Scale);
                 }
-                else
-                {
-                m_Rb.constraints = RigidbodyConstraints.None;
-                }
                 //soud trest alex
                 {
                 SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
@@ -115,6 +117,8 @@ public class TeddyBearBehaviour : MonoBehaviour
                 ac.Play();
                     if(m_Health ==0)
                     {
+                    m_Rb.detectCollisions = false;
+                    m_fallTimer = 5;
                        Instantiate(m_DeathPA, transform.position, transform.rotation);
                     }
             }

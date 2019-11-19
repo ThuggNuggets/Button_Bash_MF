@@ -10,16 +10,15 @@ public class RubixBehaviour : MonoBehaviour
     public float m_Health = 3.0f;
     private Colours.Colour m_Colour;
     //flinging the enemy when they have no health
-    public float m_VerticalFling = 85;
-    public float m_XFling = 80;
-    public float m_ZFling = 50;
+    public float m_VerticalFling = 25;
+    public float m_BackForce = 20;
+    public float m_fallTimer = 5;
 
     // The script that is storing all the player's lives
     private playerLives m_PlayerLives;
     // The collider that holds the player lives.
     private GameObject m_PlayerLivesCollider;
-    //used to find the new colour for the next babushka level
-    private Colours.Colour m_NewColour;
+
     private bool m_Valid = false;
 
     //flinging
@@ -28,16 +27,13 @@ public class RubixBehaviour : MonoBehaviour
     public float m_RubixSpinSpeed = 1;
     private float m_RubixSpinSpeedAmount = 0;
     bool m_Rotating;
-
+    bool m_Spin360;
     Quaternion m_TargetRotation;
     Quaternion m_StartRotation;
     private void Awake()
     {
+        m_Spin360 = false;
         m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
-        //get random fling values
-        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        m_XFling = Random.Range(-m_XFling, -minXFling);
-        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
 
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
@@ -49,10 +45,23 @@ public class RubixBehaviour : MonoBehaviour
     {
         if (m_Health <= 0)
         {
-           //flinging
-            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
+            //flinging
+            m_fallTimer -= Time.deltaTime;
+            if (m_fallTimer > 2.5f)
+            {
+                transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            }
+            else if(m_fallTimer > 1)
+            {
+                m_FlingRotation = 3;
+                transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                transform.Translate(new Vector3(0, 0, 0) * Time.deltaTime, Space.World);
+            }
             //destroy self and bullet on collision
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 10);
             //rotates the object
             switch (m_FlingRotation)
             {
@@ -71,18 +80,39 @@ public class RubixBehaviour : MonoBehaviour
                         transform.Rotate(0, 0, 10);
                         break;
                     }
+                case 3:
+                    {
+                        transform.Rotate(0, 0, 0);
+                        break;
+                    }
             }
         }
 
         if(m_Rotating)
         {
-            m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
-            Debug.Log(m_RubixSpinSpeedAmount);
-            transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
-            if(m_RubixSpinSpeedAmount > 1)
+            if (m_Spin360)
             {
-                m_Rotating = false;
-                m_RubixSpinSpeedAmount = 0;
+                m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed * 2;
+                transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+            }
+            else
+            {
+                m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
+                transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+            }
+            if(m_RubixSpinSpeedAmount >= 1)
+            {
+                if (m_Spin360)
+                {
+                   m_TargetRotation *= Quaternion.Euler(0, 180.0f, 0);
+                    m_RubixSpinSpeedAmount = 0;
+                    m_Spin360 = false;
+                }
+                else
+                {
+                    m_Rotating = false;
+                    m_RubixSpinSpeedAmount = 0;
+                }
             }
         }
     }
@@ -111,9 +141,14 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_TargetRotation = Quaternion.Euler(0, 0, 0);
+                                    if(m_Colour  == Colours.Colour.Red)
+                                    {
+                                        m_TargetRotation = Quaternion.Euler(0, 180.0f, 0);
+                                        m_Spin360 = true;
+                                    }
                                     m_Colour = Colours.Colour.Red;
                                     m_StartRotation = transform.rotation;
-                                    m_TargetRotation = Quaternion.Euler(0, 0, 0);
                                     
                                 }
                                 break;
@@ -124,9 +159,14 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_TargetRotation = Quaternion.Euler(0, 90, 0);
+                                    if (m_Colour == Colours.Colour.Green)
+                                    {
+                                        m_TargetRotation = Quaternion.Euler(0, -90, 0);
+                                        m_Spin360 = true;
+                                    }
                                     m_Colour = Colours.Colour.Green;
                                     m_StartRotation = transform.rotation;
-                                    m_TargetRotation = Quaternion.Euler(0, 90, 0);
                                 }
                                 break;
                             }
@@ -136,9 +176,14 @@ public class RubixBehaviour : MonoBehaviour
                             {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_TargetRotation = Quaternion.Euler(0, 180, 0);
+                                    if (m_Colour == Colours.Colour.Yellow)
+                                    {
+                                        m_TargetRotation = Quaternion.Euler(0, 0, 0);
+                                        m_Spin360 = true;
+                                    }
                                     m_Colour = Colours.Colour.Yellow;
                                     m_StartRotation = transform.rotation;
-                                    m_TargetRotation = Quaternion.Euler(0, 180, 0);
                             }
                             break;
                         }
@@ -148,9 +193,14 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_TargetRotation = Quaternion.Euler(0, -90, 0);
+                                    if (m_Colour == Colours.Colour.Blue)
+                                    {
+                                        m_TargetRotation = Quaternion.Euler(0, 90, 0);
+                                        m_Spin360 = true;
+                                    }
                                     m_Colour = Colours.Colour.Blue;
                                     m_StartRotation = transform.rotation;
-                                    m_TargetRotation = Quaternion.Euler(0, -90, 0);
                                 }
 
                                 break;
@@ -169,6 +219,7 @@ public class RubixBehaviour : MonoBehaviour
             ac.Play();
             if (m_Health == 0)
             {
+                m_fallTimer = 5;
                 Instantiate(m_DeathPA, transform.position, transform.rotation);
             }
         }

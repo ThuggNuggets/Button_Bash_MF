@@ -23,8 +23,9 @@ public class BabushkaBehaviour : MonoBehaviour
 
     //flinging the enemy when they have no health
     public float m_VerticalFling = 85;
-    public float m_XFling = 80;
-    public float m_ZFling = 50;
+    public float m_BackForce = 20;
+    public float m_fallTimer = 5;
+    public float m_ChildFallTimer = 5;
 
     //used to make sure the next babushka is a colour of the remaining players
     // The script that is storing all the player's lives
@@ -61,11 +62,7 @@ public class BabushkaBehaviour : MonoBehaviour
         {
             m_AddedVector = new Vector3(0, 0, -3);
         }
-        //get random fling values
-        float minXFling = gameObject.GetComponent<EnemyBehaviour>().m_Speed;
-        m_XFling = Random.Range(-m_XFling, -minXFling);
-        m_ZFling = Random.Range(-m_ZFling, m_ZFling);
-
+        
         //finds the object that hold the player lives 
         m_PlayerLivesCollider = GameObject.Find("Collider");
         m_PlayerLives = m_PlayerLivesCollider.GetComponent<playerLives>();
@@ -73,7 +70,7 @@ public class BabushkaBehaviour : MonoBehaviour
         m_FlingRotation = Random.Range(0, 2);
 
         m_ChildTopColour = GetComponent<EnemyBehaviour>().m_Colour;
-            foreach (Transform child in transform)
+        foreach (Transform child in transform)
             {
                 switch (m_ChildTopColour)
                 {
@@ -153,40 +150,43 @@ public class BabushkaBehaviour : MonoBehaviour
             if (m_Health == 1)
             {
                 //fling the top half of the babushka
-                child.transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
-                Destroy(child.gameObject, 2);
-                switch (m_FlingRotation)
-                {
-                    case 0:
-                        {
-                            child.transform.Rotate(10, 0, 0);
-                            break;
-                        }
-                    case 1:
-                        {
-                            child.transform.Rotate(0, 0, 10);
-                            break;
-                        }
 
-                }
+                child.transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+               
+                child.transform.Rotate(0, 20, 0);
+                
             }
         }
         if (m_Health <= 0)
           {
             //fling the bottom half of the babushka
-            transform.Translate(new Vector3(m_XFling, m_VerticalFling, m_ZFling) * Time.deltaTime, Space.World);
+            m_fallTimer -= Time.deltaTime;
+            if (m_fallTimer > 2.5f)
+            {
+                transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                m_FlingRotation = 2;
+                transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
+            }
             //destroy self and bullet on collision
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 10);
             switch (m_FlingRotation)
             {
                 case 0:
                     {
-                        transform.Rotate(10, 0, 0);
+                        transform.Rotate(0, 10, 0);
                         break;
                     }
                 case 1:
                     {
                         transform.Rotate(0, 0, 10);
+                        break;
+                    }
+                case 2:
+                    {
+                        transform.Rotate(0, 0, 0);
                         break;
                     }
 
@@ -231,10 +231,9 @@ public class BabushkaBehaviour : MonoBehaviour
             ac.clip = sm.m_SoundClips[3];
             ac.pitch = Random.Range(1, 3);
             ac.Play();
-
-
             if (m_Health == 0)
             {
+                m_fallTimer = 5;
                 Instantiate(m_DeathPA, transform.position, transform.rotation);
             }
         }
@@ -304,7 +303,7 @@ public class BabushkaBehaviour : MonoBehaviour
         
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject,2);
+            Destroy(child.gameObject,1);
         }
         
     }
