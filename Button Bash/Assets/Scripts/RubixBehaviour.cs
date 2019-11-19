@@ -21,7 +21,7 @@ public class RubixBehaviour : MonoBehaviour
     private GameObject m_PlayerLivesCollider;
 
     private bool m_Valid = false;
-
+    bool m_ColourMatch = true;
     //flinging
     int m_FlingRotation;
     //speed of rotation after being hit by a button
@@ -29,6 +29,7 @@ public class RubixBehaviour : MonoBehaviour
     private float m_RubixSpinSpeedAmount = 0;
     bool m_Rotating;
     bool m_Spin360;
+    public float m_JumpHeight = 2.5f;
     Quaternion m_TargetRotation;
     Quaternion m_StartRotation;
     Rigidbody rb;
@@ -86,7 +87,7 @@ public class RubixBehaviour : MonoBehaviour
             }
         }
 
-        if(m_Rotating)
+        if (m_Rotating)
         {
             if (m_Spin360)
             {
@@ -98,21 +99,59 @@ public class RubixBehaviour : MonoBehaviour
                 m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
                 transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
             }
-            if(m_RubixSpinSpeedAmount >= 1)
+            if (m_RubixSpinSpeedAmount >= 1)
             {
                 if (m_Spin360)
                 {
-                   m_TargetRotation *= Quaternion.Euler(0, 180.0f, 0);
-                    m_RubixSpinSpeedAmount = 0;
                     m_Spin360 = false;
+                    m_RubixSpinSpeedAmount = 0;
+                    m_TargetRotation *= Quaternion.Euler(0, 180.0f, 0);
                 }
                 else
                 {
                     m_Rotating = false;
                     m_RubixSpinSpeedAmount = 0;
+                    m_StartRotation = transform.rotation;
                 }
             }
         }
+        else
+        {
+            if (m_RubixSpinSpeedAmount < 1)
+            {
+                m_RubixSpinSpeedAmount += Time.deltaTime * m_RubixSpinSpeed;
+                m_ColourMatch = false;
+            }
+            else
+            {
+                m_ColourMatch = true;
+            }
+          if (!m_ColourMatch)
+          {
+                if (m_Colour == Colours.Colour.Red)
+                {
+
+                    m_TargetRotation = Quaternion.Euler(0, 0, 0);
+                    transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+                }
+                else if (m_Colour == Colours.Colour.Blue)
+                {
+                    m_TargetRotation = Quaternion.Euler(0, -90, 0);
+                    transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+                }
+                else if (m_Colour == Colours.Colour.Green)
+                {
+                    m_TargetRotation = Quaternion.Euler(0, 90, 0);
+                    transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+                }
+                else if (m_Colour == Colours.Colour.Yellow)
+                {
+                    m_TargetRotation = Quaternion.Euler(0, 180, 0);
+                    transform.rotation = Quaternion.Slerp(m_StartRotation, m_TargetRotation, m_RubixSpinSpeedAmount);
+                }
+            }
+        } 
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -130,7 +169,7 @@ public class RubixBehaviour : MonoBehaviour
                 //changes its colour
                 while (!m_Valid)
                 {
-                    ///-------------------------------------------------------------------------------------------
+                    m_Spin360 = false;
                     switch (Random.Range(0, 4))
                     {
                         case 0:
@@ -139,14 +178,15 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_RubixSpinSpeedAmount = 0;
+                                    m_StartRotation = transform.rotation;
                                     m_TargetRotation = Quaternion.Euler(0, 0, 0);
-                                    if(m_Colour  == Colours.Colour.Red)
+                                    if (m_Colour  == Colours.Colour.Red)
                                     {
                                         m_TargetRotation = Quaternion.Euler(0, 180.0f, 0);
                                         m_Spin360 = true;
                                     }
                                     m_Colour = Colours.Colour.Red;
-                                    m_StartRotation = transform.rotation;
                                     
                                 }
                                 break;
@@ -157,6 +197,8 @@ public class RubixBehaviour : MonoBehaviour
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_RubixSpinSpeedAmount = 0;
+                                    m_StartRotation = transform.rotation;
                                     m_TargetRotation = Quaternion.Euler(0, 90, 0);
                                     if (m_Colour == Colours.Colour.Green)
                                     {
@@ -164,16 +206,17 @@ public class RubixBehaviour : MonoBehaviour
                                         m_Spin360 = true;
                                     }
                                     m_Colour = Colours.Colour.Green;
-                                    m_StartRotation = transform.rotation;
                                 }
                                 break;
                             }
                         case 2:
-                        {
-                            if (m_PlayerLives.m_Player4Lives > 0)
                             {
+                                if (m_PlayerLives.m_Player4Lives > 0)
+                                {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_RubixSpinSpeedAmount = 0;
+                                    m_StartRotation = transform.rotation;
                                     m_TargetRotation = Quaternion.Euler(0, 180, 0);
                                     if (m_Colour == Colours.Colour.Yellow)
                                     {
@@ -181,35 +224,34 @@ public class RubixBehaviour : MonoBehaviour
                                         m_Spin360 = true;
                                     }
                                     m_Colour = Colours.Colour.Yellow;
-                                    m_StartRotation = transform.rotation;
+                                }
+                                break;
                             }
-                            break;
-                        }
                         case 3:
                             {
                                 if (m_PlayerLives.m_Player1Lives > 0)
                                 {
                                     m_Valid = true;
                                     m_Rotating = true;
+                                    m_RubixSpinSpeedAmount = 0;
+                                    m_StartRotation = transform.rotation;
                                     m_TargetRotation = Quaternion.Euler(0, -90, 0);
                                     if (m_Colour == Colours.Colour.Blue)
                                     {
                                         m_TargetRotation = Quaternion.Euler(0, 90, 0);
                                         m_Spin360 = true;
                                     }
-                                    m_Colour = Colours.Colour.Blue;
-                                    m_StartRotation = transform.rotation;
+                                        m_Colour = Colours.Colour.Blue;
                                 }
-
-                                break;
+                           
+                                    break;
                             }
                     }
-                    ///
                 }
                 
             }
 
-            rb.AddForce(0, 3, 0, ForceMode.Impulse);
+            rb.AddForce(0, m_JumpHeight, 0, ForceMode.Impulse);
             gameObject.GetComponent<EnemyBehaviour>().SetColour(m_Colour);
             // play a sound from the sound bucket
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
