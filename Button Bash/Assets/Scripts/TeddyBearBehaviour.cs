@@ -11,7 +11,8 @@ public class TeddyBearBehaviour : MonoBehaviour
     //flinging the enemy when they have no health
     public float m_VerticalFling = 85;
     public float m_BackForce = 20;
-    public float m_fallTimer = 5;
+    private float m_fallTimer = 5;
+    public float m_MaxFallTimer = 5;
     private Rigidbody m_Rb;
     private Renderer m_Renderer;
     //flinging
@@ -44,7 +45,7 @@ public class TeddyBearBehaviour : MonoBehaviour
         if (m_Health <= 0)
         {            
             m_fallTimer -= Time.deltaTime;
-            if (m_fallTimer > 2.5f)
+            if (m_fallTimer > m_MaxFallTimer * 0.5f)
             {
                 transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
             }
@@ -118,7 +119,7 @@ public class TeddyBearBehaviour : MonoBehaviour
                     if(m_Health ==0)
                     {
                     m_Rb.detectCollisions = false;
-                    m_fallTimer = 5;
+                    m_fallTimer = m_MaxFallTimer;
                        Instantiate(m_DeathPA, transform.position, transform.rotation);
                     }
             }

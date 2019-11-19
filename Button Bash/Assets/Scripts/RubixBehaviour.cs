@@ -12,7 +12,8 @@ public class RubixBehaviour : MonoBehaviour
     //flinging the enemy when they have no health
     public float m_VerticalFling = 25;
     public float m_BackForce = 20;
-    public float m_fallTimer = 5;
+    private float m_fallTimer = 5;
+    public float m_MaxFallTimer = 5;
 
     // The script that is storing all the player's lives
     private playerLives m_PlayerLives;
@@ -30,8 +31,10 @@ public class RubixBehaviour : MonoBehaviour
     bool m_Spin360;
     Quaternion m_TargetRotation;
     Quaternion m_StartRotation;
+    Rigidbody rb;
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         m_Spin360 = false;
         m_Colour = gameObject.GetComponent<EnemyBehaviour>().GetColour();
 
@@ -47,18 +50,13 @@ public class RubixBehaviour : MonoBehaviour
         {
             //flinging
             m_fallTimer -= Time.deltaTime;
-            if (m_fallTimer > 2.5f)
+            if (m_fallTimer > m_MaxFallTimer* 0.5f)
             {
                 transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
             }
-            else if(m_fallTimer > 1)
-            {
-                m_FlingRotation = 3;
-                transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
-            }
             else
             {
-                transform.Translate(new Vector3(0, 0, 0) * Time.deltaTime, Space.World);
+                transform.Translate(new Vector3(-m_BackForce, 0, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
             Destroy(gameObject, 10);
@@ -210,6 +208,8 @@ public class RubixBehaviour : MonoBehaviour
                 }
                 
             }
+
+            rb.AddForce(new Vector3(0,10,0));
             gameObject.GetComponent<EnemyBehaviour>().SetColour(m_Colour);
             // play a sound from the sound bucket
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
@@ -219,7 +219,7 @@ public class RubixBehaviour : MonoBehaviour
             ac.Play();
             if (m_Health == 0)
             {
-                m_fallTimer = 5;
+                m_fallTimer = m_MaxFallTimer;
                 Instantiate(m_DeathPA, transform.position, transform.rotation);
             }
         }

@@ -24,8 +24,8 @@ public class BabushkaBehaviour : MonoBehaviour
     //flinging the enemy when they have no health
     public float m_VerticalFling = 85;
     public float m_BackForce = 20;
-    public float m_fallTimer = 5;
-    public float m_ChildFallTimer = 5;
+    private float m_fallTimer = 5;
+    public float m_MaxFallTimer = 5;
 
     //used to make sure the next babushka is a colour of the remaining players
     // The script that is storing all the player's lives
@@ -161,7 +161,7 @@ public class BabushkaBehaviour : MonoBehaviour
           {
             //fling the bottom half of the babushka
             m_fallTimer -= Time.deltaTime;
-            if (m_fallTimer > 2.5f)
+            if (m_fallTimer > m_MaxFallTimer * 0.5)
             {
                 transform.Translate(new Vector3(-m_BackForce, m_VerticalFling, 0) * Time.deltaTime, Space.World);
             }
@@ -233,7 +233,7 @@ public class BabushkaBehaviour : MonoBehaviour
             ac.Play();
             if (m_Health == 0)
             {
-                m_fallTimer = 5;
+                m_fallTimer = m_MaxFallTimer;
                 Instantiate(m_DeathPA, transform.position, transform.rotation);
             }
         }
