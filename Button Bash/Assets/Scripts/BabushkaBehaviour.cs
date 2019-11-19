@@ -26,6 +26,7 @@ public class BabushkaBehaviour : MonoBehaviour
     public float m_BackForce = 20;
     private float m_fallTimer = 5;
     public float m_MaxFallTimer = 5;
+    public float m_despawnTimer = 10;
 
     //used to make sure the next babushka is a colour of the remaining players
     // The script that is storing all the player's lives
@@ -171,7 +172,7 @@ public class BabushkaBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
-            Destroy(gameObject, 10);
+            Destroy(gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
                 case 0:

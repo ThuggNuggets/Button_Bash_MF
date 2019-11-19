@@ -12,6 +12,7 @@ public class LetterBlockBehaviour : MonoBehaviour
 	public float m_BackForce = 20;
     private float m_fallTimer = 5;
     public float m_MaxFallTimer = 5;
+    public float m_despawnTimer = 10;
     //flinging
     int m_FlingRotation;
 
@@ -138,7 +139,7 @@ public class LetterBlockBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
-            Destroy(gameObject, 10);
+            Destroy(gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
                 case 0:

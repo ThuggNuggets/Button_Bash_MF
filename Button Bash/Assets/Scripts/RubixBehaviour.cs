@@ -14,7 +14,7 @@ public class RubixBehaviour : MonoBehaviour
     public float m_BackForce = 20;
     private float m_fallTimer = 5;
     public float m_MaxFallTimer = 5;
-
+    public float m_despawnTimer = 10;
     // The script that is storing all the player's lives
     private playerLives m_PlayerLives;
     // The collider that holds the player lives.
@@ -59,7 +59,7 @@ public class RubixBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, 0, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
-            Destroy(gameObject, 10);
+            Destroy(gameObject, m_despawnTimer);
             //rotates the object
             switch (m_FlingRotation)
             {
@@ -209,7 +209,7 @@ public class RubixBehaviour : MonoBehaviour
                 
             }
 
-            rb.AddForce(new Vector3(0,10,0));
+            rb.AddForce(0, 3, 0, ForceMode.Impulse);
             gameObject.GetComponent<EnemyBehaviour>().SetColour(m_Colour);
             // play a sound from the sound bucket
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();

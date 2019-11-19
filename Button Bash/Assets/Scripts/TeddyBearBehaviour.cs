@@ -13,6 +13,7 @@ public class TeddyBearBehaviour : MonoBehaviour
     public float m_BackForce = 20;
     private float m_fallTimer = 5;
     public float m_MaxFallTimer = 5;
+    public float m_despawnTimer = 10;
     private Rigidbody m_Rb;
     private Renderer m_Renderer;
     //flinging
@@ -56,7 +57,7 @@ public class TeddyBearBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
-            Destroy(gameObject, 10);
+            Destroy(gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
                 case 0:
