@@ -145,6 +145,12 @@ public class PlayerControls : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2" || collision.gameObject.tag == "Player3" || collision.gameObject.tag == "Player4")
         {
+            SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.clip = sm.m_SoundClips[12];
+            ac.pitch = Random.Range(1, 3);
+            ac.Play();
+            Debug.Log("Collision");
             m_CollidingObject = collision.gameObject;
             m_CollisionWaitTimer = m_MaxCollisionWaitTimer;
             m_Colliding = true;
