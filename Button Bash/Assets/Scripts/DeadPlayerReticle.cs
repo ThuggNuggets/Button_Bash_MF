@@ -59,7 +59,32 @@ public class DeadPlayerReticle : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoaded;
 
 		m_ProjectileSpawnPoint = GameObject.Find("Dead player button spawn").transform;
-	}
+
+        switch (m_PlayerNumber)
+        {
+            case 0:
+                {
+                    m_PlayerNumber = GameManager.GetPlayerCharacter(0);
+
+                    break;
+                }
+            case 1:
+                {
+                    m_PlayerNumber = GameManager.GetPlayerCharacter(1);
+                    break;
+                }
+            case 2:
+                {
+                    m_PlayerNumber = GameManager.GetPlayerCharacter(2);
+                    break;
+                }
+            case 3:
+                {
+                    m_PlayerNumber = GameManager.GetPlayerCharacter(3);
+                    break;
+                }
+        }
+    }
 
 	/// <summary>
 	/// Update.
@@ -113,7 +138,8 @@ public class DeadPlayerReticle : MonoBehaviour
 	/// <param name="mode">Needed for the function, don't know what it does.</param>
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
+        //Aaron -> changed this as kept getting an error + couldnt figure out what it did
 		//if (scene == SceneManager.GetSceneAt(3) && gameObject.activeSelf == true)
-			//Destroy(gameObject);
+	    //Destroy(gameObject);
 	}
 }

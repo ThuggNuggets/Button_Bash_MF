@@ -57,11 +57,11 @@ public class BabushkaBehaviour : MonoBehaviour
         //dictates where the next babushka will spawn based on how close to the side walls they are
         if(m_LeftWall.transform.position.z + 13 > transform.position.z)
         {
-            m_AddedVector = new Vector3(0, 0, 3);
+            m_AddedVector = new Vector3(0, 0, 4);
         }
         else  if (m_RightWall.transform.position.z - 13 < transform.position.z)
         {
-            m_AddedVector = new Vector3(0, 0, -3);
+            m_AddedVector = new Vector3(0, 0, -4);
         }
         
         //finds the object that hold the player lives 
