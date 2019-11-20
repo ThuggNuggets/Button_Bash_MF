@@ -11,18 +11,26 @@ public class ReturnToMenu : MonoBehaviour
 	/// If the script is to check for controller input.
 	/// </summary>
 	public bool m_UseControllerInput = false;
-
+    public float m_delay;
 	/// <summary>
 	/// Update, checks input if it is using direct controller input.
 	/// Otherwise it's just for the function.
 	/// </summary>
 	private void Update()
 	{
-		if (m_UseControllerInput == true)
-		{
-			if (XCI.GetButtonDown(XboxButton.A) == true)
-				ReturnMainMenuMenu();
-		}
+        if (m_delay < 0)
+        {
+            if (m_UseControllerInput == true)
+            {
+                if (XCI.GetButtonDown(XboxButton.A) == true)
+                    ReturnMainMenuMenu();
+            }
+        }
+        else
+        {
+            m_delay -= Time.deltaTime;
+        }
+        Debug.Log(m_delay);
 	}
 
 	/// <summary>
