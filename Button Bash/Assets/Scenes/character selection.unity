@@ -1735,7 +1735,7 @@ MonoBehaviour:
   - {fileID: 2161187068594170637, guid: becfe3dc936c3de4fa3a4b979b79ad34, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 1
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
+  m_LockedInDarkenColour: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0.85490197}
   m_SelectButton: {fileID: 2108880610}
 --- !u!82 &893127946
 AudioSource:
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   - {fileID: 2161187068594170637, guid: becfe3dc936c3de4fa3a4b979b79ad34, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 2
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
+  m_LockedInDarkenColour: {r: 0.5, g: 0.4976415, b: 0.4976415, a: 0.8039216}
   m_SelectButton: {fileID: 1315919408}
 --- !u!82 &1000652624
 AudioSource:
@@ -2764,7 +2764,7 @@ MonoBehaviour:
   - {fileID: 2161187068594170637, guid: becfe3dc936c3de4fa3a4b979b79ad34, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 3
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
+  m_LockedInDarkenColour: {r: 0.5377358, g: 0.5250534, b: 0.5250534, a: 0.7921569}
   m_SelectButton: {fileID: 2023713240}
 --- !u!82 &1474611313
 AudioSource:
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   - {fileID: 2161187068594170637, guid: becfe3dc936c3de4fa3a4b979b79ad34, type: 3}
   m_DeadZone: 0.01
   m_PlayerNumber: 0
-  m_LockedInDarkenColour: {r: 0, g: 0, b: 0, a: 0.72156864}
+  m_LockedInDarkenColour: {r: 0.5566038, g: 0.54872733, b: 0.54872733, a: 0.7607843}
   m_SelectButton: {fileID: 1582929497}
 --- !u!82 &1803910185
 AudioSource:
