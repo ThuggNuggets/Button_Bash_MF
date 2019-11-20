@@ -67,7 +67,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-		// Timer for each roll in the animation.
+		// Timer for each roll in the animation. + refresh the timer when it runs out
 		if (m_RollTimer > 0)
 			m_RollTimer -= Time.deltaTime;
 		else
@@ -122,10 +122,9 @@ public class LetterBlockBehaviour : MonoBehaviour
 				m_GotHit = false;
 			}
 		}
-
+        //move forward
 		transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime);
-
-		m_FlashTimer--;
+        //throws the block behind the bed
         if (m_Health <= 0)
         {
             m_fallTimer -= Time.deltaTime;
@@ -138,7 +137,7 @@ public class LetterBlockBehaviour : MonoBehaviour
                 m_FlingRotation = 3;
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
-            //destroy self and bullet on collision
+            //destroy self after a certain amount of time
             Destroy(gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
@@ -164,6 +163,8 @@ public class LetterBlockBehaviour : MonoBehaviour
                     }
             }
         }
+        //flashing 
+		m_FlashTimer--;
         if (m_Flash)
         {
             m_Renderer.material = m_WhiteMaterial;
