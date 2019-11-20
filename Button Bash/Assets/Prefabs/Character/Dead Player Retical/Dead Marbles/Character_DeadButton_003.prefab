@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 3905374817873709276}
   - component: {fileID: 3905374817874479356}
   - component: {fileID: 3905374817875610172}
-  - component: {fileID: 6827102401044953316}
-  - component: {fileID: 3285499480327720943}
-  - component: {fileID: 1266538887814426917}
   m_Layer: 0
   m_Name: Character_DeadButton_003
   m_TagString: Untagged
@@ -81,26 +78,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6827102401044953316
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905374817873417468}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 30.740923, y: 2.157858, z: 30.740923}
-  m_Center: {x: 0, y: 1.078929, z: 0}
---- !u!54 &3285499480327720943
+--- !u!54 &4622617134489809258
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905374817873417468}
+  m_GameObject: {fileID: 6731195259801516451}
   serializedVersion: 2
   m_Mass: 0.0000001
   m_Drag: 0
@@ -110,23 +94,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1266538887814426917
-MonoBehaviour:
+--- !u!135 &5747433327067440132
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905374817873417468}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95170cbfd8761234ebc037149fcfc96d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Force: 50
-  m_DespawnTimer: 3
-  m_FlingSpeed: 50
-  m_XFling: 0
-  m_ZFling: 50
+  m_GameObject: {fileID: 6731195259801516451}
+  m_Material: {fileID: 13400000, guid: 308cf997190a11d4b841a05ae9ba66c5, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.90529233
+  m_Center: {x: 0, y: 0.9052923, z: 0}
 --- !u!114 &3600044567498947499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,40 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95170cbfd8761234ebc037149fcfc96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Force: 50
+  m_Force: 75
   m_DespawnTimer: 3
-  m_FlingSpeed: 50
-  m_XFling: 0
-  m_ZFling: 50
---- !u!54 &4622617134489809258
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6731195259801516451}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &5747433327067440132
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6731195259801516451}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.90529233
-  m_Center: {x: 0, y: 0.9052923, z: 0}
 --- !u!1001 &4482116376884443288
 PrefabInstance:
   m_ObjectHideFlags: 0
