@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -245,7 +246,7 @@ public class playerLives : MonoBehaviour
 				GameManager.AddDefeatedCharacter(3);
 
 			// Load the end scene.
-			SceneManager.LoadScene(3);
+			SceneManager.LoadScene(4);
 		}
 		Instantiate(m_EnemyHitParticleEffect, collision.transform.position, new Quaternion());
     }

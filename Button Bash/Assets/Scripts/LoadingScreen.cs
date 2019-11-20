@@ -15,10 +15,14 @@ public class LoadingScreen : MonoBehaviour
 	/// </summary>
 	private void Update()
 	{
-		// Decrement the time, when it reaches 0, load the game.
-		if (m_LoadTime <= 0.0f)
-			SceneManager.LoadScene(3);
-		else
-			m_LoadTime -= Time.deltaTime;
+        // Decrement the time, when it reaches 0, load the game.
+        if (m_LoadTime <= 0.0f)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            m_LoadTime -= Time.deltaTime;
+        }
 	}
 }
