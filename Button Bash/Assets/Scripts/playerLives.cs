@@ -33,35 +33,18 @@ public class playerLives : MonoBehaviour
 	public GameObject[] m_DefeatedPlayerReticals;
 
     //are players flashing
-    bool m_Player1Flash = false;
-    bool m_Player2Flash = false;
-    bool m_Player3Flash = false;
-    bool m_Player4Flash = false;
+    bool m_Player1Flash, m_Player2Flash, m_Player3Flash, m_Player4Flash = false;
     //how long the flash is
-    private int m_P1FlashTimer = 0;
-    private int m_P2FlashTimer = 0;
-    private int m_P3FlashTimer = 0;
-    private int m_P4FlashTimer = 0;
+    private int m_P1FlashTimer, m_P2FlashTimer, m_P3FlashTimer, m_P4FlashTimer = 0;
     //origional materials
-    Material m_OriginalP1Mat;
-    Material m_OriginalP2Mat;
-    Material m_OriginalP3Mat;
-    Material m_OriginalP4Mat;
+    Material m_OriginalP1Mat, m_OriginalP2Mat, m_OriginalP3Mat, m_OriginalP4Mat;
     //origional hat materials
-    Material m_P1HatMat;
-    Material m_P2HatMat;
-    Material m_P3HatMat;
-    Material m_P4HatMat;
+    Material m_P1HatMat, m_P4HatMat, m_P3HatMat, m_P2HatMat;
+
     //renderer of the players
-    Renderer m_Player1Rend;
-    Renderer m_Player2Rend;
-    Renderer m_Player3Rend;
-    Renderer m_Player4Rend;
+    Renderer m_Player1Rend, m_Player2Rend, m_Player3Rend, m_Player4Rend;
     // renderer of the players hats
-    Renderer m_P1HatRend;
-    Renderer m_P2HatRend;
-    Renderer m_P3HatRend;
-    Renderer m_P4HatRend;
+    Renderer m_P1HatRend, m_P2HatRend,m_P3HatRend,m_P4HatRend;
     //player array
     public GameObject[] m_players;
     //player hat array
@@ -75,21 +58,13 @@ public class playerLives : MonoBehaviour
     public int m_MaxFlashTimer = 10;
     public int m_flashAmount = 3;
     public int m_MaxFlashDelay = 5;
+
     // how long to stay unflashed
-    private int m_P1FlashDelay;
-    private int m_P2FlashDelay;
-    private int m_P3FlashDelay;
-    private int m_P4FlashDelay;
+    private int m_P1FlashDelay, m_P2FlashDelay, m_P3FlashDelay, m_P4FlashDelay;
     //how many times each player has flashed
-    private int m_P1FlashIterator;
-    private int m_P2FlashIterator;
-    private int m_P3FlashIterator;
-    private int m_P4FlashIterator;
+   private int m_P1FlashIterator, m_P2FlashIterator, m_P3FlashIterator, m_P4FlashIterator;
     //have the players been hit
-    private bool m_P1Hit = false;
-    private bool m_P2Hit = false;
-    private bool m_P3Hit = false;
-    private bool m_P4Hit = false;
+    private bool m_P1Hit, m_P2Hit, m_P3Hit, m_P4Hit = false;
     // How many players have lost all their lives.
     private int m_PlayerDeathIterator = 0;
 
@@ -121,9 +96,9 @@ public class playerLives : MonoBehaviour
         m_P4HatMat = m_P4HatRend.material;
 
         m_P1FlashDelay = m_MaxFlashDelay;
-        m_P1FlashDelay = m_MaxFlashDelay;
-        m_P1FlashDelay = m_MaxFlashDelay;
-        m_P1FlashDelay = m_MaxFlashDelay;
+        m_P2FlashDelay = m_MaxFlashDelay;
+        m_P3FlashDelay = m_MaxFlashDelay;
+        m_P4FlashDelay = m_MaxFlashDelay;
         m_PlayerDeathIterator = 0;
     }
     private void OnCollisionEnter(Collision collision)
@@ -175,6 +150,7 @@ public class playerLives : MonoBehaviour
                     {
                         m_Player2Lives -= 1;
                         m_P2Hit = true;
+                        m_Player2Flash = true;
                         m_P2FlashTimer = m_MaxFlashTimer;
                         // If player 2's lives are 0, increase the amount of players that have no lives.
                         if (m_Player2Lives == 0)
@@ -195,6 +171,7 @@ public class playerLives : MonoBehaviour
                     if (m_Player3Lives > 0)
                     {
                         m_Player3Lives -= 1;
+                        m_Player3Flash = true;
                         m_P3Hit = true;
                         m_P3FlashTimer = m_MaxFlashTimer;
                         // If player 3's lives are 0, increase the amount of players that have no lives.
@@ -216,6 +193,7 @@ public class playerLives : MonoBehaviour
                     if (m_Player4Lives > 0)
                     {
                         m_Player4Lives -= 1;
+                        m_Player4Flash = true;
                         m_P4Hit = true;
                         m_P4FlashTimer = m_MaxFlashTimer;
                         // If player 4's lives are 0, increase the amount of players that have no lives.
@@ -274,11 +252,10 @@ public class playerLives : MonoBehaviour
                 m_P1FlashDelay--;
                 if (m_P1FlashDelay < 0)
                 {
-                m_P1FlashIterator++;
+                    m_P1FlashIterator++;
                     m_Player1Flash = true;
                     m_P1FlashTimer = m_MaxFlashTimer;
                 }
-
                 if(m_P1FlashIterator >= m_flashAmount)
                 {
                     m_P1FlashIterator = 0;
@@ -287,11 +264,6 @@ public class playerLives : MonoBehaviour
                 }
             }
         }
-
-
-
-
-
 
         //player 2 flash
         if (m_P2Hit)
@@ -318,7 +290,6 @@ public class playerLives : MonoBehaviour
                     m_Player2Flash = true;
                     m_P2FlashTimer = m_MaxFlashTimer;
                 }
-
                 if (m_P2FlashIterator >= m_flashAmount)
                 {
                     m_P2FlashIterator = 0;
@@ -353,7 +324,6 @@ public class playerLives : MonoBehaviour
                     m_Player3Flash = true;
                     m_P3FlashTimer = m_MaxFlashTimer;
                 }
-
                 if (m_P3FlashIterator >= m_flashAmount)
                 {
                     m_P3FlashIterator = 0;
@@ -388,7 +358,6 @@ public class playerLives : MonoBehaviour
                     m_Player4Flash = true;
                     m_P4FlashTimer = m_MaxFlashTimer;
                 }
-
                 if (m_P4FlashIterator >= m_flashAmount)
                 {
                     m_P4FlashIterator = 0;
@@ -397,10 +366,6 @@ public class playerLives : MonoBehaviour
                 }
             }
         }
-
-
-
-
     }
 
 }
