@@ -113,7 +113,7 @@ public class DeadPlayerReticle : MonoBehaviour
 	/// <param name="mode">Needed for the function, don't know what it does.</param>
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		if (scene == SceneManager.GetSceneAt(2) && gameObject.activeSelf == true)
-			Destroy(gameObject);
+		//if (scene == SceneManager.GetSceneAt(3) && gameObject.activeSelf == true)
+			//Destroy(gameObject);
 	}
 }
