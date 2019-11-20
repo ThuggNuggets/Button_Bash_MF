@@ -36,8 +36,6 @@ public class LetterBlockBehaviour : MonoBehaviour
 
 	private float m_RollAnimationLength;
 
-	private bool m_GotHit = false;
-
 	public Transform m_LeftWall;
 
 	public Transform m_RightWall;
@@ -67,7 +65,7 @@ public class LetterBlockBehaviour : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-		// Timer for each roll in the animation. + refresh the timer when it runs out
+		// Timer for each roll in the animation.
 		if (m_RollTimer > 0)
 			m_RollTimer -= Time.deltaTime;
 		else
@@ -75,53 +73,24 @@ public class LetterBlockBehaviour : MonoBehaviour
 			m_RollTimer = m_RollAnimationLength / 8;
 		}
 
-		// Letter block is chaning lanes.
+		// Letter block is chaning lanes. + rotate back to origional rotation
 		if (m_ChangingLanes == true)
 		{
 			if (m_RollTimer <= 0.0f)
 			{
-				if (m_RandomRotateRoll == 0)
-					transform.Rotate(0, -90, 0);
-				else
-					transform.Rotate(0, 90, 0);
+                if (m_RandomRotateRoll == 0)
+                {
+                    transform.Rotate(0, -90, 0);
+                }
+                else
+                {
+                    transform.Rotate(0, 90, 0);
+                }
 
-				m_ChangingLanes = false;
+                    m_ChangingLanes = false;
 			}
 		}
 
-		// Rotate the block after it got hit and when it isn't in the middle of rolling.
-		if (m_GotHit == true)
-		{
-			if (m_RollTimer <= 0.0f)
-			{
-				m_RandomRotateRoll = Random.Range(0, 2);
-				switch (m_RandomRotateRoll)
-				{
-					// Rotate left for the camera.
-					case 0:
-						if (m_LeftWall.position.z + 13 < transform.position.z)
-							transform.Rotate(new Vector3(0, 90, 0));
-						else
-						{
-							transform.Rotate(new Vector3(0, -90, 0));
-							m_RandomRotateRoll = 1;
-						}
-						break;
-					// Rotate right for the camera.
-					case 1:
-						if (m_RightWall.position.z - 13 > transform.position.z)
-							transform.Rotate(new Vector3(0, -90, 0));
-						else
-						{
-							transform.Rotate(new Vector3(0, 90, 0));
-							m_RandomRotateRoll = 0;
-						}
-						break;
-				}
-				m_ChangingLanes = true;
-				m_GotHit = false;
-			}
-		}
         //move forward
 		transform.Translate(new Vector3(m_Speed, 0, 0) * Time.deltaTime);
         //throws the block behind the bed
@@ -196,13 +165,41 @@ public class LetterBlockBehaviour : MonoBehaviour
             ac.clip = sm.m_SoundClips[1];
             ac.pitch = Random.Range(1, 3);
             ac.Play();
-			m_GotHit = true;
             if (m_Health == 0)
             {
                 m_fallTimer = m_MaxFallTimer;
                 m_Speed = 0;
                 Instantiate(m_DeathPA, transform.position,transform.rotation);
             }
+
+
+                m_RandomRotateRoll = Random.Range(0, 2);
+                switch (m_RandomRotateRoll)
+                {
+                    // Rotate left for the camera.
+                    case 0:
+                        if (m_LeftWall.position.z + 13 < transform.position.z)
+                            transform.Rotate(new Vector3(0, 90, 0));
+                        else
+                        {
+                            transform.Rotate(new Vector3(0, -90, 0));
+                            m_RandomRotateRoll = 1;
+                        }
+                        break;
+                    // Rotate right for the camera.
+                    case 1:
+                        if (m_RightWall.position.z - 13 > transform.position.z)
+                            transform.Rotate(new Vector3(0, -90, 0));
+                        else
+                        {
+                            transform.Rotate(new Vector3(0, 90, 0));
+                            m_RandomRotateRoll = 0;
+                        }
+                        break;
+                }
+                m_ChangingLanes = true;
+                m_Animator.Play("Roll", 0, 0);
+            m_RollTimer = m_RollAnimationLength / 8;
         }
     }
 }
