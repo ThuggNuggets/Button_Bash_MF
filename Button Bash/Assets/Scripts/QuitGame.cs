@@ -15,10 +15,31 @@ public class QuitGame : MonoBehaviour
 	/// </summary>
 	private int m_QuittingPlayer;
 
-    /// <summary>
+	/// <summary>
+	/// The canvas with the quit query.
+	/// </summary>
+	private GameObject m_QuitScreenCanvas;
+
+	/// <summary>
+	/// On startup.
+	/// </summary>
+	private void Awake()
+	{
+		// Store the canvas.
+		// The script needs to not be on the object that gets set to inactive, as then the script wouldn't run,
+		// so the quit query is the child of the object that has this script, stored for easy access.
+		m_QuitScreenCanvas = transform.GetChild(0).gameObject;
+
+		// If the quit query is active, set it to inactive.
+		// If someone forgets to set the screen to inactive in the editor.
+		if (m_QuitScreenCanvas.activeInHierarchy == true)
+			m_QuitScreenCanvas.SetActive(false);
+	}
+
+	/// <summary>
 	/// Update.
 	/// </summary>
-    void Update()
+	void Update()
     {
 		// If a player hasn't pressed the back button, check if a player has pressed the back button.
 		if (m_QueryQuit == false)
@@ -27,7 +48,7 @@ public class QuitGame : MonoBehaviour
 			{
 				// Present the "Are you sure you want to quit?" query.
 				m_QueryQuit = true;
-				transform.GetChild(0).gameObject.SetActive(true);
+				m_QuitScreenCanvas.SetActive(true);
 
 				// Remember which player pressed the back button.
 				if (XCI.GetButton(XboxButton.Back, XboxController.First))
@@ -38,6 +59,8 @@ public class QuitGame : MonoBehaviour
 					m_QuittingPlayer = 3;
 				else if (XCI.GetButton(XboxButton.Back, XboxController.Fourth))
 					m_QuittingPlayer = 4;
+
+				GameObject.Find("start button").GetComponent<MoveToNextScene>().m_UseControllerInputDirectly = false;
 			}
 		}
 		// If the quit query is on screen.
@@ -49,7 +72,8 @@ public class QuitGame : MonoBehaviour
 			{
 				// Back out of the quit query.
 				m_QueryQuit = false;
-				transform.GetChild(0).gameObject.SetActive(false);
+				m_QuitScreenCanvas.SetActive(false);
+				GameObject.Find("start button").GetComponent<MoveToNextScene>().m_UseControllerInputDirectly = true;
 			}
 		}
     }
