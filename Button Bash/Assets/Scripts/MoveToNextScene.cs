@@ -22,7 +22,11 @@ public class MoveToNextScene : MonoBehaviour
 		if (m_UseControllerInputDirectly == true)
 		{
 			// If the A button is pressed, move on to the next scene.
-			if (XCI.GetButtonDown(XboxButton.A))
+			// Has all the ORs cause Xinput doesn't like this script / scene.
+			if (XCI.GetButton(XboxButton.A, XboxController.First) ||
+				XCI.GetButton(XboxButton.A, XboxController.Second) ||
+				XCI.GetButton(XboxButton.A, XboxController.Third) ||
+				XCI.GetButton(XboxButton.A, XboxController.Fourth))
 				NextScene();
 		}
 	}
