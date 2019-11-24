@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.9528302, g: 0.90913385, b: 0.79552335, a: 1}
+  m_Color: {r: 0.6509434, g: 0.5431609, b: 0.26713246, a: 1}
   m_Intensity: 0.89
   m_Range: 10
   m_SpotAngle: 30
@@ -62,6 +62,75 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &1188629932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188629933}
+  - component: {fileID: 1188629934}
+  m_Layer: 0
+  m_Name: Fill light 2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1188629933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188629932}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 27.98, y: 8.25, z: -21.22}
+  m_LocalScale: {x: 2.82, y: 2.820001, z: 2.820001}
+  m_Children: []
+  m_Father: {fileID: 8037359496662777088}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &1188629934
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188629932}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 0.9490196, g: 0.7019608, b: 0.5254902, a: 1}
+  m_Intensity: 4.5
+  m_Range: 7.8969717
+  m_SpotAngle: 78.45553
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5005,13 +5074,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037359495414118941}
-  m_LocalRotation: {x: 0.899653, y: 0.05150694, z: 0.10466072, w: 0.42073476}
-  m_LocalPosition: {x: -16.791574, y: 44.099434, z: 50.83568}
+  m_LocalRotation: {x: 0.909118, y: 0.053041406, z: 0.101629175, w: 0.40045303}
+  m_LocalPosition: {x: -14.5, y: 63.9, z: 29.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8037359496662777088}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 131.734, y: -20.365997, z: -15.755005}
+  m_LocalEulerAnglesHint: {x: 134.165, y: -19.037994, z: -14.787994}
 --- !u!108 &8037359495414118942
 Light:
   m_ObjectHideFlags: 0
@@ -5022,7 +5091,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.9490196, g: 0.7008786, b: 0.5254902, a: 1}
+  m_Color: {r: 0.8962264, g: 0.5287876, b: 0.26633143, a: 1}
   m_Intensity: 3
   m_Range: 199.24138
   m_SpotAngle: 84.52149
@@ -5032,9 +5101,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 10
   m_Cookie: {fileID: 2800000, guid: b6611e2079396fb46a0c6d2c63000c1a, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -5091,7 +5160,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.9490196, g: 0.7019608, b: 0.5254902, a: 1}
+  m_Color: {r: 0.9056604, g: 0.5272677, b: 0.26059094, a: 1}
   m_Intensity: 0.84
   m_Range: 10
   m_SpotAngle: 30
@@ -9918,6 +9987,7 @@ Transform:
   - {fileID: 8037359495276581881}
   - {fileID: 8037359495414118943}
   - {fileID: 8037359495507420795}
+  - {fileID: 1188629933}
   m_Father: {fileID: 8037359495096222908}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
