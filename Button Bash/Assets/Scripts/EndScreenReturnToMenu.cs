@@ -23,6 +23,8 @@ public class EndScreenReturnToMenu : MonoBehaviour
 		{
 			if (XCI.GetButton(XboxButton.A) == true)
 				SceneManager.LoadScene(0);
+			else if (XCI.GetButton(XboxButton.X) == true)
+				SceneManager.LoadScene(5);
 		}
 		else
 			m_InputDelayTimer -= Time.deltaTime;
