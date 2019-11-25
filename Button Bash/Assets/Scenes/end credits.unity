@@ -147,8 +147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.8, y: -97.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -100.8, y: -113.43}
+  m_SizeDelta: {x: 100, y: 131.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82482896
 MonoBehaviour:
@@ -1681,8 +1681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165, y: -97.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 165, y: -91.490005}
+  m_SizeDelta: {x: 100, y: 112.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245672422
 MonoBehaviour:
@@ -1967,8 +1967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154, y: -97.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -154, y: -91.49}
+  m_SizeDelta: {x: 100, y: 112.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294445887
 MonoBehaviour:
@@ -2457,8 +2457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -81.9}
-  m_SizeDelta: {x: 235.7, y: 59.4}
+  m_AnchoredPosition: {x: 0, y: -91.7}
+  m_SizeDelta: {x: 235.7, y: 57.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498982853
 MonoBehaviour:
@@ -3053,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -85.6}
+  m_AnchoredPosition: {x: 0, y: -93.6}
   m_SizeDelta: {x: 160, y: 61.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688272605
@@ -3089,7 +3089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Uirah Overton
+  m_Text: 'Uriah Overton
 
     Head Designer'
 --- !u!222 &1688272606
@@ -3329,7 +3329,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 9e7efc65532fe4c49a472d7f2bd006fc, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3880,8 +3880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.6, y: -97.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 6.6, y: -91.490005}
+  m_SizeDelta: {x: 100, y: 112.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027271048
 MonoBehaviour:
@@ -3953,8 +3953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113.2, y: -97.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 110.66, y: -111.61}
+  m_SizeDelta: {x: 94.91, y: 127.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146773672
 MonoBehaviour:
@@ -3976,7 +3976,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 6092cda9f09f22f4383d17b6d90e8963, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
