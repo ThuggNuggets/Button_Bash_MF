@@ -30,7 +30,6 @@ public class ReturnToMenu : MonoBehaviour
         {
             m_delay -= Time.deltaTime;
         }
-        Debug.Log(m_delay);
 	}
 
 	/// <summary>

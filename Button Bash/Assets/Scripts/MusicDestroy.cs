@@ -17,7 +17,6 @@ public class MusicDestroy : MonoBehaviour
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         number++;
-        Debug.Log(number);
         if (number % 4 == 0)
         {
             gameObject.SetActive(false);

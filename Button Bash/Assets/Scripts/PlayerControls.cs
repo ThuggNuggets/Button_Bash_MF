@@ -141,6 +141,11 @@ public class PlayerControls : MonoBehaviour
 			{
 				m_AmmoRing.transform.GetChild(i).gameObject.SetActive(true);
 			}
+            SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
+            AudioSource ac = GetComponent<AudioSource>();
+            ac.clip = sm.m_SoundClips[13];
+            ac.pitch = Random.Range(1, 3);
+            ac.Play();
             m_currentAmmo = m_maxAmmo;
         }
     }
@@ -155,17 +160,18 @@ public class PlayerControls : MonoBehaviour
             ac.clip = sm.m_SoundClips[12];
             ac.pitch = Random.Range(1, 3);
             ac.Play();
-            Debug.Log("Collision");
             m_CollidingObject = collision.gameObject;
             m_CollisionWaitTimer = m_MaxCollisionWaitTimer;
             m_Colliding = true;
             if (transform.position.z > m_CollidingObject.transform.position.z)
             {
                 right = true;
+                left = false;
             }
             else
             {
                 left = true;
+                right = false;
             }
         }
     }
