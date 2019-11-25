@@ -107,7 +107,7 @@ public class LetterBlockBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
             //destroy self after a certain amount of time
-            Destroy(gameObject, m_despawnTimer);
+            Destroy(transform.parent.gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
                 case 0:
@@ -158,7 +158,7 @@ public class LetterBlockBehaviour : MonoBehaviour
             m_Health--;
             m_Flash = true;
             m_FlashTimer = m_MaxFlashTimer;
-            Destroy(collision.gameObject);
+            Destroy(collision.transform.parent.gameObject);
             //soud trest alex
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
             AudioSource ac = GetComponent<AudioSource>();

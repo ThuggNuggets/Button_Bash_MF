@@ -10,23 +10,9 @@ public class PlayerProjectile : MonoBehaviour
 	public float m_Force;
 
 	/// <summary>
-	/// The rigidbody on the projectile.
-	/// </summary>
-	private Rigidbody m_Rigidbody;
-
-	/// <summary>
 	/// The timer for the projectile.
 	/// </summary>
 	public float m_Timer;
-
-	/// <summary>
-	/// On startup.
-	/// </summary>
-    void Awake()
-    {
-		// Get the rigidbody of the projectile.
-		m_Rigidbody = GetComponent<Rigidbody>();
-    }
 
 	/// <summary>
 	/// Update the projectile. Fixed update for physics.
@@ -39,10 +25,11 @@ public class PlayerProjectile : MonoBehaviour
 
         // If the timer is equal to 0, destroy the projectile.
         if (m_Timer <= 0.0f)
-			Destroy(gameObject);
-
-		// Else, decrease the projectile by delta time.
-		else
-			m_Timer -= Time.deltaTime;
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        // Else, decrease the projectile by delta time.
+        else
+            m_Timer -= Time.deltaTime;
     }
 }

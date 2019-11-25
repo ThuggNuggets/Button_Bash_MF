@@ -22,6 +22,7 @@ TagManager:
   - ammopile
   - Image Box
   - music
+  - bedBack
   layers:
   - Default
   - TransparentFX
