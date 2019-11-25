@@ -22,7 +22,10 @@ public class ReturnToMenu : MonoBehaviour
         {
             if (m_UseControllerInput == true)
             {
-                if (XCI.GetButtonDown(XboxButton.A) == true)
+                if (XCI.GetButtonDown(XboxButton.A, XboxController.First) ||
+					XCI.GetButtonDown(XboxButton.A, XboxController.Second) ||
+					XCI.GetButtonDown(XboxButton.A, XboxController.Third) ||
+					XCI.GetButtonDown(XboxButton.A, XboxController.Fourth))
                     ReturnMainMenuMenu();
             }
         }
