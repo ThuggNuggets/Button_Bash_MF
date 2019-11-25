@@ -23,10 +23,10 @@ public class MoveToNextScene : MonoBehaviour
 		{
 			// If the A button is pressed, move on to the next scene.
 			// Has all the ORs cause Xinput doesn't like this script / scene.
-			if (XCI.GetButton(XboxButton.A, XboxController.First) ||
-				XCI.GetButton(XboxButton.A, XboxController.Second) ||
-				XCI.GetButton(XboxButton.A, XboxController.Third) ||
-				XCI.GetButton(XboxButton.A, XboxController.Fourth))
+			if (XCI.GetButtonDown(XboxButton.A, XboxController.First) ||
+				XCI.GetButtonDown(XboxButton.A, XboxController.Second) ||
+				XCI.GetButtonDown(XboxButton.A, XboxController.Third) ||
+				XCI.GetButtonDown(XboxButton.A, XboxController.Fourth))
 				NextScene();
 		}
 	}
