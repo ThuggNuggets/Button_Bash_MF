@@ -122,18 +122,18 @@ TextureImporter:
       name: wiaznd_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 49
-        width: 346
-        height: 584
+        x: 76
+        y: 0
+        width: 370
+        height: 664
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87bc1482c6f62da4682de6ab882551e0
+      spriteID: e7cd9ebee64ecc2438d661d11f35b050
       vertices: []
       indices: 
       edges: []
@@ -142,18 +142,18 @@ TextureImporter:
       name: wiaznd_1
       rect:
         serializedVersion: 2
-        x: 605
-        y: 49
-        width: 361
-        height: 584
+        x: 599
+        y: 0
+        width: 370
+        height: 664
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e427e528e868bd047973bc95911fd3ec
+      spriteID: 1ef827ce3e670dd42872dc795fca1084
       vertices: []
       indices: 
       edges: []
