@@ -44,10 +44,10 @@ public class QuitGame : MonoBehaviour
 		// If a player hasn't pressed the back button, check if a player has pressed the back button.
 		if (m_QueryQuit == false)
 		{
-			if (XCI.GetButton(XboxButton.Back, XboxController.First) ||
-				XCI.GetButton(XboxButton.Back, XboxController.Second) ||
-				XCI.GetButton(XboxButton.Back, XboxController.Third) ||
-				XCI.GetButton(XboxButton.Back, XboxController.Fourth))
+			if (XCI.GetButtonDown(XboxButton.Back, XboxController.First) ||
+				XCI.GetButtonDown(XboxButton.Back, XboxController.Second) ||
+				XCI.GetButtonDown(XboxButton.Back, XboxController.Third) ||
+				XCI.GetButtonDown(XboxButton.Back, XboxController.Fourth))
 			{
 				// Present the "Are you sure you want to quit?" query.
 				m_QueryQuit = true;
@@ -56,13 +56,13 @@ public class QuitGame : MonoBehaviour
 				try
 				{
 					// Remember which player pressed the back button.
-					if (XCI.GetButton(XboxButton.Back, XboxController.First))
+					if (XCI.GetButtonDown(XboxButton.Back, XboxController.First))
 						m_QuittingPlayer = 1;
-					else if (XCI.GetButton(XboxButton.Back, XboxController.Second))
+					else if (XCI.GetButtonDown(XboxButton.Back, XboxController.Second))
 						m_QuittingPlayer = 2;
-					else if (XCI.GetButton(XboxButton.Back, XboxController.Third))
+					else if (XCI.GetButtonDown(XboxButton.Back, XboxController.Third))
 						m_QuittingPlayer = 3;
-					else if (XCI.GetButton(XboxButton.Back, XboxController.Fourth))
+					else if (XCI.GetButtonDown(XboxButton.Back, XboxController.Fourth))
 						m_QuittingPlayer = 4;
 				}
 				catch
@@ -76,9 +76,9 @@ public class QuitGame : MonoBehaviour
 		// If the quit query is on screen.
 		else
 		{
-			if (XCI.GetButton(XboxButton.A, (XboxController)m_QuittingPlayer))
+			if (XCI.GetButtonDown(XboxButton.A, (XboxController)m_QuittingPlayer))
 				Application.Quit();
-			else if (XCI.GetButton(XboxButton.B, (XboxController)m_QuittingPlayer))
+			else if (XCI.GetButtonDown(XboxButton.B, (XboxController)m_QuittingPlayer))
 			{
 				// Back out of the quit query.
 				m_QueryQuit = false;
