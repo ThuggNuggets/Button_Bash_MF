@@ -21,6 +21,8 @@ public class GamePause : MonoBehaviour
 	/// </summary>
 	private GameObject m_PauseScreen;
 
+	public Sprite[] m_PausedPlayerImages;
+
 	/// <summary>
 	/// On startup.
 	/// </summary>
@@ -47,37 +49,45 @@ public class GamePause : MonoBehaviour
 			// Then pause the game, remembering which one player paused the game.
 			// And set the pause menu to active, so it shows up on screen.
 
+			// First player.
 			if (XCI.GetButtonDown(XboxButton.Start, XboxController.First) == true)
 			{
 				m_Paused = true;
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 1;
 				m_PauseScreen.SetActive(true);
-				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[0].texture;
 			}
+			// Second player.
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Second) == true)
 			{
 				m_Paused = true;
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 2;
 				m_PauseScreen.SetActive(true);
-				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[1].texture;
 			}
+			// Third player.
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Third) == true)
 			{
 				m_Paused = true;
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 3;
 				m_PauseScreen.SetActive(true);
-				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[2].texture;
 			}
+			// Fourth player.
 			else if (XCI.GetButtonDown(XboxButton.Start, XboxController.Fourth) == true)
 			{
 				m_Paused = true;
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 4;
 				m_PauseScreen.SetActive(true);
-				GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
+				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[3].texture;
 			}
 		}
 		// Else if the game is paused, check if the player that paused the game pressed the pause button.
