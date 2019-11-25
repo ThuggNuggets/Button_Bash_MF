@@ -21,6 +21,9 @@ public class GamePause : MonoBehaviour
 	/// </summary>
 	private GameObject m_PauseScreen;
 
+	/// <summary>
+	/// The sprites that represent which player has paused the game.
+	/// </summary>
 	public Sprite[] m_PausedPlayerImages;
 
 	/// <summary>
@@ -46,7 +49,7 @@ public class GamePause : MonoBehaviour
 		if (m_Paused == false)
 		{
 			// Check which player pressed the pause button.
-			// Then pause the game, remembering which one player paused the game.
+			// Then pause the game, remembering which player paused the game.
 			// And set the pause menu to active, so it shows up on screen.
 
 			// First player.
@@ -56,7 +59,6 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 1;
 				m_PauseScreen.SetActive(true);
-				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[0].texture;
 			}
 			// Second player.
@@ -66,7 +68,6 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 2;
 				m_PauseScreen.SetActive(true);
-				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[1].texture;
 			}
 			// Third player.
@@ -76,7 +77,6 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 3;
 				m_PauseScreen.SetActive(true);
-				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[2].texture;
 			}
 			// Fourth player.
@@ -86,7 +86,6 @@ public class GamePause : MonoBehaviour
 				Time.timeScale = 0.0f;
 				m_PausedPlayerNumber = 4;
 				m_PauseScreen.SetActive(true);
-				//GetComponentInChildren<Text>().text = "Paused by Player " + m_PausedPlayerNumber;
 				transform.GetChild(0).GetChild(1).GetComponent<RawImage>().texture = m_PausedPlayerImages[3].texture;
 			}
 		}
@@ -103,7 +102,7 @@ public class GamePause : MonoBehaviour
 				m_PauseScreen.SetActive(false);
 			}
 
-			if (XCI.GetButtonDown(XboxButton.Back, (XboxController)m_PausedPlayerNumber) == true)
+			else if (XCI.GetButtonDown(XboxButton.Back, (XboxController)m_PausedPlayerNumber) == true)
 			{
 				Debug.Log("Return to menu!");
 				Time.timeScale = 1.0f;
