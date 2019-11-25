@@ -44,21 +44,31 @@ public class QuitGame : MonoBehaviour
 		// If a player hasn't pressed the back button, check if a player has pressed the back button.
 		if (m_QueryQuit == false)
 		{
-			if (XCI.GetButton(XboxButton.Back))
+			if (XCI.GetButton(XboxButton.Back, XboxController.First) ||
+				XCI.GetButton(XboxButton.Back, XboxController.Second) ||
+				XCI.GetButton(XboxButton.Back, XboxController.Third) ||
+				XCI.GetButton(XboxButton.Back, XboxController.Fourth))
 			{
 				// Present the "Are you sure you want to quit?" query.
 				m_QueryQuit = true;
 				m_QuitScreenCanvas.SetActive(true);
 
-				// Remember which player pressed the back button.
-				if (XCI.GetButton(XboxButton.Back, XboxController.First))
-					m_QuittingPlayer = 1;
-				else if (XCI.GetButton(XboxButton.Back, XboxController.Second))
-					m_QuittingPlayer = 2;
-				else if (XCI.GetButton(XboxButton.Back, XboxController.Third))
-					m_QuittingPlayer = 3;
-				else if (XCI.GetButton(XboxButton.Back, XboxController.Fourth))
-					m_QuittingPlayer = 4;
+				try
+				{
+					// Remember which player pressed the back button.
+					if (XCI.GetButton(XboxButton.Back, XboxController.First))
+						m_QuittingPlayer = 1;
+					else if (XCI.GetButton(XboxButton.Back, XboxController.Second))
+						m_QuittingPlayer = 2;
+					else if (XCI.GetButton(XboxButton.Back, XboxController.Third))
+						m_QuittingPlayer = 3;
+					else if (XCI.GetButton(XboxButton.Back, XboxController.Fourth))
+						m_QuittingPlayer = 4;
+				}
+				catch
+				{
+					m_QuittingPlayer = -1;
+				}
 
 				GameObject.Find("start button").GetComponent<MoveToNextScene>().m_UseControllerInputDirectly = false;
 			}

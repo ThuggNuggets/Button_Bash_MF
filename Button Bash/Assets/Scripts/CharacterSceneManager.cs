@@ -43,48 +43,48 @@ public class CharacterSceneManager : MonoBehaviour
 		// B = unready.
 
 		// Player 1
-		if (XCI.GetButtonUp(XboxButton.A, XboxController.First) && m_ReadyPlayerOne == false)
+		if (XCI.GetButtonDown(XboxButton.A, XboxController.First) && m_ReadyPlayerOne == false)
 		{
 			m_PlayersReady++;
 			m_ReadyPlayerOne = true;
 		}
-		else if (XCI.GetButtonUp(XboxButton.B, XboxController.First) && m_ReadyPlayerOne == true)
+		else if (XCI.GetButtonDown(XboxButton.B, XboxController.First) && m_ReadyPlayerOne == true)
 		{
 			m_PlayersReady--;
 			m_ReadyPlayerOne = false;
 		}
 		
 		// Player 2.
-		if (XCI.GetButtonUp(XboxButton.A, XboxController.Second) && m_ReadyPlayerTwo == false)
+		if (XCI.GetButtonDown(XboxButton.A, XboxController.Second) && m_ReadyPlayerTwo == false)
 		{
 			m_PlayersReady++;
 			m_ReadyPlayerTwo = true;
 		}
-		else if (XCI.GetButtonUp(XboxButton.B, XboxController.Second) && m_ReadyPlayerTwo == true)
+		else if (XCI.GetButtonDown(XboxButton.B, XboxController.Second) && m_ReadyPlayerTwo == true)
 		{
 			m_PlayersReady--;
 			m_ReadyPlayerTwo = false;
 		}
 
 		// Player 3.
-		if (XCI.GetButtonUp(XboxButton.A, XboxController.Third) && m_ReadyPlayerThree == false)
+		if (XCI.GetButtonDown(XboxButton.A, XboxController.Third) && m_ReadyPlayerThree == false)
 		{
 			m_PlayersReady++;
 			m_ReadyPlayerThree = true;
 		}
-		else if (XCI.GetButtonUp(XboxButton.B, XboxController.Third) && m_ReadyPlayerThree == true)
+		else if (XCI.GetButtonDown(XboxButton.B, XboxController.Third) && m_ReadyPlayerThree == true)
 		{
 			m_PlayersReady--;
 			m_ReadyPlayerThree = false;
 		}
 
 		// Player 4.
-		if (XCI.GetButtonUp(XboxButton.A, XboxController.Fourth) && m_ReadyPlayerFour == false)
+		if (XCI.GetButtonDown(XboxButton.A, XboxController.Fourth) && m_ReadyPlayerFour == false)
 		{
 			m_PlayersReady++;
 			m_ReadyPlayerFour = true;
 		}
-		else if (XCI.GetButtonUp(XboxButton.B, XboxController.Fourth) && m_ReadyPlayerFour == true)
+		else if (XCI.GetButtonDown(XboxButton.B, XboxController.Fourth) && m_ReadyPlayerFour == true)
 		{
 			m_PlayersReady--;
 			m_ReadyPlayerFour = false;
