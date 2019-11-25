@@ -65,23 +65,27 @@ public class PlayerControls : MonoBehaviour
     public float m_laneChangingSpeed = 1;
     //right Vector
     Vector3 m_Right;
-    //shunting
+    //shunting - power of pushing players when over lapping
     public float m_Shunt = 10.0f;
+   
 
 	private GameObject m_AmmoRing;
     private GameObject m_AimingLine;
     private GameObject m_BaseMesh;
-    //----------------------------------------------------------------------------testing----------------------------------------------------------------------------
+    //if the player i fhittin another player
     bool m_Colliding = false;
     private GameObject m_CollidingObject;
     RaycastHit m_Hit;
-    public float m_MaxBounceTimer = 0.2f;
+    //variables for the players bouncing off of each other
     float m_BounceTimer = 0.2f;
+    public float m_BounceSpeed = 2;
+    public float m_MaxBounceTimer = 0.2f;
     private float m_CollisionWaitTimer = 0.5f;
     public float m_MaxCollisionWaitTimer = 0.5f;
+    //collision if they were hit on the left or right side
     bool left = false;
     bool right = false;
-    public float m_BounceSpeed = 2;
+
     //is player in throwing animation
     private float m_ThrowingTimer = -1;
     private bool m_IsShooting = false;
@@ -123,6 +127,7 @@ public class PlayerControls : MonoBehaviour
                     break;
                 }
         }
+
     }
     /// <summary>
     /// when players collide with the ammo piles refill ammo to max
