@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 
 //This code is used to write to 4 different texts on a UI and hold the remaining lives each player has
@@ -128,6 +128,7 @@ public class playerLives : MonoBehaviour
                         m_Player1Flash = true;
                         m_P1FlashTimer = m_MaxFlashTimer;
                         m_Player1Lives -= 1;
+						GamePad.SetVibration(PlayerIndex.One, 2.0f, 2.0f);
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (m_Player1Lives == 0)
 						{
@@ -152,8 +153,9 @@ public class playerLives : MonoBehaviour
                         m_P2Hit = true;
                         m_Player2Flash = true;
                         m_P2FlashTimer = m_MaxFlashTimer;
-                        // If player 2's lives are 0, increase the amount of players that have no lives.
-                        if (m_Player2Lives == 0)
+						GamePad.SetVibration(PlayerIndex.Two, 2.0f, 2.0f);
+						// If player 2's lives are 0, increase the amount of players that have no lives.
+						if (m_Player2Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Magic = GameObject.Find("Character_magic_001");
@@ -174,8 +176,9 @@ public class playerLives : MonoBehaviour
                         m_Player3Flash = true;
                         m_P3Hit = true;
                         m_P3FlashTimer = m_MaxFlashTimer;
-                        // If player 3's lives are 0, increase the amount of players that have no lives.
-                        if (m_Player3Lives == 0)
+						GamePad.SetVibration(PlayerIndex.Three, 2.0f, 2.0f);
+						// If player 3's lives are 0, increase the amount of players that have no lives.
+						if (m_Player3Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Alien = GameObject.Find("Character_Alien_001");
@@ -196,8 +199,9 @@ public class playerLives : MonoBehaviour
                         m_Player4Flash = true;
                         m_P4Hit = true;
                         m_P4FlashTimer = m_MaxFlashTimer;
-                        // If player 4's lives are 0, increase the amount of players that have no lives.
-                        if (m_Player4Lives == 0)
+						GamePad.SetVibration(PlayerIndex.Four, 2.0f, 2.0f);
+						// If player 4's lives are 0, increase the amount of players that have no lives.
+						if (m_Player4Lives == 0)
                         {
                             m_PlayerDeathIterator++;
                             GameObject m_Cat = GameObject.Find("Character_Cat_001");
@@ -261,6 +265,7 @@ public class playerLives : MonoBehaviour
                     m_P1FlashIterator = 0;
                     m_Player1Flash = false;
                     m_P1Hit = false;
+					GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                 }
             }
         }
@@ -295,7 +300,8 @@ public class playerLives : MonoBehaviour
                     m_P2FlashIterator = 0;
                     m_Player2Flash = false;
                     m_P2Hit = false;
-                }
+					GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+				}
             }
         }
 
@@ -329,7 +335,8 @@ public class playerLives : MonoBehaviour
                     m_P3FlashIterator = 0;
                     m_Player3Flash = false;
                     m_P3Hit = false;
-                }
+					GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+				}
             }
         }
 
@@ -363,7 +370,8 @@ public class playerLives : MonoBehaviour
                     m_P4FlashIterator = 0;
                     m_Player4Flash = false;
                     m_P4Hit = false;
-                }
+					GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
+				}
             }
         }
     }
