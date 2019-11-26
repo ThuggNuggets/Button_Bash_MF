@@ -60,7 +60,7 @@ public class RubixBehaviour : MonoBehaviour
                 transform.Translate(new Vector3(-m_BackForce, 0, 0) * Time.deltaTime, Space.World);
             }
             //destroy self and bullet on collision
-            Destroy(gameObject, m_despawnTimer);
+            Destroy(transform.parent.gameObject, m_despawnTimer);
             //rotates the object
             switch (m_FlingRotation)
             {
@@ -159,7 +159,7 @@ public class RubixBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             //destroy bullet
-            Destroy(collision.gameObject);
+            Destroy(collision.transform.parent.parent.parent.gameObject);
             m_Health--;
             if (m_Health > 0)
             {

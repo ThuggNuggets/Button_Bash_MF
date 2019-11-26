@@ -58,8 +58,7 @@ public class TeddyBearBehaviour : MonoBehaviour
                 m_FlingRotation = 3;
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
-            //destroy self and bullet on collision
-            Destroy(gameObject, m_despawnTimer);
+            Destroy(transform.parent.gameObject, m_despawnTimer);
             switch (m_FlingRotation)
             {
                 case 0:
@@ -105,8 +104,8 @@ public class TeddyBearBehaviour : MonoBehaviour
             m_Flash = true;
             m_FlashTimer = m_MaxFlashTimer;
             //destroy the bullet
-            Destroy(collision.gameObject);
-                m_Health--;
+            Destroy(collision.transform.parent.parent.parent.gameObject);
+            m_Health--;
                 if (m_Health > 0)
                 {
                 //increases size of bear
@@ -121,8 +120,8 @@ public class TeddyBearBehaviour : MonoBehaviour
                 ac.Play();
                     if(m_Health ==0)
                     {
-                    m_Collider.size = new Vector3(m_Collider.size.x, 0.5f, 0.5f);
-                    m_fallTimer = m_MaxFallTimer;
+                       m_Collider.size = new Vector3(m_Collider.size.x, 0.5f, 0.5f);
+                       m_fallTimer = m_MaxFallTimer;
                        Instantiate(m_DeathPA, transform.position, transform.rotation);
                     }
             }

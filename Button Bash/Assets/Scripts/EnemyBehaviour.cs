@@ -56,7 +56,14 @@ public class EnemyBehaviour : MonoBehaviour
         // If the enemy reaches the end trigger x position, destroy the enemy.
         if (collision.gameObject.tag == "endingTrigger"|| collision.gameObject.tag == "bedBack")
         {
-            Destroy(transform.parent.gameObject);
+            if (transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            else if (transform.parent == null)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

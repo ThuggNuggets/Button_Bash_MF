@@ -26,7 +26,7 @@ public class PlayerProjectile : MonoBehaviour
         // If the timer is equal to 0, destroy the projectile.
         if (m_Timer <= 0.0f)
         {
-            Destroy(transform.parent.gameObject);
+            Destroy(transform.parent.parent.parent.gameObject);
         }
         // Else, decrease the projectile by delta time.
         else

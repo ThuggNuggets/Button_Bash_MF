@@ -158,7 +158,7 @@ public class LetterBlockBehaviour : MonoBehaviour
             m_Health--;
             m_Flash = true;
             m_FlashTimer = m_MaxFlashTimer;
-            Destroy(collision.transform.parent.gameObject);
+            Destroy(collision.transform.parent.parent.parent.gameObject);
             //soud trest alex
             SoundManager sm = GameObject.Find("Sound bucket ").GetComponent<SoundManager>();
             AudioSource ac = GetComponent<AudioSource>();
@@ -199,7 +199,7 @@ public class LetterBlockBehaviour : MonoBehaviour
                 }
                 m_ChangingLanes = true;
                 m_Animator.Play("Roll", 0, 0);
-            m_RollTimer = m_RollAnimationLength / 8;
+                m_RollTimer = m_RollAnimationLength / 8;
         }
     }
 }

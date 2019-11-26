@@ -161,6 +161,7 @@ public class BabushkaBehaviour : MonoBehaviour
         if (m_Health <= 0)
           {
             //fling the bottom half of the babushka
+           
             m_fallTimer -= Time.deltaTime;
             if (m_fallTimer > m_MaxFallTimer * 0.5)
             {
@@ -171,8 +172,7 @@ public class BabushkaBehaviour : MonoBehaviour
                 m_FlingRotation = 2;
                 transform.Translate(new Vector3(-m_BackForce, -1, 0) * Time.deltaTime, Space.World);
             }
-            //destroy self and bullet on collision
-            Destroy(gameObject, m_despawnTimer);
+
             switch (m_FlingRotation)
             {
                 case 0:
@@ -192,6 +192,15 @@ public class BabushkaBehaviour : MonoBehaviour
                     }
 
             }
+
+            if(transform.parent != null)
+            {
+                Destroy(transform.parent.gameObject, m_despawnTimer);
+            }
+            else if (transform.parent == null)
+            {
+                Destroy(gameObject, m_despawnTimer);
+            }
           }
     }
 
@@ -204,7 +213,7 @@ public class BabushkaBehaviour : MonoBehaviour
         // If the bullet collides with an enemy and the enemy shares a colour with the bullet, destroy the bullet.
         if (collision.gameObject.tag == "bullet")
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.transform.parent.parent.parent.gameObject);
             if (gameObject.tag == "babushkaLarge" )
             {
                 if (m_Health > 1)
@@ -234,6 +243,7 @@ public class BabushkaBehaviour : MonoBehaviour
             ac.Play();
             if (m_Health == 0)
             {
+               
                 m_fallTimer = m_MaxFallTimer;
                 Instantiate(m_DeathPA, transform.position, transform.rotation);
             }
