@@ -6356,6 +6356,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1709878092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1350943979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8580392376560066331, guid: 778aa177a6b1a6340b90c8cc2dd42f0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8580392376345523541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1350943984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350943979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37438fecaf72b2f49907a3db15212f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShakeAmount: 0.1
 --- !u!4 &1356146506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7158945995708751131, guid: 557360c79038ebd46ba7061a00be1034,
@@ -7947,7 +7966,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b2f4c299f4a1ff9479f4fa2e05842bd1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.242
+  m_Volume: 0.669
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9826,6 +9845,16 @@ PrefabInstance:
       propertyPath: m_Hats.Array.data[3]
       value: 
       objectReference: {fileID: 1074448214}
+    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
+        type: 3}
+      propertyPath: m_MaxFlashTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808261314332480247, guid: f8c1b057495b92347a4c3ae41d2cdec5,
+        type: 3}
+      propertyPath: m_MaxFlashDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c1b057495b92347a4c3ae41d2cdec5, type: 3}
 --- !u!1001 &3266317859506510609
