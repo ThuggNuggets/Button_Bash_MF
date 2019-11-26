@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8580392376560066308}
   - component: {fileID: 8580392376560066309}
   - component: {fileID: 8580392376560066330}
+  - component: {fileID: 1396922392124321958}
   - component: {fileID: 8580392376560066311}
   m_Layer: 8
   m_Name: Main Camera(DON'T TOUCH ME)
@@ -83,6 +84,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580392376560066331}
   m_Enabled: 1
+--- !u!114 &1396922392124321958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580392376560066331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37438fecaf72b2f49907a3db15212f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8580392376560066311
 MonoBehaviour:
   m_ObjectHideFlags: 0

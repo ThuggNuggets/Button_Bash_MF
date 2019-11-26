@@ -68,6 +68,8 @@ public class playerLives : MonoBehaviour
     // How many players have lost all their lives.
     private int m_PlayerDeathIterator = 0;
 
+	private CameraShake m_CameraShaker;
+
     private void Awake()
     {
         m_Player1Lives = m_MaxHealth;
@@ -100,6 +102,9 @@ public class playerLives : MonoBehaviour
         m_P3FlashDelay = m_MaxFlashDelay;
         m_P4FlashDelay = m_MaxFlashDelay;
         m_PlayerDeathIterator = 0;
+
+		m_CameraShaker = Camera.main.GetComponent<CameraShake>();
+		Debug.Log("Found camera");
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -129,6 +134,7 @@ public class playerLives : MonoBehaviour
                         m_P1FlashTimer = m_MaxFlashTimer;
                         m_Player1Lives -= 1;
 						GamePad.SetVibration(PlayerIndex.One, 2.0f, 2.0f);
+						m_CameraShaker.SetScreenShake(true);
 						// If player 1's lives are 0, increase the amount of players that have no lives.
 						if (m_Player1Lives == 0)
 						{
@@ -154,6 +160,7 @@ public class playerLives : MonoBehaviour
                         m_Player2Flash = true;
                         m_P2FlashTimer = m_MaxFlashTimer;
 						GamePad.SetVibration(PlayerIndex.Two, 2.0f, 2.0f);
+						m_CameraShaker.SetScreenShake(true);
 						// If player 2's lives are 0, increase the amount of players that have no lives.
 						if (m_Player2Lives == 0)
                         {
@@ -177,6 +184,7 @@ public class playerLives : MonoBehaviour
                         m_P3Hit = true;
                         m_P3FlashTimer = m_MaxFlashTimer;
 						GamePad.SetVibration(PlayerIndex.Three, 2.0f, 2.0f);
+						m_CameraShaker.SetScreenShake(true);
 						// If player 3's lives are 0, increase the amount of players that have no lives.
 						if (m_Player3Lives == 0)
                         {
@@ -200,6 +208,7 @@ public class playerLives : MonoBehaviour
                         m_P4Hit = true;
                         m_P4FlashTimer = m_MaxFlashTimer;
 						GamePad.SetVibration(PlayerIndex.Four, 2.0f, 2.0f);
+						m_CameraShaker.SetScreenShake(true);
 						// If player 4's lives are 0, increase the amount of players that have no lives.
 						if (m_Player4Lives == 0)
                         {
@@ -266,7 +275,8 @@ public class playerLives : MonoBehaviour
                     m_Player1Flash = false;
                     m_P1Hit = false;
 					GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
-                }
+					m_CameraShaker.SetScreenShake(false);
+				}
             }
         }
 
@@ -301,6 +311,7 @@ public class playerLives : MonoBehaviour
                     m_Player2Flash = false;
                     m_P2Hit = false;
 					GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
+					m_CameraShaker.SetScreenShake(false);
 				}
             }
         }
@@ -336,6 +347,7 @@ public class playerLives : MonoBehaviour
                     m_Player3Flash = false;
                     m_P3Hit = false;
 					GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+					m_CameraShaker.SetScreenShake(false);
 				}
             }
         }
@@ -371,6 +383,7 @@ public class playerLives : MonoBehaviour
                     m_Player4Flash = false;
                     m_P4Hit = false;
 					GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
+					m_CameraShaker.SetScreenShake(false);
 				}
             }
         }
