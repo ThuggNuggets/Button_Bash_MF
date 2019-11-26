@@ -21,9 +21,15 @@ public class EndScreenReturnToMenu : MonoBehaviour
 
 		if (m_InputDelayTimer <= 0.0f)
 		{
-			if (XCI.GetButton(XboxButton.A) == true)
+			if (XCI.GetButton(XboxButton.A, XboxController.First) ||
+				XCI.GetButton(XboxButton.A, XboxController.Second) ||
+				XCI.GetButton(XboxButton.A, XboxController.Third) ||
+				XCI.GetButton(XboxButton.A, XboxController.Fourth))
 				SceneManager.LoadScene(0);
-			else if (XCI.GetButton(XboxButton.X) == true)
+			else if (XCI.GetButton(XboxButton.X, XboxController.First) ||
+				XCI.GetButton(XboxButton.X, XboxController.Second) ||
+				XCI.GetButton(XboxButton.X, XboxController.Third) ||
+				XCI.GetButton(XboxButton.X, XboxController.Fourth))
 				SceneManager.LoadScene(5);
 		}
 		else
